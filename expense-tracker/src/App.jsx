@@ -1,7 +1,7 @@
 import { useState, useMemo, useEffect, useRef, useCallback } from 'react'
 import './App.css'
 import { useExpenses } from './useExpenses'
-import { useFixed, getFixedStatus } from './useFixed'
+import { useFixed, getFixedStatus, getInstallmentInfo } from './useFixed'
 import { useBudget } from './useBudget'
 import {
   CATEGORIES, getCategoryById,
@@ -448,19 +448,47 @@ function AddModal({ onClose, onAdd, expense }) {
   )
 }
 
+const MONTHS_PT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+
 function AddFixedModal({ onClose, onAdd, item }) {
   const isEditing = !!item
   const [name, setName] = useState(item?.name ?? '')
   const [amount, setAmount] = useState(item?.amount ? String(item.amount) : '')
   const [dueDay, setDueDay] = useState(item?.dueDay ? String(item.dueDay) : '1')
   const [category, setCategory] = useState(item?.category ?? 'home')
+  const [hasInstallments, setHasInstallments] = useState(!!(item?.installments))
+  const [installmentCount, setInstallmentCount] = useState(item?.installments ? String(item.installments) : '12')
+  const defaultStart = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}`
+  const [startMonthValue, setStartMonthValue] = useState(
+    item?.installmentStart
+      ? `${item.installmentStart.year}-${String(item.installmentStart.month + 1).padStart(2, '0')}`
+      : defaultStart
+  )
+
+  const parsedCount = parseInt(installmentCount)
+  const endPreview = (() => {
+    if (!hasInstallments || parsedCount < 2) return null
+    const [sy, sm] = startMonthValue.split('-').map(Number)
+    const endIdx = (sy * 12 + (sm - 1)) + parsedCount - 1
+    return getMonthLabel(Math.floor(endIdx / 12), endIdx % 12)
+  })()
 
   const canSubmit = name.trim() && parseFloat(amount) > 0 && parseInt(dueDay) >= 1 && parseInt(dueDay) <= 31
+    && (!hasInstallments || (parsedCount >= 2 && parsedCount <= 120))
 
   const handleSubmit = (e) => {
     e.preventDefault()
     if (!canSubmit) return
-    onAdd({ name: name.trim(), amount: parseFloat(amount), dueDay: parseInt(dueDay), category })
+    const data = { name: name.trim(), amount: parseFloat(amount), dueDay: parseInt(dueDay), category }
+    if (hasInstallments) {
+      const [sy, sm] = startMonthValue.split('-').map(Number)
+      data.installments = parsedCount
+      data.installmentStart = { year: sy, month: sm - 1 }
+    } else {
+      data.installments = null
+      data.installmentStart = null
+    }
+    onAdd(data)
     onClose()
   }
 
@@ -512,6 +540,67 @@ function AddFixedModal({ onClose, onAdd, item }) {
           </div>
 
           <div className="field">
+            <label className="field-label">Tipo</label>
+            <div className="segment-control">
+              <button
+                type="button"
+                className={`segment-btn${!hasInstallments ? ' segment-active' : ''}`}
+                onClick={() => setHasInstallments(false)}
+              >
+                Recorrente
+              </button>
+              <button
+                type="button"
+                className={`segment-btn${hasInstallments ? ' segment-active' : ''}`}
+                onClick={() => setHasInstallments(true)}
+              >
+                Parcelado
+              </button>
+            </div>
+          </div>
+
+          {hasInstallments && (
+            <>
+              <div className="form-row">
+                <div className="field">
+                  <label className="field-label">Nº de parcelas</label>
+                  <input
+                    className="field-input"
+                    type="number"
+                    inputMode="numeric"
+                    placeholder="ex: 12"
+                    min="2"
+                    max="120"
+                    value={installmentCount}
+                    onChange={(e) => setInstallmentCount(e.target.value)}
+                  />
+                </div>
+                <div className="field">
+                  <label className="field-label">Início</label>
+                  <select
+                    className="field-input"
+                    value={startMonthValue}
+                    onChange={(e) => setStartMonthValue(e.target.value)}
+                  >
+                    {Array.from({ length: 25 }, (_, i) => {
+                      const idx = (today.getFullYear() - 2) * 12 + today.getMonth() + i - 12
+                      const y = Math.floor(idx / 12)
+                      const m = idx % 12
+                      const val = `${y}-${String(m + 1).padStart(2, '0')}`
+                      return <option key={val} value={val}>{MONTHS_PT[m]} {y}</option>
+                    })}
+                  </select>
+                </div>
+              </div>
+              {endPreview && (
+                <div className="installment-preview">
+                  Total: {formatCurrency(parseFloat(amount) * parsedCount || 0)} em {parsedCount}x · término em {endPreview}
+                </div>
+              )}
+            </>
+          )}
+
+          <div className="field">
             <label className="field-label">Categoria</label>
             <div className="category-grid">
               {CATEGORIES.map((cat) => (
@@ -540,12 +629,17 @@ function AddFixedModal({ onClose, onAdd, item }) {
 
 function FixedSummary({ fixedExpenses, payments, viewYear, viewMonth }) {
   if (!fixedExpenses.length) return null
-  const total = fixedExpenses.reduce((s, f) => s + f.amount, 0)
-  const paidItems = fixedExpenses.filter((f) => payments[`${f.id}-${viewYear}-${viewMonth}`])
+  const activeItems = fixedExpenses.filter((f) => {
+    if (!f.installments || !f.installmentStart) return true
+    return getInstallmentInfo(f, viewYear, viewMonth)?.active
+  })
+  if (!activeItems.length) return null
+  const total = activeItems.reduce((s, f) => s + f.amount, 0)
+  const paidItems = activeItems.filter((f) => payments[`${f.id}-${viewYear}-${viewMonth}`])
   const paid = paidItems.reduce((s, f) => s + f.amount, 0)
   const open = total - paid
   const pct = total > 0 ? (paid / total) * 100 : 0
-  const allPaid = paidItems.length === fixedExpenses.length
+  const allPaid = paidItems.length === activeItems.length
 
   return (
     <div className={`fixed-summary${allPaid ? ' fixed-summary-done' : ''}`}>
@@ -555,7 +649,7 @@ function FixedSummary({ fixedExpenses, payments, viewYear, viewMonth }) {
           <span className="fixed-summary-open-amount">{formatCurrency(open)}</span>
         </div>
         <div className="fixed-summary-badge">
-          {paidItems.length}/{fixedExpenses.length} pagas
+          {paidItems.length}/{activeItems.length} pagas
         </div>
       </div>
 
@@ -581,6 +675,8 @@ function FixedSummary({ fixedExpenses, payments, viewYear, viewMonth }) {
 
 function StatusBadge({ status, dueDay }) {
   if (status === 'paid') return <span className="badge badge-paid">✓ Paga</span>
+  if (status === 'done') return <span className="badge badge-done">Concluída</span>
+  if (status === 'not-started') return <span className="badge badge-upcoming">Em breve</span>
   if (status === 'overdue') return <span className="badge badge-overdue">Vencida</span>
   if (status === 'due-today') return <span className="badge badge-due-today">Vence hoje</span>
   return <span className="badge badge-upcoming">Dia {dueDay}</span>
@@ -603,12 +699,17 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid,
         const cat = getCategoryById(item.category)
         const status = getFixedStatus(item, payments, viewYear, viewMonth)
         const paid = status === 'paid'
+        const inactive = status === 'done' || status === 'not-started'
+        const info = getInstallmentInfo(item, viewYear, viewMonth)
         return (
           <SwipeItem
             key={item.id}
             onDelete={() => onDelete(item)}
           >
-            <div className="expense-item fixed-item" style={{ animationDelay: `${i * 30}ms` }}>
+            <div
+              className={`expense-item fixed-item${inactive ? ' fixed-item-inactive' : ''}`}
+              style={{ animationDelay: `${i * 30}ms` }}
+            >
               <div className="expense-icon" style={{ background: cat.color + '18' }}>
                 {cat.emoji}
               </div>
@@ -616,28 +717,131 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid,
                 <div className="expense-name">{item.name}</div>
                 <div className="expense-meta">
                   <span>{cat.label}</span>
+                  {info && (
+                    <>
+                      <span className="expense-meta-dot" />
+                      <span className={`installment-pill${info.done ? ' installment-pill-done' : ''}`}>
+                        {info.done ? 'Quitada' : `${Math.max(1, info.current)}ª/${info.total}`}
+                      </span>
+                    </>
+                  )}
                   <span className="expense-meta-dot" />
                   <StatusBadge status={status} dueDay={item.dueDay} />
                 </div>
               </div>
               <div className="fixed-item-right">
                 <div className="expense-amount">{formatCurrency(item.amount)}</div>
-                <button
-                  className={`fixed-check-btn${paid ? ' fixed-check-btn-paid' : ''}`}
-                  onClick={(e) => { e.stopPropagation(); onTogglePaid(item) }}
-                  aria-label={paid ? 'Desmarcar como pago' : 'Marcar como pago'}
-                >
-                  {paid && (
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="20 6 9 17 4 12" />
-                    </svg>
-                  )}
-                </button>
+                {!inactive && (
+                  <button
+                    className={`fixed-check-btn${paid ? ' fixed-check-btn-paid' : ''}`}
+                    onClick={(e) => { e.stopPropagation(); onTogglePaid(item) }}
+                    aria-label={paid ? 'Desmarcar como pago' : 'Marcar como pago'}
+                  >
+                    {paid && (
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12" />
+                      </svg>
+                    )}
+                  </button>
+                )}
               </div>
             </div>
           </SwipeItem>
         )
       })}
+    </div>
+  )
+}
+
+function InstallmentsCard({ fixedExpenses, viewYear, viewMonth }) {
+  const items = fixedExpenses.filter((f) => f.installments && f.installmentStart)
+  if (!items.length) return null
+
+  const monthlyTotal = items.reduce((s, f) => {
+    const info = getInstallmentInfo(f, viewYear, viewMonth)
+    return info?.active ? s + f.amount : s
+  }, 0)
+
+  const totalDebt = items.reduce((s, f) => {
+    const info = getInstallmentInfo(f, viewYear, viewMonth)
+    if (!info || info.done) return s
+    const viewIdx = viewYear * 12 + viewMonth
+    const startIdx = f.installmentStart.year * 12 + f.installmentStart.month
+    const fromIdx = Math.max(viewIdx, startIdx)
+    const endIdx = startIdx + info.total - 1
+    return s + Math.max(0, endIdx - fromIdx + 1) * f.amount
+  }, 0)
+
+  const activeCount = items.filter((f) => getInstallmentInfo(f, viewYear, viewMonth)?.active).length
+
+  return (
+    <div className="installments-card">
+      <div className="installments-card-header">
+        <span className="section-title">Parcelas</span>
+        <span className="installments-card-badge">{activeCount} em andamento</span>
+      </div>
+
+      <div className="installments-stats-row">
+        <div className="installments-stat">
+          <span className="installments-stat-label">Este mês</span>
+          <span className="installments-stat-value">{formatCurrency(monthlyTotal)}</span>
+        </div>
+        <div className="installments-stat">
+          <span className="installments-stat-label">Dívida restante</span>
+          <span className="installments-stat-value">{formatCurrency(totalDebt)}</span>
+        </div>
+      </div>
+
+      <div className="installments-item-list">
+        {items.map((item) => {
+          const info = getInstallmentInfo(item, viewYear, viewMonth)
+          const cat = getCategoryById(item.category)
+          const elapsed = info.done ? info.total : Math.max(0, info.current - 1)
+          const pct = Math.min(100, (elapsed / info.total) * 100)
+
+          const viewIdx = viewYear * 12 + viewMonth
+          const startIdx = item.installmentStart.year * 12 + item.installmentStart.month
+          const fromIdx = Math.max(viewIdx, startIdx)
+          const endIdx = startIdx + info.total - 1
+          const remainingCount = Math.max(0, endIdx - fromIdx + 1)
+          const remainingAmount = remainingCount * item.amount
+
+          return (
+            <div key={item.id} className={`installments-item${info.done ? ' installments-item-done' : ''}`}>
+              <div className="installments-item-top">
+                <div
+                  className="installments-item-icon"
+                  style={{ background: cat.color + '18' }}
+                >
+                  {cat.emoji}
+                </div>
+                <span className="installments-item-name">{item.name}</span>
+                <div className="installments-item-right">
+                  <span className="installments-item-fraction">
+                    {info.done ? '✓' : info.notStarted ? '—' : `${info.current}/${info.total}`}
+                  </span>
+                  <span className="installments-item-amount">{formatCurrency(item.amount)}/mês</span>
+                </div>
+              </div>
+              <div className="installments-progress-bg">
+                <div
+                  className={`installments-progress-bar${info.done ? ' installments-progress-done' : ''}`}
+                  style={{ width: `${pct}%` }}
+                />
+              </div>
+              <div className="installments-item-footer">
+                {info.done
+                  ? <span>Quitada</span>
+                  : info.notStarted
+                    ? <span>Inicia em {getMonthLabel(item.installmentStart.year, item.installmentStart.month)}</span>
+                    : <span>{remainingCount}x restantes</span>
+                }
+                {!info.done && <span className="installments-item-remaining">{formatCurrency(remainingAmount)}</span>}
+              </div>
+            </div>
+          )
+        })}
+      </div>
     </div>
   )
 }
@@ -909,6 +1113,12 @@ export default function App() {
             <FixedSummary
               fixedExpenses={fixedExpenses}
               payments={payments}
+              viewYear={viewYear}
+              viewMonth={viewMonth}
+            />
+
+            <InstallmentsCard
+              fixedExpenses={fixedExpenses}
               viewYear={viewYear}
               viewMonth={viewMonth}
             />

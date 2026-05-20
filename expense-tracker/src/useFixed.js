@@ -11,7 +11,29 @@ const loadPayments = () => {
   try { return JSON.parse(localStorage.getItem(PAYMENTS_KEY) ?? '{}') } catch { return {} }
 }
 
+export function getInstallmentInfo(item, year, month) {
+  if (!item.installments || !item.installmentStart) return null
+  const startIdx = item.installmentStart.year * 12 + item.installmentStart.month
+  const viewIdx = year * 12 + month
+  const current = viewIdx - startIdx + 1
+  const total = item.installments
+  return {
+    current,
+    total,
+    remaining: Math.max(0, total - current + 1),
+    active: current >= 1 && current <= total,
+    done: current > total,
+    notStarted: current < 1,
+  }
+}
+
 export function getFixedStatus(item, payments, year, month) {
+  if (item.installments && item.installmentStart) {
+    const info = getInstallmentInfo(item, year, month)
+    if (info.done) return 'done'
+    if (info.notStarted) return 'not-started'
+  }
+
   const today = new Date()
   const key = `${item.id}-${year}-${month}`
   if (payments[key]) return 'paid'

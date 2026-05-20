@@ -1055,3 +1055,231 @@
 .fixed-summary-stat-paid {
   color: var(--accent);
 }
+
+/* Inactive fixed item (done/not-started installment) */
+.fixed-item-inactive {
+  opacity: 0.5;
+}
+
+/* Status badge — done */
+.badge-done {
+  background: #f0f7f4;
+  color: #5a8a72;
+  border: 1px solid #c5ddd3;
+}
+
+/* Installment pill in fixed list row */
+.installment-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 1px 7px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 600;
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.installment-pill-done {
+  background: var(--accent-light);
+  color: var(--accent);
+  border-color: #b5ddc7;
+}
+
+/* Installments card */
+.installments-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeUp var(--transition-slow) 90ms both;
+}
+
+.installments-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.installments-card-badge {
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.installments-stats-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.installments-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.installments-stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.installments-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-primary);
+}
+
+.installments-item-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.installments-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.installments-item-done .installments-progress-bar {
+  background: #b5ddc7;
+}
+
+.installments-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.installments-item-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.installments-item-name {
+  flex: 1;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.installments-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1px;
+  flex-shrink: 0;
+}
+
+.installments-item-fraction {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.installments-item-amount {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.installments-progress-bg {
+  height: 5px;
+  background: var(--bg);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.installments-progress-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  transition: width 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.installments-progress-done {
+  background: #b5ddc7;
+}
+
+.installments-item-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.installments-item-remaining {
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+/* AddFixedModal — segment control */
+.segment-control {
+  display: flex;
+  gap: 4px;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 3px;
+}
+
+.segment-btn {
+  flex: 1;
+  padding: 7px 12px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.segment-btn:hover {
+  color: var(--accent);
+}
+
+.segment-btn.segment-active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+/* Installment preview line */
+.installment-preview {
+  font-size: 12px;
+  color: var(--text-muted);
+  padding: 8px 12px;
+  background: var(--surface-2);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  line-height: 1.4;
+}
+
+.fixed-summary-stat-paid {
+  color: var(--accent);
+}
