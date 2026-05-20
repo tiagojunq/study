@@ -239,28 +239,61 @@ function CategoryBreakdown({ expenses }) {
 function SwipeItem({ children, onDelete, onEdit }) {
   const [offset, setOffset] = useState(0)
   const [swiped, setSwiped] = useState(false)
+  const contentRef = useRef(null)
   const startX = useRef(null)
+  const startY = useRef(null)
+  const direction = useRef(null)
   const THRESHOLD = 72
 
-  const handleTouchStart = (e) => { startX.current = e.touches[0].clientX }
-  const handleTouchMove = (e) => {
-    if (startX.current === null) return
-    const dx = startX.current - e.touches[0].clientX
-    if (dx > 0) setOffset(Math.min(dx, THRESHOLD + 16))
-  }
-  const handleTouchEnd = () => {
-    if (offset >= THRESHOLD) { setSwiped(true); setOffset(THRESHOLD) }
-    else { setSwiped(false); setOffset(0) }
-    startX.current = null
-  }
-  const close = () => { setSwiped(false); setOffset(0) }
+  const close = useCallback(() => { setSwiped(false); setOffset(0) }, [])
+
+  useEffect(() => {
+    const el = contentRef.current
+    if (!el) return
+
+    const onStart = (e) => {
+      startX.current = e.touches[0].clientX
+      startY.current = e.touches[0].clientY
+      direction.current = null
+    }
+
+    const onMove = (e) => {
+      if (startX.current === null) return
+      const dx = startX.current - e.touches[0].clientX
+      const dy = Math.abs(startY.current - e.touches[0].clientY)
+
+      if (direction.current === null) {
+        direction.current = Math.abs(dx) > dy ? 'h' : 'v'
+      }
+      if (direction.current !== 'h') return
+
+      e.preventDefault()
+      if (dx > 0) setOffset(Math.min(dx, THRESHOLD + 16))
+      else if (dx < -10) { setSwiped(false); setOffset(0) }
+    }
+
+    const onEnd = () => {
+      setOffset((prev) => {
+        if (prev >= THRESHOLD) { setSwiped(true); return THRESHOLD }
+        setSwiped(false); return 0
+      })
+      startX.current = null
+      direction.current = null
+    }
+
+    el.addEventListener('touchstart', onStart, { passive: true })
+    el.addEventListener('touchmove', onMove, { passive: false })
+    el.addEventListener('touchend', onEnd, { passive: true })
+    return () => {
+      el.removeEventListener('touchstart', onStart)
+      el.removeEventListener('touchmove', onMove)
+      el.removeEventListener('touchend', onEnd)
+    }
+  }, [])
 
   return (
     <div className="swipe-wrapper">
-      <div
-        className="swipe-actions"
-        style={{ opacity: offset > 0 ? 1 : 0 }}
-      >
+      <div className="swipe-actions" style={{ opacity: offset > 0 ? 1 : 0 }}>
         {onEdit && (
           <button className="swipe-action-edit" onClick={() => { close(); onEdit() }}>
             Editar
@@ -271,11 +304,9 @@ function SwipeItem({ children, onDelete, onEdit }) {
         </button>
       </div>
       <div
-        className={`swipe-content${swiped ? ' swiped' : ''}`}
+        ref={contentRef}
+        className="swipe-content"
         style={{ transform: `translateX(-${offset}px)` }}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
         onClick={swiped ? close : undefined}
       >
         {children}
