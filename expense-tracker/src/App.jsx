@@ -860,6 +860,7 @@ function AlertBanner({ fixedExpenses, payments, viewYear, viewMonth }) {
 
   const isOverdue = overdueItems.length > 0
   const items = isOverdue ? overdueItems : dueTodayItems
+  const names = items.map((i) => i.name).join(', ')
   const msg = items.length === 1
     ? isOverdue ? `${names} está vencida` : `${names} irá vencer hoje`
     : isOverdue ? `${names} estão vencidas` : `${names} irão vencer hoje`
