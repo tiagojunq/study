@@ -70,6 +70,7 @@
 .summary-stats {
   display: flex;
   gap: 20px;
+  flex-wrap: wrap;
 }
 
 .summary-stat {
@@ -90,6 +91,11 @@
   font-size: 16px;
   font-weight: 600;
   opacity: 0.95;
+}
+
+.trend-up .summary-stat-value,
+.trend-down .summary-stat-value {
+  opacity: 1;
 }
 
 /* Filter bar */
@@ -234,6 +240,249 @@
 .expense-delete:hover {
   background: var(--danger-light);
   color: var(--danger);
+}
+
+/* Fixed item */
+.fixed-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.fixed-pay-btn {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-full);
+  padding: 3px 10px;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.fixed-pay-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* Status badges */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.badge-paid {
+  background: #e8f5ee;
+  color: #2d6a4f;
+  border: 1px solid #b5ddc7;
+}
+
+.badge-overdue {
+  background: #fdf0ef;
+  color: #c0392b;
+  border: 1px solid #f0b8b4;
+}
+
+.badge-due-today {
+  background: #fef6ea;
+  color: #c47a1e;
+  border: 1px solid #f0d5a0;
+}
+
+.badge-upcoming {
+  background: var(--surface-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+/* Alert Banner */
+.alert-banner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 20px;
+  margin: 0 -20px;
+  font-size: 13px;
+  font-weight: 500;
+  animation: fadeIn 200ms both;
+}
+
+.alert-overdue {
+  background: #fdf0ef;
+  color: #c0392b;
+  border-top: 1px solid #f0b8b4;
+  border-bottom: 1px solid #f0b8b4;
+}
+
+.alert-due-today {
+  background: #fef6ea;
+  color: #c47a1e;
+  border-top: 1px solid #f0d5a0;
+  border-bottom: 1px solid #f0d5a0;
+}
+
+.alert-icon {
+  font-size: 15px;
+  flex-shrink: 0;
+}
+
+.alert-text {
+  flex: 1;
+  line-height: 1.4;
+}
+
+/* Tab Nav */
+.tab-nav {
+  display: flex;
+  gap: 4px;
+  background: var(--surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-full);
+  padding: 4px;
+  animation: fadeUp var(--transition-slow) 90ms both;
+}
+
+.tab-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.tab-btn:hover {
+  color: var(--accent);
+}
+
+.tab-btn.tab-active {
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+}
+
+/* Budget Card */
+.budget-card {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1.5px solid var(--border);
+  animation: fadeUp var(--transition-slow) 130ms both;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.budget-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.budget-set-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-full);
+  padding: 4px 12px;
+  transition: all var(--transition);
+}
+
+.budget-set-btn:hover {
+  background: var(--accent);
+  color: white;
+}
+
+.budget-edit-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.budget-input {
+  width: 120px;
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.budget-save-btn {
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  padding: 5px 14px;
+  transition: all var(--transition);
+}
+
+.budget-save-btn:hover {
+  background: var(--accent-hover);
+}
+
+.budget-cancel-btn {
+  width: 28px;
+  height: 28px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 18px;
+  transition: all var(--transition);
+}
+
+.budget-cancel-btn:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.budget-amounts {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.budget-spent {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.5px;
+}
+
+.budget-of {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.budget-bar-bg {
+  height: 8px;
+  border-radius: var(--radius-full);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.budget-bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.budget-pct {
+  font-size: 12px;
+  font-weight: 600;
 }
 
 /* Category breakdown */
@@ -567,6 +816,62 @@
   color: var(--text-primary);
   min-width: 120px;
   text-align: center;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1814;
+  color: white;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 200;
+  min-width: 260px;
+  max-width: calc(100vw - 40px);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.28);
+  animation: toastSlideUp 220ms cubic-bezier(0.4, 0, 0.2, 1) both;
+  overflow: hidden;
+}
+
+@keyframes toastSlideUp {
+  from { opacity: 0; transform: translateX(-50%) translateY(16px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+.toast-message {
+  flex: 1;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.toast-undo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #74d89b;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+.toast-undo:hover {
+  background: rgba(116, 216, 155, 0.15);
+}
+
+.toast-progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: #74d89b;
+  border-radius: 0;
+  transition: width 100ms linear;
 }
 
 @media (max-width: 480px) {
