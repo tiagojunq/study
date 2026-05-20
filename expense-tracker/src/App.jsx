@@ -236,14 +236,14 @@ function CategoryBreakdown({ expenses }) {
   )
 }
 
-function SwipeItem({ children, onDelete, onEdit }) {
+function SwipeItem({ children, onDelete }) {
   const [offset, setOffset] = useState(0)
   const [swiped, setSwiped] = useState(false)
   const contentRef = useRef(null)
   const startX = useRef(null)
   const startY = useRef(null)
   const direction = useRef(null)
-  const THRESHOLD = 72
+  const THRESHOLD = 88
 
   const close = useCallback(() => { setSwiped(false); setOffset(0) }, [])
 
@@ -261,12 +261,10 @@ function SwipeItem({ children, onDelete, onEdit }) {
       if (startX.current === null) return
       const dx = startX.current - e.touches[0].clientX
       const dy = Math.abs(startY.current - e.touches[0].clientY)
-
       if (direction.current === null) {
         direction.current = Math.abs(dx) > dy ? 'h' : 'v'
       }
       if (direction.current !== 'h') return
-
       e.preventDefault()
       if (dx > 0) setOffset(Math.min(dx, THRESHOLD + 16))
       else if (dx < -10) { setSwiped(false); setOffset(0) }
@@ -294,11 +292,6 @@ function SwipeItem({ children, onDelete, onEdit }) {
   return (
     <div className="swipe-wrapper">
       <div className="swipe-actions" style={{ opacity: offset > 0 ? 1 : 0 }}>
-        {onEdit && (
-          <button className="swipe-action-edit" onClick={() => { close(); onEdit() }}>
-            Editar
-          </button>
-        )}
         <button className="swipe-action-delete" onClick={() => { close(); onDelete() }}>
           Remover
         </button>
@@ -342,11 +335,11 @@ function ExpenseList({ expenses, onDelete, onEdit, filter }) {
           <SwipeItem
             key={expense.id}
             onDelete={() => onDelete(expense.id)}
-            onEdit={() => onEdit(expense)}
           >
             <div
               className="expense-item"
-              style={{ animationDelay: `${i * 30}ms` }}
+              style={{ animationDelay: `${i * 30}ms`, cursor: 'pointer' }}
+              onClick={() => onEdit(expense)}
             >
               <div className="expense-icon" style={{ background: cat.color + '18' }}>
                 {cat.emoji}
@@ -548,30 +541,39 @@ function AddFixedModal({ onClose, onAdd, item }) {
 function FixedSummary({ fixedExpenses, payments, viewYear, viewMonth }) {
   if (!fixedExpenses.length) return null
   const total = fixedExpenses.reduce((s, f) => s + f.amount, 0)
-  const paid = fixedExpenses
-    .filter((f) => payments[`${f.id}-${viewYear}-${viewMonth}`])
-    .reduce((s, f) => s + f.amount, 0)
+  const paidItems = fixedExpenses.filter((f) => payments[`${f.id}-${viewYear}-${viewMonth}`])
+  const paid = paidItems.reduce((s, f) => s + f.amount, 0)
   const open = total - paid
   const pct = total > 0 ? (paid / total) * 100 : 0
+  const allPaid = paidItems.length === fixedExpenses.length
 
   return (
-    <div className="fixed-summary">
-      <div className="fixed-summary-row">
-        <div className="fixed-summary-item">
-          <span className="fixed-summary-label">Total fixo</span>
-          <span className="fixed-summary-value">{formatCurrency(total)}</span>
+    <div className={`fixed-summary${allPaid ? ' fixed-summary-done' : ''}`}>
+      <div className="fixed-summary-top">
+        <div className="fixed-summary-open-block">
+          <span className="fixed-summary-open-label">Em aberto</span>
+          <span className="fixed-summary-open-amount">{formatCurrency(open)}</span>
         </div>
-        <div className="fixed-summary-item fixed-summary-paid">
-          <span className="fixed-summary-label">Pago</span>
-          <span className="fixed-summary-value">{formatCurrency(paid)}</span>
-        </div>
-        <div className="fixed-summary-item fixed-summary-open">
-          <span className="fixed-summary-label">Em aberto</span>
-          <span className="fixed-summary-value">{formatCurrency(open)}</span>
+        <div className="fixed-summary-badge">
+          {paidItems.length}/{fixedExpenses.length} pagas
         </div>
       </div>
+
       <div className="fixed-summary-bar-bg">
         <div className="fixed-summary-bar" style={{ width: `${pct}%` }} />
+      </div>
+
+      <div className="fixed-summary-bottom">
+        <div className="fixed-summary-stat">
+          <span className="fixed-summary-stat-dot fixed-summary-stat-dot-paid" />
+          <span className="fixed-summary-stat-label">Pago</span>
+          <span className="fixed-summary-stat-val fixed-summary-stat-paid">{formatCurrency(paid)}</span>
+        </div>
+        <div className="fixed-summary-stat">
+          <span className="fixed-summary-stat-dot fixed-summary-stat-dot-total" />
+          <span className="fixed-summary-stat-label">Total fixo</span>
+          <span className="fixed-summary-stat-val">{formatCurrency(total)}</span>
+        </div>
       </div>
     </div>
   )
@@ -605,16 +607,12 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, o
           <SwipeItem
             key={item.id}
             onDelete={() => onDelete(item)}
-            onEdit={() => onEdit(item)}
           >
-            <div
-              className="expense-item fixed-item"
-              style={{ animationDelay: `${i * 30}ms` }}
-            >
+            <div className="expense-item fixed-item" style={{ animationDelay: `${i * 30}ms` }}>
               <div className="expense-icon" style={{ background: cat.color + '18' }}>
                 {cat.emoji}
               </div>
-              <div className="expense-info">
+              <div className="expense-info" style={{ cursor: 'pointer' }} onClick={() => onEdit(item)}>
                 <div className="expense-name">{item.name}</div>
                 <div className="expense-meta">
                   <span>{cat.label}</span>
@@ -625,7 +623,7 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, o
               <div className="fixed-item-right">
                 <div className="expense-amount">{formatCurrency(item.amount)}</div>
                 {!isPaid && (
-                  <button className="fixed-pay-btn" onClick={() => onMarkPaid(item, status)}>
+                  <button className="fixed-pay-btn" onClick={(e) => { e.stopPropagation(); onMarkPaid(item, status) }}>
                     Pagar
                   </button>
                 )}
