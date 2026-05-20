@@ -32,5 +32,9 @@ export function useExpenses() {
     setExpenses((prev) => prev.filter((e) => e.id !== id))
   }, [])
 
-  return { expenses, addExpense, removeExpense }
+  const updateExpense = useCallback((id, updates) => {
+    setExpenses((prev) => prev.map((e) => e.id === id ? { ...e, ...updates } : e))
+  }, [])
+
+  return { expenses, addExpense, removeExpense, updateExpense }
 }

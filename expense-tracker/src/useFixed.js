@@ -65,6 +65,10 @@ export function useFixed() {
     setFixedExpenses((prev) => prev.filter((f) => f.id !== id))
   }, [])
 
+  const updateFixed = useCallback((id, updates) => {
+    setFixedExpenses((prev) => prev.map((f) => f.id === id ? { ...f, ...updates } : f))
+  }, [])
+
   const markPaid = useCallback((fixedId, year, month) => {
     const key = `${fixedId}-${year}-${month}`
     setPayments((prev) => ({ ...prev, [key]: true }))
@@ -83,5 +87,5 @@ export function useFixed() {
     return !!payments[`${fixedId}-${year}-${month}`]
   }, [payments])
 
-  return { fixedExpenses, payments, addFixed, removeFixed, markPaid, unmarkPaid, isPaid }
+  return { fixedExpenses, payments, addFixed, removeFixed, updateFixed, markPaid, unmarkPaid, isPaid }
 }

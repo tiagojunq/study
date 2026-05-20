@@ -882,3 +882,114 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
+/* Swipe to delete/edit */
+.swipe-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+}
+
+.swipe-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  align-items: stretch;
+  transition: opacity var(--transition);
+}
+
+.swipe-action-delete,
+.swipe-action-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 16px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  border: none;
+  cursor: pointer;
+}
+
+.swipe-action-delete {
+  background: var(--danger);
+  color: white;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+}
+
+.swipe-action-edit {
+  background: #3a7ce0;
+  color: white;
+}
+
+.swipe-content {
+  transition: transform 200ms cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+.swipe-content .expense-item {
+  border-radius: var(--radius-md);
+}
+
+/* Fixed summary */
+.fixed-summary {
+  background: var(--surface);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1.5px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeUp var(--transition-slow) 80ms both;
+}
+
+.fixed-summary-row {
+  display: flex;
+  gap: 8px;
+}
+
+.fixed-summary-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.fixed-summary-label {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.fixed-summary-value {
+  font-size: 15px;
+  font-weight: 650;
+  color: var(--text-primary);
+  letter-spacing: -0.3px;
+}
+
+.fixed-summary-paid .fixed-summary-value {
+  color: var(--accent);
+}
+
+.fixed-summary-open .fixed-summary-value {
+  color: var(--danger);
+}
+
+.fixed-summary-bar-bg {
+  height: 6px;
+  background: var(--bg);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.fixed-summary-bar {
+  height: 100%;
+  background: var(--accent);
+  border-radius: var(--radius-full);
+  transition: width 600ms cubic-bezier(0.4, 0, 0.2, 1);
+}

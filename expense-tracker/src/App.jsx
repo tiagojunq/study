@@ -236,7 +236,55 @@ function CategoryBreakdown({ expenses }) {
   )
 }
 
-function ExpenseList({ expenses, onDelete, filter }) {
+function SwipeItem({ children, onDelete, onEdit }) {
+  const [offset, setOffset] = useState(0)
+  const [swiped, setSwiped] = useState(false)
+  const startX = useRef(null)
+  const THRESHOLD = 72
+
+  const handleTouchStart = (e) => { startX.current = e.touches[0].clientX }
+  const handleTouchMove = (e) => {
+    if (startX.current === null) return
+    const dx = startX.current - e.touches[0].clientX
+    if (dx > 0) setOffset(Math.min(dx, THRESHOLD + 16))
+  }
+  const handleTouchEnd = () => {
+    if (offset >= THRESHOLD) { setSwiped(true); setOffset(THRESHOLD) }
+    else { setSwiped(false); setOffset(0) }
+    startX.current = null
+  }
+  const close = () => { setSwiped(false); setOffset(0) }
+
+  return (
+    <div className="swipe-wrapper">
+      <div
+        className="swipe-actions"
+        style={{ opacity: offset > 0 ? 1 : 0 }}
+      >
+        {onEdit && (
+          <button className="swipe-action-edit" onClick={() => { close(); onEdit() }}>
+            Editar
+          </button>
+        )}
+        <button className="swipe-action-delete" onClick={() => { close(); onDelete() }}>
+          Remover
+        </button>
+      </div>
+      <div
+        className={`swipe-content${swiped ? ' swiped' : ''}`}
+        style={{ transform: `translateX(-${offset}px)` }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onClick={swiped ? close : undefined}
+      >
+        {children}
+      </div>
+    </div>
+  )
+}
+
+function ExpenseList({ expenses, onDelete, onEdit, filter }) {
   const filtered = filter === 'all'
     ? expenses
     : expenses.filter((e) => e.category === filter)
@@ -248,7 +296,7 @@ function ExpenseList({ expenses, onDelete, filter }) {
         <div className="empty-title">Nenhum gasto aqui</div>
         <div className="empty-subtitle">
           {filter === 'all'
-            ? 'Toque no botão + para registrar seu primeiro gasto.'
+            ? 'Arraste para a esquerda para remover. Toque + para adicionar.'
             : 'Sem gastos nessa categoria neste mês.'}
         </div>
       </div>
@@ -260,47 +308,41 @@ function ExpenseList({ expenses, onDelete, filter }) {
       {filtered.map((expense, i) => {
         const cat = getCategoryById(expense.category)
         return (
-          <div
-            className="expense-item"
+          <SwipeItem
             key={expense.id}
-            style={{ animationDelay: `${i * 30}ms` }}
+            onDelete={() => onDelete(expense.id)}
+            onEdit={() => onEdit(expense)}
           >
             <div
-              className="expense-icon"
-              style={{ background: cat.color + '18' }}
+              className="expense-item"
+              style={{ animationDelay: `${i * 30}ms` }}
             >
-              {cat.emoji}
-            </div>
-            <div className="expense-info">
-              <div className="expense-name">{expense.name}</div>
-              <div className="expense-meta">
-                <span>{cat.label}</span>
-                <span className="expense-meta-dot" />
-                <span>{formatDate(expense.date)}</span>
+              <div className="expense-icon" style={{ background: cat.color + '18' }}>
+                {cat.emoji}
               </div>
+              <div className="expense-info">
+                <div className="expense-name">{expense.name}</div>
+                <div className="expense-meta">
+                  <span>{cat.label}</span>
+                  <span className="expense-meta-dot" />
+                  <span>{formatDate(expense.date)}</span>
+                </div>
+              </div>
+              <div className="expense-amount">{formatCurrency(expense.amount)}</div>
             </div>
-            <div className="expense-amount">{formatCurrency(expense.amount)}</div>
-            <button
-              className="expense-delete"
-              onClick={() => onDelete(expense.id)}
-              title="Remover"
-            >
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          </SwipeItem>
         )
       })}
     </div>
   )
 }
 
-function AddModal({ onClose, onAdd }) {
-  const [name, setName] = useState('')
-  const [amount, setAmount] = useState('')
-  const [category, setCategory] = useState('food')
-  const [date, setDate] = useState(today.toISOString().slice(0, 10))
+function AddModal({ onClose, onAdd, expense }) {
+  const isEditing = !!expense
+  const [name, setName] = useState(expense?.name ?? '')
+  const [amount, setAmount] = useState(expense?.amount ? String(expense.amount) : '')
+  const [category, setCategory] = useState(expense?.category ?? 'food')
+  const [date, setDate] = useState(expense?.date ?? today.toISOString().slice(0, 10))
 
   const canSubmit = name.trim() && parseFloat(amount) > 0
 
@@ -315,7 +357,7 @@ function AddModal({ onClose, onAdd }) {
     <div className="overlay" onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="modal">
         <span className="modal-handle" />
-        <div className="modal-title">Novo gasto</div>
+        <div className="modal-title">{isEditing ? 'Editar gasto' : 'Novo gasto'}</div>
         <form className="form" onSubmit={handleSubmit}>
           <div className="field">
             <label className="field-label">Descrição</label>
@@ -374,7 +416,7 @@ function AddModal({ onClose, onAdd }) {
           </div>
 
           <button className="btn-primary" type="submit" disabled={!canSubmit}>
-            Adicionar gasto
+            {isEditing ? 'Salvar alterações' : 'Adicionar gasto'}
           </button>
         </form>
       </div>
@@ -382,11 +424,12 @@ function AddModal({ onClose, onAdd }) {
   )
 }
 
-function AddFixedModal({ onClose, onAdd }) {
-  const [name, setName] = useState('')
-  const [amount, setAmount] = useState('')
-  const [dueDay, setDueDay] = useState('1')
-  const [category, setCategory] = useState('home')
+function AddFixedModal({ onClose, onAdd, item }) {
+  const isEditing = !!item
+  const [name, setName] = useState(item?.name ?? '')
+  const [amount, setAmount] = useState(item?.amount ? String(item.amount) : '')
+  const [dueDay, setDueDay] = useState(item?.dueDay ? String(item.dueDay) : '1')
+  const [category, setCategory] = useState(item?.category ?? 'home')
 
   const canSubmit = name.trim() && parseFloat(amount) > 0 && parseInt(dueDay) >= 1 && parseInt(dueDay) <= 31
 
@@ -401,7 +444,7 @@ function AddFixedModal({ onClose, onAdd }) {
     <div className="overlay" onClick={(e) => e.target === e.currentTarget && onClose()}>
       <div className="modal">
         <span className="modal-handle" />
-        <div className="modal-title">Nova despesa fixa</div>
+        <div className="modal-title">{isEditing ? 'Editar despesa fixa' : 'Nova despesa fixa'}</div>
         <form className="form" onSubmit={handleSubmit}>
           <div className="field">
             <label className="field-label">Descrição</label>
@@ -463,9 +506,41 @@ function AddFixedModal({ onClose, onAdd }) {
           </div>
 
           <button className="btn-primary" type="submit" disabled={!canSubmit}>
-            Adicionar despesa fixa
+            {isEditing ? 'Salvar alterações' : 'Adicionar despesa fixa'}
           </button>
         </form>
+      </div>
+    </div>
+  )
+}
+
+function FixedSummary({ fixedExpenses, payments, viewYear, viewMonth }) {
+  if (!fixedExpenses.length) return null
+  const total = fixedExpenses.reduce((s, f) => s + f.amount, 0)
+  const paid = fixedExpenses
+    .filter((f) => payments[`${f.id}-${viewYear}-${viewMonth}`])
+    .reduce((s, f) => s + f.amount, 0)
+  const open = total - paid
+  const pct = total > 0 ? (paid / total) * 100 : 0
+
+  return (
+    <div className="fixed-summary">
+      <div className="fixed-summary-row">
+        <div className="fixed-summary-item">
+          <span className="fixed-summary-label">Total fixo</span>
+          <span className="fixed-summary-value">{formatCurrency(total)}</span>
+        </div>
+        <div className="fixed-summary-item fixed-summary-paid">
+          <span className="fixed-summary-label">Pago</span>
+          <span className="fixed-summary-value">{formatCurrency(paid)}</span>
+        </div>
+        <div className="fixed-summary-item fixed-summary-open">
+          <span className="fixed-summary-label">Em aberto</span>
+          <span className="fixed-summary-value">{formatCurrency(open)}</span>
+        </div>
+      </div>
+      <div className="fixed-summary-bar-bg">
+        <div className="fixed-summary-bar" style={{ width: `${pct}%` }} />
       </div>
     </div>
   )
@@ -478,13 +553,13 @@ function StatusBadge({ status, dueDay }) {
   return <span className="badge badge-upcoming">Dia {dueDay}</span>
 }
 
-function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, onDelete }) {
+function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, onDelete, onEdit }) {
   if (!fixedExpenses.length) {
     return (
       <div className="empty-state">
         <div className="empty-icon">📋</div>
         <div className="empty-title">Sem despesas fixas</div>
-        <div className="empty-subtitle">Toque no botão + para adicionar uma despesa recorrente.</div>
+        <div className="empty-subtitle">Arraste para a esquerda para remover. Toque + para adicionar.</div>
       </div>
     )
   }
@@ -496,46 +571,36 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, o
         const status = getFixedStatus(item, payments, viewYear, viewMonth)
         const isPaid = status === 'paid'
         return (
-          <div
-            className="expense-item fixed-item"
+          <SwipeItem
             key={item.id}
-            style={{ animationDelay: `${i * 30}ms` }}
+            onDelete={() => onDelete(item)}
+            onEdit={() => onEdit(item)}
           >
             <div
-              className="expense-icon"
-              style={{ background: cat.color + '18' }}
+              className="expense-item fixed-item"
+              style={{ animationDelay: `${i * 30}ms` }}
             >
-              {cat.emoji}
-            </div>
-            <div className="expense-info">
-              <div className="expense-name">{item.name}</div>
-              <div className="expense-meta">
-                <span>{cat.label}</span>
-                <span className="expense-meta-dot" />
-                <StatusBadge status={status} dueDay={item.dueDay} />
+              <div className="expense-icon" style={{ background: cat.color + '18' }}>
+                {cat.emoji}
+              </div>
+              <div className="expense-info">
+                <div className="expense-name">{item.name}</div>
+                <div className="expense-meta">
+                  <span>{cat.label}</span>
+                  <span className="expense-meta-dot" />
+                  <StatusBadge status={status} dueDay={item.dueDay} />
+                </div>
+              </div>
+              <div className="fixed-item-right">
+                <div className="expense-amount">{formatCurrency(item.amount)}</div>
+                {!isPaid && (
+                  <button className="fixed-pay-btn" onClick={() => onMarkPaid(item, status)}>
+                    Pagar
+                  </button>
+                )}
               </div>
             </div>
-            <div className="fixed-item-right">
-              <div className="expense-amount">{formatCurrency(item.amount)}</div>
-              {!isPaid && (
-                <button
-                  className="fixed-pay-btn"
-                  onClick={() => onMarkPaid(item, status)}
-                >
-                  Pagar
-                </button>
-              )}
-            </div>
-            <button
-              className="expense-delete"
-              onClick={() => onDelete(item)}
-              title="Remover"
-            >
-              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            </button>
-          </div>
+          </SwipeItem>
         )
       })}
     </div>
@@ -571,13 +636,15 @@ function AlertBanner({ fixedExpenses, payments, viewYear, viewMonth }) {
 }
 
 export default function App() {
-  const { expenses, addExpense, removeExpense } = useExpenses()
-  const { fixedExpenses, payments, addFixed, removeFixed, markPaid, unmarkPaid } = useFixed()
+  const { expenses, addExpense, removeExpense, updateExpense } = useExpenses()
+  const { fixedExpenses, payments, addFixed, removeFixed, updateFixed, markPaid, unmarkPaid } = useFixed()
   const { getBudget, setBudget } = useBudget()
   const { toast, showToast, dismissToast } = useToast()
 
   const [showModal, setShowModal] = useState(false)
   const [showFixedModal, setShowFixedModal] = useState(false)
+  const [editingExpense, setEditingExpense] = useState(null)
+  const [editingFixed, setEditingFixed] = useState(null)
   const [filter, setFilter] = useState('all')
   const [viewMonth, setViewMonth] = useState(today.getMonth())
   const [viewYear, setViewYear] = useState(today.getFullYear())
@@ -664,6 +731,24 @@ export default function App() {
       addFixed(item)
     })
   }, [removeFixed, addFixed, showToast])
+
+  const handleEditExpense = useCallback((expense) => {
+    setEditingExpense(expense)
+  }, [])
+
+  const handleSaveExpense = useCallback((updates) => {
+    updateExpense(editingExpense.id, updates)
+    setEditingExpense(null)
+  }, [updateExpense, editingExpense])
+
+  const handleEditFixed = useCallback((item) => {
+    setEditingFixed(item)
+  }, [])
+
+  const handleSaveFixed = useCallback((updates) => {
+    updateFixed(editingFixed.id, updates)
+    setEditingFixed(null)
+  }, [updateFixed, editingFixed])
 
   const handleMarkPaid = useCallback((item) => {
     const dateStr = today.toISOString().slice(0, 10)
@@ -766,6 +851,7 @@ export default function App() {
             <ExpenseList
               expenses={monthExpenses}
               onDelete={handleDeleteExpense}
+              onEdit={handleEditExpense}
               filter={filter}
             />
           </>
@@ -773,6 +859,13 @@ export default function App() {
 
         {activeTab === 'fixas' && (
           <>
+            <FixedSummary
+              fixedExpenses={fixedExpenses}
+              payments={payments}
+              viewYear={viewYear}
+              viewMonth={viewMonth}
+            />
+
             <div className="section-header" style={{ marginTop: 4 }}>
               <span className="section-title">Despesas Fixas</span>
             </div>
@@ -784,6 +877,7 @@ export default function App() {
               viewMonth={viewMonth}
               onMarkPaid={handleMarkPaid}
               onDelete={handleDeleteFixed}
+              onEdit={handleEditFixed}
             />
           </>
         )}
@@ -803,8 +897,24 @@ export default function App() {
         <AddModal onClose={() => setShowModal(false)} onAdd={addExpense} />
       )}
 
+      {editingExpense && (
+        <AddModal
+          onClose={() => setEditingExpense(null)}
+          onAdd={handleSaveExpense}
+          expense={editingExpense}
+        />
+      )}
+
       {showFixedModal && (
         <AddFixedModal onClose={() => setShowFixedModal(false)} onAdd={addFixed} />
+      )}
+
+      {editingFixed && (
+        <AddFixedModal
+          onClose={() => setEditingFixed(null)}
+          onAdd={handleSaveFixed}
+          item={editingFixed}
+        />
       )}
 
       {toast && (
