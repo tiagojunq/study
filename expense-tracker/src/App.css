@@ -245,27 +245,41 @@
 /* Fixed item */
 .fixed-item-right {
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 4px;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
   flex-shrink: 0;
 }
 
-.fixed-pay-btn {
-  font-size: 11px;
-  font-weight: 600;
-  color: var(--accent);
-  background: var(--accent-light);
-  border: 1px solid var(--accent);
-  border-radius: var(--radius-full);
-  padding: 3px 10px;
+.fixed-check-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
   transition: all var(--transition);
-  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
 }
 
-.fixed-pay-btn:hover {
+.fixed-check-btn:hover {
+  border-color: var(--accent);
+  background: var(--accent-light);
+}
+
+.fixed-check-btn-paid {
   background: var(--accent);
+  border-color: var(--accent);
   color: white;
+}
+
+.fixed-check-btn-paid:hover {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
 }
 
 /* Status badges */

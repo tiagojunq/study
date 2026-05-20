@@ -4,59 +4,39 @@ const FIXED_KEY = 'fixed_v1'
 const PAYMENTS_KEY = 'fixed_payments_v1'
 
 const loadFixed = () => {
-  try {
-    return JSON.parse(localStorage.getItem(FIXED_KEY) ?? '[]')
-  } catch {
-    return []
-  }
+  try { return JSON.parse(localStorage.getItem(FIXED_KEY) ?? '[]') } catch { return [] }
 }
 
 const loadPayments = () => {
-  try {
-    return JSON.parse(localStorage.getItem(PAYMENTS_KEY) ?? '{}')
-  } catch {
-    return {}
-  }
+  try { return JSON.parse(localStorage.getItem(PAYMENTS_KEY) ?? '{}') } catch { return {} }
 }
 
 export function getFixedStatus(item, payments, year, month) {
   const today = new Date()
-  const todayDay = today.getDate()
-  const todayMonth = today.getMonth()
-  const todayYear = today.getFullYear()
   const key = `${item.id}-${year}-${month}`
-
   if (payments[key]) return 'paid'
 
-  const isCurrentViewMonth = year === todayYear && month === todayMonth
-
-  if (isCurrentViewMonth) {
-    if (todayDay === item.dueDay) return 'due-today'
-    if (todayDay > item.dueDay) return 'overdue'
+  const isCurrentMonth = year === today.getFullYear() && month === today.getMonth()
+  if (isCurrentMonth) {
+    if (today.getDate() === item.dueDay) return 'due-today'
+    if (today.getDate() > item.dueDay) return 'overdue'
     return 'upcoming'
   }
 
   const viewDate = new Date(year, month, 1)
-  const currentDate = new Date(todayYear, todayMonth, 1)
-  if (viewDate < currentDate) return 'overdue'
-
-  return 'upcoming'
+  const nowDate = new Date(today.getFullYear(), today.getMonth(), 1)
+  return viewDate < nowDate ? 'overdue' : 'upcoming'
 }
 
 export function useFixed() {
   const [fixedExpenses, setFixedExpenses] = useState(loadFixed)
   const [payments, setPayments] = useState(loadPayments)
 
-  useEffect(() => {
-    localStorage.setItem(FIXED_KEY, JSON.stringify(fixedExpenses))
-  }, [fixedExpenses])
-
-  useEffect(() => {
-    localStorage.setItem(PAYMENTS_KEY, JSON.stringify(payments))
-  }, [payments])
+  useEffect(() => { localStorage.setItem(FIXED_KEY, JSON.stringify(fixedExpenses)) }, [fixedExpenses])
+  useEffect(() => { localStorage.setItem(PAYMENTS_KEY, JSON.stringify(payments)) }, [payments])
 
   const addFixed = useCallback((item) => {
-    const newItem = { ...item, id: crypto.randomUUID() }
+    const newItem = { ...item, id: item.id ?? crypto.randomUUID() }
     setFixedExpenses((prev) => [...prev, newItem])
     return newItem
   }, [])
@@ -69,16 +49,15 @@ export function useFixed() {
     setFixedExpenses((prev) => prev.map((f) => f.id === id ? { ...f, ...updates } : f))
   }, [])
 
-  const markPaid = useCallback((fixedId, year, month) => {
-    const key = `${fixedId}-${year}-${month}`
-    setPayments((prev) => ({ ...prev, [key]: true }))
+  // payments[key] stores the expense id that was auto-added, for undo support
+  const markPaid = useCallback((fixedId, year, month, expenseId) => {
+    setPayments((prev) => ({ ...prev, [`${fixedId}-${year}-${month}`]: expenseId }))
   }, [])
 
   const unmarkPaid = useCallback((fixedId, year, month) => {
-    const key = `${fixedId}-${year}-${month}`
     setPayments((prev) => {
       const next = { ...prev }
-      delete next[key]
+      delete next[`${fixedId}-${year}-${month}`]
       return next
     })
   }, [])
@@ -87,5 +66,10 @@ export function useFixed() {
     return !!payments[`${fixedId}-${year}-${month}`]
   }, [payments])
 
-  return { fixedExpenses, payments, addFixed, removeFixed, updateFixed, markPaid, unmarkPaid, isPaid }
+  const getPaidExpenseId = useCallback((fixedId, year, month) => {
+    const val = payments[`${fixedId}-${year}-${month}`]
+    return val && val !== true ? val : null
+  }, [payments])
+
+  return { fixedExpenses, payments, addFixed, removeFixed, updateFixed, markPaid, unmarkPaid, isPaid, getPaidExpenseId }
 }

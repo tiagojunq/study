@@ -586,7 +586,7 @@ function StatusBadge({ status, dueDay }) {
   return <span className="badge badge-upcoming">Dia {dueDay}</span>
 }
 
-function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, onDelete, onEdit }) {
+function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid, onDelete, onEdit }) {
   if (!fixedExpenses.length) {
     return (
       <div className="empty-state">
@@ -602,7 +602,7 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, o
       {fixedExpenses.map((item, i) => {
         const cat = getCategoryById(item.category)
         const status = getFixedStatus(item, payments, viewYear, viewMonth)
-        const isPaid = status === 'paid'
+        const paid = status === 'paid'
         return (
           <SwipeItem
             key={item.id}
@@ -622,11 +622,17 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onMarkPaid, o
               </div>
               <div className="fixed-item-right">
                 <div className="expense-amount">{formatCurrency(item.amount)}</div>
-                {!isPaid && (
-                  <button className="fixed-pay-btn" onClick={(e) => { e.stopPropagation(); onMarkPaid(item, status) }}>
-                    Pagar
-                  </button>
-                )}
+                <button
+                  className={`fixed-check-btn${paid ? ' fixed-check-btn-paid' : ''}`}
+                  onClick={(e) => { e.stopPropagation(); onTogglePaid(item) }}
+                  aria-label={paid ? 'Desmarcar como pago' : 'Marcar como pago'}
+                >
+                  {paid && (
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="20 6 9 17 4 12" />
+                    </svg>
+                  )}
+                </button>
               </div>
             </div>
           </SwipeItem>
@@ -666,7 +672,7 @@ function AlertBanner({ fixedExpenses, payments, viewYear, viewMonth }) {
 
 export default function App() {
   const { expenses, addExpense, removeExpense, updateExpense } = useExpenses()
-  const { fixedExpenses, payments, addFixed, removeFixed, updateFixed, markPaid, unmarkPaid } = useFixed()
+  const { fixedExpenses, payments, addFixed, removeFixed, updateFixed, markPaid, unmarkPaid, isPaid, getPaidExpenseId } = useFixed()
   const { getBudget, setBudget } = useBudget()
   const { toast, showToast, dismissToast } = useToast()
 
@@ -779,23 +785,37 @@ export default function App() {
     setEditingFixed(null)
   }, [updateFixed, editingFixed])
 
-  const handleMarkPaid = useCallback((item) => {
-    const dateStr = today.toISOString().slice(0, 10)
-    const expenseData = {
-      id: crypto.randomUUID(),
-      createdAt: new Date().toISOString(),
-      name: item.name,
-      amount: item.amount,
-      category: item.category,
-      date: dateStr,
-    }
-    markPaid(item.id, viewYear, viewMonth)
-    addExpense(expenseData)
-    showToast('Marcado como pago', () => {
+  const handleTogglePaid = useCallback((item) => {
+    if (isPaid(item.id, viewYear, viewMonth)) {
+      const expenseId = getPaidExpenseId(item.id, viewYear, viewMonth)
+      const existingExpense = expenseId ? expenses.find((e) => e.id === expenseId) : null
       unmarkPaid(item.id, viewYear, viewMonth)
-      removeExpense(expenseData.id)
-    })
-  }, [markPaid, unmarkPaid, addExpense, removeExpense, viewYear, viewMonth, showToast])
+      if (expenseId) removeExpense(expenseId)
+      showToast('Pagamento desfeito', () => {
+        markPaid(item.id, viewYear, viewMonth, expenseId)
+        if (existingExpense) addExpense(existingExpense)
+      })
+    } else {
+      const maxDay = new Date(viewYear, viewMonth + 1, 0).getDate()
+      const day = Math.min(item.dueDay, maxDay)
+      const dateStr = `${viewYear}-${String(viewMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+      const expenseId = crypto.randomUUID()
+      const expenseData = {
+        id: expenseId,
+        createdAt: new Date().toISOString(),
+        name: item.name,
+        amount: item.amount,
+        category: item.category,
+        date: dateStr,
+      }
+      markPaid(item.id, viewYear, viewMonth, expenseId)
+      addExpense(expenseData)
+      showToast('Marcado como pago', () => {
+        unmarkPaid(item.id, viewYear, viewMonth)
+        removeExpense(expenseId)
+      })
+    }
+  }, [isPaid, getPaidExpenseId, expenses, markPaid, unmarkPaid, addExpense, removeExpense, viewYear, viewMonth, showToast])
 
   return (
     <>
@@ -904,7 +924,7 @@ export default function App() {
               payments={payments}
               viewYear={viewYear}
               viewMonth={viewMonth}
-              onMarkPaid={handleMarkPaid}
+              onTogglePaid={handleTogglePaid}
               onDelete={handleDeleteFixed}
               onEdit={handleEditFixed}
             />
