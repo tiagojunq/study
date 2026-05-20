@@ -582,8 +582,8 @@ function AddFixedModal({ onClose, onAdd, item }) {
                     value={startMonthValue}
                     onChange={(e) => setStartMonthValue(e.target.value)}
                   >
-                    {Array.from({ length: 25 }, (_, i) => {
-                      const idx = (today.getFullYear() - 2) * 12 + today.getMonth() + i - 12
+                    {Array.from({ length: 49 }, (_, i) => {
+                      const idx = (today.getFullYear() - 2) * 12 + today.getMonth() + i
                       const y = Math.floor(idx / 12)
                       const m = idx % 12
                       const val = `${y}-${String(m + 1).padStart(2, '0')}`
@@ -708,12 +708,13 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid,
           >
             <div
               className={`expense-item fixed-item${inactive ? ' fixed-item-inactive' : ''}`}
-              style={{ animationDelay: `${i * 30}ms` }}
+              style={{ animationDelay: `${i * 30}ms`, cursor: 'pointer' }}
+              onClick={() => onEdit(item)}
             >
               <div className="expense-icon" style={{ background: cat.color + '18' }}>
                 {cat.emoji}
               </div>
-              <div className="expense-info" style={{ cursor: 'pointer' }} onClick={() => onEdit(item)}>
+              <div className="expense-info">
                 <div className="expense-name">{item.name}</div>
                 <div className="expense-meta">
                   <span>{cat.label}</span>
@@ -753,7 +754,42 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid,
   )
 }
 
-function InstallmentsCard({ fixedExpenses, viewYear, viewMonth }) {
+function InstallmentDetailRows({ item, payments }) {
+  const startIdx = item.installmentStart.year * 12 + item.installmentStart.month
+  return (
+    <div className="installments-detail">
+      {Array.from({ length: item.installments }, (_, i) => {
+        const monthAbs = startIdx + i
+        const iYear = Math.floor(monthAbs / 12)
+        const iMonth = monthAbs % 12
+        const isPaidEntry = !!payments[`${item.id}-${iYear}-${iMonth}`]
+        const now = new Date()
+        const detailStatus = isPaidEntry ? 'paid' : (() => {
+          if (iYear > now.getFullYear() || (iYear === now.getFullYear() && iMonth > now.getMonth())) return 'upcoming'
+          if (iYear === now.getFullYear() && iMonth === now.getMonth()) {
+            if (now.getDate() === item.dueDay) return 'due-today'
+            if (now.getDate() > item.dueDay) return 'overdue'
+            return 'upcoming'
+          }
+          return 'overdue'
+        })()
+        const monthLabel = new Date(iYear, iMonth, 1).toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' })
+        return (
+          <div key={i} className={`detail-row${isPaidEntry ? ' detail-row-paid' : ''}`}>
+            <span className="detail-num">{i + 1}ª</span>
+            <span className="detail-month">{monthLabel}</span>
+            <span className="detail-day">dia {item.dueDay}</span>
+            <StatusBadge status={detailStatus} dueDay={item.dueDay} />
+            <span className="detail-amount">{formatCurrency(item.amount)}</span>
+          </div>
+        )
+      })}
+    </div>
+  )
+}
+
+function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth }) {
+  const [expanded, setExpanded] = useState(null)
   const items = fixedExpenses.filter((f) => f.installments && f.installmentStart)
   if (!items.length) return null
 
@@ -805,39 +841,45 @@ function InstallmentsCard({ fixedExpenses, viewYear, viewMonth }) {
           const endIdx = startIdx + info.total - 1
           const remainingCount = Math.max(0, endIdx - fromIdx + 1)
           const remainingAmount = remainingCount * item.amount
+          const isExpanded = expanded === item.id
 
           return (
-            <div key={item.id} className={`installments-item${info.done ? ' installments-item-done' : ''}`}>
-              <div className="installments-item-top">
-                <div
-                  className="installments-item-icon"
-                  style={{ background: cat.color + '18' }}
-                >
-                  {cat.emoji}
+            <div key={item.id}>
+              <div
+                className={`installments-item${info.done ? ' installments-item-done' : ''}`}
+                onClick={() => setExpanded(isExpanded ? null : item.id)}
+                style={{ cursor: 'pointer' }}
+              >
+                <div className="installments-item-top">
+                  <div className="installments-item-icon" style={{ background: cat.color + '18' }}>
+                    {cat.emoji}
+                  </div>
+                  <span className="installments-item-name">{item.name}</span>
+                  <div className="installments-item-right">
+                    <span className="installments-item-fraction">
+                      {info.done ? '✓' : info.notStarted ? '—' : `${info.current}/${info.total}`}
+                    </span>
+                    <span className="installments-item-amount">{formatCurrency(item.amount)}/mês</span>
+                  </div>
+                  <span className="installments-chevron">{isExpanded ? '▲' : '▼'}</span>
                 </div>
-                <span className="installments-item-name">{item.name}</span>
-                <div className="installments-item-right">
-                  <span className="installments-item-fraction">
-                    {info.done ? '✓' : info.notStarted ? '—' : `${info.current}/${info.total}`}
-                  </span>
-                  <span className="installments-item-amount">{formatCurrency(item.amount)}/mês</span>
+                <div className="installments-progress-bg">
+                  <div
+                    className={`installments-progress-bar${info.done ? ' installments-progress-done' : ''}`}
+                    style={{ width: `${pct}%` }}
+                  />
+                </div>
+                <div className="installments-item-footer">
+                  {info.done
+                    ? <span>Quitada</span>
+                    : info.notStarted
+                      ? <span>Inicia em {getMonthLabel(item.installmentStart.year, item.installmentStart.month)}</span>
+                      : <span>{remainingCount}x restantes</span>
+                  }
+                  {!info.done && <span className="installments-item-remaining">{formatCurrency(remainingAmount)}</span>}
                 </div>
               </div>
-              <div className="installments-progress-bg">
-                <div
-                  className={`installments-progress-bar${info.done ? ' installments-progress-done' : ''}`}
-                  style={{ width: `${pct}%` }}
-                />
-              </div>
-              <div className="installments-item-footer">
-                {info.done
-                  ? <span>Quitada</span>
-                  : info.notStarted
-                    ? <span>Inicia em {getMonthLabel(item.installmentStart.year, item.installmentStart.month)}</span>
-                    : <span>{remainingCount}x restantes</span>
-                }
-                {!info.done && <span className="installments-item-remaining">{formatCurrency(remainingAmount)}</span>}
-              </div>
+              {isExpanded && <InstallmentDetailRows item={item} payments={payments} />}
             </div>
           )
         })}
@@ -1120,6 +1162,7 @@ export default function App() {
 
             <InstallmentsCard
               fixedExpenses={fixedExpenses}
+              payments={payments}
               viewYear={viewYear}
               viewMonth={viewMonth}
             />

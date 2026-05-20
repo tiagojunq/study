@@ -1283,3 +1283,61 @@
 .fixed-summary-stat-paid {
   color: var(--accent);
 }
+
+/* Installments chevron */
+.installments-chevron {
+  font-size: 10px;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-left: 4px;
+}
+
+/* Installment detail rows (expanded view) */
+.installments-detail {
+  border-top: 1px solid var(--border);
+  padding: 6px 0 2px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 4px;
+}
+
+.detail-row {
+  display: grid;
+  grid-template-columns: 24px 1fr auto auto auto;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 4px;
+  border-radius: var(--radius-sm);
+}
+
+.detail-row-paid {
+  opacity: 0.55;
+}
+
+.detail-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-align: right;
+}
+
+.detail-month {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-primary);
+  text-transform: capitalize;
+}
+
+.detail-day {
+  font-size: 11px;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.detail-amount {
+  font-size: 13px;
+  font-weight: 650;
+  color: var(--text-primary);
+  letter-spacing: -0.2px;
+  white-space: nowrap;
+}
