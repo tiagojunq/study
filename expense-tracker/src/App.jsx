@@ -754,7 +754,7 @@ function FixedList({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid,
   )
 }
 
-function InstallmentDetailRows({ item, payments }) {
+function InstallmentDetailRows({ item, payments, onTogglePaid, onNavigate }) {
   const startIdx = item.installmentStart.year * 12 + item.installmentStart.month
   return (
     <div className="installments-detail">
@@ -775,11 +775,26 @@ function InstallmentDetailRows({ item, payments }) {
         })()
         const monthLabel = new Date(iYear, iMonth, 1).toLocaleDateString('pt-BR', { month: 'short', year: 'numeric' })
         return (
-          <div key={i} className={`detail-row${isPaidEntry ? ' detail-row-paid' : ''}`}>
+          <div
+            key={i}
+            className={`detail-row${isPaidEntry ? ' detail-row-paid' : ''}`}
+            style={{ cursor: 'pointer' }}
+            onClick={() => onNavigate(iYear, iMonth)}
+          >
             <span className="detail-num">{i + 1}ª</span>
             <span className="detail-month">{monthLabel}</span>
             <StatusBadge status={detailStatus} dueDay={item.dueDay} />
-            <span className="detail-amount">{formatCurrency(item.amount)}</span>
+            <button
+              className={`detail-check-btn${isPaidEntry ? ' detail-check-btn-paid' : ''}`}
+              onClick={(e) => { e.stopPropagation(); onTogglePaid(item, iYear, iMonth) }}
+              aria-label={isPaidEntry ? 'Desmarcar como pago' : 'Marcar como pago'}
+            >
+              {isPaidEntry && (
+                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="20 6 9 17 4 12" />
+                </svg>
+              )}
+            </button>
           </div>
         )
       })}
@@ -787,7 +802,7 @@ function InstallmentDetailRows({ item, payments }) {
   )
 }
 
-function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth }) {
+function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth, onTogglePaid, onDeleteFixed, onNavigate }) {
   const [expanded, setExpanded] = useState(null)
   const items = fixedExpenses.filter((f) => f.installments && f.installmentStart)
   if (!items.length) return null
@@ -881,7 +896,22 @@ function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth }) {
                   {!info.done && <span className="installments-item-remaining">{formatCurrency(remainingAmount)}</span>}
                 </div>
               </div>
-              {isExpanded && <InstallmentDetailRows item={item} payments={payments} />}
+              {isExpanded && (
+                <>
+                  <InstallmentDetailRows
+                    item={item}
+                    payments={payments}
+                    onTogglePaid={onTogglePaid}
+                    onNavigate={onNavigate}
+                  />
+                  <button
+                    className="installments-delete-btn"
+                    onClick={(e) => { e.stopPropagation(); onDeleteFixed(item) }}
+                  >
+                    Excluir parcelamento
+                  </button>
+                </>
+              )}
             </div>
           )
         })}
@@ -898,28 +928,18 @@ function MonthPicker({ viewYear, viewMonth, onSelect, onClose }) {
     <div className="month-picker-overlay" onClick={onClose}>
       <div className="month-picker" onClick={(e) => e.stopPropagation()}>
         <div className="month-picker-year-nav">
-          <button
-            className="month-nav-btn"
-            onClick={() => setPickerYear((y) => y - 1)}
-          >‹</button>
+          <button className="month-nav-btn" onClick={() => setPickerYear((y) => y - 1)}>‹</button>
           <span className="month-picker-year">{pickerYear}</span>
-          <button
-            className="month-nav-btn"
-            onClick={() => setPickerYear((y) => y + 1)}
-            disabled={pickerYear >= todayYear}
-            style={{ opacity: pickerYear >= todayYear ? 0.3 : 1 }}
-          >›</button>
+          <button className="month-nav-btn" onClick={() => setPickerYear((y) => y + 1)}>›</button>
         </div>
         <div className="month-picker-grid">
           {MONTHS_SHORT.map((label, m) => {
-            const isFuture = pickerYear > todayYear || (pickerYear === todayYear && m > todayMonth)
             const isSelected = pickerYear === viewYear && m === viewMonth
             return (
               <button
                 key={m}
                 className={`month-picker-btn${isSelected ? ' month-picker-btn-active' : ''}`}
-                onClick={() => { if (!isFuture) { onSelect(pickerYear, m); onClose() } }}
-                disabled={isFuture}
+                onClick={() => { onSelect(pickerYear, m); onClose() }}
               >
                 {label}
               </button>
@@ -1037,13 +1057,9 @@ export default function App() {
   }
 
   const goForward = () => {
-    const isCurrentMonth = viewMonth === today.getMonth() && viewYear === today.getFullYear()
-    if (isCurrentMonth) return
     if (viewMonth === 11) { setViewMonth(0); setViewYear((y) => y + 1) }
     else setViewMonth((m) => m + 1)
   }
-
-  const isCurrentMonth = viewMonth === today.getMonth() && viewYear === today.getFullYear()
 
   const handleDeleteExpense = useCallback((id) => {
     const expense = expenses.find((e) => e.id === id)
@@ -1079,20 +1095,20 @@ export default function App() {
     setEditingFixed(null)
   }, [updateFixed, editingFixed])
 
-  const handleTogglePaid = useCallback((item) => {
-    if (isPaid(item.id, viewYear, viewMonth)) {
-      const expenseId = getPaidExpenseId(item.id, viewYear, viewMonth)
+  const handleTogglePaid = useCallback((item, year, month) => {
+    if (isPaid(item.id, year, month)) {
+      const expenseId = getPaidExpenseId(item.id, year, month)
       const existingExpense = expenseId ? expenses.find((e) => e.id === expenseId) : null
-      unmarkPaid(item.id, viewYear, viewMonth)
+      unmarkPaid(item.id, year, month)
       if (expenseId) removeExpense(expenseId)
       showToast('Pagamento desfeito', () => {
-        markPaid(item.id, viewYear, viewMonth, expenseId)
+        markPaid(item.id, year, month, expenseId)
         if (existingExpense) addExpense(existingExpense)
       })
     } else {
-      const maxDay = new Date(viewYear, viewMonth + 1, 0).getDate()
+      const maxDay = new Date(year, month + 1, 0).getDate()
       const day = Math.min(item.dueDay, maxDay)
-      const dateStr = `${viewYear}-${String(viewMonth + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`
+      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(day).padStart(2, '0')}`
       const expenseId = crypto.randomUUID()
       const expenseData = {
         id: expenseId,
@@ -1102,14 +1118,14 @@ export default function App() {
         category: item.category,
         date: dateStr,
       }
-      markPaid(item.id, viewYear, viewMonth, expenseId)
+      markPaid(item.id, year, month, expenseId)
       addExpense(expenseData)
       showToast('Marcado como pago', () => {
-        unmarkPaid(item.id, viewYear, viewMonth)
+        unmarkPaid(item.id, year, month)
         removeExpense(expenseId)
       })
     }
-  }, [isPaid, getPaidExpenseId, expenses, markPaid, unmarkPaid, addExpense, removeExpense, viewYear, viewMonth, showToast])
+  }, [isPaid, getPaidExpenseId, expenses, markPaid, unmarkPaid, addExpense, removeExpense, showToast])
 
   return (
     <>
@@ -1124,14 +1140,7 @@ export default function App() {
             {getMonthLabel(viewYear, viewMonth)}
             <span className="month-nav-chevron">▾</span>
           </button>
-          <button
-            className="month-nav-btn"
-            onClick={goForward}
-            disabled={isCurrentMonth}
-            style={{ opacity: isCurrentMonth ? 0.3 : 1 }}
-          >
-            ›
-          </button>
+          <button className="month-nav-btn" onClick={goForward}>›</button>
         </div>
 
         <AlertBanner
@@ -1217,6 +1226,9 @@ export default function App() {
               payments={payments}
               viewYear={viewYear}
               viewMonth={viewMonth}
+              onTogglePaid={handleTogglePaid}
+              onDeleteFixed={handleDeleteFixed}
+              onNavigate={handleMonthSelect}
             />
 
             <div className="section-header" style={{ marginTop: 4 }}>
@@ -1228,7 +1240,7 @@ export default function App() {
               payments={payments}
               viewYear={viewYear}
               viewMonth={viewMonth}
-              onTogglePaid={handleTogglePaid}
+              onTogglePaid={(item) => handleTogglePaid(item, viewYear, viewMonth)}
               onDelete={handleDeleteFixed}
               onEdit={handleEditFixed}
             />
