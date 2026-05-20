@@ -778,7 +778,6 @@ function InstallmentDetailRows({ item, payments }) {
           <div key={i} className={`detail-row${isPaidEntry ? ' detail-row-paid' : ''}`}>
             <span className="detail-num">{i + 1}ª</span>
             <span className="detail-month">{monthLabel}</span>
-            <span className="detail-day">dia {item.dueDay}</span>
             <StatusBadge status={detailStatus} dueDay={item.dueDay} />
             <span className="detail-amount">{formatCurrency(item.amount)}</span>
           </div>
@@ -832,11 +831,14 @@ function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth }) {
         {items.map((item) => {
           const info = getInstallmentInfo(item, viewYear, viewMonth)
           const cat = getCategoryById(item.category)
-          const elapsed = info.done ? info.total : Math.max(0, info.current - 1)
-          const pct = Math.min(100, (elapsed / info.total) * 100)
+          const startIdx = item.installmentStart.year * 12 + item.installmentStart.month
+          const paidCount = Array.from({ length: info.total }, (_, i) => {
+            const monthAbs = startIdx + i
+            return payments[`${item.id}-${Math.floor(monthAbs / 12)}-${monthAbs % 12}`] ? 1 : 0
+          }).reduce((a, b) => a + b, 0)
+          const pct = Math.min(100, (paidCount / info.total) * 100)
 
           const viewIdx = viewYear * 12 + viewMonth
-          const startIdx = item.installmentStart.year * 12 + item.installmentStart.month
           const fromIdx = Math.max(viewIdx, startIdx)
           const endIdx = startIdx + info.total - 1
           const remainingCount = Math.max(0, endIdx - fromIdx + 1)
@@ -857,7 +859,7 @@ function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth }) {
                   <span className="installments-item-name">{item.name}</span>
                   <div className="installments-item-right">
                     <span className="installments-item-fraction">
-                      {info.done ? '✓' : info.notStarted ? '—' : `${info.current}/${info.total}`}
+                      {info.done ? '✓' : info.notStarted ? '—' : `${paidCount}/${info.total} pagas`}
                     </span>
                     <span className="installments-item-amount">{formatCurrency(item.amount)}/mês</span>
                   </div>
@@ -883,6 +885,47 @@ function InstallmentsCard({ fixedExpenses, payments, viewYear, viewMonth }) {
             </div>
           )
         })}
+      </div>
+    </div>
+  )
+}
+
+const MONTHS_SHORT = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+
+function MonthPicker({ viewYear, viewMonth, onSelect, onClose }) {
+  const [pickerYear, setPickerYear] = useState(viewYear)
+  return (
+    <div className="month-picker-overlay" onClick={onClose}>
+      <div className="month-picker" onClick={(e) => e.stopPropagation()}>
+        <div className="month-picker-year-nav">
+          <button
+            className="month-nav-btn"
+            onClick={() => setPickerYear((y) => y - 1)}
+          >‹</button>
+          <span className="month-picker-year">{pickerYear}</span>
+          <button
+            className="month-nav-btn"
+            onClick={() => setPickerYear((y) => y + 1)}
+            disabled={pickerYear >= todayYear}
+            style={{ opacity: pickerYear >= todayYear ? 0.3 : 1 }}
+          >›</button>
+        </div>
+        <div className="month-picker-grid">
+          {MONTHS_SHORT.map((label, m) => {
+            const isFuture = pickerYear > todayYear || (pickerYear === todayYear && m > todayMonth)
+            const isSelected = pickerYear === viewYear && m === viewMonth
+            return (
+              <button
+                key={m}
+                className={`month-picker-btn${isSelected ? ' month-picker-btn-active' : ''}`}
+                onClick={() => { if (!isFuture) { onSelect(pickerYear, m); onClose() } }}
+                disabled={isFuture}
+              >
+                {label}
+              </button>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
@@ -929,6 +972,12 @@ export default function App() {
   const [viewMonth, setViewMonth] = useState(today.getMonth())
   const [viewYear, setViewYear] = useState(today.getFullYear())
   const [activeTab, setActiveTab] = useState('lancamentos')
+  const [showMonthPicker, setShowMonthPicker] = useState(false)
+
+  const handleMonthSelect = useCallback((year, month) => {
+    setViewYear(year)
+    setViewMonth(month)
+  }, [])
 
   useEffect(() => {
     const asked = localStorage.getItem('notif_asked')
@@ -1071,7 +1120,10 @@ export default function App() {
 
         <div className="month-nav">
           <button className="month-nav-btn" onClick={goBack}>‹</button>
-          <span className="month-nav-label">{getMonthLabel(viewYear, viewMonth)}</span>
+          <button className="month-nav-label-btn" onClick={() => setShowMonthPicker(true)}>
+            {getMonthLabel(viewYear, viewMonth)}
+            <span className="month-nav-chevron">▾</span>
+          </button>
           <button
             className="month-nav-btn"
             onClick={goForward}
@@ -1193,6 +1245,15 @@ export default function App() {
         </svg>
         Adicionar
       </button>
+
+      {showMonthPicker && (
+        <MonthPicker
+          viewYear={viewYear}
+          viewMonth={viewMonth}
+          onSelect={handleMonthSelect}
+          onClose={() => setShowMonthPicker(false)}
+        />
+      )}
 
       {showModal && (
         <AddModal onClose={() => setShowModal(false)} onAdd={addExpense} />

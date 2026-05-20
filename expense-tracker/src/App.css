@@ -832,6 +832,103 @@
   text-align: center;
 }
 
+.month-nav-label-btn {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  min-width: 120px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+
+.month-nav-label-btn:hover {
+  background: var(--surface-2);
+  color: var(--accent);
+}
+
+.month-nav-chevron {
+  font-size: 10px;
+  opacity: 0.6;
+}
+
+/* Month picker */
+.month-picker-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(3px);
+  z-index: 150;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: fadeIn 180ms both;
+}
+
+.month-picker {
+  background: var(--surface);
+  border-radius: var(--radius-xl);
+  padding: 24px 20px 20px;
+  width: 100%;
+  max-width: 320px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+  animation: scaleIn 200ms cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.month-picker-year-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.month-picker-year {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.month-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.month-picker-btn {
+  padding: 11px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  border: 1.5px solid var(--border);
+  background: var(--surface-2);
+  transition: all var(--transition);
+  text-align: center;
+}
+
+.month-picker-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.month-picker-btn:disabled {
+  opacity: 0.25;
+  cursor: not-allowed;
+}
+
+.month-picker-btn-active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: white !important;
+  font-weight: 600;
+}
+
 /* Toast */
 .toast {
   position: fixed;
@@ -1303,7 +1400,7 @@
 
 .detail-row {
   display: grid;
-  grid-template-columns: 24px 1fr auto auto auto;
+  grid-template-columns: 24px 1fr auto auto;
   align-items: center;
   gap: 8px;
   padding: 7px 4px;
