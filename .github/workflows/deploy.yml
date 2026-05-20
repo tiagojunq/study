@@ -3,9 +3,6 @@ name: Deploy Expense Tracker to GitHub Pages
 on:
   push:
     branches: [main]
-    paths:
-      - 'expense-tracker/**'
-      - '.github/workflows/deploy.yml'
   workflow_dispatch:
 
 permissions:
