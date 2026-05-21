@@ -76,11 +76,12 @@ export default function ModeratorSession({ moderatorName, onExit }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomCode])
 
-  // Tick every second for the timer.
+  // Tick every second for the timer — stop when finished.
   useEffect(() => {
+    if (phase === 'finished') return
     const id = setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(id)
-  }, [])
+  }, [phase])
 
   // Auto-finalize at the duration limit.
   useEffect(() => {
@@ -291,7 +292,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   return (
     <div className="app">
       <header className="header">
-        <h1>Moderador • Simulado ISTQB CTFL</h1>
+        <h1>Simulador Briático de Estudo</h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>

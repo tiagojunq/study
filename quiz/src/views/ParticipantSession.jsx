@@ -15,9 +15,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   const [now, setNow] = useState(Date.now())
 
   useEffect(() => {
+    if (state?.phase === 'finished') return
     const id = setInterval(() => setNow(Date.now()), 1000)
     return () => clearInterval(id)
-  }, [])
+  }, [state?.phase])
 
   useEffect(() => {
     const client = createClient({
@@ -209,6 +210,13 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
         {phase === 'lobby' && (
           <div className="panel">
             <h2>Sala {roomCode}</h2>
+            <div style={{ textAlign: 'center', margin: '0.75rem 0' }}>
+              <img
+                src="/study/quiz/brio-esteja-com-voce.png"
+                alt="Que o brio esteja com você"
+                style={{ maxWidth: '220px', borderRadius: '8px' }}
+              />
+            </div>
             <p>
               Aguardando o moderador iniciar o simulado. Por enquanto, relaxe ☕.
             </p>
