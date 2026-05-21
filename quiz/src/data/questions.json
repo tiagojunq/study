@@ -3309,5 +3309,1255 @@
     "correct": [
       "a"
     ]
+  },
+  {
+    "id": "C-1",
+    "exam": "C",
+    "number": "1",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.1.1",
+    "selectCount": 1,
+    "stem": "Qual das seguintes afirmações descreve um objetivo de teste NÃO válido?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Reduzir o nível de risco do produto de software."
+      },
+      {
+        "letter": "b",
+        "text": "Garantir que o software esteja completamente livre de defeitos após os testes."
+      },
+      {
+        "letter": "c",
+        "text": "Fornecer informações para a tomada de decisão sobre o lançamento."
+      },
+      {
+        "letter": "d",
+        "text": "Verificar a conformidade com requisitos contratuais ou legais."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-2",
+    "exam": "C",
+    "number": "2",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.1.2",
+    "selectCount": 1,
+    "stem": "Um desenvolvedor codifica incorrectamente uma condição 'maior que' quando deveria ser 'maior ou igual a'. Isso resulta em um resultado incorreto durante a execução. Qual é a sequência correta dos termos ISTQB para descrever essa situação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Engano (error) → defeito (defect) → falha (failure)"
+      },
+      {
+        "letter": "b",
+        "text": "Falha (failure) → defeito (defect) → engano (error)"
+      },
+      {
+        "letter": "c",
+        "text": "Defeito (defect) → engano (error) → falha (failure)"
+      },
+      {
+        "letter": "d",
+        "text": "Engano (error) → falha (failure) → defeito (defect)"
+      }
+    ],
+    "correct": [
+      "a"
+    ]
+  },
+  {
+    "id": "C-3",
+    "exam": "C",
+    "number": "3",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "selectCount": 1,
+    "stem": "Qual dos seguintes princípios de teste afirma que testar o mesmo conjunto de testes repetidamente pode tornar-se ineficaz para encontrar novos defeitos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Testes revelam a presença de defeitos, não a sua ausência."
+      },
+      {
+        "letter": "b",
+        "text": "Testes exaustivos são impossíveis."
+      },
+      {
+        "letter": "c",
+        "text": "O paradoxo do pesticida."
+      },
+      {
+        "letter": "d",
+        "text": "Agrupamento de defeitos (clustering)."
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-4",
+    "exam": "C",
+    "number": "4",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.2.2",
+    "selectCount": 1,
+    "stem": "O princípio 'ausência de defeitos é uma falácia' significa que:",
+    "options": [
+      {
+        "letter": "a",
+        "text": "É impossível desenvolver software sem defeitos."
+      },
+      {
+        "letter": "b",
+        "text": "Encontrar e corrigir defeitos não garante que o sistema atende às necessidades do usuário."
+      },
+      {
+        "letter": "c",
+        "text": "Os testes nunca podem provar que o software está livre de defeitos."
+      },
+      {
+        "letter": "d",
+        "text": "Os defeitos sempre causam falhas visíveis para o usuário final."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-5",
+    "exam": "C",
+    "number": "5",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.3.1",
+    "selectCount": 1,
+    "stem": "Qual atividade do processo de teste envolve a identificação das condições de teste a partir da análise da base de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Planejamento do teste"
+      },
+      {
+        "letter": "b",
+        "text": "Análise de teste"
+      },
+      {
+        "letter": "c",
+        "text": "Projeto de teste"
+      },
+      {
+        "letter": "d",
+        "text": "Execução do teste"
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-6",
+    "exam": "C",
+    "number": "6",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.3.2",
+    "selectCount": 1,
+    "stem": "Durante qual atividade do processo de teste os casos de teste são criados e os dados de teste são especificados?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Monitoramento e controle do teste"
+      },
+      {
+        "letter": "b",
+        "text": "Análise de teste"
+      },
+      {
+        "letter": "c",
+        "text": "Projeto de teste"
+      },
+      {
+        "letter": "d",
+        "text": "Conclusão do teste"
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-7",
+    "exam": "C",
+    "number": "7",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.4.1",
+    "selectCount": 1,
+    "stem": "Qual das seguintes afirmações descreve uma vantagem do teste independente em relação ao teste realizado pelos próprios desenvolvedores?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Testadores independentes sempre encontram mais defeitos do que os desenvolvedores."
+      },
+      {
+        "letter": "b",
+        "text": "Testadores independentes evitam o viés do autor e podem ter uma perspectiva diferente sobre o sistema."
+      },
+      {
+        "letter": "c",
+        "text": "Testadores independentes não precisam conhecer o domínio do negócio."
+      },
+      {
+        "letter": "d",
+        "text": "Testadores independentes garantem que todos os casos de teste sejam automatizados."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-8",
+    "exam": "C",
+    "number": "8",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "FL-1.5.1",
+    "selectCount": 1,
+    "stem": "Qual habilidade é considerada fundamental para um testador eficaz segundo o ISTQB CTFL?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Capacidade de programar em múltiplas linguagens de programação."
+      },
+      {
+        "letter": "b",
+        "text": "Conhecimento exclusivo de ferramentas de automação de teste."
+      },
+      {
+        "letter": "c",
+        "text": "Pensamento crítico, curiosidade e atenção aos detalhes."
+      },
+      {
+        "letter": "d",
+        "text": "Capacidade de trabalhar somente de forma isolada da equipe."
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-9",
+    "exam": "C",
+    "number": "9",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "FL-2.1.1",
+    "selectCount": 1,
+    "stem": "No modelo em V, qual nível de desenvolvimento corresponde diretamente ao teste de aceitação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Projeto detalhado de componentes"
+      },
+      {
+        "letter": "b",
+        "text": "Projeto de arquitetura do sistema"
+      },
+      {
+        "letter": "c",
+        "text": "Requisitos do sistema"
+      },
+      {
+        "letter": "d",
+        "text": "Requisitos de negócio / necessidades do usuário"
+      }
+    ],
+    "correct": [
+      "d"
+    ]
+  },
+  {
+    "id": "C-10",
+    "exam": "C",
+    "number": "10",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "FL-2.1.2",
+    "selectCount": 1,
+    "stem": "Qual nível de teste tem como objetivo principal verificar se componentes individuais se comunicam corretamente entre si?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste de componente"
+      },
+      {
+        "letter": "b",
+        "text": "Teste de integração"
+      },
+      {
+        "letter": "c",
+        "text": "Teste de sistema"
+      },
+      {
+        "letter": "d",
+        "text": "Teste de aceitação operacional"
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-11",
+    "exam": "C",
+    "number": "11",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "FL-2.2.1",
+    "selectCount": 1,
+    "stem": "Qual dos seguintes é um tipo de teste NÃO funcional?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste de regressão"
+      },
+      {
+        "letter": "b",
+        "text": "Teste de usabilidade"
+      },
+      {
+        "letter": "c",
+        "text": "Teste de componente"
+      },
+      {
+        "letter": "d",
+        "text": "Teste de integração"
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-12",
+    "exam": "C",
+    "number": "12",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "FL-2.2.2",
+    "selectCount": 1,
+    "stem": "O que distingue o teste de confirmação (re-teste) do teste de regressão?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "O re-teste verifica se defeitos corrigidos foram de fato resolvidos; o teste de regressão verifica se a correção não introduziu novos defeitos em outras áreas."
+      },
+      {
+        "letter": "b",
+        "text": "O re-teste é automatizado; o teste de regressão é manual."
+      },
+      {
+        "letter": "c",
+        "text": "O re-teste é realizado pelo desenvolvedor; o teste de regressão pelo testador."
+      },
+      {
+        "letter": "d",
+        "text": "O re-teste verifica todo o sistema; o teste de regressão verifica apenas o módulo corrigido."
+      }
+    ],
+    "correct": [
+      "a"
+    ]
+  },
+  {
+    "id": "C-13",
+    "exam": "C",
+    "number": "13",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "FL-2.3.1",
+    "selectCount": 1,
+    "stem": "Em métodos de desenvolvimento iterativo e incremental, como o Scrum, qual afirmação sobre os testes é CORRETA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Os testes são realizados apenas ao final do projeto, após todas as iterações."
+      },
+      {
+        "letter": "b",
+        "text": "Os testes são integrados ao processo de desenvolvimento em cada iteração/sprint."
+      },
+      {
+        "letter": "c",
+        "text": "Os testes de regressão são desnecessários em ciclos ágeis curtos."
+      },
+      {
+        "letter": "d",
+        "text": "A documentação de teste detalhada é obrigatória em cada sprint."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-14",
+    "exam": "C",
+    "number": "14",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "FL-2.4.1",
+    "selectCount": 1,
+    "stem": "Qual das seguintes situações mais provavelmente exige um teste de manutenção?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Execução do teste de aceitação antes do lançamento do produto."
+      },
+      {
+        "letter": "b",
+        "text": "Verificação do comportamento do sistema após migração para um novo sistema operacional."
+      },
+      {
+        "letter": "c",
+        "text": "Análise de requisitos no início do projeto."
+      },
+      {
+        "letter": "d",
+        "text": "Revisão técnica do código-fonte durante o desenvolvimento."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-15",
+    "exam": "C",
+    "number": "15",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "FL-3.1.1",
+    "selectCount": 1,
+    "stem": "Qual é um benefício principal do teste estático em relação ao teste dinâmico?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Verifica o comportamento do sistema durante a execução real."
+      },
+      {
+        "letter": "b",
+        "text": "Permite identificar defeitos antes que o código seja executado, reduzindo o custo de correção."
+      },
+      {
+        "letter": "c",
+        "text": "É mais eficaz para encontrar defeitos de desempenho e carga."
+      },
+      {
+        "letter": "d",
+        "text": "Requer menos esforço do que os testes dinâmicos."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-16",
+    "exam": "C",
+    "number": "16",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "FL-3.2.1",
+    "selectCount": 1,
+    "stem": "Qual tipo de revisão formal tem como objetivo principal a melhoria da qualidade do produto por meio de detecção sistemática de defeitos, com funções e responsabilidades bem definidas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Revisão informal"
+      },
+      {
+        "letter": "b",
+        "text": "Walkthrough"
+      },
+      {
+        "letter": "c",
+        "text": "Revisão técnica"
+      },
+      {
+        "letter": "d",
+        "text": "Inspeção"
+      }
+    ],
+    "correct": [
+      "d"
+    ]
+  },
+  {
+    "id": "C-17",
+    "exam": "C",
+    "number": "17",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "FL-3.2.2",
+    "selectCount": 1,
+    "stem": "Em um walkthrough, qual é o papel do autor do produto de trabalho?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Moderar a reunião e garantir o cumprimento do processo."
+      },
+      {
+        "letter": "b",
+        "text": "Liderar a reunião apresentando o produto de trabalho para os revisores."
+      },
+      {
+        "letter": "c",
+        "text": "Registrar os defeitos identificados durante a revisão."
+      },
+      {
+        "letter": "d",
+        "text": "Tomar decisões sobre as melhorias a serem feitas."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-18",
+    "exam": "C",
+    "number": "18",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "FL-3.3.1",
+    "selectCount": 1,
+    "stem": "Qual dos seguintes é um exemplo de defeito que pode ser detectado pela análise estática de código?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "O sistema leva mais de 5 segundos para responder sob alta carga."
+      },
+      {
+        "letter": "b",
+        "text": "A interface do usuário não atende aos padrões de acessibilidade."
+      },
+      {
+        "letter": "c",
+        "text": "Variáveis declaradas mas nunca utilizadas no código."
+      },
+      {
+        "letter": "d",
+        "text": "O sistema rejeita entradas válidas do usuário."
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-19",
+    "exam": "C",
+    "number": "19",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "selectCount": 1,
+    "stem": "Um campo de formulário aceita idades entre 18 e 65 anos (inclusive). Quais valores de teste cobrem as três partições de equivalência (inválido abaixo, válido, inválido acima)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "17, 40, 66"
+      },
+      {
+        "letter": "b",
+        "text": "18, 40, 65"
+      },
+      {
+        "letter": "c",
+        "text": "0, 18, 65"
+      },
+      {
+        "letter": "d",
+        "text": "17, 18, 65"
+      }
+    ],
+    "correct": [
+      "a"
+    ]
+  },
+  {
+    "id": "C-20",
+    "exam": "C",
+    "number": "20",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.2.2",
+    "selectCount": 1,
+    "stem": "Usando análise de valor limite de 2 pontos para um campo que aceita valores entre 10 e 50 (inclusive), quais são os valores de teste para os limites do intervalo válido?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "9, 10, 50, 51"
+      },
+      {
+        "letter": "b",
+        "text": "10, 50"
+      },
+      {
+        "letter": "c",
+        "text": "10, 30, 50"
+      },
+      {
+        "letter": "d",
+        "text": "9, 11, 49, 51"
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-21",
+    "exam": "C",
+    "number": "21",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.2.3",
+    "selectCount": 1,
+    "stem": "Usando análise de valor limite de 3 pontos para um campo que aceita valores entre 1 e 100 (inclusive), quantos valores de teste são necessários para cobrir todos os limites?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "2"
+      },
+      {
+        "letter": "b",
+        "text": "4"
+      },
+      {
+        "letter": "c",
+        "text": "6"
+      },
+      {
+        "letter": "d",
+        "text": "8"
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-22",
+    "exam": "C",
+    "number": "22",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "selectCount": 1,
+    "stem": "Qual técnica de teste de caixa preta é mais adequada para testar combinações de regras de negócio com múltiplas condições que geram resultados distintos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Partição de equivalência"
+      },
+      {
+        "letter": "b",
+        "text": "Análise de valor limite"
+      },
+      {
+        "letter": "c",
+        "text": "Teste de tabela de decisão"
+      },
+      {
+        "letter": "d",
+        "text": "Teste de caso de uso"
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-23",
+    "exam": "C",
+    "number": "23",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.3.2",
+    "selectCount": 1,
+    "stem": "Uma tabela de decisão possui 3 condições binárias (V/F). Qual é o número máximo de regras de decisão na tabela completa?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "3"
+      },
+      {
+        "letter": "b",
+        "text": "6"
+      },
+      {
+        "letter": "c",
+        "text": "8"
+      },
+      {
+        "letter": "d",
+        "text": "12"
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-24",
+    "exam": "C",
+    "number": "24",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.4.1",
+    "selectCount": 1,
+    "stem": "Para qual tipo de sistema o teste de transição de estado é mais apropriado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Sistemas que processam grandes volumes de dados em batch."
+      },
+      {
+        "letter": "b",
+        "text": "Sistemas cujo comportamento depende do estado atual e da sequência de eventos recebidos."
+      },
+      {
+        "letter": "c",
+        "text": "Sistemas com múltiplas condições de entrada independentes."
+      },
+      {
+        "letter": "d",
+        "text": "Sistemas sem interface com o usuário."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-25",
+    "exam": "C",
+    "number": "25",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.5.1",
+    "selectCount": 1,
+    "stem": "O que significa atingir 100% de cobertura de instruções (statement coverage)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Todos os caminhos possíveis do programa foram executados ao menos uma vez."
+      },
+      {
+        "letter": "b",
+        "text": "Cada instrução executável do código foi executada por pelo menos um caso de teste."
+      },
+      {
+        "letter": "c",
+        "text": "Cada decisão no código foi avaliada como verdadeira e como falsa."
+      },
+      {
+        "letter": "d",
+        "text": "Todas as combinações possíveis de condições foram testadas."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-26",
+    "exam": "C",
+    "number": "26",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.5.2",
+    "selectCount": 1,
+    "stem": "Qual técnica de teste de caixa branca exige que cada desvio de fluxo de controle (branch) seja exercitado tanto como verdadeiro quanto como falso?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cobertura de instruções (statement coverage)"
+      },
+      {
+        "letter": "b",
+        "text": "Cobertura de decisões (branch/decision coverage)"
+      },
+      {
+        "letter": "c",
+        "text": "Cobertura de caminhos (path coverage)"
+      },
+      {
+        "letter": "d",
+        "text": "Cobertura de condições (condition coverage)"
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-27",
+    "exam": "C",
+    "number": "27",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.6.1",
+    "selectCount": 1,
+    "stem": "Qual técnica de teste baseada em experiência utiliza a intuição e o conhecimento histórico de defeitos para antecipar onde os defeitos provavelmente ocorrerão?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste baseado em checklist"
+      },
+      {
+        "letter": "b",
+        "text": "Teste exploratório"
+      },
+      {
+        "letter": "c",
+        "text": "Suposição de erro (error guessing)"
+      },
+      {
+        "letter": "d",
+        "text": "Teste de transição de estado"
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-28",
+    "exam": "C",
+    "number": "28",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.6.2",
+    "selectCount": 1,
+    "stem": "Qual das seguintes afirmações sobre o teste exploratório é CORRETA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "O teste exploratório não pode ser conduzido com base em nenhuma documentação."
+      },
+      {
+        "letter": "b",
+        "text": "O teste exploratório é ad hoc e não pode ser gerenciado ou controlado."
+      },
+      {
+        "letter": "c",
+        "text": "No teste exploratório, o aprendizado, o projeto e a execução do teste ocorrem simultaneamente."
+      },
+      {
+        "letter": "d",
+        "text": "O teste exploratório só é eficaz quando realizado por testadores com mais de 5 anos de experiência."
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-29",
+    "exam": "C",
+    "number": "29",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "FL-4.1.1",
+    "selectCount": 2,
+    "stem": "Quais das DUAS afirmações a seguir descrevem corretamente técnicas de teste de caixa preta (black-box)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Derivadas da estrutura interna do componente ou sistema."
+      },
+      {
+        "letter": "b",
+        "text": "Baseadas na especificação do comportamento externo do sistema."
+      },
+      {
+        "letter": "c",
+        "text": "Incluem a técnica de partição de equivalência."
+      },
+      {
+        "letter": "d",
+        "text": "Incluem a técnica de cobertura de decisões."
+      },
+      {
+        "letter": "e",
+        "text": "Requerem acesso ao código-fonte do sistema."
+      }
+    ],
+    "correct": [
+      "b",
+      "c"
+    ]
+  },
+  {
+    "id": "C-30",
+    "exam": "C",
+    "number": "30",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "selectCount": 1,
+    "stem": "Qual das seguintes atividades faz parte do planejamento de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Executar os casos de teste e registrar os resultados."
+      },
+      {
+        "letter": "b",
+        "text": "Definir o escopo, a abordagem, os recursos e o cronograma do teste."
+      },
+      {
+        "letter": "c",
+        "text": "Comparar resultados obtidos com resultados esperados."
+      },
+      {
+        "letter": "d",
+        "text": "Criar os procedimentos de execução de teste."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-31",
+    "exam": "C",
+    "number": "31",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.1.2",
+    "selectCount": 1,
+    "stem": "Qual documento de teste descreve o escopo, os objetivos, os riscos assumidos, a abordagem e os critérios de entrada e saída para uma atividade de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Caso de teste"
+      },
+      {
+        "letter": "b",
+        "text": "Relatório de conclusão do teste"
+      },
+      {
+        "letter": "c",
+        "text": "Plano de teste"
+      },
+      {
+        "letter": "d",
+        "text": "Script de teste"
+      }
+    ],
+    "correct": [
+      "c"
+    ]
+  },
+  {
+    "id": "C-32",
+    "exam": "C",
+    "number": "32",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.2.1",
+    "selectCount": 1,
+    "stem": "Qual é a diferença entre um risco de produto e um risco de projeto no contexto de testes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Riscos de produto dizem respeito a possíveis falhas no software; riscos de projeto dizem respeito a fatores que podem comprometer o sucesso do projeto."
+      },
+      {
+        "letter": "b",
+        "text": "Riscos de produto são gerenciados pelo testador; riscos de projeto pelo gerente de projeto."
+      },
+      {
+        "letter": "c",
+        "text": "Riscos de produto ocorrem durante o desenvolvimento; riscos de projeto ocorrem após a entrega."
+      },
+      {
+        "letter": "d",
+        "text": "Não há diferença prática entre esses dois tipos de risco."
+      }
+    ],
+    "correct": [
+      "a"
+    ]
+  },
+  {
+    "id": "C-33",
+    "exam": "C",
+    "number": "33",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.2.2",
+    "selectCount": 1,
+    "stem": "Como a análise de risco influencia os testes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Permite que todos os requisitos sejam testados com a mesma prioridade."
+      },
+      {
+        "letter": "b",
+        "text": "Prioriza os esforços de teste em áreas de maior risco para maximizar a detecção de defeitos críticos."
+      },
+      {
+        "letter": "c",
+        "text": "Garante que todos os defeitos encontrados sejam corrigidos antes do lançamento."
+      },
+      {
+        "letter": "d",
+        "text": "Elimina a necessidade de testes de regressão."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-34",
+    "exam": "C",
+    "number": "34",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.3.1",
+    "selectCount": 1,
+    "stem": "Qual das seguintes métricas é mais útil para monitorar o progresso dos testes durante a execução?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Número de desenvolvedores alocados ao projeto."
+      },
+      {
+        "letter": "b",
+        "text": "Percentual de casos de teste executados e número de defeitos encontrados por severidade."
+      },
+      {
+        "letter": "c",
+        "text": "Complexidade ciclomática média do código."
+      },
+      {
+        "letter": "d",
+        "text": "Número total de linhas de código do sistema."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-35",
+    "exam": "C",
+    "number": "35",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.4.1",
+    "selectCount": 1,
+    "stem": "Qual é o principal propósito de um relatório de conclusão do teste (test completion report)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Listar detalhadamente todos os casos de teste executados."
+      },
+      {
+        "letter": "b",
+        "text": "Fornecer um resumo das atividades de teste e fornecer informações aos stakeholders para tomada de decisão."
+      },
+      {
+        "letter": "c",
+        "text": "Descrever os requisitos funcionais que foram testados."
+      },
+      {
+        "letter": "d",
+        "text": "Documentar todos os defeitos que precisam ser corrigidos na próxima versão."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-36",
+    "exam": "C",
+    "number": "36",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.5.1",
+    "selectCount": 1,
+    "stem": "Por que o gerenciamento de configuração é importante para as atividades de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Permite automatizar a execução de todos os casos de teste."
+      },
+      {
+        "letter": "b",
+        "text": "Garante que os artefatos de teste estejam relacionados à versão correta do item em teste."
+      },
+      {
+        "letter": "c",
+        "text": "Elimina a necessidade de rastreabilidade entre requisitos e casos de teste."
+      },
+      {
+        "letter": "d",
+        "text": "É necessário apenas para projetos com mais de 10 testadores."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-37",
+    "exam": "C",
+    "number": "37",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.1.3",
+    "selectCount": 1,
+    "stem": "Qual das seguintes afirmações sobre critérios de saída de teste (exit criteria) é CORRETA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Os critérios de saída definem quando os testes podem ser iniciados."
+      },
+      {
+        "letter": "b",
+        "text": "Os critérios de saída definem as condições que devem ser atendidas para encerrar uma atividade de teste."
+      },
+      {
+        "letter": "c",
+        "text": "Os critérios de saída são definidos apenas ao final do projeto."
+      },
+      {
+        "letter": "d",
+        "text": "Os critérios de saída aplicam-se somente ao teste de aceitação."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-38",
+    "exam": "C",
+    "number": "38",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "FL-5.6.1",
+    "selectCount": 2,
+    "stem": "Quais das DUAS opções a seguir são informações tipicamente incluídas em um plano de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Código-fonte do sistema em teste."
+      },
+      {
+        "letter": "b",
+        "text": "Escopo e objetivos do teste."
+      },
+      {
+        "letter": "c",
+        "text": "Resultados detalhados de cada caso de teste executado."
+      },
+      {
+        "letter": "d",
+        "text": "Riscos assumidos e abordagem de teste."
+      },
+      {
+        "letter": "e",
+        "text": "Lista de defeitos corrigidos pelo desenvolvedor."
+      }
+    ],
+    "correct": [
+      "b",
+      "d"
+    ]
+  },
+  {
+    "id": "C-39",
+    "exam": "C",
+    "number": "39",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "FL-6.1.1",
+    "selectCount": 1,
+    "stem": "Qual dos seguintes é um benefício direto da automação de testes de regressão?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Elimina completamente a necessidade de testadores humanos no projeto."
+      },
+      {
+        "letter": "b",
+        "text": "Permite executar suítes de regressão com maior frequência e velocidade, reduzindo o risco de quebras."
+      },
+      {
+        "letter": "c",
+        "text": "Garante que 100% do código seja coberto pelos testes."
+      },
+      {
+        "letter": "d",
+        "text": "Reduz o tempo de desenvolvimento de novas funcionalidades automaticamente."
+      }
+    ],
+    "correct": [
+      "b"
+    ]
+  },
+  {
+    "id": "C-40",
+    "exam": "C",
+    "number": "40",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "FL-6.2.1",
+    "selectCount": 1,
+    "stem": "Qual das seguintes afirmações sobre a introdução de ferramentas de automação de teste é VERDADEIRA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "A automação de testes sempre gera retorno imediato sobre o investimento desde o primeiro mês."
+      },
+      {
+        "letter": "b",
+        "text": "Ferramentas de automação são igualmente adequadas para todos os tipos e níveis de teste."
+      },
+      {
+        "letter": "c",
+        "text": "A introdução de automação requer um investimento inicial e os scripts precisam ser mantidos quando o sistema muda."
+      },
+      {
+        "letter": "d",
+        "text": "A automação de testes elimina a necessidade de atualizar os casos de teste após mudanças no sistema."
+      }
+    ],
+    "correct": [
+      "c"
+    ]
   }
 ]

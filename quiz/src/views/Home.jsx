@@ -20,16 +20,21 @@ export default function Home({ onStartModerator, onStartParticipant }) {
   return (
     <div className="app">
       <header className="header">
-        <h1>Simulado ISTQB CTFL — Multiplayer</h1>
+        <h1>Simulador Briático de Estudo</h1>
       </header>
       <div className="container">
-        <div className="panel">
-          <h2>Banco de simulados ISTQB CTFL 4.0 (PT-BR)</h2>
+        <div className="panel" style={{ textAlign: 'center' }}>
+          <img
+            src="/study/quiz/voce-tem-brio.png"
+            alt="Você tem Brio?"
+            style={{ maxWidth: '300px', borderRadius: '8px', marginBottom: '0.75rem' }}
+          />
+          <h2 style={{ marginTop: 0 }}>Estuda que a vida muda, porra!</h2>
           <p className="muted">
-            106 questões oficiais do exame de exemplo (Set A + Apêndice + Set B).
+            Banco de simulados ISTQB CTFL 4.0 (PT-BR) — questões oficiais + extras geradas.<br />
             Até 10 pessoas simultâneas via WebRTC P2P — sem servidor.
           </p>
-          <ul className="muted" style={{ marginTop: '0.5rem' }}>
+          <ul className="muted" style={{ marginTop: '0.5rem', textAlign: 'left' }}>
             <li>O moderador cria a sala e controla o ritmo (libera questão, libera resposta).</li>
             <li>Todos respondem em tempo real. O ranking aparece ao final.</li>
             <li>Tempo limite máximo: 60 minutos.</li>
