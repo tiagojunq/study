@@ -1,3 +1,5 @@
+import { chapterName } from '../lib/quiz.js'
+
 export default function QuestionDisplay({
   question,
   selected,
@@ -11,11 +13,18 @@ export default function QuestionDisplay({
   const selSet = new Set(selected || [])
 
   const canPick = !locked && !reveal
+  const points = question.points || 1
 
   return (
     <div>
       <div className="q-number">
-        Questão {question.exam}-{question.number}
+        <strong>Questão {question.exam}-{question.number}</strong>
+        {' • '}
+        {chapterName(question.chapter)}
+        {' • '}
+        <span style={{ color: 'var(--accent)' }}>
+          {points} {points === 1 ? 'ponto' : 'pontos'}
+        </span>
         <span className="tag" style={{ marginLeft: '0.5rem' }}>
           {selectCount === 2 ? 'Selecione DUAS' : 'Selecione UMA'}
         </span>

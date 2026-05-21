@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createClient } from '../lib/peer.js'
-import { formatTime, chapterName, scoreAnswer } from '../lib/quiz.js'
+import { formatTime } from '../lib/quiz.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
 
@@ -63,11 +63,6 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   const timerClass =
     remaining <= 60 ? 'timer danger' : remaining <= 300 ? 'timer warn' : 'timer'
 
-  const me = useMemo(() => {
-    if (!state || !myConnId) return null
-    return state.participants.find((p) => p.id === myConnId) || null
-  }, [state, myConnId])
-
   const iAnswered =
     state && state.answeredIds && state.answeredIds.includes(myConnId)
 
@@ -97,6 +92,45 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   }
 
   // ---- Status screens ------------------------------------------------
+  if (status === 'error') {
+    return (
+      <div className="app">
+        <header className="header">
+          <h1>Participante • {name}</h1>
+          <button className="ghost" onClick={onExit}>Sair</button>
+        </header>
+        <div className="container">
+          <div className="banner danger">
+            <strong>Não consegui conectar na sala {roomCode}.</strong>
+            <div style={{ marginTop: '0.5rem', fontWeight: 'normal' }}>
+              {errorMsg === 'peer-unavailable' && (
+                <>O código da sala não existe ou o moderador ainda não abriu a sala. Confira o código e tente de novo.</>
+              )}
+              {errorMsg === 'timeout' && (
+                <>O canal P2P (WebRTC) não foi estabelecido em 20s. Isso costuma acontecer em redes corporativas ou Wi-Fi com firewall agressivo. Tente em outra rede (ex.: 4G/5G do celular) ou peça ao moderador para usar outra rede.</>
+              )}
+              {errorMsg === 'network' && (
+                <>O navegador não conseguiu falar com o servidor de sinalização (PeerJS). Cheque sua conexão de internet.</>
+              )}
+              {errorMsg === 'browser-incompatible' && (
+                <>Este navegador não suporta WebRTC. Use Chrome, Firefox, Edge ou Safari recente.</>
+              )}
+              {errorMsg && !['peer-unavailable','timeout','network','browser-incompatible'].includes(errorMsg) && (
+                <>Detalhe técnico: <code>{errorMsg}</code></>
+              )}
+            </div>
+          </div>
+          <div className="row">
+            <button className="primary" onClick={() => window.location.reload()}>
+              Tentar novamente
+            </button>
+            <button className="ghost" onClick={onExit}>Voltar ao início</button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (status === 'connecting' || !state) {
     return (
       <div className="app">
@@ -108,12 +142,11 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
           <div className="banner info">
             <span className="spinner" /> Conectando à sala <strong>{roomCode}</strong>…
           </div>
-          {status === 'error' && (
-            <div className="banner danger">
-              Erro ao conectar ({errorMsg}). Verifique se o código está correto e
-              se o moderador já abriu a sala.
-            </div>
-          )}
+          <p className="muted" style={{ marginTop: '0.5rem' }}>
+            A conexão é peer-to-peer via WebRTC. Em redes corporativas ou Wi-Fi
+            público pode levar alguns segundos. Se demorar mais de 20s, mostro
+            um erro com sugestões.
+          </p>
         </div>
       </div>
     )
@@ -161,14 +194,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   return (
     <div className="app">
       <header className="header">
-        <h1>
-          Participante • {name}
-          {me && (
-            <span className="score-pill" style={{ marginLeft: '0.75rem' }}>
-              <strong>{me.score}</strong> pts
-            </span>
-          )}
-        </h1>
+        <h1>Participante • {name}</h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
@@ -207,7 +233,6 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
             <div className="panel">
               <div className="spread">
                 <div>
-                  <span className="tag">{chapterName(q.chapter)}</span>{' '}
                   <span className="muted">
                     Questão {state.currentIndex + 1} de {state.totalQuestions}
                   </span>
@@ -245,22 +270,6 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                     Resposta correta:{' '}
                     <strong>{q.correct.join(', ').toUpperCase()}</strong>
                   </p>
-                  {iAnswered ? (
-                    <p>
-                      Sua resposta:{' '}
-                      <strong>
-                        {(draft.length > 0 ? draft : []).join(', ').toUpperCase() || '—'}
-                      </strong>{' '}
-                      —{' '}
-                      {scoreAnswer(q, draft) === 1 ? (
-                        <span style={{ color: 'var(--ok)' }}>✓ Acertou (+1)</span>
-                      ) : (
-                        <span style={{ color: 'var(--danger)' }}>✗ Errou (0)</span>
-                      )}
-                    </p>
-                  ) : (
-                    <p className="muted">Você não respondeu a esta questão.</p>
-                  )}
                 </>
               )}
             </div>
