@@ -97,6 +97,45 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   }
 
   // ---- Status screens ------------------------------------------------
+  if (status === 'error') {
+    return (
+      <div className="app">
+        <header className="header">
+          <h1>Participante • {name}</h1>
+          <button className="ghost" onClick={onExit}>Sair</button>
+        </header>
+        <div className="container">
+          <div className="banner danger">
+            <strong>Não consegui conectar na sala {roomCode}.</strong>
+            <div style={{ marginTop: '0.5rem', fontWeight: 'normal' }}>
+              {errorMsg === 'peer-unavailable' && (
+                <>O código da sala não existe ou o moderador ainda não abriu a sala. Confira o código e tente de novo.</>
+              )}
+              {errorMsg === 'timeout' && (
+                <>O canal P2P (WebRTC) não foi estabelecido em 20s. Isso costuma acontecer em redes corporativas ou Wi-Fi com firewall agressivo. Tente em outra rede (ex.: 4G/5G do celular) ou peça ao moderador para usar outra rede.</>
+              )}
+              {errorMsg === 'network' && (
+                <>O navegador não conseguiu falar com o servidor de sinalização (PeerJS). Cheque sua conexão de internet.</>
+              )}
+              {errorMsg === 'browser-incompatible' && (
+                <>Este navegador não suporta WebRTC. Use Chrome, Firefox, Edge ou Safari recente.</>
+              )}
+              {errorMsg && !['peer-unavailable','timeout','network','browser-incompatible'].includes(errorMsg) && (
+                <>Detalhe técnico: <code>{errorMsg}</code></>
+              )}
+            </div>
+          </div>
+          <div className="row">
+            <button className="primary" onClick={() => window.location.reload()}>
+              Tentar novamente
+            </button>
+            <button className="ghost" onClick={onExit}>Voltar ao início</button>
+          </div>
+        </div>
+      </div>
+    )
+  }
+
   if (status === 'connecting' || !state) {
     return (
       <div className="app">
@@ -108,12 +147,11 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
           <div className="banner info">
             <span className="spinner" /> Conectando à sala <strong>{roomCode}</strong>…
           </div>
-          {status === 'error' && (
-            <div className="banner danger">
-              Erro ao conectar ({errorMsg}). Verifique se o código está correto e
-              se o moderador já abriu a sala.
-            </div>
-          )}
+          <p className="muted" style={{ marginTop: '0.5rem' }}>
+            A conexão é peer-to-peer via WebRTC. Em redes corporativas ou Wi-Fi
+            público pode levar alguns segundos. Se demorar mais de 20s, mostro
+            um erro com sugestões.
+          </p>
         </div>
       </div>
     )
