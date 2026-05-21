@@ -4,7 +4,6 @@ import {
   prepareQuestions,
   scoreAnswer,
   formatTime,
-  chapterName,
   MAX_PARTICIPANTS,
   MAX_DURATION_SECONDS,
 } from '../lib/quiz.js'
@@ -420,7 +419,6 @@ export default function ModeratorSession({ moderatorName, onExit }) {
             <div className="panel">
               <div className="spread">
                 <div>
-                  <span className="tag">{chapterName(currentQuestion.chapter)}</span>{' '}
                   <span className="muted">
                     Questão {currentIndex + 1} de {questions.length}
                   </span>
@@ -471,9 +469,6 @@ export default function ModeratorSession({ moderatorName, onExit }) {
                     >
                       <span className="dot" />
                       {p.name}{p.id === HOST_ID ? ' (você)' : ''}
-                      <span className="muted" style={{ marginLeft: 6 }}>
-                        {p.score} pts
-                      </span>
                     </span>
                   )
                 })}

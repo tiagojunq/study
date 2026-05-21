@@ -1,6 +1,6 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { createClient } from '../lib/peer.js'
-import { formatTime, chapterName, scoreAnswer } from '../lib/quiz.js'
+import { formatTime } from '../lib/quiz.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
 
@@ -62,11 +62,6 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   const remaining = Math.max(0, durationLimitSeconds - elapsedSeconds)
   const timerClass =
     remaining <= 60 ? 'timer danger' : remaining <= 300 ? 'timer warn' : 'timer'
-
-  const me = useMemo(() => {
-    if (!state || !myConnId) return null
-    return state.participants.find((p) => p.id === myConnId) || null
-  }, [state, myConnId])
 
   const iAnswered =
     state && state.answeredIds && state.answeredIds.includes(myConnId)
@@ -199,14 +194,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   return (
     <div className="app">
       <header className="header">
-        <h1>
-          Participante • {name}
-          {me && (
-            <span className="score-pill" style={{ marginLeft: '0.75rem' }}>
-              <strong>{me.score}</strong> pts
-            </span>
-          )}
-        </h1>
+        <h1>Participante • {name}</h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
@@ -245,7 +233,6 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
             <div className="panel">
               <div className="spread">
                 <div>
-                  <span className="tag">{chapterName(q.chapter)}</span>{' '}
                   <span className="muted">
                     Questão {state.currentIndex + 1} de {state.totalQuestions}
                   </span>
@@ -283,22 +270,6 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                     Resposta correta:{' '}
                     <strong>{q.correct.join(', ').toUpperCase()}</strong>
                   </p>
-                  {iAnswered ? (
-                    <p>
-                      Sua resposta:{' '}
-                      <strong>
-                        {(draft.length > 0 ? draft : []).join(', ').toUpperCase() || '—'}
-                      </strong>{' '}
-                      —{' '}
-                      {scoreAnswer(q, draft) === 1 ? (
-                        <span style={{ color: 'var(--ok)' }}>✓ Acertou (+1)</span>
-                      ) : (
-                        <span style={{ color: 'var(--danger)' }}>✗ Errou (0)</span>
-                      )}
-                    </p>
-                  ) : (
-                    <p className="muted">Você não respondeu a esta questão.</p>
-                  )}
                 </>
               )}
             </div>
