@@ -51,6 +51,11 @@ export default function QuestionDisplay({
             >
               <span className="letter">{opt.letter}</span>
               <span className="option-text">{opt.text}</span>
+              {reveal && question.explanations?.[opt.letter] && (
+                <span style={{ display: 'block', fontSize: '0.78rem', color: 'var(--muted)', marginTop: '0.25rem' }}>
+                  {question.explanations[opt.letter]}
+                </span>
+              )}
             </div>
           )
         })}
