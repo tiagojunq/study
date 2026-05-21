@@ -1,0 +1,520 @@
+import { useEffect, useMemo, useRef, useState } from 'react'
+import {
+  BANKS,
+  prepareQuestions,
+  scoreAnswer,
+  formatTime,
+  chapterName,
+  MAX_PARTICIPANTS,
+  MAX_DURATION_SECONDS,
+} from '../lib/quiz.js'
+import { createHost, newRoomCode } from '../lib/peer.js'
+import QuestionDisplay from '../components/QuestionDisplay.jsx'
+import Ranking from '../components/Ranking.jsx'
+
+const HOST_ID = 'host'
+
+export default function ModeratorSession({ moderatorName, onExit }) {
+  const [roomCode] = useState(() => newRoomCode())
+  const [peerStatus, setPeerStatus] = useState('connecting') // connecting | open | error
+  const [peerError, setPeerError] = useState(null)
+  const hostRef = useRef(null)
+
+  // Quiz config
+  const [bank, setBank] = useState('A_MAIN')
+  const [limit, setLimit] = useState(40)
+  const [shuffle, setShuffle] = useState(true)
+  const [durationMinutes, setDurationMinutes] = useState(60)
+
+  // Session state (host-owned)
+  const [phase, setPhase] = useState('lobby') // lobby | question | reveal | finished
+  const [questions, setQuestions] = useState([])
+  const [currentIndex, setCurrentIndex] = useState(-1)
+  const [participants, setParticipants] = useState([
+    {
+      id: HOST_ID,
+      name: moderatorName,
+      online: true,
+      role: 'moderator',
+      score: 0,
+      answeredCount: 0,
+    },
+  ])
+  // Map of participantId -> array of letters answered for the current question.
+  const [currentAnswers, setCurrentAnswers] = useState({})
+  const [startedAt, setStartedAt] = useState(null)
+  const [now, setNow] = useState(Date.now())
+  const [durationLimitSeconds, setDurationLimitSeconds] = useState(
+    MAX_DURATION_SECONDS,
+  )
+
+  // Local moderator's draft answer for current question (not yet committed).
+  const [hostDraft, setHostDraft] = useState([])
+
+  // --- PeerJS setup ----------------------------------------------------
+  useEffect(() => {
+    const host = createHost({
+      roomCode,
+      onOpen: () => setPeerStatus('open'),
+      onError: (err) => {
+        console.error('PeerJS host error', err)
+        setPeerStatus('error')
+        setPeerError(err && err.type ? err.type : 'erro de rede')
+      },
+      onConnection: (conn) => {
+        // Wire data handler for this client connection. The connection is
+        // already in the host's `connections` map, so the next broadcast
+        // (triggered when the client sends `join`) reaches it.
+        conn.on('data', (raw) => {
+          let msg
+          try { msg = typeof raw === 'string' ? JSON.parse(raw) : raw } catch { msg = raw }
+          handleClientMessage(conn.connectionId, msg, conn)
+        })
+      },
+    })
+    hostRef.current = host
+    return () => host.destroy()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [roomCode])
+
+  // Tick every second for the timer.
+  useEffect(() => {
+    const id = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(id)
+  }, [])
+
+  // Auto-finalize at the duration limit.
+  useEffect(() => {
+    if (!startedAt || phase === 'finished') return
+    const elapsed = (now - startedAt) / 1000
+    if (elapsed >= durationLimitSeconds) finalize()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [now])
+
+  // --- State broadcast helpers ----------------------------------------
+  // Build a snapshot suitable for clients. Public state never includes
+  // the moderator's draft answer.
+  const buildSnapshot = (override = {}) => {
+    const merged = {
+      phase,
+      currentIndex,
+      currentQuestion:
+        currentIndex >= 0 && currentIndex < questions.length
+          ? questions[currentIndex]
+          : null,
+      participants,
+      currentAnswers, // public reveals only after `reveal` phase, but
+      // we send a sanitized view for the lobby UI badge ("answered")
+      answeredIds: Object.keys(currentAnswers),
+      totalQuestions: questions.length,
+      startedAt,
+      durationLimitSeconds,
+      revealCorrect:
+        phase === 'reveal' && currentIndex >= 0
+          ? questions[currentIndex]?.correct ?? null
+          : null,
+      ...override,
+    }
+    // strip server-only fields the clients don't need
+    const { currentAnswers: _full, ...publicSnap } = merged
+    return publicSnap
+  }
+
+  const broadcastState = (override) => {
+    hostRef.current?.broadcast({ type: 'state', state: buildSnapshot(override) })
+  }
+
+  // Re-broadcast whenever phase / index / participants / answeredIds change.
+  useEffect(() => {
+    if (peerStatus !== 'open') return
+    broadcastState()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase, currentIndex, participants, currentAnswers, questions, startedAt])
+
+  // --- Client message handler -----------------------------------------
+  const handleClientMessage = (connId, msg, conn) => {
+    if (!msg || typeof msg !== 'object') return
+    if (msg.type === 'join') {
+      const cleanName = String(msg.name || '').trim().slice(0, 40) || 'Convidado'
+      setParticipants((prev) => {
+        // Reject if room is full (excluding the moderator).
+        const nonHost = prev.filter((p) => p.id !== HOST_ID)
+        if (nonHost.length >= MAX_PARTICIPANTS - 1) {
+          try { conn.send(JSON.stringify({ type: 'rejected', reason: 'full' })) } catch (e) {}
+          return prev
+        }
+        if (prev.some((p) => p.id === connId)) {
+          return prev.map((p) => (p.id === connId ? { ...p, online: true } : p))
+        }
+        return [
+          ...prev,
+          {
+            id: connId,
+            name: cleanName,
+            online: true,
+            role: 'participant',
+            score: 0,
+            answeredCount: 0,
+          },
+        ]
+      })
+    } else if (msg.type === 'answer') {
+      // Accept only if it matches the current question and we're in `question` phase.
+      if (phaseRef.current !== 'question') return
+      if (msg.questionIndex !== currentIndexRef.current) return
+      const letters = Array.isArray(msg.letters)
+        ? msg.letters.filter((l) => typeof l === 'string')
+        : []
+      setCurrentAnswers((prev) => {
+        if (prev[connId]) return prev // first answer wins; locked
+        return { ...prev, [connId]: letters }
+      })
+    }
+  }
+
+  // We need refs for phase / currentIndex because handleClientMessage is
+  // captured at mount time (closure over initial values).
+  const phaseRef = useRef(phase)
+  const currentIndexRef = useRef(currentIndex)
+  useEffect(() => { phaseRef.current = phase }, [phase])
+  useEffect(() => { currentIndexRef.current = currentIndex }, [currentIndex])
+
+  // --- Moderator actions ----------------------------------------------
+  const handleStart = () => {
+    const limitNum = Math.max(1, Math.min(106, Number(limit) || 1))
+    const seed = Math.floor(Math.random() * 1e9)
+    const qs = prepareQuestions({ bank, limit: limitNum, shuffle, seed })
+    if (qs.length === 0) return
+    const dur = Math.max(
+      60,
+      Math.min(MAX_DURATION_SECONDS, Number(durationMinutes) * 60 || MAX_DURATION_SECONDS),
+    )
+    setQuestions(qs)
+    setDurationLimitSeconds(dur)
+    setCurrentAnswers({})
+    setHostDraft([])
+    setCurrentIndex(0)
+    setStartedAt(Date.now())
+    setPhase('question')
+  }
+
+  const toggleHostDraft = (letter) => {
+    const q = questions[currentIndex]
+    if (!q) return
+    setHostDraft((prev) => {
+      const has = prev.includes(letter)
+      if (q.selectCount === 1) {
+        return has ? [] : [letter]
+      }
+      if (has) return prev.filter((l) => l !== letter)
+      if (prev.length >= q.selectCount) {
+        // replace oldest
+        return [...prev.slice(1), letter]
+      }
+      return [...prev, letter]
+    })
+  }
+
+  const handleReveal = () => {
+    const q = questions[currentIndex]
+    if (!q) return
+    // Commit the moderator's draft answer if not already.
+    const allAnswers = { ...currentAnswers }
+    if (!allAnswers[HOST_ID]) {
+      allAnswers[HOST_ID] = [...hostDraft]
+    }
+    // Score every participant for this question.
+    setParticipants((prev) =>
+      prev.map((p) => {
+        const ans = allAnswers[p.id]
+        if (!ans) return p
+        const earned = scoreAnswer(q, ans)
+        return {
+          ...p,
+          score: p.score + earned,
+          answeredCount: p.answeredCount + 1,
+        }
+      }),
+    )
+    setCurrentAnswers(allAnswers)
+    setPhase('reveal')
+  }
+
+  const handleNext = () => {
+    if (currentIndex + 1 >= questions.length) {
+      finalize()
+      return
+    }
+    setCurrentIndex((i) => i + 1)
+    setCurrentAnswers({})
+    setHostDraft([])
+    setPhase('question')
+  }
+
+  const finalize = () => {
+    // If we finalize mid-question, commit whatever answers have been
+    // submitted so participants don't silently lose points.
+    if (phase === 'question' && currentIndex >= 0 && currentIndex < questions.length) {
+      const q = questions[currentIndex]
+      const allAnswers = { ...currentAnswers }
+      if (!allAnswers[HOST_ID] && hostDraft.length > 0) {
+        allAnswers[HOST_ID] = [...hostDraft]
+      }
+      setParticipants((prev) =>
+        prev.map((p) => {
+          const ans = allAnswers[p.id]
+          if (!ans) return p
+          const earned = scoreAnswer(q, ans)
+          return {
+            ...p,
+            score: p.score + earned,
+            answeredCount: p.answeredCount + 1,
+          }
+        }),
+      )
+    }
+    setPhase('finished')
+  }
+
+  // --- Derived UI ------------------------------------------------------
+  const currentQuestion = currentIndex >= 0 ? questions[currentIndex] : null
+  const elapsedSeconds = startedAt ? Math.floor((now - startedAt) / 1000) : 0
+  const remaining = Math.max(0, durationLimitSeconds - elapsedSeconds)
+  const timerClass =
+    remaining <= 60 ? 'timer danger' : remaining <= 300 ? 'timer warn' : 'timer'
+
+  const answeredIds = useMemo(() => new Set(Object.keys(currentAnswers)), [
+    currentAnswers,
+  ])
+
+  const nonHostParticipants = participants.filter((p) => p.id !== HOST_ID)
+
+  return (
+    <div className="app">
+      <header className="header">
+        <h1>Moderador • Simulado ISTQB CTFL</h1>
+        <div className="meta">
+          {startedAt && (
+            <span className={timerClass}>
+              ⏱ {formatTime(elapsedSeconds)} / {formatTime(durationLimitSeconds)}
+            </span>
+          )}
+          <button className="ghost" onClick={onExit}>Sair</button>
+        </div>
+      </header>
+
+      <div className="container">
+        {peerStatus === 'connecting' && (
+          <div className="banner info">
+            <span className="spinner" /> Conectando ao broker P2P…
+          </div>
+        )}
+        {peerStatus === 'error' && (
+          <div className="banner danger">
+            Erro ao iniciar a sessão ({peerError}). Tente recarregar a página.
+          </div>
+        )}
+
+        {phase === 'lobby' && (
+          <>
+            <div className="panel">
+              <h2>Sala criada</h2>
+              <p>Compartilhe o código com os participantes:</p>
+              <div className="row" style={{ alignItems: 'center', marginTop: '0.5rem' }}>
+                <span className="room-code">{roomCode}</span>
+                <button
+                  onClick={() => navigator.clipboard?.writeText(roomCode)}
+                  className="ghost"
+                >Copiar código</button>
+                <button
+                  onClick={() => {
+                    const url = new URL(window.location.href)
+                    url.searchParams.set('sala', roomCode)
+                    navigator.clipboard?.writeText(url.toString())
+                  }}
+                  className="ghost"
+                >Copiar link</button>
+              </div>
+              <p style={{ marginTop: '0.75rem' }}>
+                Limite de {MAX_PARTICIPANTS - 1} participantes (mais o moderador).
+              </p>
+            </div>
+
+            <div className="panel">
+              <h2>Participantes ({nonHostParticipants.length}/{MAX_PARTICIPANTS - 1})</h2>
+              {nonHostParticipants.length === 0 ? (
+                <p className="muted">Aguardando ninguém entrar…</p>
+              ) : (
+                <div className="participants">
+                  {nonHostParticipants.map((p) => (
+                    <span key={p.id} className={`chip ${p.online ? 'online' : ''}`}>
+                      <span className="dot" /> {p.name}
+                    </span>
+                  ))}
+                </div>
+              )}
+              <div className="divider" />
+              <p className="muted">Você como moderador: <strong>{moderatorName}</strong></p>
+            </div>
+
+            <div className="panel">
+              <h2>Configuração do simulado</h2>
+              <div className="grid-2">
+                <label>
+                  Banco de questões
+                  <select value={bank} onChange={(e) => setBank(e.target.value)}>
+                    {Object.values(BANKS).map((b) => (
+                      <option key={b.id} value={b.id}>{b.label}</option>
+                    ))}
+                  </select>
+                </label>
+                <label>
+                  Quantidade de questões
+                  <input
+                    type="number"
+                    min={1}
+                    max={106}
+                    value={limit}
+                    onChange={(e) => setLimit(e.target.value)}
+                  />
+                </label>
+                <label>
+                  Tempo limite (minutos, máx. 60)
+                  <input
+                    type="number"
+                    min={1}
+                    max={60}
+                    value={durationMinutes}
+                    onChange={(e) => setDurationMinutes(e.target.value)}
+                  />
+                </label>
+                <label style={{ flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
+                  <input
+                    type="checkbox"
+                    checked={shuffle}
+                    onChange={(e) => setShuffle(e.target.checked)}
+                    style={{ width: 'auto' }}
+                  />
+                  <span>Embaralhar ordem das questões</span>
+                </label>
+              </div>
+              <div className="divider" />
+              <div className="row">
+                <button
+                  className="primary"
+                  onClick={handleStart}
+                  disabled={peerStatus !== 'open'}
+                >
+                  Iniciar simulado
+                </button>
+                <span className="muted" style={{ alignSelf: 'center' }}>
+                  Você pode iniciar mesmo com 0 participantes (modo solo).
+                </span>
+              </div>
+            </div>
+          </>
+        )}
+
+        {(phase === 'question' || phase === 'reveal') && currentQuestion && (
+          <>
+            <div className="panel">
+              <div className="spread">
+                <div>
+                  <span className="tag">{chapterName(currentQuestion.chapter)}</span>{' '}
+                  <span className="muted">
+                    Questão {currentIndex + 1} de {questions.length}
+                  </span>
+                </div>
+                <div className="row">
+                  {phase === 'question' && (
+                    <button className="primary" onClick={handleReveal}>
+                      Mostrar resposta
+                    </button>
+                  )}
+                  {phase === 'reveal' && (
+                    <button className="primary" onClick={handleNext}>
+                      {currentIndex + 1 >= questions.length
+                        ? 'Encerrar e ver ranking'
+                        : 'Próxima questão →'}
+                    </button>
+                  )}
+                  <button className="ghost" onClick={finalize}>
+                    Encerrar agora
+                  </button>
+                </div>
+              </div>
+              <div className="divider" />
+              <QuestionDisplay
+                question={currentQuestion}
+                selected={
+                  phase === 'reveal' ? currentAnswers[HOST_ID] || [] : hostDraft
+                }
+                onToggle={toggleHostDraft}
+                locked={false}
+                reveal={phase === 'reveal'}
+              />
+            </div>
+
+            <div className="panel">
+              <h2>
+                Quem respondeu ({answeredIds.size}/{participants.length})
+              </h2>
+              <div className="participants">
+                {participants.map((p) => {
+                  const answered = p.id === HOST_ID
+                    ? phase === 'reveal' || hostDraft.length > 0
+                    : answeredIds.has(p.id)
+                  return (
+                    <span
+                      key={p.id}
+                      className={`chip ${answered ? 'answered' : p.online ? 'online' : ''}`}
+                    >
+                      <span className="dot" />
+                      {p.name}{p.id === HOST_ID ? ' (você)' : ''}
+                      <span className="muted" style={{ marginLeft: 6 }}>
+                        {p.score} pts
+                      </span>
+                    </span>
+                  )
+                })}
+              </div>
+              {phase === 'question' && (
+                <p className="muted" style={{ marginTop: '0.75rem' }}>
+                  Marque sua resposta e clique em <strong>Mostrar resposta</strong> para revelar
+                  o gabarito a todos.
+                </p>
+              )}
+              {phase === 'reveal' && (
+                <p className="muted" style={{ marginTop: '0.75rem' }}>
+                  Resposta correta:{' '}
+                  <strong>{currentQuestion.correct.join(', ').toUpperCase()}</strong>
+                </p>
+              )}
+            </div>
+          </>
+        )}
+
+        {phase === 'finished' && (
+          <>
+            <div className="panel">
+              <h2>Ranking final</h2>
+              <p className="muted">
+                {questions.length} questões • duração {formatTime(elapsedSeconds)}
+              </p>
+              <Ranking
+                participants={participants}
+                totalQuestions={questions.length}
+                myId={HOST_ID}
+              />
+            </div>
+            <div className="row">
+              <button className="primary" onClick={onExit}>
+                Voltar ao início
+              </button>
+            </div>
+          </>
+        )}
+      </div>
+    </div>
+  )
+}
