@@ -10,6 +10,7 @@ import {
 import { createHost, newRoomCode } from '../lib/peer.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
+import ThemeToggle from '../components/ThemeToggle.jsx'
 
 const HOST_ID = 'host'
 
@@ -299,6 +300,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
               ⏱ {formatTime(elapsedSeconds)} / {formatTime(durationLimitSeconds)}
             </span>
           )}
+          <ThemeToggle />
           <button className="ghost" onClick={onExit}>Sair</button>
         </div>
       </header>

@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import ThemeToggle from '../components/ThemeToggle.jsx'
 
 export default function Home({ onStartModerator, onStartParticipant }) {
   const [name, setName] = useState('')
@@ -21,6 +22,7 @@ export default function Home({ onStartModerator, onStartParticipant }) {
     <div className="app">
       <header className="header">
         <h1>Simulador Briático de Estudo</h1>
+        <ThemeToggle />
       </header>
       <div className="container">
         <div className="panel" style={{ textAlign: 'center' }}>

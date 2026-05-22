@@ -3,6 +3,7 @@ import { createClient } from '../lib/peer.js'
 import { formatTime } from '../lib/quiz.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
+import ThemeToggle from '../components/ThemeToggle.jsx'
 
 export default function ParticipantSession({ roomCode, name, onExit }) {
   const [status, setStatus] = useState('connecting') // connecting | open | rejected | closed | error
@@ -98,7 +99,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
       <div className="app">
         <header className="header">
           <h1>Participante • {name}</h1>
-          <button className="ghost" onClick={onExit}>Sair</button>
+          <div className="meta">
+            <ThemeToggle />
+            <button className="ghost" onClick={onExit}>Sair</button>
+          </div>
         </header>
         <div className="container">
           <div className="banner danger">
@@ -137,7 +141,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
       <div className="app">
         <header className="header">
           <h1>Participante • {name}</h1>
-          <button className="ghost" onClick={onExit}>Sair</button>
+          <div className="meta">
+            <ThemeToggle />
+            <button className="ghost" onClick={onExit}>Sair</button>
+          </div>
         </header>
         <div className="container">
           <div className="banner info">
@@ -156,7 +163,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   if (status === 'rejected') {
     return (
       <div className="app">
-        <header className="header"><h1>Participante</h1></header>
+        <header className="header">
+          <h1>Participante</h1>
+          <ThemeToggle />
+        </header>
         <div className="container">
           <div className="banner warn">
             Não foi possível entrar: sala cheia (máximo de 9 participantes além
@@ -171,7 +181,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   if (status === 'closed') {
     return (
       <div className="app">
-        <header className="header"><h1>Participante</h1></header>
+        <header className="header">
+          <h1>Participante</h1>
+          <ThemeToggle />
+        </header>
         <div className="container">
           <div className="banner warn">
             A conexão com o moderador foi encerrada.
@@ -202,6 +215,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
               ⏱ {formatTime(elapsedSeconds)} / {formatTime(durationLimitSeconds)}
             </span>
           )}
+          <ThemeToggle />
           <button className="ghost" onClick={onExit}>Sair</button>
         </div>
       </header>
