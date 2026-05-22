@@ -214,6 +214,24 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
       return next
     })
 
+  const clampLimitOnInput = (raw, max) => {
+    if (raw === '') return ''
+    const n = parseInt(raw, 10)
+    if (isNaN(n)) return ''
+    if (n < 1) return '1'
+    if (n > max) return String(max)
+    return String(n)
+  }
+
+  // Auto-clamp the limit when the available count shrinks (e.g. user
+  // unchecks a chapter so fewer questions are available than the
+  // currently typed limit).
+  useEffect(() => {
+    if (availableQCount <= 0) return
+    const n = Number(limit)
+    if (n > availableQCount) setLimit(String(availableQCount))
+  }, [availableQCount]) // eslint-disable-line react-hooks/exhaustive-deps
+
   // --- Moderator actions ----------------------------------------------
   const handleStart = () => {
     const seed = Math.floor(Math.random() * 1e9)
@@ -479,7 +497,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                       min={1}
                       max={ALL_QUESTIONS.length}
                       value={limit}
-                      onChange={(e) => setLimit(e.target.value)}
+                      onChange={(e) => setLimit(clampLimitOnInput(e.target.value, ALL_QUESTIONS.length))}
                     />
                   </label>
                   <p className="muted" style={{ fontSize: '0.83rem', marginTop: '0.3rem' }}>
@@ -521,7 +539,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                       min={1}
                       max={availableQCount || 1}
                       value={limit}
-                      onChange={(e) => setLimit(e.target.value)}
+                      onChange={(e) => setLimit(clampLimitOnInput(e.target.value, availableQCount || 1))}
                     />
                   </label>
                   <p className="muted" style={{ fontSize: '0.83rem', marginTop: '0.3rem' }}>
