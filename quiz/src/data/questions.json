@@ -5444,5 +5444,3710 @@
       "c": "Correta. Introduzir automação requer investimento inicial significativo (ferramenta, treinamento, criação de scripts) e manutenção contínua quando o sistema evolui.",
       "d": "Incorreta. Scripts de automação precisam ser atualizados quando a interface ou comportamento do sistema muda; a automação não elimina essa necessidade."
     }
+  },
+  {
+    "id": "D-1",
+    "exam": "D",
+    "number": "1",
+    "chapter": 1,
+    "lo": "FL-1.1.1",
+    "isAppendix": false,
+    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste VÁLIDO segundo o ISTQB?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Garantir que o app esteja 100% livre de defeitos antes do lançamento."
+      },
+      {
+        "letter": "b",
+        "text": "Prevenir defeitos avaliando os requisitos e identificando ambiguidades antes da codificação."
+      },
+      {
+        "letter": "c",
+        "text": "Substituir as atividades de garantia da qualidade (QA) realizadas pela equipe."
+      },
+      {
+        "letter": "d",
+        "text": "Demonstrar formalmente que o software é absolutamente seguro contra qualquer ataque."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Provar ausência de defeitos é impossível (1º princípio ISTQB).",
+      "b": "Correta. Prevenir defeitos pela revisão antecipada de requisitos é um objetivo legítimo do teste, alinhado ao princípio de teste antecipado.",
+      "c": "Incorreta. O teste é parte do QA, não o substitui.",
+      "d": "Incorreta. Nenhum teste prova segurança absoluta; o teste reduz risco, não o elimina."
+    }
+  },
+  {
+    "id": "D-2",
+    "exam": "D",
+    "number": "2",
+    "chapter": 1,
+    "lo": "FL-1.1.2",
+    "isAppendix": false,
+    "stem": "Na equipe da 'Livraria Online Letrarte', Marina identifica que ao buscar por título com acento, o sistema retorna lista vazia. João, desenvolvedor, então localiza no código a linha que filtra os caracteres e a corrige. Qual afirmação é VERDADEIRA sobre as atividades de Marina e João?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ambas são atividades de teste, pois envolvem encontrar defeitos."
+      },
+      {
+        "letter": "b",
+        "text": "Ambas são atividades de depuração, pois há correção envolvida."
+      },
+      {
+        "letter": "c",
+        "text": "Marina realizou teste (encontrou uma falha); João realizou depuração (localizou e corrigiu o defeito)."
+      },
+      {
+        "letter": "d",
+        "text": "Marina realizou depuração e João realizou teste de confirmação."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. A correção do código não faz parte do teste.",
+      "b": "Incorreta. Encontrar a falha é teste, não depuração.",
+      "c": "Correta. Teste identifica falhas; depuração localiza causa-raiz e corrige o defeito subjacente.",
+      "d": "Incorreta. Marina identificou a falha (teste); João depurou. Teste de confirmação seria reexecutar após correção."
+    }
+  },
+  {
+    "id": "D-3",
+    "exam": "D",
+    "number": "3",
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "isAppendix": false,
+    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste TODAS as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio ISTQB esse gerente está ignorando?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Testes mostram a presença de defeitos, não sua ausência."
+      },
+      {
+        "letter": "b",
+        "text": "Testes exaustivos são impossíveis."
+      },
+      {
+        "letter": "c",
+        "text": "Testes antecipados economizam tempo e dinheiro."
+      },
+      {
+        "letter": "d",
+        "text": "Defeitos se agrupam."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Esse princípio refere-se ao que o teste pode demonstrar, não à viabilidade de cobrir todas as combinações.",
+      "b": "Correta. Testar todas as combinações é inviável; usa-se priorização por risco e técnicas adequadas (2º princípio).",
+      "c": "Incorreta. Princípio válido, mas não é o que está sendo violado aqui.",
+      "d": "Incorreta. O agrupamento de defeitos não justifica o pedido do gerente."
+    }
+  },
+  {
+    "id": "D-4",
+    "exam": "D",
+    "number": "4",
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "isAppendix": false,
+    "stem": "Após meses executando o mesmo conjunto de regressão automatizado no 'Sistema de Reservas Hoteleiras Pousadinha', a equipe nota que nenhum defeito novo está sendo encontrado, mesmo com mudanças significativas no código. Qual princípio explica esse fenômeno?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Paradoxo do pesticida."
+      },
+      {
+        "letter": "b",
+        "text": "Agrupamento de defeitos."
+      },
+      {
+        "letter": "c",
+        "text": "Ausência de erros é uma falácia."
+      },
+      {
+        "letter": "d",
+        "text": "Testes dependem do contexto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Casos de teste repetidos perdem eficácia ao longo do tempo (4º princípio); precisam ser revisados/atualizados.",
+      "b": "Incorreta. Refere-se à concentração de defeitos em módulos específicos.",
+      "c": "Incorreta. Refere-se à ideia de que ausência de defeitos não significa software útil.",
+      "d": "Incorreta. Refere-se à variabilidade do teste conforme contexto, não à perda de eficácia."
+    }
+  },
+  {
+    "id": "D-5",
+    "exam": "D",
+    "number": "5",
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "isAppendix": false,
+    "stem": "A equipe da 'EduTech Cursos' entregou um sistema com zero defeitos abertos, mas os usuários reclamaram que ele não atende às necessidades reais de aprendizado. Qual princípio ISTQB foi violado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Defeitos se agrupam."
+      },
+      {
+        "letter": "b",
+        "text": "Testes antecipados economizam tempo e dinheiro."
+      },
+      {
+        "letter": "c",
+        "text": "Ausência de erros é uma falácia."
+      },
+      {
+        "letter": "d",
+        "text": "Testes mostram a presença de defeitos, não sua ausência."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não há relação com o problema descrito.",
+      "b": "Incorreta. O princípio fala sobre antecipar testes, não sobre adequação ao usuário.",
+      "c": "Correta. Software sem defeitos pode ainda não atender às expectativas/necessidades reais — esta é a 'falácia da ausência de erros' (7º princípio).",
+      "d": "Incorreta. Refere-se à limitação do teste como prova; o caso descrito mostra inadequação ao usuário."
+    }
+  },
+  {
+    "id": "D-6",
+    "exam": "D",
+    "number": "6",
+    "chapter": 1,
+    "lo": "FL-1.3.1",
+    "isAppendix": false,
+    "stem": "Qual sequência representa CORRETAMENTE as principais atividades de teste, na ordem em que normalmente ocorrem?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Implementação, planejamento, análise, execução, design, conclusão."
+      },
+      {
+        "letter": "b",
+        "text": "Planejamento, monitoramento e controle, análise, design, implementação, execução, conclusão."
+      },
+      {
+        "letter": "c",
+        "text": "Análise, design, planejamento, execução, monitoramento, conclusão."
+      },
+      {
+        "letter": "d",
+        "text": "Planejamento, execução, design, análise, conclusão, monitoramento."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. A ordem está fora do fluxo lógico definido pelo ISTQB.",
+      "b": "Correta. Esta é a sequência típica das atividades de teste; monitoramento/controle ocorre em paralelo.",
+      "c": "Incorreta. Planejamento deve preceder análise e design.",
+      "d": "Incorreta. Execução não vem antes de design e análise."
+    }
+  },
+  {
+    "id": "D-7",
+    "exam": "D",
+    "number": "7",
+    "chapter": 1,
+    "lo": "FL-1.3.1",
+    "isAppendix": false,
+    "stem": "Durante a atividade de DESIGN de teste do projeto 'BibliotecaCloud', qual produto de trabalho é tipicamente criado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Plano de teste."
+      },
+      {
+        "letter": "b",
+        "text": "Relatório de progresso do teste."
+      },
+      {
+        "letter": "c",
+        "text": "Casos de teste e cobertura de condições de teste."
+      },
+      {
+        "letter": "d",
+        "text": "Relatório de fechamento do teste."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. O plano de teste é produzido durante o planejamento.",
+      "b": "Incorreta. Relatórios de progresso fazem parte do monitoramento/controle.",
+      "c": "Correta. Na atividade de design, condições de teste são detalhadas em casos de teste concretos.",
+      "d": "Incorreta. Relatório de fechamento é produto da atividade de conclusão."
+    }
+  },
+  {
+    "id": "D-8",
+    "exam": "D",
+    "number": "8",
+    "chapter": 1,
+    "lo": "FL-1.4.1",
+    "isAppendix": false,
+    "stem": "Em uma equipe ágil que desenvolve uma 'Plataforma de Telemedicina', qual responsabilidade é tipicamente do LÍDER DE TESTE (test manager)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Executar casos de teste manuais e registrar defeitos."
+      },
+      {
+        "letter": "b",
+        "text": "Codificar scripts de automação para a equipe."
+      },
+      {
+        "letter": "c",
+        "text": "Planejar o teste, definir abordagem e alocar recursos."
+      },
+      {
+        "letter": "d",
+        "text": "Aprovar formalmente o release em nome do cliente."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Execução é tipicamente atribuição de testadores.",
+      "b": "Incorreta. Programar automação é função técnica do testador/automatizador.",
+      "c": "Correta. O líder de teste é responsável pelo planejamento, abordagem, recursos e monitoramento.",
+      "d": "Incorreta. Aprovação formal cabe ao patrocinador/cliente, não ao líder de teste."
+    }
+  },
+  {
+    "id": "D-9",
+    "exam": "D",
+    "number": "9",
+    "chapter": 1,
+    "lo": "FL-1.4.1",
+    "isAppendix": false,
+    "stem": "Qual conjunto de habilidades é MAIS importante para um testador eficaz, segundo o ISTQB?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Apenas conhecimento técnico profundo em automação."
+      },
+      {
+        "letter": "b",
+        "text": "Conhecimento do domínio, pensamento crítico, habilidades de comunicação e atenção aos detalhes."
+      },
+      {
+        "letter": "c",
+        "text": "Apenas certificação ISTQB e experiência em frameworks específicos."
+      },
+      {
+        "letter": "d",
+        "text": "Habilidades exclusivas de programação em linguagens de baixo nível."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Apenas técnica não basta; comunicação e domínio são igualmente cruciais.",
+      "b": "Correta. O ISTQB destaca uma combinação de habilidades técnicas e interpessoais.",
+      "c": "Incorreta. Certificação não substitui habilidades comportamentais e de domínio.",
+      "d": "Incorreta. Programação de baixo nível raramente é requisito para testadores."
+    }
+  },
+  {
+    "id": "D-10",
+    "exam": "D",
+    "number": "10",
+    "chapter": 1,
+    "lo": "FL-1.5.1",
+    "isAppendix": false,
+    "stem": "Qual característica MELHOR descreve o 'mindset de teste' (testing mindset) em comparação ao 'mindset de desenvolvimento'?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "O mindset de teste foca em criar funcionalidades; o de desenvolvimento, em mantê-las."
+      },
+      {
+        "letter": "b",
+        "text": "O mindset de teste é mais crítico e questionador; o de desenvolvimento é mais construtivo."
+      },
+      {
+        "letter": "c",
+        "text": "Ambos são idênticos e intercambiáveis."
+      },
+      {
+        "letter": "d",
+        "text": "O mindset de teste evita colaboração; o de desenvolvimento promove trabalho em equipe."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Inverte os papéis: desenvolvimento cria; teste investiga.",
+      "b": "Correta. Testadores tendem a ser críticos/questionadores, enquanto desenvolvedores tendem a focar em construir soluções.",
+      "c": "Incorreta. Os mindsets são complementares, não idênticos.",
+      "d": "Incorreta. Bom teste exige colaboração; o ISTQB ressalta isso."
+    }
+  },
+  {
+    "id": "D-11",
+    "exam": "D",
+    "number": "11",
+    "chapter": 1,
+    "lo": "FL-1.1.1",
+    "isAppendix": false,
+    "stem": "Um desenvolvedor do 'App de Entregas Rapidex' digitou 'TAX = 0.5' quando deveria ser 'TAX = 0.05'. Ao calcular o frete, o aplicativo cobra 10x o valor esperado, gerando reclamações dos clientes. Como classificamos cada elemento desse cenário?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "A digitação errada é uma falha; o cálculo incorreto, um defeito; a reclamação, um erro."
+      },
+      {
+        "letter": "b",
+        "text": "A digitação errada é um erro; a linha incorreta no código, um defeito; o cálculo errado exibido, uma falha."
+      },
+      {
+        "letter": "c",
+        "text": "Todos são defeitos, pois envolvem o sistema."
+      },
+      {
+        "letter": "d",
+        "text": "A digitação errada é um defeito; o cálculo errado, um erro; a falha é a reclamação do cliente."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Confunde os conceitos.",
+      "b": "Correta. Erro é a ação humana, defeito é a falha estática no código/produto, falha é a manifestação observável.",
+      "c": "Incorreta. Cada conceito tem definição distinta no ISTQB.",
+      "d": "Incorreta. Reclamação de cliente não é definida como falha pelo ISTQB."
+    }
+  },
+  {
+    "id": "D-12",
+    "exam": "D",
+    "number": "12",
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "isAppendix": false,
+    "stem": "A equipe do sistema 'GestãoEscolar+' identificou que 70% dos defeitos encontrados nos últimos releases estavam no módulo de boletins. Como devem priorizar os testes do próximo release?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Reduzir o teste no módulo de boletins, pois já foi muito testado."
+      },
+      {
+        "letter": "b",
+        "text": "Distribuir os testes igualmente entre todos os módulos."
+      },
+      {
+        "letter": "c",
+        "text": "Concentrar mais esforço no módulo de boletins, pois defeitos tendem a se agrupar."
+      },
+      {
+        "letter": "d",
+        "text": "Ignorar histórico e basear-se apenas na intuição."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Reduzir foco onde há histórico de defeitos contraria o princípio do agrupamento.",
+      "b": "Incorreta. Distribuição igualitária ignora dados históricos.",
+      "c": "Correta. Pelo princípio de agrupamento de defeitos, módulos com histórico de defeitos tendem a conter mais.",
+      "d": "Incorreta. Ignorar dados históricos é contrário à abordagem baseada em risco."
+    }
+  },
+  {
+    "id": "D-13",
+    "exam": "D",
+    "number": "13",
+    "chapter": 1,
+    "lo": "FL-1.3.1",
+    "isAppendix": false,
+    "stem": "Qual afirmação sobre INDEPENDÊNCIA DE TESTE é VERDADEIRA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Maior independência sempre garante maior qualidade do produto."
+      },
+      {
+        "letter": "b",
+        "text": "O desenvolvedor que escreveu o código é o melhor testador para encontrar defeitos no próprio código."
+      },
+      {
+        "letter": "c",
+        "text": "Diferentes níveis de independência têm benefícios e desvantagens; o nível adequado depende do contexto."
+      },
+      {
+        "letter": "d",
+        "text": "Testadores independentes não devem comunicar-se com desenvolvedores."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Independência traz benefícios mas não garante por si só maior qualidade.",
+      "b": "Incorreta. Vieses do autor dificultam encontrar defeitos no próprio trabalho.",
+      "c": "Correta. ISTQB destaca que cada nível de independência possui prós e contras; o contexto determina o adequado.",
+      "d": "Incorreta. Comunicação é fundamental; independência não significa isolamento."
+    }
+  },
+  {
+    "id": "D-14",
+    "exam": "D",
+    "number": "14",
+    "chapter": 1,
+    "lo": "FL-1.1.1",
+    "isAppendix": false,
+    "stem": "Qual afirmação descreve CORRETAMENTE a relação entre Garantia da Qualidade (QA), Controle de Qualidade (QC) e Teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "QA, QC e Teste são sinônimos."
+      },
+      {
+        "letter": "b",
+        "text": "QA foca em processos preventivos; QC foca em verificar o produto; o teste é uma forma de QC."
+      },
+      {
+        "letter": "c",
+        "text": "Teste substitui QA em projetos ágeis."
+      },
+      {
+        "letter": "d",
+        "text": "QC é uma forma de QA; teste não tem relação com QC."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Os três conceitos são distintos.",
+      "b": "Correta. QA cuida do processo; QC verifica o produto; o teste contribui para o QC.",
+      "c": "Incorreta. Em qualquer abordagem, QA e teste coexistem.",
+      "d": "Incorreta. Teste é uma das principais atividades de QC."
+    }
+  },
+  {
+    "id": "D-15",
+    "exam": "D",
+    "number": "15",
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "isAppendix": false,
+    "stem": "Em qual situação o princípio 'testes antecipados economizam tempo e dinheiro' é MELHOR aplicado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Esperar a entrega completa do código para começar qualquer atividade de teste."
+      },
+      {
+        "letter": "b",
+        "text": "Revisar requisitos e protótipos antes da codificação, encontrando ambiguidades cedo."
+      },
+      {
+        "letter": "c",
+        "text": "Executar testes de regressão apenas ao final do release."
+      },
+      {
+        "letter": "d",
+        "text": "Realizar apenas testes de aceitação após implantação em produção."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Esperar o código pronto vai contra o princípio.",
+      "b": "Correta. Revisar artefatos cedo identifica problemas antes que se propaguem, reduzindo custos.",
+      "c": "Incorreta. Adiar regressão não é teste antecipado.",
+      "d": "Incorreta. Testar apenas após produção contraria o princípio."
+    }
+  },
+  {
+    "id": "D-16",
+    "exam": "D",
+    "number": "16",
+    "chapter": 1,
+    "lo": "FL-1.3.1",
+    "isAppendix": false,
+    "stem": "Por que a rastreabilidade entre bases de teste, condições de teste, casos de teste e resultados é importante?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Apenas para satisfazer auditorias regulatórias."
+      },
+      {
+        "letter": "b",
+        "text": "Para permitir análise de impacto, avaliação de cobertura e relatórios significativos para stakeholders."
+      },
+      {
+        "letter": "c",
+        "text": "Para reduzir a quantidade de testes executados."
+      },
+      {
+        "letter": "d",
+        "text": "Para automatizar o processo de codificação."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Auditoria é só um benefício; há outros mais amplos.",
+      "b": "Correta. Rastreabilidade suporta análise de impacto, cobertura, monitoramento e comunicação eficaz.",
+      "c": "Incorreta. Não é finalidade reduzir testes; pelo contrário, ajuda a garantir cobertura adequada.",
+      "d": "Incorreta. Rastreabilidade não automatiza codificação."
+    }
+  },
+  {
+    "id": "D-17",
+    "exam": "D",
+    "number": "17",
+    "chapter": 1,
+    "lo": "FL-1.4.1",
+    "isAppendix": false,
+    "stem": "Qual das habilidades a seguir é MAIS associada ao papel de líder de teste em comparação ao testador?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Execução detalhada de casos de teste."
+      },
+      {
+        "letter": "b",
+        "text": "Codificação de scripts unitários."
+      },
+      {
+        "letter": "c",
+        "text": "Liderança, planejamento estratégico e comunicação com stakeholders."
+      },
+      {
+        "letter": "d",
+        "text": "Análise de valores limite em formulários."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Execução é mais associada ao testador.",
+      "b": "Incorreta. Codificação unitária é do desenvolvedor.",
+      "c": "Correta. Liderança e planejamento estratégico são responsabilidades do líder de teste.",
+      "d": "Incorreta. AVL é habilidade técnica do testador."
+    }
+  },
+  {
+    "id": "D-18",
+    "exam": "D",
+    "number": "18",
+    "chapter": 1,
+    "lo": "FL-1.5.1",
+    "isAppendix": false,
+    "stem": "Selecione DUAS características que melhor descrevem o mindset esperado de um testador eficaz.",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Curiosidade e atenção aos detalhes."
+      },
+      {
+        "letter": "b",
+        "text": "Confiar plenamente que o sistema funciona como esperado."
+      },
+      {
+        "letter": "c",
+        "text": "Pensamento crítico e questionador."
+      },
+      {
+        "letter": "d",
+        "text": "Evitar discutir problemas com a equipe."
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "selectCount": 2,
+    "explanations": {
+      "a": "Correta. Curiosidade e atenção aos detalhes são essenciais para descobrir defeitos.",
+      "b": "Incorreta. Confiança cega é contrária ao mindset de teste.",
+      "c": "Correta. Pensamento crítico é fundamental para questionar premissas e identificar problemas.",
+      "d": "Incorreta. Comunicação aberta é essencial."
+    }
+  },
+  {
+    "id": "D-19",
+    "exam": "D",
+    "number": "19",
+    "chapter": 1,
+    "lo": "FL-1.2.1",
+    "isAppendix": false,
+    "stem": "Por que testar um sistema bancário crítico difere de testar um aplicativo de receitas culinárias amador?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Porque testes em sistemas críticos não exigem documentação."
+      },
+      {
+        "letter": "b",
+        "text": "Porque o testes dependem do contexto: nível de risco, regulação e expectativas variam."
+      },
+      {
+        "letter": "c",
+        "text": "Porque sistemas críticos não precisam ser testados pelo usuário."
+      },
+      {
+        "letter": "d",
+        "text": "Porque apps amadores são mais complexos que sistemas bancários."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Sistemas críticos exigem mais documentação, não menos.",
+      "b": "Correta. O princípio 'testes dependem do contexto' explica que o nível, profundidade e tipos de teste variam conforme contexto.",
+      "c": "Incorreta. Testes de aceitação do usuário são comuns em sistemas críticos.",
+      "d": "Incorreta. Aplicativos amadores tipicamente têm menor complexidade."
+    }
+  },
+  {
+    "id": "D-20",
+    "exam": "D",
+    "number": "20",
+    "chapter": 1,
+    "lo": "FL-1.1.1",
+    "isAppendix": false,
+    "stem": "No projeto 'PetShop Online', a equipe verificou que o sistema implementa corretamente todos os requisitos do documento, mas usuários disseram que o sistema não atende às suas necessidades reais. Qual conceito explica MELHOR essa situação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "A equipe fez validação, mas não verificação."
+      },
+      {
+        "letter": "b",
+        "text": "A equipe fez verificação, mas a validação foi insuficiente."
+      },
+      {
+        "letter": "c",
+        "text": "Verificação e validação são sinônimos."
+      },
+      {
+        "letter": "d",
+        "text": "O sistema atende aos requisitos, portanto está perfeito."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. O cenário descreve o oposto.",
+      "b": "Correta. Verificação confirma que o sistema está conforme especificações; validação confirma que atende necessidades reais.",
+      "c": "Incorreta. São conceitos distintos.",
+      "d": "Incorreta. Atender requisitos não basta se as necessidades reais não forem atendidas (falácia da ausência de erros)."
+    }
+  },
+  {
+    "id": "D-21",
+    "exam": "D",
+    "number": "21",
+    "chapter": 2,
+    "lo": "FL-2.1.1",
+    "isAppendix": false,
+    "stem": "A equipe da 'ConstrutoraDigital' utiliza o modelo Cascata. Qual característica é VERDADEIRA sobre o teste nesse modelo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Testes são executados continuamente durante todo o desenvolvimento."
+      },
+      {
+        "letter": "b",
+        "text": "Testes são executados majoritariamente após a conclusão do desenvolvimento, no final do ciclo."
+      },
+      {
+        "letter": "c",
+        "text": "Não existem testes em modelo Cascata."
+      },
+      {
+        "letter": "d",
+        "text": "O modelo Cascata exige testes diários integrados."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Cascata é sequencial; testes contínuos são mais típicos do ágil.",
+      "b": "Correta. No Cascata, testes formais ocorrem após a fase de desenvolvimento.",
+      "c": "Incorreta. Testes existem, mas tipicamente concentrados no final.",
+      "d": "Incorreta. Esse comportamento é característico de DevOps/ágil."
+    }
+  },
+  {
+    "id": "D-22",
+    "exam": "D",
+    "number": "22",
+    "chapter": 2,
+    "lo": "FL-2.1.1",
+    "isAppendix": false,
+    "stem": "Qual é a principal característica do modelo V em relação ao teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cada nível de desenvolvimento corresponde a um nível de teste planejado em paralelo."
+      },
+      {
+        "letter": "b",
+        "text": "Não existem níveis de teste separados."
+      },
+      {
+        "letter": "c",
+        "text": "Testes são definidos somente após a entrega do código."
+      },
+      {
+        "letter": "d",
+        "text": "Os testes de aceitação ocorrem antes dos testes unitários."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. No modelo V, cada nível de desenvolvimento tem um nível de teste correspondente, planejado antecipadamente.",
+      "b": "Incorreta. O modelo V define níveis de teste claros.",
+      "c": "Incorreta. Testes são planejados desde o início.",
+      "d": "Incorreta. A ordem de execução é unitário → integração → sistema → aceitação."
+    }
+  },
+  {
+    "id": "D-23",
+    "exam": "D",
+    "number": "23",
+    "chapter": 2,
+    "lo": "FL-2.1.1",
+    "isAppendix": false,
+    "stem": "Em uma equipe ágil que constrói o 'App de Yoga ZenLife', os testes:",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ocorrem apenas no final do projeto, antes do release."
+      },
+      {
+        "letter": "b",
+        "text": "São executados continuamente em curtos ciclos (sprints), com colaboração próxima entre desenvolvedores e testadores."
+      },
+      {
+        "letter": "c",
+        "text": "Não são necessários, pois desenvolvedores ágeis não cometem erros."
+      },
+      {
+        "letter": "d",
+        "text": "São terceirizados para equipes externas que entregam relatórios mensais."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Em ágil, testes ocorrem continuamente ao longo das iterações.",
+      "b": "Correta. Em ágil, testes acontecem em sprints curtos, com colaboração contínua.",
+      "c": "Incorreta. Ágil não elimina necessidade de testes.",
+      "d": "Incorreta. Em ágil, equipes são tipicamente multifuncionais e auto-organizadas."
+    }
+  },
+  {
+    "id": "D-24",
+    "exam": "D",
+    "number": "24",
+    "chapter": 2,
+    "lo": "FL-2.1.2",
+    "isAppendix": false,
+    "stem": "Como a integração contínua (CI) influencia o teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Reduz a importância dos testes automatizados."
+      },
+      {
+        "letter": "b",
+        "text": "Aumenta a necessidade de testes automatizados de regressão executados a cada commit."
+      },
+      {
+        "letter": "c",
+        "text": "Elimina a necessidade de qualquer teste manual."
+      },
+      {
+        "letter": "d",
+        "text": "Substitui completamente o processo de desenvolvimento."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. CI aumenta a importância de automação.",
+      "b": "Correta. CI exige testes automatizados rápidos e confiáveis a cada integração.",
+      "c": "Incorreta. Testes manuais (exploratórios, UX) continuam relevantes.",
+      "d": "Incorreta. CI faz parte do desenvolvimento, não o substitui."
+    }
+  },
+  {
+    "id": "D-25",
+    "exam": "D",
+    "number": "25",
+    "chapter": 2,
+    "lo": "FL-2.2.1",
+    "isAppendix": false,
+    "stem": "No projeto 'Sistema de Inventário ArmazémFácil', os desenvolvedores escrevem testes JUnit para verificar uma função que calcula o estoque mínimo. Qual nível de teste é esse?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste de aceitação."
+      },
+      {
+        "letter": "b",
+        "text": "Teste de sistema."
+      },
+      {
+        "letter": "c",
+        "text": "Teste de componente (ou unitário)."
+      },
+      {
+        "letter": "d",
+        "text": "Teste de integração de sistemas."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Aceitação é realizada pelo cliente/usuário no nível de sistema.",
+      "b": "Incorreta. Teste de sistema avalia o produto completo.",
+      "c": "Correta. Testes em uma função/unidade isolada caracterizam teste de componente.",
+      "d": "Incorreta. Integração de sistemas envolve múltiplos sistemas distintos."
+    }
+  },
+  {
+    "id": "D-26",
+    "exam": "D",
+    "number": "26",
+    "chapter": 2,
+    "lo": "FL-2.2.1",
+    "isAppendix": false,
+    "stem": "Qual é o objetivo PRINCIPAL do teste de integração de componentes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Verificar a interface e a interação entre componentes que foram testados isoladamente."
+      },
+      {
+        "letter": "b",
+        "text": "Testar todo o sistema do ponto de vista do usuário final."
+      },
+      {
+        "letter": "c",
+        "text": "Garantir que cada função individual funciona corretamente."
+      },
+      {
+        "letter": "d",
+        "text": "Realizar testes de carga e performance."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. O foco do teste de integração é a comunicação e interface entre componentes.",
+      "b": "Incorreta. Isso é teste de sistema/aceitação.",
+      "c": "Incorreta. Isso é teste de componente.",
+      "d": "Incorreta. Carga/performance são tipos não-funcionais, não definem o nível."
+    }
+  },
+  {
+    "id": "D-27",
+    "exam": "D",
+    "number": "27",
+    "chapter": 2,
+    "lo": "FL-2.2.1",
+    "isAppendix": false,
+    "stem": "A 'EditoraNovasLetras' está lançando seu sistema de venda de e-books. Antes do go-live, eles convidam um grupo de leitores selecionados para usar o sistema em ambiente real. Qual tipo de teste de aceitação é esse?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste alfa."
+      },
+      {
+        "letter": "b",
+        "text": "Teste beta."
+      },
+      {
+        "letter": "c",
+        "text": "Teste de aceitação do usuário (UAT) interno."
+      },
+      {
+        "letter": "d",
+        "text": "Teste de aceitação contratual."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Alfa é realizado em ambiente do fornecedor.",
+      "b": "Correta. Teste beta é feito por usuários reais em ambiente próprio, antes do release público.",
+      "c": "Incorreta. UAT interno é feito pelos próprios usuários da organização, não por externos selecionados.",
+      "d": "Incorreta. Contratual envolve verificação de cláusulas contratuais específicas."
+    }
+  },
+  {
+    "id": "D-28",
+    "exam": "D",
+    "number": "28",
+    "chapter": 2,
+    "lo": "FL-2.3.1",
+    "isAppendix": false,
+    "stem": "Qual exemplo melhor caracteriza um teste FUNCIONAL no sistema 'AgendaMédica'?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Verificar se 1000 agendamentos simultâneos podem ser processados sem degradação."
+      },
+      {
+        "letter": "b",
+        "text": "Verificar se o sistema permite agendar uma consulta seguindo as regras de negócio."
+      },
+      {
+        "letter": "c",
+        "text": "Verificar se o código segue padrões de codificação."
+      },
+      {
+        "letter": "d",
+        "text": "Verificar se o sistema é fácil de usar para pessoas com deficiência visual."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Esse é teste de performance (não-funcional).",
+      "b": "Correta. Verificar conformidade com regras de negócio é um teste funcional.",
+      "c": "Incorreta. Esse é análise estática.",
+      "d": "Incorreta. Esse é teste de acessibilidade (não-funcional)."
+    }
+  },
+  {
+    "id": "D-29",
+    "exam": "D",
+    "number": "29",
+    "chapter": 2,
+    "lo": "FL-2.3.1",
+    "isAppendix": false,
+    "stem": "Qual destes é um exemplo de teste NÃO-FUNCIONAL?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Verificar se um login com credenciais válidas permite acesso."
+      },
+      {
+        "letter": "b",
+        "text": "Verificar o cálculo de imposto em uma fatura."
+      },
+      {
+        "letter": "c",
+        "text": "Verificar quanto tempo o sistema demora para responder com 500 usuários simultâneos."
+      },
+      {
+        "letter": "d",
+        "text": "Verificar se o relatório de vendas exibe o valor correto."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Verificar funcionalidade de login é funcional.",
+      "b": "Incorreta. Cálculo de imposto é funcional.",
+      "c": "Correta. Tempo de resposta sob carga é teste de performance (não-funcional).",
+      "d": "Incorreta. Verificar valor do relatório é funcional."
+    }
+  },
+  {
+    "id": "D-30",
+    "exam": "D",
+    "number": "30",
+    "chapter": 2,
+    "lo": "FL-2.3.1",
+    "isAppendix": false,
+    "stem": "Que tipo de teste FOCA na estrutura interna do código, com objetivo de exercitar caminhos, instruções e ramos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste funcional."
+      },
+      {
+        "letter": "b",
+        "text": "Teste de caixa-branca (estrutural)."
+      },
+      {
+        "letter": "c",
+        "text": "Teste de aceitação."
+      },
+      {
+        "letter": "d",
+        "text": "Teste de performance."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Funcional foca em comportamento, não estrutura.",
+      "b": "Correta. Caixa-branca/estrutural baseia-se na estrutura interna do código.",
+      "c": "Incorreta. Aceitação foca em necessidades do usuário.",
+      "d": "Incorreta. Performance avalia atributos não-funcionais."
+    }
+  },
+  {
+    "id": "D-31",
+    "exam": "D",
+    "number": "31",
+    "chapter": 2,
+    "lo": "FL-2.4.1",
+    "isAppendix": false,
+    "stem": "Após o usuário relatar um bug crítico no 'Sistema Bancário Pague+', a equipe corrige o problema e precisa testar a alteração. Que tipo de teste de manutenção é esse?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Manutenção adaptativa."
+      },
+      {
+        "letter": "b",
+        "text": "Manutenção corretiva."
+      },
+      {
+        "letter": "c",
+        "text": "Manutenção perfectiva."
+      },
+      {
+        "letter": "d",
+        "text": "Manutenção preventiva."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Adaptativa lida com mudanças no ambiente externo.",
+      "b": "Correta. Corretiva trata da correção de defeitos identificados.",
+      "c": "Incorreta. Perfectiva visa melhoria sem corrigir defeito.",
+      "d": "Incorreta. Preventiva visa evitar problemas futuros."
+    }
+  },
+  {
+    "id": "D-32",
+    "exam": "D",
+    "number": "32",
+    "chapter": 2,
+    "lo": "FL-2.4.1",
+    "isAppendix": false,
+    "stem": "O sistema 'NotasFiscais.gov' precisa ser atualizado porque o governo alterou a alíquota de um imposto. Que tipo de manutenção é esta?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Manutenção corretiva."
+      },
+      {
+        "letter": "b",
+        "text": "Manutenção adaptativa."
+      },
+      {
+        "letter": "c",
+        "text": "Manutenção perfectiva."
+      },
+      {
+        "letter": "d",
+        "text": "Manutenção preditiva."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não houve defeito a corrigir.",
+      "b": "Correta. Manutenção adaptativa responde a mudanças no ambiente (regulação, sistemas externos).",
+      "c": "Incorreta. Perfectiva é melhoria de qualidade sem mudança de ambiente.",
+      "d": "Incorreta. 'Preditiva' não é categoria padrão do ISTQB."
+    }
+  },
+  {
+    "id": "D-33",
+    "exam": "D",
+    "number": "33",
+    "chapter": 2,
+    "lo": "FL-2.4.1",
+    "isAppendix": false,
+    "stem": "Por que a ANÁLISE DE IMPACTO é importante no teste de manutenção?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Para determinar quais áreas precisam ser testadas e o escopo do teste de regressão."
+      },
+      {
+        "letter": "b",
+        "text": "Para eliminar a necessidade de teste de regressão."
+      },
+      {
+        "letter": "c",
+        "text": "Para garantir que o sistema novo esteja livre de defeitos."
+      },
+      {
+        "letter": "d",
+        "text": "Para reduzir a documentação do projeto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. A análise de impacto identifica quais partes podem ser afetadas, guiando o escopo de regressão.",
+      "b": "Incorreta. Justamente o oposto: ela define a regressão necessária.",
+      "c": "Incorreta. Análise de impacto não garante zero defeitos.",
+      "d": "Incorreta. Não tem relação com volume de documentação."
+    }
+  },
+  {
+    "id": "D-34",
+    "exam": "D",
+    "number": "34",
+    "chapter": 2,
+    "lo": "FL-2.2.1",
+    "isAppendix": false,
+    "stem": "Selecione DUAS características do teste de SISTEMA.",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Foca no comportamento e nas capacidades do sistema completo integrado."
+      },
+      {
+        "letter": "b",
+        "text": "É realizado por desenvolvedores em unidades isoladas."
+      },
+      {
+        "letter": "c",
+        "text": "Inclui requisitos funcionais e não-funcionais de ponta a ponta."
+      },
+      {
+        "letter": "d",
+        "text": "Sempre exige acesso ao código-fonte para todos os casos."
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "selectCount": 2,
+    "explanations": {
+      "a": "Correta. Teste de sistema avalia o sistema integrado como um todo.",
+      "b": "Incorreta. Isso descreve teste de componente.",
+      "c": "Correta. Teste de sistema cobre requisitos funcionais e não-funcionais ponta a ponta.",
+      "d": "Incorreta. Pode ser caixa-preta sem código-fonte."
+    }
+  },
+  {
+    "id": "D-35",
+    "exam": "D",
+    "number": "35",
+    "chapter": 2,
+    "lo": "FL-2.1.2",
+    "isAppendix": false,
+    "stem": "O que significa a abordagem 'shift-left' em teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Mover o teste para o final do ciclo de vida."
+      },
+      {
+        "letter": "b",
+        "text": "Antecipar atividades de teste para fases mais iniciais do SDLC, como revisão de requisitos e design."
+      },
+      {
+        "letter": "c",
+        "text": "Realizar apenas testes manuais."
+      },
+      {
+        "letter": "d",
+        "text": "Distribuir testes apenas após produção."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Shift-left é o oposto disso.",
+      "b": "Correta. Shift-left consiste em antecipar testes e atividades de qualidade, alinhado ao princípio de teste antecipado.",
+      "c": "Incorreta. Shift-left não tem relação com automação vs manual.",
+      "d": "Incorreta. Shift-left antecipa, não posterga."
+    }
+  },
+  {
+    "id": "D-36",
+    "exam": "D",
+    "number": "36",
+    "chapter": 3,
+    "lo": "FL-3.1.1",
+    "isAppendix": false,
+    "stem": "Qual é a principal diferença entre TESTE ESTÁTICO e TESTE DINÂMICO?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Teste estático envolve execução do código; dinâmico não."
+      },
+      {
+        "letter": "b",
+        "text": "Teste estático avalia artefatos sem executar o código; dinâmico exige execução do software."
+      },
+      {
+        "letter": "c",
+        "text": "Ambos exigem execução do código."
+      },
+      {
+        "letter": "d",
+        "text": "Teste estático é sempre automatizado; dinâmico, sempre manual."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Está invertido.",
+      "b": "Correta. Estático examina artefatos sem executar; dinâmico exige execução.",
+      "c": "Incorreta. Apenas o dinâmico envolve execução.",
+      "d": "Incorreta. Ambos podem ser automatizados ou manuais conforme o tipo."
+    }
+  },
+  {
+    "id": "D-37",
+    "exam": "D",
+    "number": "37",
+    "chapter": 3,
+    "lo": "FL-3.1.1",
+    "isAppendix": false,
+    "stem": "Qual benefício é PRINCIPAL ao usar revisões estáticas em requisitos antes da codificação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Reduz o custo de correção, pois defeitos são identificados antes da implementação."
+      },
+      {
+        "letter": "b",
+        "text": "Substitui a necessidade de teste dinâmico."
+      },
+      {
+        "letter": "c",
+        "text": "Garante que o software será livre de defeitos."
+      },
+      {
+        "letter": "d",
+        "text": "Elimina a necessidade de revisar o código depois."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Defeitos encontrados antes da codificação são muito mais baratos de corrigir.",
+      "b": "Incorreta. Estático e dinâmico são complementares.",
+      "c": "Incorreta. Nenhuma técnica garante ausência de defeitos.",
+      "d": "Incorreta. Revisões de código permanecem úteis."
+    }
+  },
+  {
+    "id": "D-38",
+    "exam": "D",
+    "number": "38",
+    "chapter": 3,
+    "lo": "FL-3.2.1",
+    "isAppendix": false,
+    "stem": "Qual tipo de revisão é caracterizado por ser o MAIS formal, com regras estritas, papéis definidos e métricas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Revisão informal."
+      },
+      {
+        "letter": "b",
+        "text": "Walkthrough."
+      },
+      {
+        "letter": "c",
+        "text": "Revisão técnica."
+      },
+      {
+        "letter": "d",
+        "text": "Inspeção."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Informal é a menos formal.",
+      "b": "Incorreta. Walkthrough é semi-formal, conduzido pelo autor.",
+      "c": "Incorreta. Revisão técnica é formal mas menos rigorosa que inspeção.",
+      "d": "Correta. Inspeção é o tipo mais formal, com regras, métricas e papéis bem definidos."
+    }
+  },
+  {
+    "id": "D-39",
+    "exam": "D",
+    "number": "39",
+    "chapter": 3,
+    "lo": "FL-3.2.1",
+    "isAppendix": false,
+    "stem": "Em uma revisão tipo WALKTHROUGH:",
+    "options": [
+      {
+        "letter": "a",
+        "text": "O moderador conduz a sessão e cobra métricas."
+      },
+      {
+        "letter": "b",
+        "text": "O autor guia os participantes pelo artefato para obter feedback e disseminar conhecimento."
+      },
+      {
+        "letter": "c",
+        "text": "Apenas o gerente decide o que será revisado."
+      },
+      {
+        "letter": "d",
+        "text": "É sempre uma análise estática automatizada."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Walkthrough não exige moderador formal.",
+      "b": "Correta. No walkthrough, o autor lidera, apresentando o artefato e obtendo feedback.",
+      "c": "Incorreta. Gerentes podem participar, mas não decidem unilateralmente.",
+      "d": "Incorreta. Walkthrough é manual, não automatizado."
+    }
+  },
+  {
+    "id": "D-40",
+    "exam": "D",
+    "number": "40",
+    "chapter": 3,
+    "lo": "FL-3.2.2",
+    "isAppendix": false,
+    "stem": "Em uma INSPEÇÃO formal, qual é o papel do MODERADOR (líder de revisão)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Escrever o artefato e propor o que será inspecionado."
+      },
+      {
+        "letter": "b",
+        "text": "Planejar a revisão, conduzir a reunião e assegurar aderência ao processo."
+      },
+      {
+        "letter": "c",
+        "text": "Registrar todos os defeitos encontrados durante a reunião."
+      },
+      {
+        "letter": "d",
+        "text": "Decidir se o artefato deve ser publicado."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Esse é o papel do autor.",
+      "b": "Correta. O moderador planeja, conduz e garante que o processo seja seguido.",
+      "c": "Incorreta. Esse é o papel do escriba.",
+      "d": "Incorreta. Decisão final cabe à gerência ou stakeholders, não ao moderador."
+    }
+  },
+  {
+    "id": "D-41",
+    "exam": "D",
+    "number": "41",
+    "chapter": 3,
+    "lo": "FL-3.2.2",
+    "isAppendix": false,
+    "stem": "Qual papel em uma revisão formal é responsável por DOCUMENTAR todos os achados, ações e decisões durante a reunião?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Autor."
+      },
+      {
+        "letter": "b",
+        "text": "Moderador."
+      },
+      {
+        "letter": "c",
+        "text": "Escriba (scribe)."
+      },
+      {
+        "letter": "d",
+        "text": "Revisor."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. O autor produz o artefato em revisão.",
+      "b": "Incorreta. O moderador conduz a reunião.",
+      "c": "Correta. O escriba registra defeitos, comentários e ações.",
+      "d": "Incorreta. O revisor analisa o artefato e levanta questões."
+    }
+  },
+  {
+    "id": "D-42",
+    "exam": "D",
+    "number": "42",
+    "chapter": 3,
+    "lo": "FL-3.2.1",
+    "isAppendix": false,
+    "stem": "Qual característica MELHOR descreve uma revisão INFORMAL?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Possui processo documentado e papéis definidos."
+      },
+      {
+        "letter": "b",
+        "text": "Não exige processo formal nem registro padronizado; o objetivo principal é encontrar defeitos com baixo custo."
+      },
+      {
+        "letter": "c",
+        "text": "É sempre conduzida pelo moderador certificado."
+      },
+      {
+        "letter": "d",
+        "text": "Produz métricas detalhadas como parte do processo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Isso descreve inspeção.",
+      "b": "Correta. Revisão informal não possui processo formal nem documentação rigorosa.",
+      "c": "Incorreta. Não exige moderador.",
+      "d": "Incorreta. Métricas detalhadas são da inspeção."
+    }
+  },
+  {
+    "id": "D-43",
+    "exam": "D",
+    "number": "43",
+    "chapter": 3,
+    "lo": "FL-3.1.1",
+    "isAppendix": false,
+    "stem": "Qual destas atividades é um exemplo de ANÁLISE ESTÁTICA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Executar testes unitários automatizados em JUnit."
+      },
+      {
+        "letter": "b",
+        "text": "Usar uma ferramenta como SonarQube para detectar 'code smells' e violações de padrão."
+      },
+      {
+        "letter": "c",
+        "text": "Realizar teste exploratório no app móvel."
+      },
+      {
+        "letter": "d",
+        "text": "Executar testes de regressão em um pipeline CI."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Testes unitários são análise dinâmica (executam código).",
+      "b": "Correta. Ferramentas como SonarQube fazem análise estática sem executar o código.",
+      "c": "Incorreta. Teste exploratório é dinâmico.",
+      "d": "Incorreta. Regressão é teste dinâmico."
+    }
+  },
+  {
+    "id": "D-44",
+    "exam": "D",
+    "number": "44",
+    "chapter": 3,
+    "lo": "FL-3.1.1",
+    "isAppendix": false,
+    "stem": "Selecione DUAS razões pelas quais revisões antecipadas são valiosas no projeto.",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Reduzem custos de correção de defeitos."
+      },
+      {
+        "letter": "b",
+        "text": "Substituem completamente os testes dinâmicos."
+      },
+      {
+        "letter": "c",
+        "text": "Aumentam o conhecimento compartilhado da equipe sobre o artefato."
+      },
+      {
+        "letter": "d",
+        "text": "Garantem 100% de qualidade do produto."
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "selectCount": 2,
+    "explanations": {
+      "a": "Correta. Defeitos identificados cedo custam menos para corrigir.",
+      "b": "Incorreta. Revisões complementam, não substituem testes dinâmicos.",
+      "c": "Correta. Revisões promovem aprendizagem e compreensão compartilhada do artefato.",
+      "d": "Incorreta. Nenhuma técnica garante qualidade total."
+    }
+  },
+  {
+    "id": "D-45",
+    "exam": "D",
+    "number": "45",
+    "chapter": 3,
+    "lo": "FL-3.2.1",
+    "isAppendix": false,
+    "stem": "Qual é o objetivo principal de uma REVISÃO TÉCNICA?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Treinar novos desenvolvedores no produto."
+      },
+      {
+        "letter": "b",
+        "text": "Avaliar a qualidade técnica do artefato e obter consenso entre os pares."
+      },
+      {
+        "letter": "c",
+        "text": "Apenas verificar conformidade contratual."
+      },
+      {
+        "letter": "d",
+        "text": "Garantir cumprimento de prazos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Embora possa ter efeito colateral educativo, não é o objetivo principal.",
+      "b": "Correta. Revisões técnicas focam na qualidade técnica e no consenso entre revisores qualificados.",
+      "c": "Incorreta. Verificação contratual é específica e não é o foco da revisão técnica.",
+      "d": "Incorreta. Prazos são objeto de gestão de projeto, não da revisão técnica."
+    }
+  },
+  {
+    "id": "D-46",
+    "exam": "D",
+    "number": "46",
+    "chapter": 4,
+    "lo": "FL-4.1.1",
+    "isAppendix": false,
+    "stem": "Qual descrição diferencia CORRETAMENTE técnicas de caixa-preta e caixa-branca?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Caixa-preta usa código-fonte; caixa-branca usa apenas requisitos."
+      },
+      {
+        "letter": "b",
+        "text": "Caixa-preta deriva testes da especificação sem precisar do código; caixa-branca deriva testes da estrutura do código."
+      },
+      {
+        "letter": "c",
+        "text": "Ambas exigem código-fonte."
+      },
+      {
+        "letter": "d",
+        "text": "Caixa-preta é sempre automatizada; caixa-branca é sempre manual."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Está invertido.",
+      "b": "Correta. Caixa-preta se baseia em especificações; caixa-branca, na estrutura interna.",
+      "c": "Incorreta. Caixa-preta não exige código-fonte.",
+      "d": "Incorreta. Ambas podem ser automatizadas ou manuais."
+    }
+  },
+  {
+    "id": "D-47",
+    "exam": "D",
+    "number": "47",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Um campo aceita idades de 18 a 65 anos para um cartão da 'AcademiaForma'. Quantas partições de equivalência VÁLIDAS e INVÁLIDAS existem para esse campo, considerando partições padrão?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1 válida e 1 inválida."
+      },
+      {
+        "letter": "b",
+        "text": "1 válida e 2 inválidas (abaixo de 18 e acima de 65)."
+      },
+      {
+        "letter": "c",
+        "text": "2 válidas e 2 inválidas."
+      },
+      {
+        "letter": "d",
+        "text": "3 válidas e nenhuma inválida."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Há duas faixas inválidas (abaixo e acima).",
+      "b": "Correta. 18-65 é a válida; abaixo de 18 e acima de 65 são inválidas.",
+      "c": "Incorreta. Há apenas uma faixa válida.",
+      "d": "Incorreta. As faixas fora de 18-65 são inválidas."
+    }
+  },
+  {
+    "id": "D-48",
+    "exam": "D",
+    "number": "48",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Para o mesmo campo de idade (18 a 65), aplicando Análise de Valor Limite com a abordagem de 2 valores (limite e valor adjacente), quais valores devem ser testados nos LIMITES?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "0, 17, 18, 65, 66, 100."
+      },
+      {
+        "letter": "b",
+        "text": "17, 18, 65, 66."
+      },
+      {
+        "letter": "c",
+        "text": "18, 19, 64, 65."
+      },
+      {
+        "letter": "d",
+        "text": "1, 18, 65, 99."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Inclui valores extras desnecessários para os limites.",
+      "b": "Correta. AVL de 2 valores testa cada limite e seu adjacente fora da partição.",
+      "c": "Incorreta. Não inclui os valores adjacentes inválidos.",
+      "d": "Incorreta. Não foca nos limites."
+    }
+  },
+  {
+    "id": "D-49",
+    "exam": "D",
+    "number": "49",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Na abordagem de AVL com 3 valores para o intervalo 1-10, quais valores são testados em CADA limite?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Para o limite inferior: 0, 1, 2; para o superior: 9, 10, 11."
+      },
+      {
+        "letter": "b",
+        "text": "Apenas 1 e 10."
+      },
+      {
+        "letter": "c",
+        "text": "0, 5 e 11."
+      },
+      {
+        "letter": "d",
+        "text": "Somente -1, 0, 11, 12."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. AVL de 3 valores testa o valor antes do limite, o limite e o valor após.",
+      "b": "Incorreta. Essa é a abordagem de apenas 1 valor (limite).",
+      "c": "Incorreta. 5 está no meio da partição, não é limite.",
+      "d": "Incorreta. Não cobre os limites internos (1 e 10)."
+    }
+  },
+  {
+    "id": "D-50",
+    "exam": "D",
+    "number": "50",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "A 'Locadora CarroFácil' aplica desconto: clientes VIP com mais de 5 dias de locação ganham 20%; clientes regulares com mais de 5 dias ganham 10%; menos de 5 dias não tem desconto. Qual técnica é MAIS adequada para testar essa lógica?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Análise de valor limite apenas."
+      },
+      {
+        "letter": "b",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "c",
+        "text": "Teste de transição de estados."
+      },
+      {
+        "letter": "d",
+        "text": "Teste exploratório sem técnica."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. AVL é útil para faixas, mas a regra combina múltiplas condições.",
+      "b": "Correta. Tabela de decisão é ideal para combinar múltiplas condições e regras de negócio.",
+      "c": "Incorreta. Não há transições de estado descritas.",
+      "d": "Incorreta. Sem técnica é menos eficaz."
+    }
+  },
+  {
+    "id": "D-51",
+    "exam": "D",
+    "number": "51",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "O 'App Bancário PagueAgora' permite estados: 'Pendente', 'Aprovado', 'Rejeitado', 'Cancelado'. Apenas 'Pendente' pode ir para os outros. Que técnica deve ser usada para testar essa lógica?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "b",
+        "text": "Análise de valor limite."
+      },
+      {
+        "letter": "c",
+        "text": "Teste de transição de estados."
+      },
+      {
+        "letter": "d",
+        "text": "Partição de equivalência apenas."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Tabela de decisão modela combinações de condições, não estados.",
+      "b": "Incorreta. AVL é para faixas numéricas.",
+      "c": "Correta. A técnica de transição de estados modela estados e transições válidas/inválidas entre eles.",
+      "d": "Incorreta. Partição não captura sequência de estados."
+    }
+  },
+  {
+    "id": "D-52",
+    "exam": "D",
+    "number": "52",
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "isAppendix": false,
+    "stem": "Um código tem 100 instruções. Sua suíte de testes executa 75 delas. Qual é a cobertura de instrução?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "25%."
+      },
+      {
+        "letter": "b",
+        "text": "50%."
+      },
+      {
+        "letter": "c",
+        "text": "75%."
+      },
+      {
+        "letter": "d",
+        "text": "100%."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. 25% seriam instruções não cobertas.",
+      "b": "Incorreta. Cálculo incorreto.",
+      "c": "Correta. 75/100 = 75% de cobertura de instrução.",
+      "d": "Incorreta. Faltam 25 instruções para cobrir tudo."
+    }
+  },
+  {
+    "id": "D-53",
+    "exam": "D",
+    "number": "53",
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "isAppendix": false,
+    "stem": "Para alcançar 100% de cobertura de DECISÃO em um código com um único IF, quantos casos de teste são MÍNIMOS?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1."
+      },
+      {
+        "letter": "b",
+        "text": "2 (um para verdadeiro, um para falso)."
+      },
+      {
+        "letter": "c",
+        "text": "4."
+      },
+      {
+        "letter": "d",
+        "text": "Depende do número de variáveis."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Um só caso cobre apenas um lado da decisão.",
+      "b": "Correta. Para 100% de cobertura de decisão, é preciso executar cada decisão como verdadeira e falsa.",
+      "c": "Incorreta. 4 seria necessário para outras coberturas mais profundas.",
+      "d": "Incorreta. Não depende do número de variáveis para decisão."
+    }
+  },
+  {
+    "id": "D-54",
+    "exam": "D",
+    "number": "54",
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "isAppendix": false,
+    "stem": "Qual afirmação é VERDADEIRA sobre a relação entre cobertura de instrução e cobertura de decisão?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "100% de cobertura de instrução garante 100% de cobertura de decisão."
+      },
+      {
+        "letter": "b",
+        "text": "100% de cobertura de decisão implica 100% de cobertura de instrução."
+      },
+      {
+        "letter": "c",
+        "text": "São métricas independentes e não há relação entre elas."
+      },
+      {
+        "letter": "d",
+        "text": "Cobertura de instrução é sempre maior que cobertura de decisão."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Pode-se cobrir todas as instruções sem cobrir as duas saídas de uma decisão (ex.: IF sem ELSE).",
+      "b": "Correta. Cobrir cada decisão V e F implica executar todas as instruções alcançáveis.",
+      "c": "Incorreta. Há relação hierárquica entre as coberturas.",
+      "d": "Incorreta. Não há essa relação."
+    }
+  },
+  {
+    "id": "D-55",
+    "exam": "D",
+    "number": "55",
+    "chapter": 4,
+    "lo": "FL-4.4.1",
+    "isAppendix": false,
+    "stem": "Maria, testadora experiente do sistema 'Hospital VidaPlena', sabe por experiência que campos de data costumam falhar em ano bissexto. Ela cria testes especificamente com 29/02/2024. Que técnica está usando?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "b",
+        "text": "Predição de erros (error guessing)."
+      },
+      {
+        "letter": "c",
+        "text": "AVL formal."
+      },
+      {
+        "letter": "d",
+        "text": "Cobertura de ramo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não está construindo tabela.",
+      "b": "Correta. Predição de erros usa a experiência e intuição do testador para antecipar onde defeitos costumam ocorrer.",
+      "c": "Incorreta. Não está aplicando AVL formal.",
+      "d": "Incorreta. Cobertura de ramo é caixa-branca."
+    }
+  },
+  {
+    "id": "D-56",
+    "exam": "D",
+    "number": "56",
+    "chapter": 4,
+    "lo": "FL-4.4.1",
+    "isAppendix": false,
+    "stem": "Qual descrição é CORRETA sobre TESTE EXPLORATÓRIO?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "É feito sem qualquer planejamento ou objetivo."
+      },
+      {
+        "letter": "b",
+        "text": "Combina aprendizado, design e execução de testes simultaneamente, geralmente guiado por uma 'charter' (carta)."
+      },
+      {
+        "letter": "c",
+        "text": "É sempre automatizado."
+      },
+      {
+        "letter": "d",
+        "text": "Substitui completamente técnicas formais de caixa-preta."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Exploratório tem objetivos e tipicamente uma carta orientadora.",
+      "b": "Correta. Exploratório é uma abordagem deliberada que combina aprendizado, design e execução, frequentemente baseada em sessions com charter.",
+      "c": "Incorreta. Exploratório é normalmente manual, embora possa usar ferramentas.",
+      "d": "Incorreta. Complementa, não substitui."
+    }
+  },
+  {
+    "id": "D-57",
+    "exam": "D",
+    "number": "57",
+    "chapter": 4,
+    "lo": "FL-4.5.1",
+    "isAppendix": false,
+    "stem": "Qual estrutura textual é característica do BDD (Behavior-Driven Development)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "If/Else/End."
+      },
+      {
+        "letter": "b",
+        "text": "Given/When/Then."
+      },
+      {
+        "letter": "c",
+        "text": "Plan/Do/Check/Act."
+      },
+      {
+        "letter": "d",
+        "text": "Setup/Exercise/Verify/Teardown."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Sintaxe de programação, não BDD.",
+      "b": "Correta. Cenários BDD usam Given (contexto), When (ação), Then (resultado).",
+      "c": "Incorreta. PDCA é ciclo de melhoria.",
+      "d": "Incorreta. Padrão de testes unitários, não BDD."
+    }
+  },
+  {
+    "id": "D-58",
+    "exam": "D",
+    "number": "58",
+    "chapter": 4,
+    "lo": "FL-4.5.1",
+    "isAppendix": false,
+    "stem": "Em ATDD (Acceptance Test-Driven Development), quem normalmente colabora para definir os critérios de aceitação ANTES da codificação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Apenas o testador, sozinho."
+      },
+      {
+        "letter": "b",
+        "text": "Cliente/PO, desenvolvedor e testador (a equipe dos 'três amigos')."
+      },
+      {
+        "letter": "c",
+        "text": "Apenas o gerente de projeto."
+      },
+      {
+        "letter": "d",
+        "text": "Somente o desenvolvedor responsável."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. ATDD é colaborativo.",
+      "b": "Correta. ATDD prega colaboração entre negócio (PO/cliente), desenvolvedor e testador.",
+      "c": "Incorreta. Gerente não define critérios sozinho.",
+      "d": "Incorreta. ATDD envolve múltiplas perspectivas."
+    }
+  },
+  {
+    "id": "D-59",
+    "exam": "D",
+    "number": "59",
+    "chapter": 4,
+    "lo": "FL-4.5.1",
+    "isAppendix": false,
+    "stem": "Os 'três amigos' (three amigos) em abordagens colaborativas normalmente representam quais perspectivas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Suporte, vendas e marketing."
+      },
+      {
+        "letter": "b",
+        "text": "Negócio (PO/analista), desenvolvimento e teste."
+      },
+      {
+        "letter": "c",
+        "text": "Diretor, gerente e líder técnico."
+      },
+      {
+        "letter": "d",
+        "text": "Usuário, cliente e patrocinador."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Áreas não envolvidas diretamente na construção do incremento.",
+      "b": "Correta. As três perspectivas combinam negócio, desenvolvimento e teste.",
+      "c": "Incorreta. São níveis hierárquicos, não perspectivas técnicas.",
+      "d": "Incorreta. Esses são tipos de stakeholders externos."
+    }
+  },
+  {
+    "id": "D-60",
+    "exam": "D",
+    "number": "60",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "A 'EscolaIdiomas+' aceita os níveis de inglês: A1, A2, B1, B2, C1, C2 para inscrição em aulas avançadas (apenas B2, C1, C2). Quantas partições válidas e inválidas existem?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "6 partições válidas e nenhuma inválida."
+      },
+      {
+        "letter": "b",
+        "text": "3 válidas (B2, C1, C2) e 3 inválidas (A1, A2, B1) — ou 1 válida e 1 inválida agrupadas."
+      },
+      {
+        "letter": "c",
+        "text": "1 válida e nenhuma inválida."
+      },
+      {
+        "letter": "d",
+        "text": "Nenhuma partição se aplica, pois são valores discretos."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Existem níveis não permitidos para aulas avançadas.",
+      "b": "Correta. As 3 permitidas formam (uma ou três) partição(ões) válida(s); as 3 não permitidas, inválida(s).",
+      "c": "Incorreta. Há níveis inválidos para o critério de aulas avançadas.",
+      "d": "Incorreta. Partição se aplica também a valores discretos."
+    }
+  },
+  {
+    "id": "D-61",
+    "exam": "D",
+    "number": "61",
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "isAppendix": false,
+    "stem": "Em um código com a estrutura: IF (a > 0) THEN x=1 ELSE x=2. Quantos casos de teste são NECESSÁRIOS para 100% de cobertura de ramo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1."
+      },
+      {
+        "letter": "b",
+        "text": "2."
+      },
+      {
+        "letter": "c",
+        "text": "3."
+      },
+      {
+        "letter": "d",
+        "text": "4."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Um caso cobre apenas um ramo.",
+      "b": "Correta. Dois casos: um para a > 0 (verdadeiro) e outro para a <= 0 (falso).",
+      "c": "Incorreta. Dois são suficientes para essa estrutura.",
+      "d": "Incorreta. Excessivo para o tipo de cobertura."
+    }
+  },
+  {
+    "id": "D-62",
+    "exam": "D",
+    "number": "62",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Uma regra do site 'CinemaIngressoX' tem 3 condições binárias independentes (sim/não). Quantas REGRAS (colunas) terá a tabela de decisão completa?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "3."
+      },
+      {
+        "letter": "b",
+        "text": "6."
+      },
+      {
+        "letter": "c",
+        "text": "8."
+      },
+      {
+        "letter": "d",
+        "text": "9."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. 3 é o número de condições, não combinações.",
+      "b": "Incorreta. Cálculo errado.",
+      "c": "Correta. 2^3 = 8 combinações possíveis.",
+      "d": "Incorreta. 9 não corresponde a combinações binárias de 3."
+    }
+  },
+  {
+    "id": "D-63",
+    "exam": "D",
+    "number": "63",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Selecione DUAS técnicas que são de caixa-preta (baseadas em especificação).",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Partição de equivalência."
+      },
+      {
+        "letter": "b",
+        "text": "Cobertura de instrução."
+      },
+      {
+        "letter": "c",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "d",
+        "text": "Cobertura de ramo."
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "selectCount": 2,
+    "explanations": {
+      "a": "Correta. Partição de equivalência é caixa-preta.",
+      "b": "Incorreta. Cobertura de instrução é caixa-branca.",
+      "c": "Correta. Tabela de decisão é caixa-preta.",
+      "d": "Incorreta. Cobertura de ramo é caixa-branca."
+    }
+  },
+  {
+    "id": "D-64",
+    "exam": "D",
+    "number": "64",
+    "chapter": 4,
+    "lo": "FL-4.4.1",
+    "isAppendix": false,
+    "stem": "Que técnica de teste baseada em experiência usa LISTAS DE VERIFICAÇÃO com tópicos a serem testados em vez de casos detalhados?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "b",
+        "text": "Teste baseado em checklist."
+      },
+      {
+        "letter": "c",
+        "text": "Cobertura de decisão."
+      },
+      {
+        "letter": "d",
+        "text": "AVL."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não é uma técnica baseada em experiência.",
+      "b": "Correta. Teste baseado em checklist usa listas estruturadas a partir de experiência e heurísticas.",
+      "c": "Incorreta. Cobertura de decisão é caixa-branca.",
+      "d": "Incorreta. AVL é uma técnica formal de partição."
+    }
+  },
+  {
+    "id": "D-65",
+    "exam": "D",
+    "number": "65",
+    "chapter": 4,
+    "lo": "FL-4.1.1",
+    "isAppendix": false,
+    "stem": "A equipe do 'Sistema de Gestão Escolar EduFlow' precisa testar uma funcionalidade nova SEM código disponível ainda, baseando-se apenas na especificação. Qual conjunto de técnicas é o MAIS adequado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Cobertura de instrução e cobertura de decisão."
+      },
+      {
+        "letter": "b",
+        "text": "Partição de equivalência, AVL e tabela de decisão."
+      },
+      {
+        "letter": "c",
+        "text": "Cobertura de caminho e cobertura de ramo."
+      },
+      {
+        "letter": "d",
+        "text": "Análise estática automatizada do código."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. São técnicas estruturais que exigem código.",
+      "b": "Correta. Técnicas de caixa-preta funcionam a partir da especificação, sem precisar do código.",
+      "c": "Incorreta. São técnicas estruturais.",
+      "d": "Incorreta. Análise estática precisa de artefatos prontos."
+    }
+  },
+  {
+    "id": "D-66",
+    "exam": "D",
+    "number": "66",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Um campo de senha do 'MeuBanco24h' exige entre 8 e 20 caracteres. Usando AVL de 2 valores, quais comprimentos devem ser testados?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "5, 10, 25."
+      },
+      {
+        "letter": "b",
+        "text": "7, 8, 20, 21."
+      },
+      {
+        "letter": "c",
+        "text": "1, 8, 20, 100."
+      },
+      {
+        "letter": "d",
+        "text": "8 e 20 apenas."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não foca nos limites.",
+      "b": "Correta. AVL de 2 valores testa cada limite e o adjacente fora.",
+      "c": "Incorreta. Inclui valores não-limítrofes.",
+      "d": "Incorreta. AVL de 2 valores também testa adjacentes inválidos."
+    }
+  },
+  {
+    "id": "D-67",
+    "exam": "D",
+    "number": "67",
+    "chapter": 4,
+    "lo": "FL-4.5.1",
+    "isAppendix": false,
+    "stem": "Qual é o PRINCIPAL benefício das abordagens colaborativas baseadas em comportamento (BDD, ATDD)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Eliminar a necessidade de testadores."
+      },
+      {
+        "letter": "b",
+        "text": "Alinhar entendimento entre negócio, desenvolvimento e teste, reduzindo ambiguidade nos requisitos."
+      },
+      {
+        "letter": "c",
+        "text": "Reduzir documentação a zero."
+      },
+      {
+        "letter": "d",
+        "text": "Automatizar 100% dos testes do sistema."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Testadores continuam essenciais.",
+      "b": "Correta. BDD/ATDD criam linguagem compartilhada e alinham expectativas, reduzindo ambiguidade.",
+      "c": "Incorreta. Eles produzem cenários executáveis como documentação viva.",
+      "d": "Incorreta. Automação é consequência possível, mas não meta universal."
+    }
+  },
+  {
+    "id": "D-68",
+    "exam": "D",
+    "number": "68",
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "isAppendix": false,
+    "stem": "Quando técnicas de teste de CAIXA-BRANCA são MAIS adequadas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Quando se quer avaliar a funcionalidade do ponto de vista do usuário."
+      },
+      {
+        "letter": "b",
+        "text": "Quando há acesso ao código e o objetivo é medir/melhorar cobertura estrutural."
+      },
+      {
+        "letter": "c",
+        "text": "Quando se deseja testar apenas requisitos não-funcionais."
+      },
+      {
+        "letter": "d",
+        "text": "Apenas durante testes de aceitação."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Isso é caixa-preta.",
+      "b": "Correta. Caixa-branca é adequada quando se tem código e foco em estrutura.",
+      "c": "Incorreta. Caixa-branca cobre tipicamente aspectos funcionais e estruturais.",
+      "d": "Incorreta. Aceitação tipicamente é caixa-preta."
+    }
+  },
+  {
+    "id": "D-69",
+    "exam": "D",
+    "number": "69",
+    "chapter": 4,
+    "lo": "FL-4.4.1",
+    "isAppendix": false,
+    "stem": "Qual é uma VANTAGEM do teste exploratório em comparação a técnicas baseadas em especificação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Não exige nenhuma habilidade do testador."
+      },
+      {
+        "letter": "b",
+        "text": "É útil quando há pouca especificação ou tempo limitado, alavancando criatividade e experiência do testador."
+      },
+      {
+        "letter": "c",
+        "text": "Garante 100% de cobertura formal."
+      },
+      {
+        "letter": "d",
+        "text": "Substitui automaticamente os outros tipos de teste."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Pelo contrário, depende muito da habilidade do testador.",
+      "b": "Correta. Exploratório se destaca em contextos com pouca documentação ou cronograma apertado.",
+      "c": "Incorreta. Não foca em cobertura formal.",
+      "d": "Incorreta. Complementa, não substitui."
+    }
+  },
+  {
+    "id": "D-70",
+    "exam": "D",
+    "number": "70",
+    "chapter": 4,
+    "lo": "FL-4.2.1",
+    "isAppendix": false,
+    "stem": "Que técnica é MELHOR para garantir cobertura de combinações de condições no cálculo de um seguro de carro, onde múltiplas variáveis (idade, histórico, modelo) interagem para produzir o preço?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "b",
+        "text": "Partição de equivalência simples."
+      },
+      {
+        "letter": "c",
+        "text": "Predição de erros sem documentação."
+      },
+      {
+        "letter": "d",
+        "text": "Cobertura de instrução."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Tabela de decisão modela combinações de múltiplas condições e suas consequências.",
+      "b": "Incorreta. Partição sozinha não cobre combinações.",
+      "c": "Incorreta. Predição de erros é útil mas não cobre sistematicamente combinações.",
+      "d": "Incorreta. Cobertura de instrução é caixa-branca, não combina condições."
+    }
+  },
+  {
+    "id": "D-71",
+    "exam": "D",
+    "number": "71",
+    "chapter": 4,
+    "lo": "FL-4.3.1",
+    "isAppendix": false,
+    "stem": "Em um trecho de código com 4 decisões (IFs), cada uma com seus dois ramos (V e F), quantos ramos PRECISAM ser cobertos para 100% de cobertura de ramo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "4."
+      },
+      {
+        "letter": "b",
+        "text": "6."
+      },
+      {
+        "letter": "c",
+        "text": "8."
+      },
+      {
+        "letter": "d",
+        "text": "16."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Esse é o número de IFs, não de ramos.",
+      "b": "Incorreta. Cálculo incorreto.",
+      "c": "Correta. 4 IFs × 2 ramos = 8 ramos.",
+      "d": "Incorreta. Excessivo; corresponderia a combinações."
+    }
+  },
+  {
+    "id": "D-72",
+    "exam": "D",
+    "number": "72",
+    "chapter": 4,
+    "lo": "FL-4.4.1",
+    "isAppendix": false,
+    "stem": "Que técnica baseada em experiência envolve atacar deliberadamente pontos suspeitos do sistema com entradas projetadas para provocar falhas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Predição de erros (error guessing)."
+      },
+      {
+        "letter": "b",
+        "text": "Ataque (attack-based testing)."
+      },
+      {
+        "letter": "c",
+        "text": "Tabela de decisão."
+      },
+      {
+        "letter": "d",
+        "text": "Cobertura de ramo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Predição usa intuição genérica; ataques são mais direcionados a vulnerabilidades específicas.",
+      "b": "Correta. Testes de ataque são focados em descobrir vulnerabilidades, usando dados de falhas históricas.",
+      "c": "Incorreta. Tabela de decisão é formal e baseada em especificação.",
+      "d": "Incorreta. Cobertura de ramo é caixa-branca."
+    }
+  },
+  {
+    "id": "D-73",
+    "exam": "D",
+    "number": "73",
+    "chapter": 4,
+    "lo": "FL-4.5.1",
+    "isAppendix": false,
+    "stem": "Considere o cenário: 'Dado que o usuário possui R$100 em conta, Quando ele transferir R$50, Então o saldo deve ser R$50'. Qual abordagem está sendo aplicada?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Tabela de decisão tradicional."
+      },
+      {
+        "letter": "b",
+        "text": "Cenário em formato Gherkin típico de BDD."
+      },
+      {
+        "letter": "c",
+        "text": "Caso de teste estrutural."
+      },
+      {
+        "letter": "d",
+        "text": "Teste de transição de estados."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Tabela de decisão tem formato tabular.",
+      "b": "Correta. Esta é a estrutura Given/When/Then característica de cenários BDD em Gherkin.",
+      "c": "Incorreta. Não há referência ao código.",
+      "d": "Incorreta. Não modela estados e transições."
+    }
+  },
+  {
+    "id": "D-74",
+    "exam": "D",
+    "number": "74",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "Qual conteúdo TÍPICO faz parte de um plano de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Apenas a lista de defeitos encontrados."
+      },
+      {
+        "letter": "b",
+        "text": "Escopo, abordagem, recursos, cronograma, critérios de entrada/saída."
+      },
+      {
+        "letter": "c",
+        "text": "Código-fonte completo do sistema."
+      },
+      {
+        "letter": "d",
+        "text": "Lista de salários da equipe."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Defeitos são registrados separadamente.",
+      "b": "Correta. Plano de teste documenta escopo, abordagem, recursos, cronograma, critérios, etc.",
+      "c": "Incorreta. Plano não contém código-fonte.",
+      "d": "Incorreta. Salários não fazem parte do plano de teste."
+    }
+  },
+  {
+    "id": "D-75",
+    "exam": "D",
+    "number": "75",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "Qual a diferença entre ESTRATÉGIA de teste e PLANO de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "São sinônimos."
+      },
+      {
+        "letter": "b",
+        "text": "Estratégia é uma diretriz organizacional/genérica; plano é específico do projeto/release."
+      },
+      {
+        "letter": "c",
+        "text": "Plano define a abordagem organizacional; estratégia é específica do projeto."
+      },
+      {
+        "letter": "d",
+        "text": "Apenas o plano define escopo; estratégia trata só de orçamento."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Têm escopos diferentes.",
+      "b": "Correta. Estratégia define diretrizes mais gerais; o plano aplica/adapta ao contexto específico.",
+      "c": "Incorreta. Inverte os conceitos.",
+      "d": "Incorreta. Estratégia não trata apenas de orçamento."
+    }
+  },
+  {
+    "id": "D-76",
+    "exam": "D",
+    "number": "76",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "Para iniciar o teste de sistema do 'App Saúde+' a equipe definiu que precisa ter ambiente disponível e build estável. O que esses são?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Critérios de saída."
+      },
+      {
+        "letter": "b",
+        "text": "Riscos do projeto."
+      },
+      {
+        "letter": "c",
+        "text": "Critérios de entrada (definition of ready)."
+      },
+      {
+        "letter": "d",
+        "text": "Métricas de desempenho."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Critérios de saída definem quando encerrar.",
+      "b": "Incorreta. Riscos são incertezas que podem afetar o projeto.",
+      "c": "Correta. Critérios de entrada definem o que precisa estar pronto antes de iniciar a atividade.",
+      "d": "Incorreta. Não são métricas, são condições para começar."
+    }
+  },
+  {
+    "id": "D-77",
+    "exam": "D",
+    "number": "77",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "A equipe da 'TI Saúde' usa um processo em que especialistas estimam individualmente, depois discutem divergências e reestimam até convergir. Qual técnica é essa?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Estimativa por especialistas (single expert)."
+      },
+      {
+        "letter": "b",
+        "text": "Wideband Delphi (Planning Poker é variante)."
+      },
+      {
+        "letter": "c",
+        "text": "Estimativa por 3 pontos."
+      },
+      {
+        "letter": "d",
+        "text": "Estimativa por proporção."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Especialista único não envolve grupo iterativo.",
+      "b": "Correta. Wideband Delphi (e Planning Poker) usa rounds iterativos para convergir.",
+      "c": "Incorreta. 3 pontos usa cenários otimista/realista/pessimista.",
+      "d": "Incorreta. Proporção usa relação com projetos anteriores."
+    }
+  },
+  {
+    "id": "D-78",
+    "exam": "D",
+    "number": "78",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "Na estimativa por 3 PONTOS, quais valores são considerados para calcular a estimativa esperada?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Mínimo, máximo e médio histórico."
+      },
+      {
+        "letter": "b",
+        "text": "Otimista, mais provável (realista) e pessimista."
+      },
+      {
+        "letter": "c",
+        "text": "Custo, prazo e qualidade."
+      },
+      {
+        "letter": "d",
+        "text": "Início, meio e fim do projeto."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não são exatamente esses os termos.",
+      "b": "Correta. Estimativa de 3 pontos combina otimista, realista e pessimista (fórmula PERT).",
+      "c": "Incorreta. São restrições do projeto, não estimativa de esforço.",
+      "d": "Incorreta. Não tem relação com fases."
+    }
+  },
+  {
+    "id": "D-79",
+    "exam": "D",
+    "number": "79",
+    "chapter": 5,
+    "lo": "FL-5.2.1",
+    "isAppendix": false,
+    "stem": "Para priorizar testes baseados em risco, quais DOIS fatores são tipicamente avaliados para cada item de risco?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Custo da equipe e cor da tela."
+      },
+      {
+        "letter": "b",
+        "text": "Probabilidade (likelihood) e impacto."
+      },
+      {
+        "letter": "c",
+        "text": "Idade do desenvolvedor e linguagem do código."
+      },
+      {
+        "letter": "d",
+        "text": "Quantidade de linhas e número de funções."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não são fatores de risco no ISTQB.",
+      "b": "Correta. Risco = Probabilidade × Impacto.",
+      "c": "Incorreta. Irrelevantes para risco do produto.",
+      "d": "Incorreta. São métricas de tamanho, não risco."
+    }
+  },
+  {
+    "id": "D-80",
+    "exam": "D",
+    "number": "80",
+    "chapter": 5,
+    "lo": "FL-5.2.1",
+    "isAppendix": false,
+    "stem": "A possibilidade de o cálculo de juros do 'BancoLumiar' apresentar erro em produção é um risco de:",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Projeto."
+      },
+      {
+        "letter": "b",
+        "text": "Produto."
+      },
+      {
+        "letter": "c",
+        "text": "Pessoal."
+      },
+      {
+        "letter": "d",
+        "text": "Cronograma."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Risco de projeto envolve cronograma, recursos, escopo, etc.",
+      "b": "Correta. Risco de produto refere-se a falhas na qualidade do produto.",
+      "c": "Incorreta. Pessoal seria categoria de risco de projeto.",
+      "d": "Incorreta. Cronograma é risco de projeto."
+    }
+  },
+  {
+    "id": "D-81",
+    "exam": "D",
+    "number": "81",
+    "chapter": 5,
+    "lo": "FL-5.2.1",
+    "isAppendix": false,
+    "stem": "Identificar um risco alto de falha no módulo de pagamento e priorizar testes nessa área é uma forma de:",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Aceitar o risco."
+      },
+      {
+        "letter": "b",
+        "text": "Mitigar o risco através de teste baseado em risco."
+      },
+      {
+        "letter": "c",
+        "text": "Transferir o risco para outra empresa."
+      },
+      {
+        "letter": "d",
+        "text": "Eliminar o risco totalmente."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Aceitar é não tomar ação.",
+      "b": "Correta. Concentrar esforço de teste em áreas de risco alto é uma estratégia de mitigação.",
+      "c": "Incorreta. Transferir seria contratar seguro/terceiro.",
+      "d": "Incorreta. Riscos raramente podem ser eliminados totalmente."
+    }
+  },
+  {
+    "id": "D-82",
+    "exam": "D",
+    "number": "82",
+    "chapter": 5,
+    "lo": "FL-5.3.1",
+    "isAppendix": false,
+    "stem": "Qual métrica é típica para MONITORAR o progresso do teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Quantidade de funcionários da empresa."
+      },
+      {
+        "letter": "b",
+        "text": "Percentual de casos de teste executados, defeitos abertos, taxa de aprovação."
+      },
+      {
+        "letter": "c",
+        "text": "Receita anual da companhia."
+      },
+      {
+        "letter": "d",
+        "text": "Número de horas de almoço da equipe."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não relacionado ao progresso de teste.",
+      "b": "Correta. Métricas como % executado, defeitos abertos e pass rate são típicas.",
+      "c": "Incorreta. Métrica financeira da empresa, não do teste.",
+      "d": "Incorreta. Irrelevante."
+    }
+  },
+  {
+    "id": "D-83",
+    "exam": "D",
+    "number": "83",
+    "chapter": 5,
+    "lo": "FL-5.3.1",
+    "isAppendix": false,
+    "stem": "Após perceber que o cronograma de teste está atrasado, o líder de teste decide adicionar mais testadores e priorizar funcionalidades críticas. Que atividade está realizando?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Planejamento de teste."
+      },
+      {
+        "letter": "b",
+        "text": "Controle de teste (ajuste e ações corretivas)."
+      },
+      {
+        "letter": "c",
+        "text": "Análise de teste."
+      },
+      {
+        "letter": "d",
+        "text": "Implementação de casos de teste."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Plano é o documento inicial.",
+      "b": "Correta. Controle envolve tomar ações para alinhar o teste ao plano quando há desvios.",
+      "c": "Incorreta. Análise define condições de teste.",
+      "d": "Incorreta. Implementação prepara o ambiente e dados."
+    }
+  },
+  {
+    "id": "D-84",
+    "exam": "D",
+    "number": "84",
+    "chapter": 5,
+    "lo": "FL-5.3.1",
+    "isAppendix": false,
+    "stem": "O que TIPICAMENTE faz parte de um relatório de progresso de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Status, métricas, riscos, divergências do plano, próximas ações."
+      },
+      {
+        "letter": "b",
+        "text": "Apenas a lista de pessoas presentes na reunião."
+      },
+      {
+        "letter": "c",
+        "text": "Código-fonte do sistema testado."
+      },
+      {
+        "letter": "d",
+        "text": "Histórico salarial da equipe."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Relatórios incluem status, métricas, riscos e ações.",
+      "b": "Incorreta. Lista de presença não é relatório de progresso.",
+      "c": "Incorreta. Código-fonte não pertence ao relatório.",
+      "d": "Incorreta. Informação irrelevante e confidencial."
+    }
+  },
+  {
+    "id": "D-85",
+    "exam": "D",
+    "number": "85",
+    "chapter": 5,
+    "lo": "FL-5.4.1",
+    "isAppendix": false,
+    "stem": "Por que a GESTÃO DE CONFIGURAÇÃO é importante para o teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Para garantir que itens de teste, ambientes e ferramentas estejam identificados, versionados e rastreáveis."
+      },
+      {
+        "letter": "b",
+        "text": "Para reduzir o número de testes necessários."
+      },
+      {
+        "letter": "c",
+        "text": "Para automatizar todos os testes do sistema."
+      },
+      {
+        "letter": "d",
+        "text": "Para eliminar a necessidade de testar."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Gestão de configuração garante integridade, versionamento e rastreabilidade dos artefatos.",
+      "b": "Incorreta. Não está relacionada à quantidade de testes.",
+      "c": "Incorreta. Configuração não automatiza testes.",
+      "d": "Incorreta. Não substitui o teste."
+    }
+  },
+  {
+    "id": "D-86",
+    "exam": "D",
+    "number": "86",
+    "chapter": 5,
+    "lo": "FL-5.5.1",
+    "isAppendix": false,
+    "stem": "O que NÃO deve estar incluído em um bom relatório de defeito?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Passos para reproduzir."
+      },
+      {
+        "letter": "b",
+        "text": "Resultado esperado e resultado obtido."
+      },
+      {
+        "letter": "c",
+        "text": "Severidade e prioridade."
+      },
+      {
+        "letter": "d",
+        "text": "Opinião pessoal sobre a incompetência do desenvolvedor."
+      }
+    ],
+    "correct": [
+      "d"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Passos para reproduzir são essenciais.",
+      "b": "Incorreta. Esperado vs obtido é fundamental.",
+      "c": "Incorreta. Severidade e prioridade são importantes para triagem.",
+      "d": "Correta. Relatório deve ser objetivo, factual e isento de julgamentos pessoais."
+    }
+  },
+  {
+    "id": "D-87",
+    "exam": "D",
+    "number": "87",
+    "chapter": 5,
+    "lo": "FL-5.5.1",
+    "isAppendix": false,
+    "stem": "Qual sequência representa estados TÍPICOS de um defeito do registro à finalização?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Aberto → Em análise → Atribuído → Corrigido → Verificado → Fechado."
+      },
+      {
+        "letter": "b",
+        "text": "Fechado → Aberto → Corrigido."
+      },
+      {
+        "letter": "c",
+        "text": "Verificado → Aberto → Corrigido."
+      },
+      {
+        "letter": "d",
+        "text": "Fechado → Verificado → Atribuído."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Esta é uma sequência típica de ciclo de vida de defeito.",
+      "b": "Incorreta. Começa de forma errada (fechado).",
+      "c": "Incorreta. Sequência impossível.",
+      "d": "Incorreta. Sequência impossível."
+    }
+  },
+  {
+    "id": "D-88",
+    "exam": "D",
+    "number": "88",
+    "chapter": 5,
+    "lo": "FL-5.5.1",
+    "isAppendix": false,
+    "stem": "Um defeito visual num botão da página de 'Sobre Nós' do 'site PetClub' não impede uso, mas o marketing quer corrigir antes do evento da semana. Qual classificação é MAIS apropriada?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Severidade alta, prioridade alta."
+      },
+      {
+        "letter": "b",
+        "text": "Severidade baixa, prioridade alta."
+      },
+      {
+        "letter": "c",
+        "text": "Severidade alta, prioridade baixa."
+      },
+      {
+        "letter": "d",
+        "text": "Severidade baixa, prioridade baixa."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Não há impacto técnico alto.",
+      "b": "Correta. Severidade reflete impacto técnico (baixa); prioridade reflete urgência de negócio (alta).",
+      "c": "Incorreta. Não há impacto técnico alto.",
+      "d": "Incorreta. Existe urgência de negócio."
+    }
+  },
+  {
+    "id": "D-89",
+    "exam": "D",
+    "number": "89",
+    "chapter": 5,
+    "lo": "FL-5.2.1",
+    "isAppendix": false,
+    "stem": "Selecione DUAS afirmações VERDADEIRAS sobre teste baseado em risco.",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Permite priorizar atividades de teste de acordo com o risco."
+      },
+      {
+        "letter": "b",
+        "text": "Garante 100% de cobertura de defeitos."
+      },
+      {
+        "letter": "c",
+        "text": "Ajuda a alocar recursos onde podem produzir maior valor."
+      },
+      {
+        "letter": "d",
+        "text": "Elimina a necessidade de planejar."
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "selectCount": 2,
+    "explanations": {
+      "a": "Correta. A priorização baseada em risco é um dos pilares dessa abordagem.",
+      "b": "Incorreta. Nenhuma técnica garante 100% de defeitos encontrados.",
+      "c": "Correta. Alocar recursos em áreas de maior risco maximiza valor.",
+      "d": "Incorreta. Pelo contrário, requer planejamento cuidadoso."
+    }
+  },
+  {
+    "id": "D-90",
+    "exam": "D",
+    "number": "90",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "Quando a equipe usa dados de projetos passados (ex.: '20% do esforço é teste') para estimar o esforço atual, qual técnica está aplicando?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Wideband Delphi."
+      },
+      {
+        "letter": "b",
+        "text": "Estimativa por proporção (ratio-based)."
+      },
+      {
+        "letter": "c",
+        "text": "PERT/3-points."
+      },
+      {
+        "letter": "d",
+        "text": "Julgamento de especialista único."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Delphi é iterativo entre especialistas.",
+      "b": "Correta. Estimativa por proporção usa razões históricas para extrapolar.",
+      "c": "Incorreta. PERT usa cenários O/M/P.",
+      "d": "Incorreta. Especialista único depende de opinião individual."
+    }
+  },
+  {
+    "id": "D-91",
+    "exam": "D",
+    "number": "91",
+    "chapter": 5,
+    "lo": "FL-5.5.1",
+    "isAppendix": false,
+    "stem": "Qual é a PRINCIPAL razão para implementar um processo formal de gestão de defeitos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Para responsabilizar individualmente os desenvolvedores."
+      },
+      {
+        "letter": "b",
+        "text": "Para rastrear defeitos sistematicamente, gerar métricas e apoiar a melhoria do produto e do processo."
+      },
+      {
+        "letter": "c",
+        "text": "Para reduzir o número de testes executados."
+      },
+      {
+        "letter": "d",
+        "text": "Para evitar comunicação entre testadores e desenvolvedores."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. O foco é melhoria, não punição.",
+      "b": "Correta. Gestão de defeitos formal apoia rastreabilidade, métricas e melhoria contínua.",
+      "c": "Incorreta. Não tem relação com quantidade de testes.",
+      "d": "Incorreta. Boa gestão promove comunicação."
+    }
+  },
+  {
+    "id": "D-92",
+    "exam": "D",
+    "number": "92",
+    "chapter": 5,
+    "lo": "FL-5.3.1",
+    "isAppendix": false,
+    "stem": "Qual métrica é mais útil para o líder de teste avaliar a QUALIDADE do objeto de teste no momento atual?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Número total de funcionários alocados no projeto."
+      },
+      {
+        "letter": "b",
+        "text": "Densidade de defeitos por funcionalidade ou módulo."
+      },
+      {
+        "letter": "c",
+        "text": "Quantidade de pull requests abertos no Git."
+      },
+      {
+        "letter": "d",
+        "text": "Número de reuniões realizadas."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Métrica de alocação, não de qualidade.",
+      "b": "Correta. Densidade de defeitos por módulo ajuda a inferir qualidade.",
+      "c": "Incorreta. Métrica de desenvolvimento, não direta de qualidade.",
+      "d": "Incorreta. Reuniões não medem qualidade do produto."
+    }
+  },
+  {
+    "id": "D-93",
+    "exam": "D",
+    "number": "93",
+    "chapter": 5,
+    "lo": "FL-5.1.1",
+    "isAppendix": false,
+    "stem": "A líder do projeto 'CarrosFáceis Compartilhamento' está organizando o plano de teste. O que ela NÃO deve incluir como parte central do plano?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Critérios de saída."
+      },
+      {
+        "letter": "b",
+        "text": "Cronograma e atividades."
+      },
+      {
+        "letter": "c",
+        "text": "Lista detalhada de salários da equipe de teste."
+      },
+      {
+        "letter": "d",
+        "text": "Recursos necessários (humanos, ambientes)."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Critérios de saída são essenciais.",
+      "b": "Incorreta. Cronograma é típico.",
+      "c": "Correta. Informações salariais não pertencem ao plano de teste.",
+      "d": "Incorreta. Recursos são parte do plano."
+    }
+  },
+  {
+    "id": "D-94",
+    "exam": "D",
+    "number": "94",
+    "chapter": 5,
+    "lo": "FL-5.2.1",
+    "isAppendix": false,
+    "stem": "A equipe da 'AirSegura Aviation' decide testar de forma muito mais rigorosa o módulo de cálculo de combustível do que o módulo de tema visual da interface. Que princípio de gestão está aplicando?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Testes exaustivos."
+      },
+      {
+        "letter": "b",
+        "text": "Teste baseado em risco."
+      },
+      {
+        "letter": "c",
+        "text": "Cobertura de instrução total."
+      },
+      {
+        "letter": "d",
+        "text": "Análise estática completa."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Testes exaustivos são inviáveis.",
+      "b": "Correta. Maior rigor onde o impacto/risco é maior é teste baseado em risco.",
+      "c": "Incorreta. Cobertura de instrução é técnica caixa-branca.",
+      "d": "Incorreta. Análise estática é técnica, não princípio de gestão."
+    }
+  },
+  {
+    "id": "D-95",
+    "exam": "D",
+    "number": "95",
+    "chapter": 5,
+    "lo": "FL-5.4.1",
+    "isAppendix": false,
+    "stem": "Por que a equipe deve identificar e versionar o item de teste (build sob teste)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Para que se saiba EXATAMENTE qual versão foi testada quando defeitos forem rastreados ou novos releases preparados."
+      },
+      {
+        "letter": "b",
+        "text": "Para reduzir o tamanho do código."
+      },
+      {
+        "letter": "c",
+        "text": "Para evitar o uso de ferramentas de automação."
+      },
+      {
+        "letter": "d",
+        "text": "Para excluir testadores do projeto."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Versionar permite rastreabilidade entre defeito e versão exata.",
+      "b": "Incorreta. Não tem relação com tamanho de código.",
+      "c": "Incorreta. Configuração não impede automação.",
+      "d": "Incorreta. Não tem relação com pessoal."
+    }
+  },
+  {
+    "id": "D-96",
+    "exam": "D",
+    "number": "96",
+    "chapter": 6,
+    "lo": "FL-6.1.1",
+    "isAppendix": false,
+    "stem": "Qual categoria de ferramenta de teste é MAIS adequada para a equipe da 'PortalGov' rastrear casos de teste, execuções e defeitos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ferramenta de análise estática."
+      },
+      {
+        "letter": "b",
+        "text": "Ferramenta de gestão de teste (test management)."
+      },
+      {
+        "letter": "c",
+        "text": "Ferramenta de performance."
+      },
+      {
+        "letter": "d",
+        "text": "Ferramenta de modelagem UML."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Análise estática verifica artefatos sem executar.",
+      "b": "Correta. Ferramentas de gestão de teste organizam casos, execuções e defeitos.",
+      "c": "Incorreta. Performance avalia métricas de carga e tempo de resposta.",
+      "d": "Incorreta. UML é modelagem de design."
+    }
+  },
+  {
+    "id": "D-97",
+    "exam": "D",
+    "number": "97",
+    "chapter": 6,
+    "lo": "FL-6.1.1",
+    "isAppendix": false,
+    "stem": "Para verificar se o site 'GuruDoTreino' suporta 5.000 usuários simultâneos, qual tipo de ferramenta é APROPRIADO?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ferramenta de gestão de defeitos."
+      },
+      {
+        "letter": "b",
+        "text": "Ferramenta de performance/load testing (ex.: JMeter, Gatling)."
+      },
+      {
+        "letter": "c",
+        "text": "Ferramenta de análise estática."
+      },
+      {
+        "letter": "d",
+        "text": "Ferramenta de revisão."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Gestão de defeitos não simula carga.",
+      "b": "Correta. Ferramentas de performance simulam usuários virtuais e medem comportamento sob carga.",
+      "c": "Incorreta. Análise estática não executa o sistema.",
+      "d": "Incorreta. Revisão é manual."
+    }
+  },
+  {
+    "id": "D-98",
+    "exam": "D",
+    "number": "98",
+    "chapter": 6,
+    "lo": "FL-6.2.1",
+    "isAppendix": false,
+    "stem": "Qual é um BENEFÍCIO clássico da automação de testes?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Eliminar a necessidade de planejar testes."
+      },
+      {
+        "letter": "b",
+        "text": "Executar testes repetitivos de regressão de forma rápida e consistente."
+      },
+      {
+        "letter": "c",
+        "text": "Substituir totalmente os testadores."
+      },
+      {
+        "letter": "d",
+        "text": "Garantir ausência de defeitos no software."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Planejamento continua essencial.",
+      "b": "Correta. Automação executa rapidamente testes repetitivos como regressão, com consistência.",
+      "c": "Incorreta. Testadores continuam essenciais para análise, design, exploratório, etc.",
+      "d": "Incorreta. Nenhum teste garante ausência de defeitos."
+    }
+  },
+  {
+    "id": "D-99",
+    "exam": "D",
+    "number": "99",
+    "chapter": 6,
+    "lo": "FL-6.2.1",
+    "isAppendix": false,
+    "stem": "Qual destes é um RISCO comum na introdução de ferramentas de automação de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Subestimar o esforço de manutenção dos scripts."
+      },
+      {
+        "letter": "b",
+        "text": "Reduzir custos de equipe imediatamente."
+      },
+      {
+        "letter": "c",
+        "text": "Eliminar a necessidade de ambiente de teste."
+      },
+      {
+        "letter": "d",
+        "text": "Garantir 100% de cobertura automaticamente."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Correta. Scripts de automação exigem manutenção contínua, frequentemente subestimada.",
+      "b": "Incorreta. Esse seria um benefício pretendido, não um risco.",
+      "c": "Incorreta. Ambiente de teste continua necessário.",
+      "d": "Incorreta. Automação não garante cobertura total."
+    }
+  },
+  {
+    "id": "D-100",
+    "exam": "D",
+    "number": "100",
+    "chapter": 6,
+    "lo": "FL-6.2.1",
+    "isAppendix": false,
+    "stem": "Antes de adotar uma nova ferramenta de teste no projeto 'EduCadastro', a equipe deve considerar PRINCIPALMENTE:",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Apenas o custo da licença."
+      },
+      {
+        "letter": "b",
+        "text": "Maturidade do processo, ROI esperado, suporte ao stack tecnológico e capacitação da equipe."
+      },
+      {
+        "letter": "c",
+        "text": "Apenas a interface gráfica da ferramenta."
+      },
+      {
+        "letter": "d",
+        "text": "Apenas a opinião pessoal do desenvolvedor mais antigo."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "selectCount": 1,
+    "explanations": {
+      "a": "Incorreta. Custo é só um dos fatores.",
+      "b": "Correta. ISTQB destaca avaliação ampla: processo, ROI, integração técnica e capacitação.",
+      "c": "Incorreta. UI é apenas um aspecto secundário.",
+      "d": "Incorreta. Decisão deve ser baseada em múltiplos critérios."
+    }
   }
 ]

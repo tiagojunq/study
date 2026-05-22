@@ -13,6 +13,7 @@ export default function App() {
       <ModeratorSession
         key={route.key}
         moderatorName={route.name}
+        solo={route.solo === true}
         onExit={reset}
       />
     )
@@ -30,8 +31,11 @@ export default function App() {
 
   return (
     <Home
+      onStartSolo={(name) =>
+        setRoute({ kind: 'moderator', name, solo: true, key: Date.now() })
+      }
       onStartModerator={(name) =>
-        setRoute({ kind: 'moderator', name, key: Date.now() })
+        setRoute({ kind: 'moderator', name, solo: false, key: Date.now() })
       }
       onStartParticipant={(code, name) =>
         setRoute({ kind: 'participant', code, name, key: Date.now() })
