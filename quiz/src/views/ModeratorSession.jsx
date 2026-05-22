@@ -562,9 +562,11 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                 >
                   Iniciar simulado
                 </button>
-                <span className="muted" style={{ alignSelf: 'center' }}>
-                  Você pode iniciar mesmo com 0 participantes (modo solo).
-                </span>
+                {!solo && (
+                  <span className="muted" style={{ alignSelf: 'center' }}>
+                    Você pode iniciar mesmo com 0 participantes (modo solo).
+                  </span>
+                )}
               </div>
             </div>
           </>
@@ -658,6 +660,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                 participants={participants}
                 totalQuestions={questions.length}
                 myId={HOST_ID}
+                solo={solo}
               />
             </div>
             <div className="panel">
@@ -667,6 +670,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                 chapterTotals={chapterTotals}
                 totalQuestions={questions.length}
                 myId={HOST_ID}
+                solo={solo}
               />
             </div>
             <div className="row">
