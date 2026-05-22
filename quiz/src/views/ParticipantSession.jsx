@@ -5,6 +5,7 @@ import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
 import PerformanceBreakdown from '../components/PerformanceBreakdown.jsx'
 import ThemeToggle from '../components/ThemeToggle.jsx'
+import ConfirmDialog from '../components/ConfirmDialog.jsx'
 
 export default function ParticipantSession({ roomCode, name, onExit }) {
   const [status, setStatus] = useState('connecting') // connecting | open | rejected | closed | error
@@ -15,6 +16,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   const [submittedFor, setSubmittedFor] = useState(-1) // questionIndex
   const clientRef = useRef(null)
   const [now, setNow] = useState(Date.now())
+  const [confirmExit, setConfirmExit] = useState(false)
 
   useEffect(() => {
     if (state?.phase === 'finished') return
@@ -95,6 +97,23 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   }
 
   // ---- Status screens ------------------------------------------------
+  const exitDialog = (
+    <ConfirmDialog
+      open={confirmExit}
+      title="Sair da sala?"
+      message={
+        status === 'open' && state?.phase && state.phase !== 'finished'
+          ? 'A prova ainda está em andamento. Sair encerra sua participação e você precisará entrar de novo com o código da sala.'
+          : 'Você voltará para a tela inicial.'
+      }
+      confirmLabel="Sair"
+      cancelLabel="Continuar"
+      variant="danger"
+      onConfirm={onExit}
+      onCancel={() => setConfirmExit(false)}
+    />
+  )
+
   if (status === 'error') {
     return (
       <div className="app">
@@ -102,9 +121,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
           <h1>Participante • {name}</h1>
           <div className="meta">
             <ThemeToggle />
-            <button className="ghost" onClick={onExit}>Sair</button>
+            <button className="ghost" onClick={() => setConfirmExit(true)}>Sair</button>
           </div>
         </header>
+        {exitDialog}
         <div className="container">
           <div className="banner danger">
             <strong>Não consegui conectar na sala {roomCode}.</strong>
@@ -144,9 +164,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
           <h1>Participante • {name}</h1>
           <div className="meta">
             <ThemeToggle />
-            <button className="ghost" onClick={onExit}>Sair</button>
+            <button className="ghost" onClick={() => setConfirmExit(true)}>Sair</button>
           </div>
         </header>
+        {exitDialog}
         <div className="container">
           <div className="banner info">
             <span className="spinner" /> Conectando à sala <strong>{roomCode}</strong>…
@@ -228,9 +249,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
             </span>
           )}
           <ThemeToggle />
-          <button className="ghost" onClick={onExit}>Sair</button>
+          <button className="ghost" onClick={() => setConfirmExit(true)}>Sair</button>
         </div>
       </header>
+      {exitDialog}
 
       <div className="container">
         {phase === 'lobby' && (

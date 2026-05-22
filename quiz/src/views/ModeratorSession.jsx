@@ -12,6 +12,7 @@ import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
 import PerformanceBreakdown from '../components/PerformanceBreakdown.jsx'
 import ThemeToggle from '../components/ThemeToggle.jsx'
+import ConfirmDialog from '../components/ConfirmDialog.jsx'
 
 const HOST_ID = 'host'
 
@@ -54,6 +55,8 @@ export default function ModeratorSession({ moderatorName, onExit }) {
 
   // Local moderator's draft answer for current question (not yet committed).
   const [hostDraft, setHostDraft] = useState([])
+  // Confirmation dialog when leaving (closes the room for everyone).
+  const [confirmExit, setConfirmExit] = useState(false)
 
   // --- PeerJS setup ----------------------------------------------------
   useEffect(() => {
@@ -328,9 +331,24 @@ export default function ModeratorSession({ moderatorName, onExit }) {
             </span>
           )}
           <ThemeToggle />
-          <button className="ghost" onClick={onExit}>Sair</button>
+          <button className="ghost" onClick={() => setConfirmExit(true)}>Sair</button>
         </div>
       </header>
+
+      <ConfirmDialog
+        open={confirmExit}
+        title="Sair da sala?"
+        message={
+          phase === 'finished'
+            ? 'Você voltará para a tela inicial. A sala será encerrada.'
+            : 'Sair agora encerra a sala para todos os participantes e a sessão será perdida.'
+        }
+        confirmLabel="Sair"
+        cancelLabel="Continuar na sala"
+        variant="danger"
+        onConfirm={onExit}
+        onCancel={() => setConfirmExit(false)}
+      />
 
       <div className="container">
         {peerStatus === 'connecting' && (
