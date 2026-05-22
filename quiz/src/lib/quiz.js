@@ -23,9 +23,14 @@ export const BANKS = {
     label: 'Simulado C – Extras (40 questões geradas)',
     filter: (q) => q.exam === 'C',
   },
+  D_MAIN: {
+    id: 'D_MAIN',
+    label: 'Simulado D – Extras (100 questões geradas)',
+    filter: (q) => q.exam === 'D',
+  },
   ALL: {
     id: 'ALL',
-    label: 'Banco completo (146 questões)',
+    label: 'Banco completo (246 questões)',
     filter: () => true,
   },
 }
