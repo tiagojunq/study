@@ -30,6 +30,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   const [limit, setLimit] = useState(40)
   const [shuffle, setShuffle] = useState(true)
   const [durationMinutes, setDurationMinutes] = useState(60)
+  const [noTimeLimit, setNoTimeLimit] = useState(false)
 
   // Session state (host-owned)
   const [phase, setPhase] = useState('lobby') // lobby | question | reveal | finished
@@ -94,9 +95,10 @@ export default function ModeratorSession({ moderatorName, onExit }) {
     return () => clearInterval(id)
   }, [phase])
 
-  // Auto-finalize at the duration limit.
+  // Auto-finalize at the duration limit (skip when no time limit is set).
   useEffect(() => {
     if (!startedAt || phase === 'finished') return
+    if (!durationLimitSeconds) return
     const elapsed = (now - startedAt) / 1000
     if (elapsed >= durationLimitSeconds) finalize()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -226,10 +228,12 @@ export default function ModeratorSession({ moderatorName, onExit }) {
       qs = prepareQuestions({ bank: 'ALL', chapters, limit: limitNum, shuffle, seed })
     }
     if (qs.length === 0) return
-    const dur = Math.max(
-      60,
-      Math.min(MAX_DURATION_SECONDS, Number(durationMinutes) * 60 || MAX_DURATION_SECONDS),
-    )
+    const dur = noTimeLimit
+      ? 0
+      : Math.max(
+          60,
+          Math.min(MAX_DURATION_SECONDS, Number(durationMinutes) * 60 || MAX_DURATION_SECONDS),
+        )
     // Tally how many questions belong to each chapter in this run so clients
     // can render a chapter-by-chapter breakdown at the end.
     const totals = {}
@@ -341,9 +345,15 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   // --- Derived UI ------------------------------------------------------
   const currentQuestion = currentIndex >= 0 ? questions[currentIndex] : null
   const elapsedSeconds = startedAt ? Math.floor((now - startedAt) / 1000) : 0
-  const remaining = Math.max(0, durationLimitSeconds - elapsedSeconds)
-  const timerClass =
-    remaining <= 60 ? 'timer danger' : remaining <= 300 ? 'timer warn' : 'timer'
+  const hasTimeLimit = durationLimitSeconds > 0
+  const remaining = hasTimeLimit ? Math.max(0, durationLimitSeconds - elapsedSeconds) : Infinity
+  const timerClass = !hasTimeLimit
+    ? 'timer'
+    : remaining <= 60
+      ? 'timer danger'
+      : remaining <= 300
+        ? 'timer warn'
+        : 'timer'
 
   const answeredIds = useMemo(() => new Set(Object.keys(currentAnswers)), [
     currentAnswers,
@@ -358,7 +368,8 @@ export default function ModeratorSession({ moderatorName, onExit }) {
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
-              ⏱ {formatTime(elapsedSeconds)} / {formatTime(durationLimitSeconds)}
+              ⏱ {formatTime(elapsedSeconds)}
+              {hasTimeLimit ? ` / ${formatTime(durationLimitSeconds)}` : ' (sem limite)'}
             </span>
           )}
           <ThemeToggle />
@@ -522,7 +533,17 @@ export default function ModeratorSession({ moderatorName, onExit }) {
                     max={60}
                     value={durationMinutes}
                     onChange={(e) => setDurationMinutes(e.target.value)}
+                    disabled={noTimeLimit}
                   />
+                </label>
+                <label style={{ flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
+                  <input
+                    type="checkbox"
+                    checked={noTimeLimit}
+                    onChange={(e) => setNoTimeLimit(e.target.checked)}
+                    style={{ width: 'auto' }}
+                  />
+                  <span>Sem tempo limite</span>
                 </label>
                 <label style={{ flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
                   <input

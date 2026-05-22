@@ -26,6 +26,11 @@ export default function QuestionDisplay({
         </span>
       </div>
       <div className="stem"><StemRenderer text={stem} /></div>
+      {question.image && (
+        <div className="question-diagram">
+          <img src={question.image} alt="Diagrama da questão" />
+        </div>
+      )}
       <div className="options">
         {options.map((opt) => {
           const isSel = selSet.has(opt.letter)

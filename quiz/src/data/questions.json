@@ -854,7 +854,8 @@
       "b": "Incorreta. 2 casos de teste seriam insuficientes para cobrir todas as transições válidas do diagrama.",
       "c": "Incorreta. 7 casos de teste são mais do que o mínimo necessário para cobertura de transições válidas.",
       "d": "Correta. O número mínimo de casos de teste para cobrir todas as transições válidas do diagrama é 3, pois cada caso de teste pode cobrir múltiplas transições em sequência."
-    }
+    },
+    "image": "/study/quiz/diagrams/a23.svg"
   },
   {
     "id": "A-24",
@@ -3314,7 +3315,8 @@
       "b": "Incorreta. Esta sequência tem um Add extra no início (N vai a 4 que é inválido), tornando-a incorreta.",
       "c": "Correta. Add(N=1), Add(N=2), Add(N=3), Remove(N=2), Remove(N=1) — cobre as 5 transições válidas do diagrama: 0→1, 1→2, 2→3, 3→2, 2→1.",
       "d": "Incorreta. Esta sequência não cobre a transição de N=2 para N=1 (a segunda remoção levaria para N=2→3 novamente, perdendo uma transição)."
-    }
+    },
+    "image": "/study/quiz/diagrams/b23.svg"
   },
   {
     "id": "B-24",

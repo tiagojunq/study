@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- A-23: State transition diagram — INIT/ON/PAUSE/OFF
+     5 valid transitions; minimum 3 test cases for valid transition coverage:
+     P1: INIT→ON→OFF  P2: INIT→ON→PAUSE→OFF  P3: INIT→ON→PAUSE→ON→OFF -->
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arr-a23" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4f46e5"/>
+    </marker>
+  </defs>
+
+  <!-- ── States ── -->
+  <!-- INIT -->
+  <circle cx="75"  cy="90" r="34" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <text   x="75"  y="94"  text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">INIT</text>
+
+  <!-- ON -->
+  <circle cx="245" cy="90" r="34" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <text   x="245" y="94"  text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">ON</text>
+
+  <!-- PAUSE -->
+  <circle cx="415" cy="90" r="34" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <text   x="415" y="94"  text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">PAUSE</text>
+
+  <!-- OFF (double circle = final state) -->
+  <circle cx="245" cy="210" r="34" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <circle cx="245" cy="210" r="27" fill="none"   stroke="#4f46e5" stroke-width="2"/>
+  <text   x="245" y="214" text-anchor="middle" font-size="13" font-weight="600" fill="#3730a3">OFF</text>
+
+  <!-- ── Transitions ── -->
+  <!-- 1. INIT → ON -->
+  <line x1="110" y1="90" x2="206" y2="90"
+        stroke="#4f46e5" stroke-width="1.8" marker-end="url(#arr-a23)"/>
+  <text x="158" y="82" text-anchor="middle" font-size="11" fill="#6366f1">boot</text>
+
+  <!-- 2. ON → PAUSE (arc above) -->
+  <path d="M 278 76 Q 330 42 381 76"
+        fill="none" stroke="#4f46e5" stroke-width="1.8" marker-end="url(#arr-a23)"/>
+  <text x="330" y="46" text-anchor="middle" font-size="11" fill="#6366f1">pause</text>
+
+  <!-- 3. PAUSE → ON (arc below) -->
+  <path d="M 381 104 Q 330 138 278 104"
+        fill="none" stroke="#4f46e5" stroke-width="1.8" marker-end="url(#arr-a23)"/>
+  <text x="330" y="144" text-anchor="middle" font-size="11" fill="#6366f1">resume</text>
+
+  <!-- 4. ON → OFF -->
+  <line x1="245" y1="125" x2="245" y2="175"
+        stroke="#4f46e5" stroke-width="1.8" marker-end="url(#arr-a23)"/>
+  <text x="255" y="155" text-anchor="start" font-size="11" fill="#6366f1">shutdown</text>
+
+  <!-- 5. PAUSE → OFF -->
+  <line x1="390" y1="118" x2="271" y2="187"
+        stroke="#4f46e5" stroke-width="1.8" marker-end="url(#arr-a23)"/>
+  <text x="358" y="168" text-anchor="middle" font-size="11" fill="#6366f1">force off</text>
+</svg>

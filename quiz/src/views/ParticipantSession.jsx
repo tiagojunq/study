@@ -64,9 +64,15 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   const startedAt = state?.startedAt
   const durationLimitSeconds = state?.durationLimitSeconds || 0
   const elapsedSeconds = startedAt ? Math.floor((now - startedAt) / 1000) : 0
-  const remaining = Math.max(0, durationLimitSeconds - elapsedSeconds)
-  const timerClass =
-    remaining <= 60 ? 'timer danger' : remaining <= 300 ? 'timer warn' : 'timer'
+  const hasTimeLimit = durationLimitSeconds > 0
+  const remaining = hasTimeLimit ? Math.max(0, durationLimitSeconds - elapsedSeconds) : Infinity
+  const timerClass = !hasTimeLimit
+    ? 'timer'
+    : remaining <= 60
+      ? 'timer danger'
+      : remaining <= 300
+        ? 'timer warn'
+        : 'timer'
 
   const iAnswered =
     state && state.answeredIds && state.answeredIds.includes(myConnId)
@@ -245,7 +251,8 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
-              ⏱ {formatTime(elapsedSeconds)} / {formatTime(durationLimitSeconds)}
+              ⏱ {formatTime(elapsedSeconds)}
+              {hasTimeLimit ? ` / ${formatTime(durationLimitSeconds)}` : ' (sem limite)'}
             </span>
           )}
           <ThemeToggle />
