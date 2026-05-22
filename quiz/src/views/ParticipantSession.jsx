@@ -3,6 +3,7 @@ import { createClient } from '../lib/peer.js'
 import { formatTime } from '../lib/quiz.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
+import PerformanceBreakdown from '../components/PerformanceBreakdown.jsx'
 import ThemeToggle from '../components/ThemeToggle.jsx'
 
 export default function ParticipantSession({ roomCode, name, onExit }) {
@@ -190,14 +191,25 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
             A conexão com o moderador foi encerrada.
           </div>
           {state.phase === 'finished' ? (
-            <div className="panel">
-              <h2>Ranking final</h2>
-              <Ranking
-                participants={state.participants}
-                totalQuestions={state.totalQuestions}
-                myId={myConnId}
-              />
-            </div>
+            <>
+              <div className="panel">
+                <h2>Ranking final</h2>
+                <Ranking
+                  participants={state.participants}
+                  totalQuestions={state.totalQuestions}
+                  myId={myConnId}
+                />
+              </div>
+              <div className="panel">
+                <h2>Análise por participante</h2>
+                <PerformanceBreakdown
+                  participants={state.participants}
+                  chapterTotals={state.chapterTotals || {}}
+                  totalQuestions={state.totalQuestions}
+                  myId={myConnId}
+                />
+              </div>
+            </>
           ) : null}
           <button className="ghost" onClick={onExit}>Voltar</button>
         </div>
@@ -299,19 +311,30 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
         )}
 
         {phase === 'finished' && (
-          <div className="panel">
-            <h2>Ranking final</h2>
-            <p className="muted">
-              {state.totalQuestions} questões • duração {formatTime(elapsedSeconds)}
-            </p>
-            <Ranking
-              participants={state.participants}
-              totalQuestions={state.totalQuestions}
-              myId={myConnId}
-            />
-            <div className="divider" />
-            <button className="ghost" onClick={onExit}>Voltar ao início</button>
-          </div>
+          <>
+            <div className="panel">
+              <h2>Ranking final</h2>
+              <p className="muted">
+                {state.totalQuestions} questões • duração {formatTime(elapsedSeconds)}
+              </p>
+              <Ranking
+                participants={state.participants}
+                totalQuestions={state.totalQuestions}
+                myId={myConnId}
+              />
+            </div>
+            <div className="panel">
+              <h2>Análise por participante</h2>
+              <PerformanceBreakdown
+                participants={state.participants}
+                chapterTotals={state.chapterTotals || {}}
+                totalQuestions={state.totalQuestions}
+                myId={myConnId}
+              />
+              <div className="divider" />
+              <button className="ghost" onClick={onExit}>Voltar ao início</button>
+            </div>
+          </>
         )}
       </div>
     </div>

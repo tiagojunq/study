@@ -10,6 +10,7 @@ import {
 import { createHost, newRoomCode } from '../lib/peer.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
+import PerformanceBreakdown from '../components/PerformanceBreakdown.jsx'
 import ThemeToggle from '../components/ThemeToggle.jsx'
 
 const HOST_ID = 'host'
@@ -38,6 +39,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
       role: 'moderator',
       score: 0,
       answeredCount: 0,
+      chapterCorrect: {},
     },
   ])
   // Map of participantId -> array of letters answered for the current question.
@@ -47,6 +49,8 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   const [durationLimitSeconds, setDurationLimitSeconds] = useState(
     MAX_DURATION_SECONDS,
   )
+  // How many questions per chapter in the current quiz (computed at start).
+  const [chapterTotals, setChapterTotals] = useState({})
 
   // Local moderator's draft answer for current question (not yet committed).
   const [hostDraft, setHostDraft] = useState([])
@@ -108,6 +112,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
       // we send a sanitized view for the lobby UI badge ("answered")
       answeredIds: Object.keys(currentAnswers),
       totalQuestions: questions.length,
+      chapterTotals,
       startedAt,
       durationLimitSeconds,
       revealCorrect:
@@ -130,7 +135,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
     if (peerStatus !== 'open') return
     broadcastState()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, currentIndex, participants, currentAnswers, questions, startedAt])
+  }, [phase, currentIndex, participants, currentAnswers, questions, startedAt, chapterTotals])
 
   // --- Client message handler -----------------------------------------
   const handleClientMessage = (connId, msg, conn) => {
@@ -156,6 +161,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
             role: 'participant',
             score: 0,
             answeredCount: 0,
+            chapterCorrect: {},
           },
         ]
       })
@@ -182,13 +188,24 @@ export default function ModeratorSession({ moderatorName, onExit }) {
 
   // --- Moderator actions ----------------------------------------------
   const handleStart = () => {
-    const limitNum = Math.max(1, Math.min(106, Number(limit) || 1))
+    const limitNum = Math.max(1, Math.min(146, Number(limit) || 1))
     const seed = Math.floor(Math.random() * 1e9)
     const qs = prepareQuestions({ bank, limit: limitNum, shuffle, seed })
     if (qs.length === 0) return
     const dur = Math.max(
       60,
       Math.min(MAX_DURATION_SECONDS, Number(durationMinutes) * 60 || MAX_DURATION_SECONDS),
+    )
+    // Tally how many questions belong to each chapter in this run so clients
+    // can render a chapter-by-chapter breakdown at the end.
+    const totals = {}
+    for (const q of qs) {
+      totals[q.chapter] = (totals[q.chapter] || 0) + 1
+    }
+    setChapterTotals(totals)
+    // Reset running scores in case the moderator re-starts a session.
+    setParticipants((prev) =>
+      prev.map((p) => ({ ...p, score: 0, answeredCount: 0, chapterCorrect: {} })),
     )
     setQuestions(qs)
     setDurationLimitSeconds(dur)
@@ -230,10 +247,15 @@ export default function ModeratorSession({ moderatorName, onExit }) {
         const ans = allAnswers[p.id]
         if (!ans) return p
         const earned = scoreAnswer(q, ans)
+        const chapterCorrect = { ...(p.chapterCorrect || {}) }
+        if (earned > 0) {
+          chapterCorrect[q.chapter] = (chapterCorrect[q.chapter] || 0) + 1
+        }
         return {
           ...p,
           score: p.score + earned,
           answeredCount: p.answeredCount + 1,
+          chapterCorrect,
         }
       }),
     )
@@ -266,10 +288,15 @@ export default function ModeratorSession({ moderatorName, onExit }) {
           const ans = allAnswers[p.id]
           if (!ans) return p
           const earned = scoreAnswer(q, ans)
+          const chapterCorrect = { ...(p.chapterCorrect || {}) }
+          if (earned > 0) {
+            chapterCorrect[q.chapter] = (chapterCorrect[q.chapter] || 0) + 1
+          }
           return {
             ...p,
             score: p.score + earned,
             answeredCount: p.answeredCount + 1,
+            chapterCorrect,
           }
         }),
       )
@@ -501,6 +528,15 @@ export default function ModeratorSession({ moderatorName, onExit }) {
               </p>
               <Ranking
                 participants={participants}
+                totalQuestions={questions.length}
+                myId={HOST_ID}
+              />
+            </div>
+            <div className="panel">
+              <h2>Análise por participante</h2>
+              <PerformanceBreakdown
+                participants={participants}
+                chapterTotals={chapterTotals}
                 totalQuestions={questions.length}
                 myId={HOST_ID}
               />
