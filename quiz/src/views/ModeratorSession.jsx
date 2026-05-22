@@ -669,20 +669,22 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
 
         {phase === 'finished' && (
           <>
+            {!solo && (
+              <div className="panel">
+                <h2>Ranking final</h2>
+                <p className="muted">
+                  {questions.length} questões • duração {formatTime(elapsedSeconds)}
+                </p>
+                <Ranking
+                  participants={participants}
+                  totalQuestions={questions.length}
+                  myId={HOST_ID}
+                  solo={solo}
+                />
+              </div>
+            )}
             <div className="panel">
-              <h2>Ranking final</h2>
-              <p className="muted">
-                {questions.length} questões • duração {formatTime(elapsedSeconds)}
-              </p>
-              <Ranking
-                participants={participants}
-                totalQuestions={questions.length}
-                myId={HOST_ID}
-                solo={solo}
-              />
-            </div>
-            <div className="panel">
-              <h2>Análise por participante</h2>
+              <h2>{solo ? 'Análise de desempenho' : 'Análise por participante'}</h2>
               <PerformanceBreakdown
                 participants={participants}
                 chapterTotals={chapterTotals}
