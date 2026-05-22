@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
 import ThemeToggle from '../components/ThemeToggle.jsx'
 
-export default function Home({ onStartModerator, onStartParticipant }) {
+export default function Home({ onStartSolo, onStartModerator, onStartParticipant }) {
   const [name, setName] = useState('')
   const [code, setCode] = useState('')
-  const [mode, setMode] = useState('choice') // choice | moderator-name | participant
+  // choice | solo-name | group-choice | moderator-name | participant
+  const [mode, setMode] = useState('choice')
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search)
@@ -49,6 +50,50 @@ export default function Home({ onStartModerator, onStartParticipant }) {
             <div className="row" style={{ marginTop: '0.5rem' }}>
               <button
                 className="primary"
+                onClick={() => setMode('solo-name')}
+              >
+                Somente eu
+              </button>
+              <button onClick={() => setMode('group-choice')}>
+                Em grupo
+              </button>
+            </div>
+          </div>
+        )}
+
+        {mode === 'solo-name' && (
+          <div className="panel">
+            <h2>Modo solo</h2>
+            <label>
+              Seu nome
+              <input
+                value={name}
+                autoFocus
+                onChange={(e) => setName(e.target.value)}
+                placeholder="ex.: Tiago"
+                maxLength={40}
+              />
+            </label>
+            <div className="row" style={{ marginTop: '0.75rem' }}>
+              <button
+                className="primary"
+                disabled={!trimmedName}
+                onClick={() => onStartSolo(trimmedName)}
+              >
+                Começar
+              </button>
+              <button className="ghost" onClick={() => setMode('choice')}>Voltar</button>
+            </div>
+          </div>
+        )}
+
+        {mode === 'group-choice' && (
+          <div className="panel">
+            <h2>Em grupo</h2>
+            <p className="muted">Você será o moderador da sala ou um participante?</p>
+            <div className="row" style={{ marginTop: '0.5rem' }}>
+              <button
+                className="primary"
                 onClick={() => setMode('moderator-name')}
               >
                 Sou o moderador
@@ -56,6 +101,7 @@ export default function Home({ onStartModerator, onStartParticipant }) {
               <button onClick={() => setMode('participant')}>
                 Sou participante
               </button>
+              <button className="ghost" onClick={() => setMode('choice')}>Voltar</button>
             </div>
           </div>
         )}
@@ -81,7 +127,7 @@ export default function Home({ onStartModerator, onStartParticipant }) {
               >
                 Criar sala
               </button>
-              <button className="ghost" onClick={() => setMode('choice')}>Voltar</button>
+              <button className="ghost" onClick={() => setMode('group-choice')}>Voltar</button>
             </div>
           </div>
         )}
@@ -118,7 +164,7 @@ export default function Home({ onStartModerator, onStartParticipant }) {
               >
                 Entrar na sala
               </button>
-              <button className="ghost" onClick={() => setMode('choice')}>Voltar</button>
+              <button className="ghost" onClick={() => setMode('group-choice')}>Voltar</button>
             </div>
           </div>
         )}

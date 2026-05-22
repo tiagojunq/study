@@ -18,9 +18,9 @@ import ConfirmDialog from '../components/ConfirmDialog.jsx'
 
 const HOST_ID = 'host'
 
-export default function ModeratorSession({ moderatorName, onExit }) {
+export default function ModeratorSession({ moderatorName, onExit, solo = false }) {
   const [roomCode] = useState(() => newRoomCode())
-  const [peerStatus, setPeerStatus] = useState('connecting') // connecting | open | error
+  const [peerStatus, setPeerStatus] = useState(solo ? 'open' : 'connecting') // connecting | open | error
   const [peerError, setPeerError] = useState(null)
   const hostRef = useRef(null)
 
@@ -63,6 +63,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
 
   // --- PeerJS setup ----------------------------------------------------
   useEffect(() => {
+    if (solo) return
     const host = createHost({
       roomCode,
       onOpen: () => setPeerStatus('open'),
@@ -378,14 +379,16 @@ export default function ModeratorSession({ moderatorName, onExit }) {
 
       <ConfirmDialog
         open={confirmExit}
-        title="Sair da sala?"
+        title={solo ? 'Sair do simulado?' : 'Sair da sala?'}
         message={
           phase === 'finished'
-            ? 'Você voltará para a tela inicial. A sala será encerrada.'
-            : 'Sair agora encerra a sala para todos os participantes e a sessão será perdida.'
+            ? 'Você voltará para a tela inicial.'
+            : solo
+              ? 'Sair agora encerra o simulado e o progresso será perdido.'
+              : 'Sair agora encerra a sala para todos os participantes e a sessão será perdida.'
         }
         confirmLabel="Sair"
-        cancelLabel="Continuar na sala"
+        cancelLabel={solo ? 'Continuar' : 'Continuar na sala'}
         variant="danger"
         onConfirm={onExit}
         onCancel={() => setConfirmExit(false)}
@@ -405,45 +408,49 @@ export default function ModeratorSession({ moderatorName, onExit }) {
 
         {phase === 'lobby' && (
           <>
-            <div className="panel">
-              <h2>Sala criada</h2>
-              <p>Compartilhe o código com os participantes:</p>
-              <div className="row" style={{ alignItems: 'center', marginTop: '0.5rem' }}>
-                <span className="room-code">{roomCode}</span>
-                <button
-                  onClick={() => navigator.clipboard?.writeText(roomCode)}
-                  className="ghost"
-                >Copiar código</button>
-                <button
-                  onClick={() => {
-                    const url = new URL(window.location.href)
-                    url.searchParams.set('sala', roomCode)
-                    navigator.clipboard?.writeText(url.toString())
-                  }}
-                  className="ghost"
-                >Copiar link</button>
-              </div>
-              <p style={{ marginTop: '0.75rem' }}>
-                Limite de {MAX_PARTICIPANTS - 1} participantes (mais o moderador).
-              </p>
-            </div>
-
-            <div className="panel">
-              <h2>Participantes ({nonHostParticipants.length}/{MAX_PARTICIPANTS - 1})</h2>
-              {nonHostParticipants.length === 0 ? (
-                <p className="muted">Aguardando participantes…</p>
-              ) : (
-                <div className="participants">
-                  {nonHostParticipants.map((p) => (
-                    <span key={p.id} className={`chip ${p.online ? 'online' : ''}`}>
-                      <span className="dot" /> {p.name}
-                    </span>
-                  ))}
+            {!solo && (
+              <div className="panel">
+                <h2>Sala criada</h2>
+                <p>Compartilhe o código com os participantes:</p>
+                <div className="row" style={{ alignItems: 'center', marginTop: '0.5rem' }}>
+                  <span className="room-code">{roomCode}</span>
+                  <button
+                    onClick={() => navigator.clipboard?.writeText(roomCode)}
+                    className="ghost"
+                  >Copiar código</button>
+                  <button
+                    onClick={() => {
+                      const url = new URL(window.location.href)
+                      url.searchParams.set('sala', roomCode)
+                      navigator.clipboard?.writeText(url.toString())
+                    }}
+                    className="ghost"
+                  >Copiar link</button>
                 </div>
-              )}
-              <div className="divider" />
-              <p className="muted">Você como moderador: <strong>{moderatorName}</strong></p>
-            </div>
+                <p style={{ marginTop: '0.75rem' }}>
+                  Limite de {MAX_PARTICIPANTS - 1} participantes (mais o moderador).
+                </p>
+              </div>
+            )}
+
+            {!solo && (
+              <div className="panel">
+                <h2>Participantes ({nonHostParticipants.length}/{MAX_PARTICIPANTS - 1})</h2>
+                {nonHostParticipants.length === 0 ? (
+                  <p className="muted">Aguardando participantes…</p>
+                ) : (
+                  <div className="participants">
+                    {nonHostParticipants.map((p) => (
+                      <span key={p.id} className={`chip ${p.online ? 'online' : ''}`}>
+                        <span className="dot" /> {p.name}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                <div className="divider" />
+                <p className="muted">Você como moderador: <strong>{moderatorName}</strong></p>
+              </div>
+            )}
 
             <div className="panel">
               <h2>Configuração do simulado</h2>
@@ -602,39 +609,41 @@ export default function ModeratorSession({ moderatorName, onExit }) {
               />
             </div>
 
-            <div className="panel">
-              <h2>
-                Quem respondeu ({answeredIds.size}/{participants.length})
-              </h2>
-              <div className="participants">
-                {participants.map((p) => {
-                  const answered = p.id === HOST_ID
-                    ? phase === 'reveal' || hostDraft.length > 0
-                    : answeredIds.has(p.id)
-                  return (
-                    <span
-                      key={p.id}
-                      className={`chip ${answered ? 'answered' : p.online ? 'online' : ''}`}
-                    >
-                      <span className="dot" />
-                      {p.name}{p.id === HOST_ID ? ' (você)' : ''}
-                    </span>
-                  )
-                })}
+            {!solo && (
+              <div className="panel">
+                <h2>
+                  Quem respondeu ({answeredIds.size}/{participants.length})
+                </h2>
+                <div className="participants">
+                  {participants.map((p) => {
+                    const answered = p.id === HOST_ID
+                      ? phase === 'reveal' || hostDraft.length > 0
+                      : answeredIds.has(p.id)
+                    return (
+                      <span
+                        key={p.id}
+                        className={`chip ${answered ? 'answered' : p.online ? 'online' : ''}`}
+                      >
+                        <span className="dot" />
+                        {p.name}{p.id === HOST_ID ? ' (você)' : ''}
+                      </span>
+                    )
+                  })}
+                </div>
+                {phase === 'question' && (
+                  <p className="muted" style={{ marginTop: '0.75rem' }}>
+                    Marque sua resposta e clique em <strong>Mostrar resposta</strong> para revelar
+                    o gabarito a todos.
+                  </p>
+                )}
+                {phase === 'reveal' && (
+                  <p className="muted" style={{ marginTop: '0.75rem' }}>
+                    Resposta correta:{' '}
+                    <strong>{currentQuestion.correct.join(', ').toUpperCase()}</strong>
+                  </p>
+                )}
               </div>
-              {phase === 'question' && (
-                <p className="muted" style={{ marginTop: '0.75rem' }}>
-                  Marque sua resposta e clique em <strong>Mostrar resposta</strong> para revelar
-                  o gabarito a todos.
-                </p>
-              )}
-              {phase === 'reveal' && (
-                <p className="muted" style={{ marginTop: '0.75rem' }}>
-                  Resposta correta:{' '}
-                  <strong>{currentQuestion.correct.join(', ').toUpperCase()}</strong>
-                </p>
-              )}
-            </div>
+            )}
           </>
         )}
 
