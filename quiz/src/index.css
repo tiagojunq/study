@@ -202,6 +202,14 @@ input, select, textarea {
 }
 input::placeholder, textarea::placeholder { color: var(--muted); }
 input:hover, select:hover, textarea:hover { border-color: #94a3b8; }
+input:disabled, select:disabled, textarea:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  background: var(--hover);
+}
+input:disabled:hover, select:disabled:hover, textarea:disabled:hover {
+  border-color: var(--border-strong);
+}
 input:focus, select:focus, textarea:focus {
   border-color: var(--accent);
   box-shadow: var(--focus-ring);
