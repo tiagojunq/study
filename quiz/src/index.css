@@ -1,50 +1,115 @@
 /* ============================================================
-   Design system — light theme, high contrast, WCAG AA+
+   Design system — light + dark themes, high contrast, WCAG AA+
    Palette: Slate (neutrals) + Indigo (primary) + Emerald/Amber/Red
+   Theme is toggled via `data-theme="dark"` on <html>.
    ============================================================ */
-:root {
+:root,
+:root[data-theme="light"] {
   /* Surfaces */
-  --bg: #f8fafc;            /* slate-50  — page background */
-  --panel: #ffffff;          /* cards/panels */
-  --panel-2: #f1f5f9;        /* slate-100 — alt surface (chips, inputs) */
-  --panel-3: #e2e8f0;        /* slate-200 — hover */
-  --border: #e2e8f0;         /* slate-200 */
-  --border-strong: #cbd5e1;  /* slate-300 */
+  --bg: #f8fafc;
+  --panel: #ffffff;
+  --panel-2: #f1f5f9;
+  --panel-3: #e2e8f0;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
 
   /* Text */
-  --text: #0f172a;           /* slate-900 — primary text */
-  --text-2: #334155;         /* slate-700 — secondary */
-  --muted: #64748b;          /* slate-500 — captions / hints */
+  --text: #0f172a;
+  --text-2: #334155;
+  --muted: #64748b;
 
   /* Brand & semantic */
-  --accent: #4f46e5;         /* indigo-600 */
-  --accent-hover: #4338ca;   /* indigo-700 */
-  --accent-soft: #eef2ff;    /* indigo-50 */
-  --accent-border: #c7d2fe;  /* indigo-200 */
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-contrast: #ffffff;
+  --accent-soft: #eef2ff;
+  --accent-border: #c7d2fe;
 
-  --ok: #059669;             /* emerald-600 */
-  --ok-soft: #ecfdf5;        /* emerald-50 */
-  --ok-border: #a7f3d0;      /* emerald-200 */
+  --ok: #059669;
+  --ok-soft: #ecfdf5;
+  --ok-border: #a7f3d0;
+  --ok-text: #064e3b;
 
-  --warn: #b45309;           /* amber-700 (good contrast on white) */
-  --warn-soft: #fffbeb;      /* amber-50 */
-  --warn-border: #fde68a;    /* amber-200 */
+  --warn: #b45309;
+  --warn-soft: #fffbeb;
+  --warn-border: #fde68a;
+  --warn-text: #78350f;
 
-  --danger: #b91c1c;         /* red-700 */
-  --danger-soft: #fef2f2;    /* red-50 */
-  --danger-border: #fecaca;  /* red-200 */
+  --danger: #b91c1c;
+  --danger-soft: #fef2f2;
+  --danger-border: #fecaca;
+  --danger-text: #7f1d1d;
 
-  /* Effects */
-  --radius: 10px;
-  --radius-lg: 14px;
+  /* Decorative ambient gradients */
+  --ambient-1: #eef2ff;
+  --ambient-2: #ecfdf5;
+
   --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
   --shadow: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
   --shadow-lg: 0 10px 24px -8px rgba(15, 23, 42, 0.18);
   --focus-ring: 0 0 0 3px rgba(79, 70, 229, 0.25);
+  --header-bg: rgba(255, 255, 255, 0.85);
+  --stem-bg: #f1f5f9;
+  --explanation-tint: rgba(15, 23, 42, 0.035);
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  /* Surfaces */
+  --bg: #0b1220;
+  --panel: #131c2f;
+  --panel-2: #1c283f;
+  --panel-3: #243352;
+  --border: #243352;
+  --border-strong: #334155;
+
+  /* Text */
+  --text: #f1f5f9;
+  --text-2: #cbd5e1;
+  --muted: #94a3b8;
+
+  /* Brand & semantic — lighter accents for legibility on dark */
+  --accent: #818cf8;         /* indigo-400 */
+  --accent-hover: #a5b4fc;   /* indigo-300 */
+  --accent-contrast: #0b1220;
+  --accent-soft: rgba(129, 140, 248, 0.14);
+  --accent-border: rgba(129, 140, 248, 0.45);
+
+  --ok: #34d399;             /* emerald-400 */
+  --ok-soft: rgba(52, 211, 153, 0.12);
+  --ok-border: rgba(52, 211, 153, 0.45);
+  --ok-text: #a7f3d0;
+
+  --warn: #fbbf24;           /* amber-400 */
+  --warn-soft: rgba(251, 191, 36, 0.12);
+  --warn-border: rgba(251, 191, 36, 0.45);
+  --warn-text: #fde68a;
+
+  --danger: #f87171;         /* red-400 */
+  --danger-soft: rgba(248, 113, 113, 0.12);
+  --danger-border: rgba(248, 113, 113, 0.45);
+  --danger-text: #fecaca;
+
+  --ambient-1: #1e1b4b;
+  --ambient-2: #064e3b;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow: 0 2px 6px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 12px 30px -8px rgba(0, 0, 0, 0.6);
+  --focus-ring: 0 0 0 3px rgba(129, 140, 248, 0.35);
+  --header-bg: rgba(11, 18, 32, 0.85);
+  --stem-bg: #0f1729;
+  --explanation-tint: rgba(255, 255, 255, 0.04);
+  color-scheme: dark;
+}
+
+:root {
+  /* Effects shared across themes */
+  --radius: 10px;
+  --radius-lg: 14px;
 
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
     Ubuntu, sans-serif;
-  color-scheme: light;
 }
 
 * { box-sizing: border-box; }
@@ -56,12 +121,13 @@ html, body, #root {
 
 body {
   background:
-    radial-gradient(900px 600px at 90% -10%, #eef2ff 0%, transparent 60%),
-    radial-gradient(700px 500px at -10% 100%, #ecfdf5 0%, transparent 55%),
+    radial-gradient(900px 600px at 90% -10%, var(--ambient-1) 0%, transparent 60%),
+    radial-gradient(700px 500px at -10% 100%, var(--ambient-2) 0%, transparent 55%),
     var(--bg);
   color: var(--text);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background-color 0.2s, color 0.2s;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -96,7 +162,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 button.primary {
   background: var(--accent);
   border-color: var(--accent);
-  color: #ffffff;
+  color: var(--accent-contrast);
   font-weight: 600;
 }
 button.primary:hover:not(:disabled) {
@@ -106,11 +172,10 @@ button.primary:hover:not(:disabled) {
 button.danger {
   background: var(--danger);
   border-color: var(--danger);
-  color: #ffffff;
+  color: var(--accent-contrast);
 }
 button.danger:hover:not(:disabled) {
-  background: #991b1b;
-  border-color: #991b1b;
+  filter: brightness(0.92);
 }
 button.ghost {
   background: transparent;
@@ -164,7 +229,7 @@ label {
   justify-content: space-between;
   padding: 0.9rem 1.25rem;
   border-bottom: 1px solid var(--border);
-  background: rgba(255, 255, 255, 0.85);
+  background: var(--header-bg);
   backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
@@ -253,7 +318,7 @@ label {
 
 /* ----------------------------- Question stem ----------------------------- */
 .stem {
-  background: var(--panel-2);
+  background: var(--stem-bg);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
@@ -282,7 +347,7 @@ label {
   transition: background 0.12s, border-color 0.12s, box-shadow 0.12s;
   user-select: none;
 }
-.option:hover { background: var(--panel-2); border-color: #94a3b8; }
+.option:hover { background: var(--panel-2); border-color: var(--border-strong); }
 .option.selected {
   border-color: var(--accent);
   background: var(--accent-soft);
@@ -316,17 +381,17 @@ label {
 .option.selected .letter {
   background: var(--accent);
   border-color: var(--accent);
-  color: #fff;
+  color: var(--accent-contrast);
 }
 .option.correct .letter {
   background: var(--ok);
   border-color: var(--ok);
-  color: #fff;
+  color: var(--accent-contrast);
 }
 .option.wrong .letter {
   background: var(--danger);
   border-color: var(--danger);
-  color: #fff;
+  color: var(--accent-contrast);
 }
 
 /* Body wraps text + explanation so both fill the remaining flex space.
@@ -351,18 +416,18 @@ label {
   color: var(--text-2);
   padding: 0.55rem 0.7rem;
   border-radius: 8px;
-  background: rgba(15, 23, 42, 0.035);
+  background: var(--explanation-tint);
   border-left: 3px solid var(--border-strong);
 }
 .option.correct .option-explanation {
-  background: rgba(5, 150, 105, 0.08);
+  background: var(--ok-soft);
   border-left-color: var(--ok);
-  color: #064e3b;
+  color: var(--ok-text);
 }
 .option.wrong .option-explanation {
-  background: rgba(185, 28, 28, 0.08);
+  background: var(--danger-soft);
   border-left-color: var(--danger);
-  color: #7f1d1d;
+  color: var(--danger-text);
 }
 
 /* ----------------------------- Participants / Chips ----------------------------- */
@@ -393,7 +458,7 @@ label {
 .chip.answered {
   background: var(--accent-soft);
   border-color: var(--accent-border);
-  color: var(--accent-hover);
+  color: var(--accent);
 }
 .chip.answered .dot { background: var(--accent); }
 
@@ -404,7 +469,7 @@ label {
   font-weight: 700;
   background: var(--accent-soft);
   border: 2px dashed var(--accent);
-  color: var(--accent-hover);
+  color: var(--accent);
   border-radius: var(--radius);
   padding: 0.6rem 1rem;
   letter-spacing: 0.12em;
@@ -447,9 +512,9 @@ label {
   background: var(--accent-soft);
 }
 .ranking .pos { font-weight: 700; color: var(--muted); }
-.ranking .pos.gold { color: #b45309; }
-.ranking .pos.silver { color: #475569; }
-.ranking .pos.bronze { color: #92400e; }
+.ranking .pos.gold { color: var(--warn); }
+.ranking .pos.silver { color: var(--muted); }
+.ranking .pos.bronze { color: #d59672; }
 .ranking .score { font-weight: 700; color: var(--text); }
 .ranking .pct { color: var(--muted); font-size: 0.9rem; }
 
@@ -467,22 +532,22 @@ label {
 .banner.info {
   background: var(--accent-soft);
   border-color: var(--accent-border);
-  color: #3730a3;
+  color: var(--accent);
 }
 .banner.ok {
   background: var(--ok-soft);
   border-color: var(--ok-border);
-  color: #064e3b;
+  color: var(--ok-text);
 }
 .banner.warn {
   background: var(--warn-soft);
   border-color: var(--warn-border);
-  color: #78350f;
+  color: var(--warn-text);
 }
 .banner.danger {
   background: var(--danger-soft);
   border-color: var(--danger-border);
-  color: #7f1d1d;
+  color: var(--danger-text);
 }
 
 /* ----------------------------- Misc ----------------------------- */
@@ -492,7 +557,7 @@ label {
   font-size: 0.72rem;
   font-weight: 600;
   background: var(--accent-soft);
-  color: var(--accent-hover);
+  color: var(--accent);
   padding: 0.18rem 0.5rem;
   border-radius: 6px;
   border: 1px solid var(--accent-border);
@@ -536,4 +601,26 @@ footer {
   color: var(--muted);
   font-size: 0.8rem;
   border-top: 1px solid var(--border);
+}
+
+/* ----------------------------- Theme toggle ----------------------------- */
+.theme-toggle {
+  width: 2.25rem;
+  height: 2.25rem;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  background: var(--panel-2);
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  font-size: 1rem;
+  line-height: 1;
+  box-shadow: none;
+}
+.theme-toggle:hover:not(:disabled) {
+  background: var(--panel-3);
+  color: var(--text);
+  border-color: var(--border-strong);
 }
