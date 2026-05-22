@@ -31,7 +31,7 @@ export default function Home({ onStartModerator, onStartParticipant }) {
             alt="Você tem Brio?"
             style={{ maxWidth: '300px', borderRadius: '8px', marginBottom: '0.75rem' }}
           />
-          <h2 style={{ marginTop: 0 }}>Estuda que a vida muda, porra!</h2>
+          <h2 style={{ marginTop: 0 }}>Estuda que a vida muda!</h2>
           <p className="muted">
             Banco de simulados ISTQB CTFL 4.0 (PT-BR) — questões oficiais + extras geradas.<br />
             Até 10 pessoas simultâneas via WebRTC P2P — sem servidor.
