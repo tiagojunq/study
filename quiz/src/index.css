@@ -765,6 +765,45 @@ footer {
   font-size: 0.85rem;
 }
 
+/* ----------------------------- Config mode toggle ----------------------------- */
+.mode-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+.mode-btn {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--panel);
+  color: var(--muted);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+.mode-btn + .mode-btn { border-left: 1px solid var(--border); }
+.mode-btn.active { background: var(--accent); color: #fff; }
+.mode-btn:hover:not(.active) { background: var(--hover); color: var(--text); }
+
+.chapter-check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.4rem;
+}
+.chapter-check-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+.chapter-check-item input[type="checkbox"] { flex-shrink: 0; }
+
 /* ----------------------------- Modal / Confirm Dialog ----------------------------- */
 .modal-backdrop {
   position: fixed;

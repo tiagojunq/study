@@ -1,6 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-  BANKS,
+  ALL_QUESTIONS,
+  CHAPTERS,
+  chapterName,
   prepareQuestions,
   scoreAnswer,
   formatTime,
@@ -23,7 +25,8 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   const hostRef = useRef(null)
 
   // Quiz config
-  const [bank, setBank] = useState('A_MAIN')
+  const [configMode, setConfigMode] = useState('exam') // 'exam' | 'chapter'
+  const [selectedChapters, setSelectedChapters] = useState(new Set(CHAPTERS))
   const [limit, setLimit] = useState(40)
   const [shuffle, setShuffle] = useState(true)
   const [durationMinutes, setDurationMinutes] = useState(60)
@@ -189,11 +192,38 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   useEffect(() => { phaseRef.current = phase }, [phase])
   useEffect(() => { currentIndexRef.current = currentIndex }, [currentIndex])
 
+  // --- Derived config helpers -----------------------------------------
+  const chapterQCounts = useMemo(() => {
+    const counts = {}
+    ALL_QUESTIONS.forEach((q) => { counts[q.chapter] = (counts[q.chapter] || 0) + 1 })
+    return counts
+  }, [])
+
+  const availableQCount = useMemo(() => {
+    if (configMode === 'exam') return ALL_QUESTIONS.length
+    if (selectedChapters.size === 0) return 0
+    return ALL_QUESTIONS.filter((q) => selectedChapters.has(q.chapter)).length
+  }, [configMode, selectedChapters])
+
+  const toggleChapter = (ch) =>
+    setSelectedChapters((prev) => {
+      const next = new Set(prev)
+      next.has(ch) ? next.delete(ch) : next.add(ch)
+      return next
+    })
+
   // --- Moderator actions ----------------------------------------------
   const handleStart = () => {
-    const limitNum = Math.max(1, Math.min(146, Number(limit) || 1))
     const seed = Math.floor(Math.random() * 1e9)
-    const qs = prepareQuestions({ bank, limit: limitNum, shuffle, seed })
+    let qs
+    if (configMode === 'exam') {
+      qs = prepareQuestions({ bank: 'ALL', limit: 0, shuffle, seed })
+    } else {
+      if (selectedChapters.size === 0) return
+      const chapters = [...selectedChapters]
+      const limitNum = Math.max(1, Number(limit) || availableQCount)
+      qs = prepareQuestions({ bank: 'ALL', chapters, limit: limitNum, shuffle, seed })
+    }
     if (qs.length === 0) return
     const dur = Math.max(
       60,
@@ -390,7 +420,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
             <div className="panel">
               <h2>Participantes ({nonHostParticipants.length}/{MAX_PARTICIPANTS - 1})</h2>
               {nonHostParticipants.length === 0 ? (
-                <p className="muted">Aguardando ninguém entrar…</p>
+                <p className="muted">Aguardando participantes…</p>
               ) : (
                 <div className="participants">
                   {nonHostParticipants.map((p) => (
@@ -406,25 +436,71 @@ export default function ModeratorSession({ moderatorName, onExit }) {
 
             <div className="panel">
               <h2>Configuração do simulado</h2>
-              <div className="grid-2">
-                <label>
-                  Banco de questões
-                  <select value={bank} onChange={(e) => setBank(e.target.value)}>
-                    {Object.values(BANKS).map((b) => (
-                      <option key={b.id} value={b.id}>{b.label}</option>
+
+              <div className="mode-toggle">
+                <button
+                  className={`mode-btn${configMode === 'exam' ? ' active' : ''}`}
+                  onClick={() => setConfigMode('exam')}
+                >
+                  Simulado da prova
+                </button>
+                <button
+                  className={`mode-btn${configMode === 'chapter' ? ' active' : ''}`}
+                  onClick={() => setConfigMode('chapter')}
+                >
+                  Questões por capítulo
+                </button>
+              </div>
+
+              {configMode === 'exam' && (
+                <p className="muted" style={{ marginTop: '0.6rem', fontSize: '0.88rem' }}>
+                  Usa todas as <strong>{ALL_QUESTIONS.length} questões</strong> do banco completo — sem filtros.
+                </p>
+              )}
+
+              {configMode === 'chapter' && (
+                <div style={{ marginTop: '0.75rem' }}>
+                  <p className="muted" style={{ fontSize: '0.88rem', marginBottom: '0.5rem' }}>
+                    Selecione um ou mais capítulos:
+                  </p>
+                  <div className="chapter-check-grid">
+                    {CHAPTERS.map((ch) => (
+                      <label key={ch} className="chapter-check-item">
+                        <input
+                          type="checkbox"
+                          checked={selectedChapters.has(ch)}
+                          onChange={() => toggleChapter(ch)}
+                          style={{ width: 'auto' }}
+                        />
+                        <span>
+                          {chapterName(ch)}
+                          <span className="muted"> ({chapterQCounts[ch] || 0})</span>
+                        </span>
+                      </label>
                     ))}
-                  </select>
-                </label>
-                <label>
-                  Quantidade de questões
-                  <input
-                    type="number"
-                    min={1}
-                    max={106}
-                    value={limit}
-                    onChange={(e) => setLimit(e.target.value)}
-                  />
-                </label>
+                  </div>
+                  {selectedChapters.size === 0 && (
+                    <p className="muted" style={{ fontSize: '0.85rem', marginTop: '0.4rem', color: 'var(--danger)' }}>
+                      Selecione ao menos um capítulo.
+                    </p>
+                  )}
+                  <label style={{ marginTop: '0.75rem' }}>
+                    Quantidade de questões
+                    <input
+                      type="number"
+                      min={1}
+                      max={availableQCount || 1}
+                      value={limit}
+                      onChange={(e) => setLimit(e.target.value)}
+                    />
+                  </label>
+                  <p className="muted" style={{ fontSize: '0.83rem', marginTop: '0.3rem' }}>
+                    {availableQCount} questões disponíveis para os capítulos selecionados.
+                  </p>
+                </div>
+              )}
+
+              <div className="grid-2" style={{ marginTop: '0.75rem' }}>
                 <label>
                   Tempo limite (minutos, máx. 60)
                   <input
@@ -445,12 +521,13 @@ export default function ModeratorSession({ moderatorName, onExit }) {
                   <span>Embaralhar ordem das questões</span>
                 </label>
               </div>
+
               <div className="divider" />
               <div className="row">
                 <button
                   className="primary"
                   onClick={handleStart}
-                  disabled={peerStatus !== 'open'}
+                  disabled={peerStatus !== 'open' || (configMode === 'chapter' && selectedChapters.size === 0)}
                 >
                   Iniciar simulado
                 </button>
