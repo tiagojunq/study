@@ -1,4 +1,5 @@
 import { chapterName } from '../lib/quiz.js'
+import StemRenderer from './StemRenderer.jsx'
 
 export default function QuestionDisplay({
   question,
@@ -13,7 +14,6 @@ export default function QuestionDisplay({
   const selSet = new Set(selected || [])
 
   const canPick = !locked && !reveal
-  const points = question.points || 1
 
   return (
     <div>
@@ -21,15 +21,11 @@ export default function QuestionDisplay({
         <strong>Questão {question.exam}-{question.number}</strong>
         {' • '}
         {chapterName(question.chapter)}
-        {' • '}
-        <span style={{ color: 'var(--accent)' }}>
-          {points} {points === 1 ? 'ponto' : 'pontos'}
-        </span>
         <span className="tag" style={{ marginLeft: '0.5rem' }}>
           {selectCount === 2 ? 'Selecione DUAS' : 'Selecione UMA'}
         </span>
       </div>
-      <div className="stem">{stem}</div>
+      <div className="stem"><StemRenderer text={stem} /></div>
       <div className="options">
         {options.map((opt) => {
           const isSel = selSet.has(opt.letter)

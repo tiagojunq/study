@@ -57,8 +57,12 @@ export function shuffleSeeded(array, seed) {
 // Question identity & content is fixed across all peers because the host
 // broadcasts it, but we still seed shuffling to keep host-side selection
 // deterministic and reproducible if needed.
-export function prepareQuestions({ bank, limit, shuffle, seed }) {
+export function prepareQuestions({ bank, limit, shuffle, seed, chapters }) {
   let qs = getBankQuestions(bank)
+  if (chapters && chapters.length > 0) {
+    const chSet = new Set(chapters)
+    qs = qs.filter((q) => chSet.has(q.chapter))
+  }
   if (shuffle) qs = shuffleSeeded(qs, seed)
   if (limit && limit > 0 && limit < qs.length) qs = qs.slice(0, limit)
   return qs
@@ -94,6 +98,8 @@ export function chapterName(ch) {
   }
   return map[ch] || `Cap. ${ch}`
 }
+
+export const CHAPTERS = [1, 2, 3, 4, 5, 6]
 
 export const MAX_PARTICIPANTS = 10
 export const MAX_DURATION_SECONDS = 60 * 60 // 60 min

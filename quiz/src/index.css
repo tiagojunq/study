@@ -323,12 +323,26 @@ label {
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
   margin-bottom: 1rem;
-  white-space: pre-line;
-  line-height: 1.6;
   font-size: 0.95rem;
   color: var(--text);
-  font-family: inherit;
+}
+.stem-prose p {
+  margin: 0;
+  line-height: 1.6;
   overflow-wrap: break-word;
+}
+.stem-prose p + p { margin-top: 0.5rem; }
+.stem-table {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.82rem;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: var(--text);
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* ----------------------------- Options (alternatives) ----------------------------- */
@@ -684,6 +698,111 @@ footer {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
+
+/* ----------------------------- Study insights ----------------------------- */
+.insights-divider {
+  border-top: 1px solid var(--border);
+  margin: 0.85rem 0 0.75rem;
+}
+.insights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+}
+.insights-summary {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+.insights-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.insights-label {
+  align-self: flex-start;
+  font-weight: 700;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.insights-strong {
+  background: #d1fae5;
+  color: #065f46;
+}
+.insights-weak {
+  background: #fef3c7;
+  color: #92400e;
+}
+[data-theme="dark"] .insights-strong { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .insights-weak   { background: #78350f; color: #fcd34d; }
+.insights-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1.5;
+}
+.insights-tips > li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-bottom: 0.25rem;
+}
+.insights-tip {
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+.insights-ok {
+  margin: 0;
+  color: var(--success);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
+/* ----------------------------- Config mode toggle ----------------------------- */
+.mode-toggle {
+  display: inline-flex;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin-top: 0.25rem;
+}
+.mode-btn {
+  padding: 0.45rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: var(--panel);
+  color: var(--muted);
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+  line-height: 1.4;
+}
+.mode-btn + .mode-btn { border-left: 1px solid var(--border); }
+.mode-btn.active { background: var(--accent); color: #fff; }
+.mode-btn:hover:not(.active) { background: var(--hover); color: var(--text); }
+
+.chapter-check-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.4rem;
+}
+.chapter-check-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+}
+.chapter-check-item input[type="checkbox"] { flex-shrink: 0; }
 
 /* ----------------------------- Modal / Confirm Dialog ----------------------------- */
 .modal-backdrop {
