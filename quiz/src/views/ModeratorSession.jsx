@@ -28,7 +28,6 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   const [configMode, setConfigMode] = useState('exam') // 'exam' | 'chapter'
   const [selectedChapters, setSelectedChapters] = useState(new Set(CHAPTERS))
   const [limit, setLimit] = useState(40)
-  const [shuffle, setShuffle] = useState(true)
   const [durationMinutes, setDurationMinutes] = useState(60)
   const [noTimeLimit, setNoTimeLimit] = useState(false)
 
@@ -220,12 +219,12 @@ export default function ModeratorSession({ moderatorName, onExit }) {
     let qs
     if (configMode === 'exam') {
       const limitNum = Math.max(1, Number(limit) || ALL_QUESTIONS.length)
-      qs = prepareQuestions({ bank: 'ALL', limit: limitNum, shuffle, seed })
+      qs = prepareQuestions({ bank: 'ALL', limit: limitNum, shuffle: true, seed })
     } else {
       if (selectedChapters.size === 0) return
       const chapters = [...selectedChapters]
       const limitNum = Math.max(1, Number(limit) || availableQCount)
-      qs = prepareQuestions({ bank: 'ALL', chapters, limit: limitNum, shuffle, seed })
+      qs = prepareQuestions({ bank: 'ALL', chapters, limit: limitNum, shuffle: true, seed })
     }
     if (qs.length === 0) return
     const dur = noTimeLimit
@@ -544,15 +543,6 @@ export default function ModeratorSession({ moderatorName, onExit }) {
                     style={{ width: 'auto' }}
                   />
                   <span>Sem tempo limite</span>
-                </label>
-                <label style={{ flexDirection: 'row', alignItems: 'center', gap: '0.5rem' }}>
-                  <input
-                    type="checkbox"
-                    checked={shuffle}
-                    onChange={(e) => setShuffle(e.target.checked)}
-                    style={{ width: 'auto' }}
-                  />
-                  <span>Embaralhar ordem das questões</span>
                 </label>
               </div>
 
