@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- B-23: Storage system state machine — N=0..3
+     5 valid transitions (add: 0→1, 1→2, 2→3 | remove: 3→2, 2→1)
+     Correct answer C covers all 5: Add,Add,Add,Remove,Remove = 0→1→2→3→2→1 -->
+<svg viewBox="0 0 500 144" xmlns="http://www.w3.org/2000/svg"
+     font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif">
+  <defs>
+    <marker id="arr-b23-add" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-b23-rem" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- ── States ── -->
+  <!-- N=0 (empty) -->
+  <circle cx="60"  cy="72" r="32" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text   x="60"  y="70"  text-anchor="middle" font-size="12" font-weight="600" fill="#15803d">N=0</text>
+  <text   x="60"  y="84"  text-anchor="middle" font-size="9"  fill="#16a34a">vazio</text>
+
+  <!-- N=1 -->
+  <circle cx="185" cy="72" r="32" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <text   x="185" y="76"  text-anchor="middle" font-size="12" font-weight="600" fill="#3730a3">N=1</text>
+
+  <!-- N=2 -->
+  <circle cx="315" cy="72" r="32" fill="#eef2ff" stroke="#4f46e5" stroke-width="2"/>
+  <text   x="315" y="76"  text-anchor="middle" font-size="12" font-weight="600" fill="#3730a3">N=2</text>
+
+  <!-- N=3 (full) -->
+  <circle cx="440" cy="72" r="32" fill="#fef2f2" stroke="#dc2626" stroke-width="2"/>
+  <text   x="440" y="70"  text-anchor="middle" font-size="12" font-weight="600" fill="#b91c1c">N=3</text>
+  <text   x="440" y="84"  text-anchor="middle" font-size="9"  fill="#dc2626">cheio</text>
+
+  <!-- ── Add transitions (top arcs, left → right) ── -->
+  <!-- N=0 → N=1 -->
+  <path d="M 91 57 Q 122 28 153 57"
+        fill="none" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-b23-add)"/>
+  <text x="122" y="22" text-anchor="middle" font-size="10" fill="#16a34a">add</text>
+
+  <!-- N=1 → N=2 -->
+  <path d="M 216 57 Q 250 28 283 57"
+        fill="none" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-b23-add)"/>
+  <text x="250" y="22" text-anchor="middle" font-size="10" fill="#16a34a">add</text>
+
+  <!-- N=2 → N=3 -->
+  <path d="M 346 57 Q 378 28 408 57"
+        fill="none" stroke="#16a34a" stroke-width="1.8" marker-end="url(#arr-b23-add)"/>
+  <text x="378" y="22" text-anchor="middle" font-size="10" fill="#16a34a">add</text>
+
+  <!-- ── Remove transitions (bottom arcs, right → left) ── -->
+  <!-- N=3 → N=2 -->
+  <path d="M 408 88 Q 378 117 346 88"
+        fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-b23-rem)"/>
+  <text x="378" y="128" text-anchor="middle" font-size="10" fill="#dc2626">remove</text>
+
+  <!-- N=2 → N=1 -->
+  <path d="M 283 88 Q 250 117 216 88"
+        fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#arr-b23-rem)"/>
+  <text x="250" y="128" text-anchor="middle" font-size="10" fill="#dc2626">remove</text>
+</svg>

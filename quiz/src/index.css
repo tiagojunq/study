@@ -345,6 +345,23 @@ label {
   padding: 0;
 }
 
+/* ----------------------------- Question diagram ----------------------------- */
+.question-diagram {
+  margin: 0.75rem 0;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.75rem;
+  text-align: center;
+}
+.question-diagram img {
+  max-width: 100%;
+  height: auto;
+}
+[data-theme="dark"] .question-diagram {
+  background: #f1f5f9;
+}
+
 /* ----------------------------- Options (alternatives) ----------------------------- */
 .options { display: flex; flex-direction: column; gap: 0.55rem; }
 
