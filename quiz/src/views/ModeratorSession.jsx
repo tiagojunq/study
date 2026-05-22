@@ -556,7 +556,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                     min={1}
                     max={60}
                     value={durationMinutes}
-                    onChange={(e) => setDurationMinutes(e.target.value)}
+                    onChange={(e) => setDurationMinutes(clampLimitOnInput(e.target.value, 60))}
                     disabled={noTimeLimit}
                   />
                 </label>
