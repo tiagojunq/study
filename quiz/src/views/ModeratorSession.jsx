@@ -323,7 +323,7 @@ export default function ModeratorSession({ moderatorName, onExit }) {
   return (
     <div className="app">
       <header className="header">
-        <h1>Simulador Briático de Estudo</h1>
+        <h1>Simulador de prova CTFL</h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>

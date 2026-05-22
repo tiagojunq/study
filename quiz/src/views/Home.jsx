@@ -21,7 +21,7 @@ export default function Home({ onStartModerator, onStartParticipant }) {
   return (
     <div className="app">
       <header className="header">
-        <h1>Simulador Briático de Estudo</h1>
+        <h1>Simulador de prova CTFL</h1>
         <ThemeToggle />
       </header>
       <div className="container">
