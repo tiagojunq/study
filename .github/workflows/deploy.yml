@@ -23,13 +23,6 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install expense-tracker
-        run: npm ci
-        working-directory: expense-tracker
-      - name: Build expense-tracker
-        run: npm run build
-        working-directory: expense-tracker
-
       - name: Install quiz
         run: npm ci
         working-directory: quiz
@@ -37,12 +30,21 @@ jobs:
         run: npm run build
         working-directory: quiz
 
-      - name: Stage combined site
+      - name: Stage site
         run: |
-          mkdir -p site
-          cp -R expense-tracker/dist/. site/
           mkdir -p site/quiz
           cp -R quiz/dist/. site/quiz/
+          cat > site/index.html <<'HTML'
+          <!doctype html>
+          <html lang="pt-BR">
+            <head>
+              <meta charset="UTF-8" />
+              <meta http-equiv="refresh" content="0; url=./quiz/" />
+              <title>Simulador de prova CTFL</title>
+            </head>
+            <body><a href="./quiz/">Ir para o simulador →</a></body>
+          </html>
+          HTML
 
       - uses: actions/upload-pages-artifact@v3
         with:
