@@ -217,7 +217,8 @@ export default function ModeratorSession({ moderatorName, onExit }) {
     const seed = Math.floor(Math.random() * 1e9)
     let qs
     if (configMode === 'exam') {
-      qs = prepareQuestions({ bank: 'ALL', limit: 0, shuffle, seed })
+      const limitNum = Math.max(1, Number(limit) || ALL_QUESTIONS.length)
+      qs = prepareQuestions({ bank: 'ALL', limit: limitNum, shuffle, seed })
     } else {
       if (selectedChapters.size === 0) return
       const chapters = [...selectedChapters]
@@ -453,9 +454,21 @@ export default function ModeratorSession({ moderatorName, onExit }) {
               </div>
 
               {configMode === 'exam' && (
-                <p className="muted" style={{ marginTop: '0.6rem', fontSize: '0.88rem' }}>
-                  Usa todas as <strong>{ALL_QUESTIONS.length} questões</strong> do banco completo — sem filtros.
-                </p>
+                <div style={{ marginTop: '0.75rem' }}>
+                  <label>
+                    Quantidade de questões
+                    <input
+                      type="number"
+                      min={1}
+                      max={ALL_QUESTIONS.length}
+                      value={limit}
+                      onChange={(e) => setLimit(e.target.value)}
+                    />
+                  </label>
+                  <p className="muted" style={{ fontSize: '0.83rem', marginTop: '0.3rem' }}>
+                    {ALL_QUESTIONS.length} questões disponíveis no banco completo.
+                  </p>
+                </div>
               )}
 
               {configMode === 'chapter' && (
