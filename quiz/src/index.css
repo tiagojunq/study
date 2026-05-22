@@ -323,13 +323,12 @@ label {
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
   margin-bottom: 1rem;
-  white-space: pre-wrap;
+  white-space: pre-line;
   line-height: 1.6;
   font-size: 0.95rem;
   color: var(--text);
-  font-variant-numeric: tabular-nums;
-  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
-  overflow-x: auto;
+  font-family: inherit;
+  overflow-wrap: break-word;
 }
 
 /* ----------------------------- Options (alternatives) ----------------------------- */
