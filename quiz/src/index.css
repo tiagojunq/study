@@ -323,12 +323,26 @@ label {
   border-radius: var(--radius);
   padding: 1rem 1.1rem;
   margin-bottom: 1rem;
-  white-space: pre-line;
-  line-height: 1.6;
   font-size: 0.95rem;
   color: var(--text);
-  font-family: inherit;
+}
+.stem-prose p {
+  margin: 0;
+  line-height: 1.6;
   overflow-wrap: break-word;
+}
+.stem-prose p + p { margin-top: 0.5rem; }
+.stem-table {
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+  font-size: 0.82rem;
+  white-space: pre;
+  overflow-x: auto;
+  margin: 0.5rem 0;
+  line-height: 1.5;
+  color: var(--text);
+  background: none;
+  border: none;
+  padding: 0;
 }
 
 /* ----------------------------- Options (alternatives) ----------------------------- */
