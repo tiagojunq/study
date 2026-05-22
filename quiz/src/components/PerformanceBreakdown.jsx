@@ -94,6 +94,7 @@ export default function PerformanceBreakdown({
   chapterTotals,
   totalQuestions,
   myId,
+  solo = false,
 }) {
   const sorted = [...participants].sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score
@@ -117,8 +118,8 @@ export default function PerformanceBreakdown({
             <div className="performance-header">
               <div className="performance-name">
                 <strong>{p.name}</strong>
-                {isMe ? ' (você)' : ''}
-                {p.role === 'moderator' ? ' • moderador' : ''}
+                {!solo && isMe ? ' (você)' : ''}
+                {!solo && p.role === 'moderator' ? ' • moderador' : ''}
               </div>
               <div className="performance-result">
                 <span className={`pass-badge ${passed ? 'pass' : 'fail'}`}>

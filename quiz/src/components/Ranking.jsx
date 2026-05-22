@@ -1,4 +1,4 @@
-export default function Ranking({ participants, totalQuestions, myId }) {
+export default function Ranking({ participants, totalQuestions, myId, solo = false }) {
   const sorted = [...participants].sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score
     if (b.answeredCount !== a.answeredCount) return b.answeredCount - a.answeredCount
@@ -23,8 +23,8 @@ export default function Ranking({ participants, totalQuestions, myId }) {
             <span className={posClass(i)}>#{i + 1}</span>
             <span>
               {p.name}
-              {p.id === myId ? ' (você)' : ''}
-              {p.role === 'moderator' ? ' • moderador' : ''}
+              {!solo && p.id === myId ? ' (você)' : ''}
+              {!solo && p.role === 'moderator' ? ' • moderador' : ''}
               {p.online === false ? ' • offline' : ''}
             </span>
             <span className="score">{p.score}/{totalQuestions} pts</span>
