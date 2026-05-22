@@ -608,7 +608,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                   {phase === 'reveal' && (
                     <button className="primary" onClick={handleNext}>
                       {currentIndex + 1 >= questions.length
-                        ? 'Encerrar e ver ranking'
+                        ? solo ? 'Encerrar e ver desempenho' : 'Encerrar e ver ranking'
                         : 'Próxima questão →'}
                     </button>
                   )}
