@@ -699,6 +699,72 @@ footer {
   font-variant-numeric: tabular-nums;
 }
 
+/* ----------------------------- Study insights ----------------------------- */
+.insights-divider {
+  border-top: 1px solid var(--border);
+  margin: 0.85rem 0 0.75rem;
+}
+.insights {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  font-size: 0.88rem;
+}
+.insights-summary {
+  margin: 0;
+  line-height: 1.55;
+  color: var(--text);
+}
+.insights-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+.insights-label {
+  align-self: flex-start;
+  font-weight: 700;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+.insights-strong {
+  background: #d1fae5;
+  color: #065f46;
+}
+.insights-weak {
+  background: #fef3c7;
+  color: #92400e;
+}
+[data-theme="dark"] .insights-strong { background: #064e3b; color: #6ee7b7; }
+[data-theme="dark"] .insights-weak   { background: #78350f; color: #fcd34d; }
+.insights-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  line-height: 1.5;
+}
+.insights-tips > li {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  margin-bottom: 0.25rem;
+}
+.insights-tip {
+  color: var(--muted);
+  font-size: 0.83rem;
+  line-height: 1.45;
+}
+.insights-ok {
+  margin: 0;
+  color: var(--success);
+  font-style: italic;
+  font-size: 0.85rem;
+}
+
 /* ----------------------------- Modal / Confirm Dialog ----------------------------- */
 .modal-backdrop {
   position: fixed;
