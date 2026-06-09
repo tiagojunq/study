@@ -63,7 +63,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
                 className="primary"
                 onClick={() => setMode('solo-name')}
               >
-                Somente eu
+                Modo solo
               </button>
               <button onClick={() => setMode('group-choice')}>
                 Em grupo
