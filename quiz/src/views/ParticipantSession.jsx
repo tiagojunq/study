@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { createClient } from '../lib/peer.js'
-import { formatTime } from '../lib/quiz.js'
+import { formatTime, scoreAnswer } from '../lib/quiz.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
 import PerformanceBreakdown from '../components/PerformanceBreakdown.jsx'
+import QuestionReview from '../components/QuestionReview.jsx'
 import ThemeToggle from '../components/ThemeToggle.jsx'
 import ConfirmDialog from '../components/ConfirmDialog.jsx'
 
@@ -14,6 +15,11 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
   const [myConnId, setMyConnId] = useState(null)
   const [draft, setDraft] = useState([])
   const [submittedFor, setSubmittedFor] = useState(-1) // questionIndex
+  // Local record for the post-quiz review. Only questions answered by this
+  // participant can be reviewed, so we keep our own answers and the question
+  // objects we have seen: { [questionIndex]: letters } / { [questionIndex]: q }
+  const [myAnswers, setMyAnswers] = useState({})
+  const [seenQuestions, setSeenQuestions] = useState({})
   const clientRef = useRef(null)
   const [now, setNow] = useState(Date.now())
   const [confirmExit, setConfirmExit] = useState(false)
@@ -58,6 +64,14 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
     if (state.currentIndex !== submittedFor) setDraft([])
   }, [state?.currentIndex])
 
+  // Remember each question as it appears so it can be reviewed at the end.
+  useEffect(() => {
+    const idx = state?.currentIndex
+    const cq = state?.currentQuestion
+    if (cq == null || idx == null || idx < 0) return
+    setSeenQuestions((prev) => (prev[idx] ? prev : { ...prev, [idx]: cq }))
+  }, [state?.currentIndex, state?.currentQuestion])
+
   // ---- Derived state -------------------------------------------------
   const q = state?.currentQuestion
   const phase = state?.phase
@@ -99,8 +113,28 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
       questionIndex: state.currentIndex,
       letters: draft,
     })
+    setMyAnswers((prev) => ({ ...prev, [state.currentIndex]: draft }))
     setSubmittedFor(state.currentIndex)
   }
+
+  // Post-quiz review: only questions this participant answered are
+  // reviewable; the others appear as locked chips.
+  const reviewItems = useMemo(() => {
+    if (state?.phase !== 'finished') return []
+    const total = state.totalQuestions || 0
+    return Array.from({ length: total }, (_, i) => {
+      const ans = myAnswers[i] || null
+      const question = seenQuestions[i] || null
+      const answered = !!ans && ans.length > 0 && !!question
+      const ok = answered && scoreAnswer(question, ans) === 1
+      return {
+        question,
+        myAnswer: ans,
+        status: answered ? (ok ? 'correct' : 'wrong') : 'unanswered',
+        reviewable: answered,
+      }
+    })
+  }, [state?.phase, state?.totalQuestions, myAnswers, seenQuestions])
 
   // ---- Status screens ------------------------------------------------
   const exitDialog = (
@@ -236,6 +270,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                   myId={myConnId}
                 />
               </div>
+              <div className="panel">
+                <h2>Revisão das suas questões</h2>
+                <QuestionReview items={reviewItems} />
+              </div>
             </>
           ) : null}
           <button className="ghost" onClick={onExit}>Voltar</button>
@@ -360,6 +398,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 totalQuestions={state.totalQuestions}
                 myId={myConnId}
               />
+            </div>
+            <div className="panel">
+              <h2>Revisão das suas questões</h2>
+              <QuestionReview items={reviewItems} />
               <div className="divider" />
               <button className="ghost" onClick={onExit}>Voltar ao início</button>
             </div>
