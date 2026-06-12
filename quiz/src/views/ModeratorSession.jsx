@@ -13,6 +13,7 @@ import { createHost, newRoomCode } from '../lib/peer.js'
 import QuestionDisplay from '../components/QuestionDisplay.jsx'
 import Ranking from '../components/Ranking.jsx'
 import PerformanceBreakdown from '../components/PerformanceBreakdown.jsx'
+import QuestionReview from '../components/QuestionReview.jsx'
 import ThemeToggle from '../components/ThemeToggle.jsx'
 import ConfirmDialog from '../components/ConfirmDialog.jsx'
 
@@ -48,6 +49,9 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
   ])
   // Map of participantId -> array of letters answered for the current question.
   const [currentAnswers, setCurrentAnswers] = useState({})
+  // Per-question record of everyone's answers, for the post-quiz review:
+  // { [questionIndex]: { [participantId]: letters } }
+  const [answersHistory, setAnswersHistory] = useState({})
   const [startedAt, setStartedAt] = useState(null)
   const [now, setNow] = useState(Date.now())
   const [durationLimitSeconds, setDurationLimitSeconds] = useState(
@@ -266,6 +270,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
     setQuestions(qs)
     setDurationLimitSeconds(dur)
     setCurrentAnswers({})
+    setAnswersHistory({})
     setHostDraft([])
     setCurrentIndex(0)
     setStartedAt(Date.now())
@@ -316,6 +321,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
       }),
     )
     setCurrentAnswers(allAnswers)
+    setAnswersHistory((prev) => ({ ...prev, [currentIndex]: allAnswers }))
     setPhase('reveal')
   }
 
@@ -356,6 +362,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
           }
         }),
       )
+      setAnswersHistory((prev) => ({ ...prev, [currentIndex]: allAnswers }))
     }
     setPhase('finished')
   }
@@ -378,6 +385,23 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
   ])
 
   const nonHostParticipants = participants.filter((p) => p.id !== HOST_ID)
+
+  // Post-quiz review items for the moderator. In group mode, only questions
+  // the moderator answered are reviewable; in solo mode, all of them.
+  const reviewItems = useMemo(() => {
+    if (phase !== 'finished') return []
+    return questions.map((q, i) => {
+      const ans = answersHistory[i]?.[HOST_ID] || null
+      const answered = !!ans && ans.length > 0
+      const ok = answered && scoreAnswer(q, ans) === 1
+      return {
+        question: q,
+        myAnswer: ans,
+        status: answered ? (ok ? 'correct' : 'wrong') : 'unanswered',
+        reviewable: solo || answered,
+      }
+    })
+  }, [phase, questions, answersHistory, solo])
 
   return (
     <div className="app">
@@ -692,6 +716,10 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                 myId={HOST_ID}
                 solo={solo}
               />
+            </div>
+            <div className="panel">
+              <h2>Revisão das questões</h2>
+              <QuestionReview items={reviewItems} />
             </div>
             <div className="row">
               <button className="primary" onClick={onExit}>

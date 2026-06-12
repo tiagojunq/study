@@ -829,6 +829,44 @@ footer {
 }
 .chapter-check-item input[type="checkbox"] { flex-shrink: 0; }
 
+/* ----------------------------- Question review ----------------------------- */
+.review-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+.review-chip {
+  width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--border-strong);
+  background: var(--panel-2);
+  color: var(--text);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.review-chip.correct {
+  background: var(--ok-soft);
+  border-color: var(--ok-border);
+  color: var(--ok-text);
+}
+.review-chip.wrong {
+  background: var(--danger-soft);
+  border-color: var(--danger-border);
+  color: var(--danger-text);
+}
+.review-chip.blank { opacity: 0.6; }
+.review-chip:disabled { cursor: not-allowed; }
+.review-chip:not(:disabled):hover { box-shadow: var(--focus-ring); }
+.review-legend { margin-right: 0.5rem; font-weight: 600; }
+.review-legend.correct { color: var(--ok); }
+.review-legend.wrong { color: var(--danger); }
+
 /* ----------------------------- Modal / Confirm Dialog ----------------------------- */
 .modal-backdrop {
   position: fixed;
