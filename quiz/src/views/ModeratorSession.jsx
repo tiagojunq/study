@@ -144,6 +144,9 @@ export default function ModeratorSession({
       })(),
       totalQuestions: questions.length,
       totalPoints,
+      hasMixedPoints:
+        questions.length > 0 &&
+        questions.some((q) => (q.points || 1) !== (questions[0].points || 1)),
       cert,
       chapterTotals,
       startedAt,
@@ -393,6 +396,12 @@ export default function ModeratorSession({
 
   // --- Derived UI ------------------------------------------------------
   const currentQuestion = currentIndex >= 0 ? questions[currentIndex] : null
+  // Show per-question point value only when this run mixes point values.
+  const hasMixedPoints = useMemo(() => {
+    if (!questions.length) return false
+    const first = questions[0].points || 1
+    return questions.some((q) => (q.points || 1) !== first)
+  }, [questions])
   const elapsedSeconds = startedAt ? Math.floor((now - startedAt) / 1000) : 0
   const hasTimeLimit = durationLimitSeconds > 0
   const remaining = hasTimeLimit ? Math.max(0, durationLimitSeconds - elapsedSeconds) : Infinity
@@ -674,6 +683,7 @@ export default function ModeratorSession({
                 onToggle={toggleHostDraft}
                 locked={false}
                 reveal={phase === 'reveal'}
+                showPoints={hasMixedPoints}
               />
             </div>
 

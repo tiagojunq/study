@@ -10,6 +10,11 @@ export default function QuestionReview({ items }) {
   const [openIndex, setOpenIndex] = useState(null)
 
   const open = openIndex !== null ? items[openIndex] : null
+  const hasMixedPoints =
+    items.length > 0 &&
+    items.some(
+      (it) => (it.question?.points || 1) !== (items[0].question?.points || 1),
+    )
 
   if (open) {
     return (
@@ -28,6 +33,7 @@ export default function QuestionReview({ items }) {
           onToggle={() => {}}
           locked={true}
           reveal={true}
+          showPoints={hasMixedPoints}
         />
         <div className="divider" />
         <p className="muted">

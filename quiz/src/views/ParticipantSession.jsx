@@ -375,6 +375,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 onToggle={toggle}
                 locked={iAnswered || submittedFor === state.currentIndex}
                 reveal={phase === 'reveal'}
+                showPoints={state.hasMixedPoints === true}
               />
               {phase === 'reveal' && (
                 <>
