@@ -91,6 +91,11 @@ export const CERTS = {
         label: 'Exame A + Apêndice (43 questões)',
         filter: (q) => q.exam === 'A',
       },
+      B_MAIN: {
+        id: 'B_MAIN',
+        label: 'Simulado B – 40 questões geradas (estrutura oficial)',
+        filter: (q) => q.exam === 'B',
+      },
       ALL: { id: 'ALL', label: 'Banco completo', filter: () => true },
     },
   },
