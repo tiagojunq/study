@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Home from './views/Home.jsx'
 import ModeratorSession from './views/ModeratorSession.jsx'
 import ParticipantSession from './views/ParticipantSession.jsx'
+import { DEFAULT_CERT } from './lib/quiz.js'
 
 export default function App() {
   const [route, setRoute] = useState({ kind: 'home' })
@@ -14,6 +15,7 @@ export default function App() {
         key={route.key}
         moderatorName={route.name}
         solo={route.solo === true}
+        cert={route.cert || DEFAULT_CERT}
         onExit={reset}
       />
     )
@@ -31,11 +33,11 @@ export default function App() {
 
   return (
     <Home
-      onStartSolo={(name) =>
-        setRoute({ kind: 'moderator', name, solo: true, key: Date.now() })
+      onStartSolo={(name, cert) =>
+        setRoute({ kind: 'moderator', name, solo: true, cert, key: Date.now() })
       }
-      onStartModerator={(name) =>
-        setRoute({ kind: 'moderator', name, solo: false, key: Date.now() })
+      onStartModerator={(name, cert) =>
+        setRoute({ kind: 'moderator', name, solo: false, cert, key: Date.now() })
       }
       onStartParticipant={(code, name) =>
         setRoute({ kind: 'participant', code, name, key: Date.now() })

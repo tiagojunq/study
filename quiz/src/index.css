@@ -467,6 +467,23 @@ label {
   border-left-color: var(--danger);
   color: var(--danger-text);
 }
+.rationale {
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.85rem;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border-left: 3px solid var(--accent);
+  color: var(--text-2);
+  font-size: 0.9rem;
+}
+.rationale-label {
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.35rem;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
 
 /* ----------------------------- Participants / Chips ----------------------------- */
 .participants {
@@ -866,6 +883,46 @@ footer {
 .review-legend { margin-right: 0.5rem; font-weight: 600; }
 .review-legend.correct { color: var(--ok); }
 .review-legend.wrong { color: var(--danger); }
+
+/* ----------------------------- Certification picker ----------------------------- */
+.cert-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: left;
+  padding: 1rem 1.1rem;
+  border: 2px solid var(--border-strong);
+  border-radius: 12px;
+  background: var(--panel-2);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s, transform 0.05s;
+}
+.cert-card:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+.cert-card:active { transform: translateY(1px); }
+.cert-card-title {
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+.cert-card-desc {
+  font-size: 0.85rem;
+  color: var(--text-2);
+  line-height: 1.4;
+}
+.cert-card-stats {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
 
 /* ----------------------------- Modal / Confirm Dialog ----------------------------- */
 .modal-backdrop {

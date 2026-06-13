@@ -20,7 +20,7 @@ export default function QuestionDisplay({
       <div className="q-number">
         <strong>Questão {question.exam}-{question.number}</strong>
         {' • '}
-        {chapterName(question.chapter)}
+        {chapterName(question.chapter, question.cert)}
         <span className="tag" style={{ marginLeft: '0.5rem' }}>
           {selectCount === 2 ? 'Selecione DUAS' : 'Selecione UMA'}
         </span>
@@ -63,6 +63,12 @@ export default function QuestionDisplay({
           )
         })}
       </div>
+      {reveal && question.rationale && (
+        <div className="rationale">
+          <div className="rationale-label">Justificativa detalhada</div>
+          <StemRenderer text={question.rationale} />
+        </div>
+      )}
     </div>
   )
 }

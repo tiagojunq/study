@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import {
-  ALL_QUESTIONS,
-  CHAPTERS,
+  DEFAULT_CERT,
+  getCert,
+  getCertQuestions,
   chapterName,
   prepareQuestions,
   scoreAnswer,
@@ -19,7 +20,16 @@ import ConfirmDialog from '../components/ConfirmDialog.jsx'
 
 const HOST_ID = 'host'
 
-export default function ModeratorSession({ moderatorName, onExit, solo = false }) {
+export default function ModeratorSession({
+  moderatorName,
+  onExit,
+  solo = false,
+  cert = DEFAULT_CERT,
+}) {
+  const certInfo = useMemo(() => getCert(cert), [cert])
+  const CERT_CHAPTERS = certInfo.chapters
+  const CERT_QUESTIONS = useMemo(() => getCertQuestions(cert), [cert])
+
   const [roomCode] = useState(() => newRoomCode())
   const [peerStatus, setPeerStatus] = useState(solo ? 'open' : 'connecting') // connecting | open | error
   const [peerError, setPeerError] = useState(null)
@@ -27,9 +37,9 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
 
   // Quiz config
   const [configMode, setConfigMode] = useState('exam') // 'exam' | 'chapter'
-  const [selectedChapters, setSelectedChapters] = useState(new Set(CHAPTERS))
+  const [selectedChapters, setSelectedChapters] = useState(new Set(CERT_CHAPTERS))
   const [limit, setLimit] = useState(40)
-  const [durationMinutes, setDurationMinutes] = useState(60)
+  const [durationMinutes, setDurationMinutes] = useState(certInfo.defaultDurationMinutes || 60)
   const [noTimeLimit, setNoTimeLimit] = useState(false)
 
   // Session state (host-owned)
@@ -59,6 +69,8 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
   )
   // How many questions per chapter in the current quiz (computed at start).
   const [chapterTotals, setChapterTotals] = useState({})
+  // Sum of question points in the current quiz (computed at start).
+  const [totalPoints, setTotalPoints] = useState(0)
 
   // Local moderator's draft answer for current question (not yet committed).
   const [hostDraft, setHostDraft] = useState([])
@@ -131,6 +143,8 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
         return hostShown && !ids.includes(HOST_ID) ? [...ids, HOST_ID] : ids
       })(),
       totalQuestions: questions.length,
+      totalPoints,
+      cert,
       chapterTotals,
       startedAt,
       durationLimitSeconds,
@@ -208,15 +222,15 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
   // --- Derived config helpers -----------------------------------------
   const chapterQCounts = useMemo(() => {
     const counts = {}
-    ALL_QUESTIONS.forEach((q) => { counts[q.chapter] = (counts[q.chapter] || 0) + 1 })
+    CERT_QUESTIONS.forEach((q) => { counts[q.chapter] = (counts[q.chapter] || 0) + 1 })
     return counts
-  }, [])
+  }, [CERT_QUESTIONS])
 
   const availableQCount = useMemo(() => {
-    if (configMode === 'exam') return ALL_QUESTIONS.length
+    if (configMode === 'exam') return CERT_QUESTIONS.length
     if (selectedChapters.size === 0) return 0
-    return ALL_QUESTIONS.filter((q) => selectedChapters.has(q.chapter)).length
-  }, [configMode, selectedChapters])
+    return CERT_QUESTIONS.filter((q) => selectedChapters.has(q.chapter)).length
+  }, [configMode, selectedChapters, CERT_QUESTIONS])
 
   const toggleChapter = (ch) =>
     setSelectedChapters((prev) => {
@@ -248,13 +262,13 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
     const seed = Math.floor(Math.random() * 1e9)
     let qs
     if (configMode === 'exam') {
-      const limitNum = Math.max(1, Number(limit) || ALL_QUESTIONS.length)
-      qs = prepareQuestions({ bank: 'ALL', limit: limitNum, shuffle: true, seed })
+      const limitNum = Math.max(1, Number(limit) || CERT_QUESTIONS.length)
+      qs = prepareQuestions({ cert, bank: 'ALL', limit: limitNum, shuffle: true, seed })
     } else {
       if (selectedChapters.size === 0) return
       const chapters = [...selectedChapters]
       const limitNum = Math.max(1, Number(limit) || availableQCount)
-      qs = prepareQuestions({ bank: 'ALL', chapters, limit: limitNum, shuffle: true, seed })
+      qs = prepareQuestions({ cert, bank: 'ALL', chapters, limit: limitNum, shuffle: true, seed })
     }
     if (qs.length === 0) return
     const dur = noTimeLimit
@@ -266,10 +280,13 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
     // Tally how many questions belong to each chapter in this run so clients
     // can render a chapter-by-chapter breakdown at the end.
     const totals = {}
+    let pointsSum = 0
     for (const q of qs) {
       totals[q.chapter] = (totals[q.chapter] || 0) + 1
+      pointsSum += q.points || 1
     }
     setChapterTotals(totals)
+    setTotalPoints(pointsSum)
     // Reset running scores in case the moderator re-starts a session.
     setParticipants((prev) =>
       prev.map((p) => ({ ...p, score: 0, answeredCount: 0, chapterCorrect: {} })),
@@ -413,7 +430,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
   return (
     <div className="app">
       <header className="header">
-        <h1>Simulador de prova CTFL</h1>
+        <h1>Simulador ISTQB {certInfo.shortLabel}</h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
@@ -526,13 +543,13 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                     <input
                       type="number"
                       min={1}
-                      max={ALL_QUESTIONS.length}
+                      max={CERT_QUESTIONS.length}
                       value={limit}
-                      onChange={(e) => setLimit(clampLimitOnInput(e.target.value, ALL_QUESTIONS.length))}
+                      onChange={(e) => setLimit(clampLimitOnInput(e.target.value, CERT_QUESTIONS.length))}
                     />
                   </label>
                   <p className="muted" style={{ fontSize: '0.83rem', marginTop: '0.3rem' }}>
-                    {ALL_QUESTIONS.length} questões disponíveis no banco completo.
+                    {CERT_QUESTIONS.length} questões disponíveis no banco completo.
                   </p>
                 </div>
               )}
@@ -543,7 +560,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                     Selecione um ou mais capítulos:
                   </p>
                   <div className="chapter-check-grid">
-                    {CHAPTERS.map((ch) => (
+                    {CERT_CHAPTERS.map((ch) => (
                       <label key={ch} className="chapter-check-item">
                         <input
                           type="checkbox"
@@ -552,7 +569,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                           style={{ width: 'auto' }}
                         />
                         <span>
-                          {chapterName(ch)}
+                          {chapterName(ch, cert)}
                           <span className="muted"> ({chapterQCounts[ch] || 0})</span>
                         </span>
                       </label>
@@ -709,6 +726,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                 <Ranking
                   participants={participants}
                   totalQuestions={questions.length}
+                  totalPoints={totalPoints}
                   myId={HOST_ID}
                   solo={solo}
                 />
@@ -720,8 +738,10 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
                 participants={participants}
                 chapterTotals={chapterTotals}
                 totalQuestions={questions.length}
+                totalPoints={totalPoints}
                 myId={HOST_ID}
                 solo={solo}
+                cert={cert}
               />
             </div>
             <div className="panel">
