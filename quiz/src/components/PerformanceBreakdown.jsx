@@ -159,7 +159,7 @@ export default function PerformanceBreakdown({
         )
       })}
       <p className="muted" style={{ fontSize: '0.8rem', marginTop: '0.5rem' }}>
-        Critério de aprovação ISTQB {certInfo.shortLabel}: {certInfo.passThresholdLabel}.
+        Critério de aprovação BSTQB {certInfo.shortLabel}: {certInfo.passThresholdLabel}.
       </p>
     </div>
   )

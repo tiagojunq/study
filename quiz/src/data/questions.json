@@ -30,10 +30,10 @@
       "c"
     ],
     "explanations": {
-      "a": "Incorreta. Provar ausência de defeitos não é um objetivo válido; pelo 1º princípio ISTQB, testes revelam defeitos mas não provam sua ausência.",
+      "a": "Incorreta. Provar ausência de defeitos não é um objetivo válido; pelo 1º princípio BSTQB, testes revelam defeitos mas não provam sua ausência.",
       "b": "Incorreta. Garantir ausência de falhas em produção viola o 1º princípio: testes não provam ausência de defeitos.",
       "c": "Correta. Reduzir o nível de risco e aumentar a confiança na qualidade é um objetivo legítimo e realista do teste.",
-      "d": "Incorreta. Verificar todas as combinações de entradas seria testes exaustivos, o que é impossível (2º princípio ISTQB)."
+      "d": "Incorreta. Verificar todas as combinações de entradas seria testes exaustivos, o que é impossível (2º princípio BSTQB)."
     },
     "cert": "CTFL",
     "points": 1
@@ -271,7 +271,7 @@
     ],
     "explanations": {
       "a": "Incorreta. Criar visão de produto e planejar/organizar o trabalho da equipe são habilidades de gestão/liderança, não as mais importantes para um testador.",
-      "b": "Correta. Conhecimento da área (domínio), ser bom jogador de equipe e pensamento crítico são as habilidades mais importantes para um testador segundo o ISTQB.",
+      "b": "Correta. Conhecimento da área (domínio), ser bom jogador de equipe e pensamento crítico são as habilidades mais importantes para um testador segundo o BSTQB.",
       "c": "Incorreta. Criar visão de produto não é uma habilidade tipicamente requerida de testadores; é mais associada a gerentes de produto.",
       "d": "Incorreta. Planejar e organizar o trabalho da equipe é uma habilidade gerencial, não a mais importante para um testador individual."
     },
@@ -311,7 +311,7 @@
     "explanations": {
       "a": "Incorreta. Decisões sobre automação de testes não são responsabilidade de representantes de negócios.",
       "b": "Incorreta. Testadores não ajudam a definir estratégia de testes junto com representantes de negócios; a estratégia é definida pela liderança de testes.",
-      "c": "Incorreta. Representantes comerciais fazem parte da abordagem de equipe completa (whole team approach) no ISTQB.",
+      "c": "Incorreta. Representantes comerciais fazem parte da abordagem de equipe completa (whole team approach) no BSTQB.",
       "d": "Correta. Na abordagem whole team, testadores auxiliam representantes de negócios a criar testes de aceite adequados às necessidades do negócio."
     },
     "cert": "CTFL",
@@ -2430,7 +2430,7 @@
     "explanations": {
       "a": "Incorreta. Alto impacto de risco não implica automaticamente alta probabilidade; esses dois fatores são avaliados independentemente.",
       "b": "Incorreta. Não há relação inversa automática entre impacto e probabilidade de risco.",
-      "c": "Correta. No ISTQB, impacto e probabilidade do risco são fatores independentes; conhecer um não determina o outro.",
+      "c": "Correta. No BSTQB, impacto e probabilidade do risco são fatores independentes; conhecer um não determina o outro.",
       "d": "Incorreta. A probabilidade é sempre necessária para calcular o nível total de risco (probabilidade × impacto) e definir respostas adequadas."
     },
     "cert": "CTFL",
@@ -3020,7 +3020,7 @@
     ],
     "explanations": {
       "a": "Correta. TDD (Test-Driven Development) é uma abordagem de desenvolvimento orientada a testes, onde os testes são escritos antes do código de produção.",
-      "b": "Incorreta. Desenvolvimento orientado pela cobertura não é uma abordagem reconhecida do ISTQB CTFL.",
+      "b": "Incorreta. Desenvolvimento orientado pela cobertura não é uma abordagem reconhecida do BSTQB CTFL.",
       "c": "Incorreta. Desenvolvimento orientado pela qualidade é um conceito genérico, não uma técnica específica de TDD.",
       "d": "Incorreta. Desenvolvimento orientado a funcionalidades (Feature-Driven Development) é uma metodologia ágil diferente do TDD."
     },
@@ -4197,7 +4197,7 @@
     ],
     "explanations": {
       "a": "Incorreta. Reduzir o nível de risco do produto é um objetivo de teste válido e realista.",
-      "b": "Correta. 'Garantir que o software esteja completamente livre de defeitos' não é um objetivo válido; pelo 1º princípio ISTQB, testes não provam ausência de defeitos.",
+      "b": "Correta. 'Garantir que o software esteja completamente livre de defeitos' não é um objetivo válido; pelo 1º princípio BSTQB, testes não provam ausência de defeitos.",
       "c": "Incorreta. Fornecer informações para decisão de lançamento é um objetivo legítimo e importante do teste.",
       "d": "Incorreta. Verificar conformidade com requisitos contratuais ou legais é um objetivo válido, especialmente em domínios regulamentados."
     },
@@ -4212,7 +4212,7 @@
     "chapter": 1,
     "lo": "FL-1.1.2",
     "selectCount": 1,
-    "stem": "Um desenvolvedor codifica incorrectamente uma condição 'maior que' quando deveria ser 'maior ou igual a'. Isso resulta em um resultado incorreto durante a execução. Qual é a sequência correta dos termos ISTQB para descrever essa situação?",
+    "stem": "Um desenvolvedor codifica incorrectamente uma condição 'maior que' quando deveria ser 'maior ou igual a'. Isso resulta em um resultado incorreto durante a execução. Qual é a sequência correta dos termos BSTQB para descrever essa situação?",
     "options": [
       {
         "letter": "a",
@@ -4235,8 +4235,8 @@
       "a"
     ],
     "explanations": {
-      "a": "Correta. A sequência correta no ISTQB é: engano humano (error) → defeito no produto (defect) → falha durante execução (failure).",
-      "b": "Incorreta. Esta sequência (failure → defect → error) está completamente invertida em relação à causalidade ISTQB.",
+      "a": "Correta. A sequência correta no BSTQB é: engano humano (error) → defeito no produto (defect) → falha durante execução (failure).",
+      "b": "Incorreta. Esta sequência (failure → defect → error) está completamente invertida em relação à causalidade BSTQB.",
       "c": "Incorreta. O defeito resulta do engano, não o contrário; a ordem defect → error está invertida.",
       "d": "Incorreta. A falha é a manifestação do defeito durante execução, não um passo intermediário entre engano e defeito."
     },
@@ -4446,7 +4446,7 @@
     "chapter": 1,
     "lo": "FL-1.5.1",
     "selectCount": 1,
-    "stem": "Qual habilidade é considerada fundamental para um testador eficaz segundo o ISTQB CTFL?",
+    "stem": "Qual habilidade é considerada fundamental para um testador eficaz segundo o BSTQB CTFL?",
     "options": [
       {
         "letter": "a",
@@ -4469,9 +4469,9 @@
       "c"
     ],
     "explanations": {
-      "a": "Incorreta. Programar em múltiplas linguagens é útil mas não é a habilidade fundamental definida pelo ISTQB para testadores.",
+      "a": "Incorreta. Programar em múltiplas linguagens é útil mas não é a habilidade fundamental definida pelo BSTQB para testadores.",
       "b": "Incorreta. Conhecimento exclusivo de ferramentas de automação é muito restrito; testadores precisam de habilidades mais abrangentes.",
-      "c": "Correta. Pensamento crítico, curiosidade e atenção aos detalhes são habilidades fundamentais para um testador eficaz, conforme o ISTQB CTFL.",
+      "c": "Correta. Pensamento crítico, curiosidade e atenção aos detalhes são habilidades fundamentais para um testador eficaz, conforme o BSTQB CTFL.",
       "d": "Incorreta. Trabalhar de forma isolada contradiz o princípio de whole team approach; colaboração é essencial para testadores."
     },
     "cert": "CTFL",
@@ -5414,7 +5414,7 @@
       "a": "Correta. Riscos de produto são possíveis falhas nas características do software; riscos de projeto são fatores que podem comprometer o sucesso do projeto (prazo, orçamento, recursos).",
       "b": "Incorreta. Ambos os tipos de risco são gerenciados por toda a equipe de projeto; não há divisão exclusiva por papel.",
       "c": "Incorreta. Riscos de produto podem ocorrer após a entrega (ex.: falhas em produção); riscos de projeto podem se materializar em qualquer fase do desenvolvimento.",
-      "d": "Incorreta. A distinção entre riscos de produto e projeto é fundamental para o planejamento baseado em riscos no ISTQB."
+      "d": "Incorreta. A distinção entre riscos de produto e projeto é fundamental para o planejamento baseado em riscos no BSTQB."
     },
     "cert": "CTFL",
     "points": 1
@@ -5744,7 +5744,7 @@
     "chapter": 1,
     "lo": "FL-1.1.1",
     "isAppendix": false,
-    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste válido segundo o ISTQB?",
+    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste válido segundo o BSTQB?",
     "options": [
       {
         "letter": "a",
@@ -5768,7 +5768,7 @@
     ],
     "selectCount": 1,
     "explanations": {
-      "a": "Incorreta. Provar ausência de defeitos é impossível (1º princípio ISTQB).",
+      "a": "Incorreta. Provar ausência de defeitos é impossível (1º princípio BSTQB).",
       "b": "Correta. Prevenir defeitos pela revisão antecipada de requisitos é um objetivo legítimo do teste, alinhado ao princípio de teste antecipado.",
       "c": "Incorreta. O teste é parte do QA, não o substitui.",
       "d": "Incorreta. Nenhum teste prova segurança absoluta; o teste reduz risco, não o elimina."
@@ -5822,7 +5822,7 @@
     "chapter": 1,
     "lo": "FL-1.2.1",
     "isAppendix": false,
-    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste todas as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio ISTQB esse gerente está ignorando?",
+    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste todas as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio BSTQB esse gerente está ignorando?",
     "options": [
       {
         "letter": "a",
@@ -5900,7 +5900,7 @@
     "chapter": 1,
     "lo": "FL-1.2.1",
     "isAppendix": false,
-    "stem": "A equipe da 'EduTech Cursos' entregou um sistema com zero defeitos abertos, mas os usuários reclamaram que ele não atende às necessidades reais de aprendizado. Qual princípio ISTQB foi violado?",
+    "stem": "A equipe da 'EduTech Cursos' entregou um sistema com zero defeitos abertos, mas os usuários reclamaram que ele não atende às necessidades reais de aprendizado. Qual princípio BSTQB foi violado?",
     "options": [
       {
         "letter": "a",
@@ -5963,7 +5963,7 @@
     ],
     "selectCount": 1,
     "explanations": {
-      "a": "Incorreta. A ordem está fora do fluxo lógico definido pelo ISTQB.",
+      "a": "Incorreta. A ordem está fora do fluxo lógico definido pelo BSTQB.",
       "b": "Correta. Esta é a sequência típica das atividades de teste; monitoramento/controle ocorre em paralelo.",
       "c": "Incorreta. Planejamento deve preceder análise e design.",
       "d": "Incorreta. Execução não vem antes de design e análise."
@@ -6056,7 +6056,7 @@
     "chapter": 1,
     "lo": "FL-1.4.1",
     "isAppendix": false,
-    "stem": "Qual conjunto de habilidades é mais importante para um testador eficaz, segundo o ISTQB?",
+    "stem": "Qual conjunto de habilidades é mais importante para um testador eficaz, segundo o BSTQB?",
     "options": [
       {
         "letter": "a",
@@ -6068,7 +6068,7 @@
       },
       {
         "letter": "c",
-        "text": "Apenas certificação ISTQB e experiência em frameworks específicos."
+        "text": "Apenas certificação BSTQB e experiência em frameworks específicos."
       },
       {
         "letter": "d",
@@ -6081,7 +6081,7 @@
     "selectCount": 1,
     "explanations": {
       "a": "Incorreta. Apenas técnica não basta; comunicação e domínio são igualmente cruciais.",
-      "b": "Correta. O ISTQB destaca uma combinação de habilidades técnicas e interpessoais.",
+      "b": "Correta. O BSTQB destaca uma combinação de habilidades técnicas e interpessoais.",
       "c": "Incorreta. Certificação não substitui habilidades comportamentais e de domínio.",
       "d": "Incorreta. Programação de baixo nível raramente é requisito para testadores."
     },
@@ -6122,7 +6122,7 @@
       "a": "Incorreta. Inverte os papéis: desenvolvimento cria; teste investiga.",
       "b": "Correta. Testadores tendem a ser críticos/questionadores, enquanto desenvolvedores tendem a focar em construir soluções.",
       "c": "Incorreta. Os mindsets são complementares, não idênticos.",
-      "d": "Incorreta. Bom teste exige colaboração; o ISTQB ressalta isso."
+      "d": "Incorreta. Bom teste exige colaboração; o BSTQB ressalta isso."
     },
     "cert": "CTFL",
     "points": 1
@@ -6160,8 +6160,8 @@
     "explanations": {
       "a": "Incorreta. Confunde os conceitos.",
       "b": "Correta. Erro é a ação humana, defeito é a falha estática no código/produto, falha é a manifestação observável.",
-      "c": "Incorreta. Cada conceito tem definição distinta no ISTQB.",
-      "d": "Incorreta. Reclamação de cliente não é definida como falha pelo ISTQB."
+      "c": "Incorreta. Cada conceito tem definição distinta no BSTQB.",
+      "d": "Incorreta. Reclamação de cliente não é definida como falha pelo BSTQB."
     },
     "cert": "CTFL",
     "points": 1
@@ -6238,7 +6238,7 @@
     "explanations": {
       "a": "Incorreta. Independência traz benefícios mas não garante por si só maior qualidade.",
       "b": "Incorreta. Vieses do autor dificultam encontrar defeitos no próprio trabalho.",
-      "c": "Correta. ISTQB destaca que cada nível de independência possui prós e contras; o contexto determina o adequado.",
+      "c": "Correta. BSTQB destaca que cada nível de independência possui prós e contras; o contexto determina o adequado.",
       "d": "Incorreta. Comunicação é fundamental; independência não significa isolamento."
     },
     "cert": "CTFL",
@@ -6981,7 +6981,7 @@
       "a": "Incorreta. Não houve defeito a corrigir.",
       "b": "Correta. Manutenção adaptativa responde a mudanças no ambiente (regulação, sistemas externos).",
       "c": "Incorreta. Perfectiva é melhoria de qualidade sem mudança de ambiente.",
-      "d": "Incorreta. 'Preditiva' não é categoria padrão do ISTQB."
+      "d": "Incorreta. 'Preditiva' não é categoria padrão do BSTQB."
     },
     "cert": "CTFL",
     "points": 1
@@ -8814,7 +8814,7 @@
     ],
     "selectCount": 1,
     "explanations": {
-      "a": "Incorreta. Não são fatores de risco no ISTQB.",
+      "a": "Incorreta. Não são fatores de risco no BSTQB.",
       "b": "Correta. Risco = Probabilidade × Impacto.",
       "c": "Incorreta. Irrelevantes para risco do produto.",
       "d": "Incorreta. São métricas de tamanho, não risco."
@@ -9635,7 +9635,7 @@
     "selectCount": 1,
     "explanations": {
       "a": "Incorreta. Custo é só um dos fatores.",
-      "b": "Correta. ISTQB destaca avaliação ampla: processo, ROI, integração técnica e capacitação.",
+      "b": "Correta. BSTQB destaca avaliação ampla: processo, ROI, integração técnica e capacitação.",
       "c": "Incorreta. UI é apenas um aspecto secundário.",
       "d": "Incorreta. Decisão deve ser baseada em múltiplos critérios."
     },
@@ -9653,7 +9653,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações MELHOR destaca a diferença entre sistemas convencionais e sistemas\nbaseados em AI?",
+    "stem": "Qual das seguintes afirmações melhor destaca a diferença entre sistemas convencionais e sistemas\nbaseados em AI?",
     "options": [
       {
         "letter": "a",
@@ -9693,7 +9693,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 2,
-    "stem": "Quais são as DUAS afirmações a seguir que MELHOR distinguem entre AI estreita, AI geral e super AI?",
+    "stem": "Quais são as duas afirmações a seguir que melhor distinguem entre AI estreita, AI geral e super AI?",
     "options": [
       {
         "letter": "a",
@@ -9739,7 +9739,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir descreve MELHOR a relação entre AI, ML e DL?",
+    "stem": "Qual das afirmações a seguir descreve melhor a relação entre AI, ML e DL?",
     "options": [
       {
         "letter": "a",
@@ -9779,7 +9779,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir MELHOR explica a AI generativa?",
+    "stem": "Qual das afirmações a seguir melhor explica a AI generativa?",
     "options": [
       {
         "letter": "a",
@@ -9819,7 +9819,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir compara MELHOR as opções de hardware disponíveis para implementar\nsistemas de machine learning?",
+    "stem": "Qual das afirmações a seguir compara melhor as opções de hardware disponíveis para implementar\nsistemas de machine learning?",
     "options": [
       {
         "letter": "a",
@@ -9859,7 +9859,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Considere as seguintes afirmações sobre o desenvolvimento e a hospedagem de modelos de AI:\n   i.       Ele reduz os custos de desenvolvimento ao utilizar recursos de nuvem pública, eliminando a\n            necessidade de investimento em hardware local\n   ii.      Utiliza o desenvolvimento local de componentes de preparação de dados para dados confidenciais,\n            a fim de aumentar a segurança antes de migrar para a nuvem para o treinamento do sistema\n            completo\n  iii.      Isso resulta em custos mais baixos porque laptops são usados para o desenvolvimento local e há\n            baixos custos iniciais de hardware ao hospedar modelos de AI em nuvens públicas\n iv.        Simplifica o desenvolvimento e a hospedagem ao padronizar processos em servidores locais,\n            eliminando a necessidade de configurações complexas baseadas em nuvem\n  v.        Garante a mais alta segurança ao hospedar modelos de AI em nuvens privadas, evitando assim os\n            riscos associados a vulnerabilidades de hardware local\nQual das opções a seguir reflete MELHOR as vantagens de usar uma abordagem híbrida para este\ndesenvolvimento e hospedagem?",
+    "stem": "Considere as seguintes afirmações sobre o desenvolvimento e a hospedagem de modelos de AI:\n   i.       Ele reduz os custos de desenvolvimento ao utilizar recursos de nuvem pública, eliminando a\n            necessidade de investimento em hardware local\n   ii.      Utiliza o desenvolvimento local de componentes de preparação de dados para dados confidenciais,\n            a fim de aumentar a segurança antes de migrar para a nuvem para o treinamento do sistema\n            completo\n  iii.      Isso resulta em custos mais baixos porque laptops são usados para o desenvolvimento local e há\n            baixos custos iniciais de hardware ao hospedar modelos de AI em nuvens públicas\n iv.        Simplifica o desenvolvimento e a hospedagem ao padronizar processos em servidores locais,\n            eliminando a necessidade de configurações complexas baseadas em nuvem\n  v.        Garante a mais alta segurança ao hospedar modelos de AI em nuvens privadas, evitando assim os\n            riscos associados a vulnerabilidades de hardware local\nQual das opções a seguir reflete melhor as vantagens de usar uma abordagem híbrida para este\ndesenvolvimento e hospedagem?",
     "options": [
       {
         "letter": "a",
@@ -9900,7 +9900,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Dadas as seguintes características de qualidade da norma ISO/IEC 25059:\n   1. Robustez da AI\n   2. Controlabilidade do usuário\n   3. Adaptabilidade funcional\n   4. Intervenibilidade\nE os seguintes exemplos de medições de características de qualidade:\n   A. A taxa de sucesso de um operador remoto em forçar um drone a entrar no protocolo de\n       pouso seguro quando seu sistema de navegação de AI exibe comportamento perigoso\n   B. O tempo médio necessário para anular com sucesso a decisão automatizada de um\n       sistema de gerenciamento de fraudes de bloquear a transação de um cliente\n   C. O F1-score de um modelo de detecção de objetos em um carro autônomo sob chuva forte\n     D. O tempo necessário para que um mecanismo de recomendação de comércio eletrônico atualize\n        suas sugestões para refletir uma nova tendência de moda que surge rapidamente\n\nQual das opções a seguir CORRESPONDE MELHOR às características de qualidade com as medições de\nexemplo?",
+    "stem": "Dadas as seguintes características de qualidade da norma ISO/IEC 25059:\n   1. Robustez da AI\n   2. Controlabilidade do usuário\n   3. Adaptabilidade funcional\n   4. Intervenibilidade\nE os seguintes exemplos de medições de características de qualidade:\n   A. A taxa de sucesso de um operador remoto em forçar um drone a entrar no protocolo de\n       pouso seguro quando seu sistema de navegação de AI exibe comportamento perigoso\n   B. O tempo médio necessário para anular com sucesso a decisão automatizada de um\n       sistema de gerenciamento de fraudes de bloquear a transação de um cliente\n   C. O F1-score de um modelo de detecção de objetos em um carro autônomo sob chuva forte\n     D. O tempo necessário para que um mecanismo de recomendação de comércio eletrônico atualize\n        suas sugestões para refletir uma nova tendência de moda que surge rapidamente\n\nQual das opções a seguir corresponde melhor às características de qualidade com as medições de\nexemplo?",
     "options": [
       {
         "letter": "a",
@@ -9941,7 +9941,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir descreve MELHOR um dos principais desafios quando a AI é usada em\nsistemas relacionados à segurança?",
+    "stem": "Qual das afirmações a seguir descreve melhor um dos principais desafios quando a AI é usada em\nsistemas relacionados à segurança?",
     "options": [
       {
         "letter": "a",
@@ -9981,7 +9981,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual dos exemplos a seguir é o MENOS provável de ser um critério de aceitação válido para características\nde qualidade específicas da AI definidas na norma ISO 25059 para um sistema baseado em AI?",
+    "stem": "Qual dos exemplos a seguir é o menos provável de ser um critério de aceitação válido para características\nde qualidade específicas da AI definidas na norma ISO 25059 para um sistema baseado em AI?",
     "options": [
       {
         "letter": "a",
@@ -10021,7 +10021,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Dadas as seguintes formas de ML:\n     1.     Agrupamento\n     2.     Aprendizado por reforço\n     3.     Classificação\n     4.     Regressão\nE os seguintes exemplos:\n     A. O aplicativo de jogos para celular atualiza seu feedback, tempo de resposta e o número de opções\n        oferecidas ao usuário com base no quanto os jogadores gastam\n     B. O aplicativo de tradução de idiomas pesquisa na internet para descobrir textos em vários idiomas a\n        fim de melhorar sua função de tradução\n     C. Uma empresa de manufatura prevê quando um equipamento provavelmente irá falhar com base em\n        dados de sensores e registros históricos de manutenção\n     D. Uma plataforma de rede social agrupa seus usuários em comunidades com base em suas\n        interações entre si e nos interesses declarados\n\nQual das opções a seguir CORRESPONDE MELHOR aos exemplos com as formas de ML?",
+    "stem": "Dadas as seguintes formas de ML:\n     1.     Agrupamento\n     2.     Aprendizado por reforço\n     3.     Classificação\n     4.     Regressão\nE os seguintes exemplos:\n     A. O aplicativo de jogos para celular atualiza seu feedback, tempo de resposta e o número de opções\n        oferecidas ao usuário com base no quanto os jogadores gastam\n     B. O aplicativo de tradução de idiomas pesquisa na internet para descobrir textos em vários idiomas a\n        fim de melhorar sua função de tradução\n     C. Uma empresa de manufatura prevê quando um equipamento provavelmente irá falhar com base em\n        dados de sensores e registros históricos de manutenção\n     D. Uma plataforma de rede social agrupa seus usuários em comunidades com base em suas\n        interações entre si e nos interesses declarados\n\nQual das opções a seguir corresponde melhor aos exemplos com as formas de ML?",
     "options": [
       {
         "letter": "a",
@@ -10062,7 +10062,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Considerando as seguintes atividades do fluxo de trabalho de ML:\n     1.     Implantar o modelo\n     2.     Preparar e testar os dados\n     3.     Teste o modelo\n     4.     Avaliar o modelo\n\nE, considerando as seguintes descrições:\n    A. O desempenho do modelo é testado usando dados de validação\n    B. A origem dos dados de teste utilizados para testar o modelo é identificada\n    C. Os dados de teste são usados para verificar se os critérios de performance acordados foram\n       atendidos\n    D. O modelo é testado na plataforma de destino\nQual das opções a seguir CORRESPONDE MELHOR às descrições com as atividades no fluxo de trabalho\nde ML?",
+    "stem": "Considerando as seguintes atividades do fluxo de trabalho de ML:\n     1.     Implantar o modelo\n     2.     Preparar e testar os dados\n     3.     Teste o modelo\n     4.     Avaliar o modelo\n\nE, considerando as seguintes descrições:\n    A. O desempenho do modelo é testado usando dados de validação\n    B. A origem dos dados de teste utilizados para testar o modelo é identificada\n    C. Os dados de teste são usados para verificar se os critérios de performance acordados foram\n       atendidos\n    D. O modelo é testado na plataforma de destino\nQual das opções a seguir corresponde melhor às descrições com as atividades no fluxo de trabalho\nde ML?",
     "options": [
       {
         "letter": "a",
@@ -10103,7 +10103,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre o uso de modelos pré-treinados está CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre o uso de modelos pré-treinados está correta?",
     "options": [
       {
         "letter": "a",
@@ -10143,7 +10143,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir descreve MELHOR uma atividade-chave na preparação de dados para\nmachine learning?",
+    "stem": "Qual das afirmações a seguir descreve melhor uma atividade-chave na preparação de dados para\nmachine learning?",
     "options": [
       {
         "letter": "a",
@@ -10183,7 +10183,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir MELHOR contrasta as funções dos conjuntos de dados de treinamento,\nvalidação e teste no desenvolvimento de modelos ML?",
+    "stem": "Qual das afirmações a seguir melhor contrasta as funções dos conjuntos de dados de treinamento,\nvalidação e teste no desenvolvimento de modelos ML?",
     "options": [
       {
         "letter": "a",
@@ -10223,7 +10223,7 @@
     "cognitive": "K3",
     "points": 2,
     "selectCount": 1,
-    "stem": "Considere a seguinte matriz de confusão para um classificador de imagens:\n\n  Confusion Matrix   Predicted Positive   Predicted Negative\n  Actual Positive    78                   6\n  Actual Negative    22                   14\n\nQual das opções a seguir representa a fórmula CORRETA para calcular a precisão do classificador?",
+    "stem": "Considere a seguinte matriz de confusão para um classificador de imagens:\n\n  Confusion Matrix   Predicted Positive   Predicted Negative\n  Actual Positive    78                   6\n  Actual Negative    22                   14\n\nQual das opções a seguir representa a fórmula correta para calcular a precisão do classificador?",
     "options": [
       {
         "letter": "a",
@@ -10263,7 +10263,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Durante o treinamento de uma rede neural profunda, a rede gera um resultado e a perda é calculada.\nQual das alternativas a seguir descreve CORRETAMENTE a próxima etapa do processo de treinamento?",
+    "stem": "Durante o treinamento de uma rede neural profunda, a rede gera um resultado e a perda é calculada.\nQual das alternativas a seguir descreve corretamente a próxima etapa do processo de treinamento?",
     "options": [
       {
         "letter": "a",
@@ -10303,7 +10303,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Considerando os seguintes exemplos de sistemas baseados em AI:\n   i.       Um sistema que aprende com dados em tempo real para melhorar suas previsões de falhas e\n            atualiza automaticamente os cronogramas de manutenção\n   ii.      Um filtro de spam para um aplicativo de e-mail, que identifica spam com base em regras\n            predefinidas\n  iii.      Um mecanismo de recomendação em um serviço de streaming que atualiza suas sugestões com\n            base nas mudanças nos hábitos e preferências de visualização do usuário\n iv.        Um assistente pessoal que aprende continuamente com seu usuário\n  v.        Um sistema baseado em regras para diagnóstico médico\nQual das opções a seguir MELHOR descreve os sistemas que podem ser considerados sistemas de AI\nfechados?",
+    "stem": "Considerando os seguintes exemplos de sistemas baseados em AI:\n   i.       Um sistema que aprende com dados em tempo real para melhorar suas previsões de falhas e\n            atualiza automaticamente os cronogramas de manutenção\n   ii.      Um filtro de spam para um aplicativo de e-mail, que identifica spam com base em regras\n            predefinidas\n  iii.      Um mecanismo de recomendação em um serviço de streaming que atualiza suas sugestões com\n            base nas mudanças nos hábitos e preferências de visualização do usuário\n iv.        Um assistente pessoal que aprende continuamente com seu usuário\n  v.        Um sistema baseado em regras para diagnóstico médico\nQual das opções a seguir melhor descreve os sistemas que podem ser considerados sistemas de AI\nfechados?",
     "options": [
       {
         "letter": "a",
@@ -10344,7 +10344,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das opções a seguir explica MELHOR por que uma abordagem estatística é necessária ao realizar o\nteste de um sistema baseado em AI?",
+    "stem": "Qual das opções a seguir explica melhor por que uma abordagem estatística é necessária ao realizar o\nteste de um sistema baseado em AI?",
     "options": [
       {
         "letter": "a",
@@ -10384,7 +10384,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Por que definir uma “semente” é apenas uma solução LIMITADA para resolver o problema do oráculo de\nteste em sistemas de AI?",
+    "stem": "Por que definir uma “semente” é apenas uma solução limitada para resolver o problema do oráculo de\nteste em sistemas de AI?",
     "options": [
       {
         "letter": "a",
@@ -10424,7 +10424,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir descreve MELHOR uma abordagem comum para testar modelos GenAI?",
+    "stem": "Qual das afirmações a seguir descreve melhor uma abordagem comum para testar modelos GenAI?",
     "options": [
       {
         "letter": "a",
@@ -10464,7 +10464,7 @@
     "cognitive": "K3",
     "points": 2,
     "selectCount": 1,
-    "stem": "Sua organização planeja implantar um gerador de documentos jurídicos baseado em GenAI. Durante o\nplanejamento da implementação, a equipe de segurança defende que os esforços de red teaming se\nconcentrem na prevenção de ataques de injeção de prompt, enquanto a equipe de conformidade deseja\npriorizar a detecção de viés na geração de pareceres jurídicos. A equipe de desenvolvimento sugere\nrealizar o red teaming após a entrada em operação do sistema para economizar tempo.\nQual das opções a seguir é a estratégia de implementação de red teaming MAIS eficaz para este cenário?",
+    "stem": "Sua organização planeja implantar um gerador de documentos jurídicos baseado em GenAI. Durante o\nplanejamento da implementação, a equipe de segurança defende que os esforços de red teaming se\nconcentrem na prevenção de ataques de injeção de prompt, enquanto a equipe de conformidade deseja\npriorizar a detecção de viés na geração de pareceres jurídicos. A equipe de desenvolvimento sugere\nrealizar o red teaming após a entrada em operação do sistema para economizar tempo.\nQual das opções a seguir é a estratégia de implementação de red teaming mais eficaz para este cenário?",
     "options": [
       {
         "letter": "a",
@@ -10504,7 +10504,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Um sistema de previsão do tempo baseado em ML fornece excelentes resultados para a maioria dos locais;\nno entanto, observou-se que as previsões para áreas no Reino Unido com altitude superior a 1.250 metros\nsão frequentemente imprecisas.\nQual dos seguintes níveis de teste deveria ter sido realizado de forma MAIS minuciosa?",
+    "stem": "Um sistema de previsão do tempo baseado em ML fornece excelentes resultados para a maioria dos locais;\nno entanto, observou-se que as previsões para áreas no Reino Unido com altitude superior a 1.250 metros\nsão frequentemente imprecisas.\nQual dos seguintes níveis de teste deveria ter sido realizado de forma mais minuciosa?",
     "options": [
       {
         "letter": "a",
@@ -10544,7 +10544,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre a aplicação de testes baseados em riscos a sistemas de ML está\nCORRETA?",
+    "stem": "Qual das seguintes afirmações sobre a aplicação de testes baseados em riscos a sistemas de ML está\ncorreta?",
     "options": [
       {
         "letter": "a",
@@ -10584,7 +10584,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "A equipe que está desenvolvendo um novo modelo de machine learning recebeu um conjunto de dados de\num novo fornecedor terceirizado não verificado. Eles não têm certeza sobre a origem desse conjunto de dados\ne estão preocupados que os dados brutos possam ter sido adulterados.\nQual das seguintes abordagens de teste é a MAIS adequada para lidar com esse risco específico?",
+    "stem": "A equipe que está desenvolvendo um novo modelo de machine learning recebeu um conjunto de dados de\num novo fornecedor terceirizado não verificado. Eles não têm certeza sobre a origem desse conjunto de dados\ne estão preocupados que os dados brutos possam ter sido adulterados.\nQual das seguintes abordagens de teste é a mais adequada para lidar com esse risco específico?",
     "options": [
       {
         "letter": "a",
@@ -10624,7 +10624,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Uma empresa de serviços financeiros desenvolveu um sistema de ML para aprovação de empréstimos. Um\ntestador responsável por testar esse sistema deseja determinar se há algum viés potencial no sistema\nrelacionado a fatores como gênero e idade.\nQual das seguintes abordagens seria a MAIS adequada para detectar preconceitos nos dados de\ntreinamento em um estágio inicial?",
+    "stem": "Uma empresa de serviços financeiros desenvolveu um sistema de ML para aprovação de empréstimos. Um\ntestador responsável por testar esse sistema deseja determinar se há algum viés potencial no sistema\nrelacionado a fatores como gênero e idade.\nQual das seguintes abordagens seria a mais adequada para detectar preconceitos nos dados de\ntreinamento em um estágio inicial?",
     "options": [
       {
         "letter": "a",
@@ -10744,7 +10744,7 @@
     "cognitive": "K3",
     "points": 2,
     "selectCount": 1,
-    "stem": "Você está realizando um teste de um conjunto de dados de ML para um sistema de aprovação de\nempréstimos bancários. O conjunto de dados contém os seguintes atributos:\n     •      id_do_candidato                                          (inteiro, único)\n     •      renda_anual                                              (decimal, em USD)\n     •      valor_do_empréstimo                                      (decimal, em USD)\n     •      pontuação_de_crédito                                     (inteiro, 300-850)\n     •      anos_de_trabalho                                         (inteiro, 0-50)\n     •      pagamento_mensal (decimal, em USD)\n\nAplicam-se as seguintes regras de negócio:\n     •      O valor do empréstimo não pode exceder 5 vezes a renda anual\n     •      Pagamento mensal = valor_do_empréstimo / 324 (para empréstimos de 30 anos)\n     •      As pontuações de crédito devem estar dentro da faixa padrão\n     •      Todos os valores monetários devem ser positivos\n\nAo aplicar testes de restrições de conjuntos de dados para validar o ‘pagamento_mensal’ para empréstimos\nde 30 anos, qual tipo de restrição seria MAIS apropriado?",
+    "stem": "Você está realizando um teste de um conjunto de dados de ML para um sistema de aprovação de\nempréstimos bancários. O conjunto de dados contém os seguintes atributos:\n     •      id_do_candidato                                          (inteiro, único)\n     •      renda_anual                                              (decimal, em USD)\n     •      valor_do_empréstimo                                      (decimal, em USD)\n     •      pontuação_de_crédito                                     (inteiro, 300-850)\n     •      anos_de_trabalho                                         (inteiro, 0-50)\n     •      pagamento_mensal (decimal, em USD)\n\nAplicam-se as seguintes regras de negócio:\n     •      O valor do empréstimo não pode exceder 5 vezes a renda anual\n     •      Pagamento mensal = valor_do_empréstimo / 324 (para empréstimos de 30 anos)\n     •      As pontuações de crédito devem estar dentro da faixa padrão\n     •      Todos os valores monetários devem ser positivos\n\nAo aplicar testes de restrições de conjuntos de dados para validar o ‘pagamento_mensal’ para empréstimos\nde 30 anos, qual tipo de restrição seria mais apropriado?",
     "options": [
       {
         "letter": "a",
@@ -10784,7 +10784,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das opções a seguir MELHOR explica o papel das anotações múltiplas no label correctness testing?",
+    "stem": "Qual das opções a seguir melhor explica o papel das anotações múltiplas no label correctness testing?",
     "options": [
       {
         "letter": "a",
@@ -10865,7 +10865,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre a documentação de modelos ML está CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre a documentação de modelos ML está correta?",
     "options": [
       {
         "letter": "a",
@@ -10905,7 +10905,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Após o lançamento, um modelo ML forneceu previsões corretas menos vezes do que o esperado. Testes\nadicionais foram realizados, e o nível de precisão desses testes foi medido em 83%. Anteriormente, o\nmodelo ML havia alcançado uma precisão de 83% ± 4% com um nível de confiança de 94%.\n\nQual das opções a seguir é a que MAIOR PROBABILIDADE representa a situação atual?",
+    "stem": "Após o lançamento, um modelo ML forneceu previsões corretas menos vezes do que o esperado. Testes\nadicionais foram realizados, e o nível de precisão desses testes foi medido em 83%. Anteriormente, o\nmodelo ML havia alcançado uma precisão de 83% ± 4% com um nível de confiança de 94%.\n\nQual das opções a seguir é a que maior probabilidade representa a situação atual?",
     "options": [
       {
         "letter": "a",
@@ -10945,7 +10945,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir resume MELHOR os testes contraditórios de sistemas de machine learning?",
+    "stem": "Qual das afirmações a seguir resume melhor os testes contraditórios de sistemas de machine learning?",
     "options": [
       {
         "letter": "a",
@@ -10985,7 +10985,7 @@
     "cognitive": "K3",
     "points": 2,
     "selectCount": 1,
-    "stem": "Um sistema de busca de celulares baseado em AI fornece uma lista dos aparelhos que considera mais\nadequados para o usuário, com base no conhecimento do uso anterior do celular pelo usuário e nas\npreferências especificadas por ele.\n\nOs testes metamórficos estão sendo usados com o seguinte caso de teste de origem:\nEntradas                                                                                         Saídas\nFaixa de preço selecionada:                         $200-$300                                    Celulares recomendados:\nCâmera 3D:                                          Não importa                                  SnapHappy_X1\n                                                                                                 SnapHappy_M2\nTamanho da tela:                                    médio a grande\n                                                                                                 SnapHappy_M3\nSO:                                                 Android ou iOS\n                                                                                                 ClickNow_1000x\nDuração da bateria:                                 Não importa                                  ClickNow_1000xs\n\nE estes dados de teste para dois casos de teste de acompanhamento correspondentes:\nEntrada T1                                                                 Entrada T2\nFaixa de preço selecionada:                         $200-$300              Faixa de preço selecionada:     $200–$300\nCâmera 3D:                                          sim                    Câmera 3D:                      não\nTamanho da tela:                                    médio a grande         Tamanho da tela:                médio a grande\nSO:                                                 Android ou iOS         SO:                             Android ou iOS\nDuração da bateria:                                 Não importa            Duração da bateria:             Não importa\n\nQual das opções a seguir é a que tem MAIOR probabilidade de ser uma lista válida de telefones\nrecomendados para os casos de teste de acompanhamento?",
+    "stem": "Um sistema de busca de celulares baseado em AI fornece uma lista dos aparelhos que considera mais\nadequados para o usuário, com base no conhecimento do uso anterior do celular pelo usuário e nas\npreferências especificadas por ele.\n\nOs testes metamórficos estão sendo usados com o seguinte caso de teste de origem:\nEntradas                                                                                         Saídas\nFaixa de preço selecionada:                         $200-$300                                    Celulares recomendados:\nCâmera 3D:                                          Não importa                                  SnapHappy_X1\n                                                                                                 SnapHappy_M2\nTamanho da tela:                                    médio a grande\n                                                                                                 SnapHappy_M3\nSO:                                                 Android ou iOS\n                                                                                                 ClickNow_1000x\nDuração da bateria:                                 Não importa                                  ClickNow_1000xs\n\nE estes dados de teste para dois casos de teste de acompanhamento correspondentes:\nEntrada T1                                                                 Entrada T2\nFaixa de preço selecionada:                         $200-$300              Faixa de preço selecionada:     $200–$300\nCâmera 3D:                                          sim                    Câmera 3D:                      não\nTamanho da tela:                                    médio a grande         Tamanho da tela:                médio a grande\nSO:                                                 Android ou iOS         SO:                             Android ou iOS\nDuração da bateria:                                 Não importa            Duração da bateria:             Não importa\n\nQual das opções a seguir é a que tem maior probabilidade de ser uma lista válida de telefones\nrecomendados para os casos de teste de acompanhamento?",
     "options": [
       {
         "letter": "a",
@@ -11026,7 +11026,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Uma organização usa um modelo ML para prever a rotatividade de clientes, mas não possui\nnenhum mecanismo para obter feedback direto dos usuários ou rastrear quando os clientes saem.\nEles querem testar se há desvio analisando os dados que estão sendo alimentados no modelo ML\nem produção.\nQual tipo de teste seria o MAIS apropriado nessa situação e por quê?",
+    "stem": "Uma organização usa um modelo ML para prever a rotatividade de clientes, mas não possui\nnenhum mecanismo para obter feedback direto dos usuários ou rastrear quando os clientes saem.\nEles querem testar se há desvio analisando os dados que estão sendo alimentados no modelo ML\nem produção.\nQual tipo de teste seria o mais apropriado nessa situação e por quê?",
     "options": [
       {
         "letter": "a",
@@ -11066,7 +11066,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Ao testar um modelo ML treinado, a equipe de desenvolvimento descobriu que o modelo era altamente\npreciso quando avaliado usando dados de validação, mas apresentava baixo desempenho com dados de\nteste independentes.\nQual das opções a seguir é a MAIS provável de causar essa situação?",
+    "stem": "Ao testar um modelo ML treinado, a equipe de desenvolvimento descobriu que o modelo era altamente\npreciso quando avaliado usando dados de validação, mas apresentava baixo desempenho com dados de\nteste independentes.\nQual das opções a seguir é a mais provável de causar essa situação?",
     "options": [
       {
         "letter": "a",
@@ -11106,7 +11106,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das afirmações a seguir descreve MELHOR como o teste A/B é usado no contexto de um sistema de\naprendizado de máquina (MLS)?",
+    "stem": "Qual das afirmações a seguir descreve melhor como o teste A/B é usado no contexto de um sistema de\naprendizado de máquina (MLS)?",
     "options": [
       {
         "letter": "a",
@@ -11146,7 +11146,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das seguintes descrições sobre a criação de um pseudo-oráculo usado para apoiar o teste back-to-\nback de um modelo ML é MAIS provável de estar CORRETA?",
+    "stem": "Qual das seguintes descrições sobre a criação de um pseudo-oráculo usado para apoiar o teste back-to-\nback de um modelo ML é mais provável de estar correta?",
     "options": [
       {
         "letter": "a",
@@ -11186,7 +11186,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 2,
-    "stem": "Quais são as DUAS das seguintes situações que descrevem riscos de desenvolvimento de ML que podem\nser MITIGADOS DE FORMA EFICAZ através da realização de testes de performance funcional do ML?",
+    "stem": "Quais são as duas das seguintes situações que descrevem riscos de desenvolvimento de ML que podem\nser mitigados de forma eficaz através da realização de testes de performance funcional do ML?",
     "options": [
       {
         "letter": "a",
@@ -11277,7 +11277,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual das opções a seguir MELHOR descreve uma vantagem do uso de frameworks de desenvolvimento de\nML na construção e no treinamento de modelos de machine learning?",
+    "stem": "Qual das opções a seguir melhor descreve uma vantagem do uso de frameworks de desenvolvimento de\nML na construção e no treinamento de modelos de machine learning?",
     "options": [
       {
         "letter": "a",
@@ -11317,7 +11317,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Uma organização está desenvolvendo um sistema baseado em AI para direção autônoma sem considerar\nos riscos associados ao sistema.\nQual das normas a seguir é a MAIS provável de estar sendo violada neste cenário, o que poderia resultar\nem penalidades de severidade elevada?",
+    "stem": "Uma organização está desenvolvendo um sistema baseado em AI para direção autônoma sem considerar\nos riscos associados ao sistema.\nQual das normas a seguir é a mais provável de estar sendo violada neste cenário, o que poderia resultar\nem penalidades de severidade elevada?",
     "options": [
       {
         "letter": "a",
@@ -11357,7 +11357,7 @@
     "cognitive": "K2",
     "points": 1,
     "selectCount": 1,
-    "stem": "Qual é a principal razão pela qual a cobertura estrutural por si só NÃO É SUFICIENTE como base para\nrealizar testes em redes neurais?",
+    "stem": "Qual é a principal razão pela qual a cobertura estrutural por si só não É suficiente como base para\nrealizar testes em redes neurais?",
     "options": [
       {
         "letter": "a",

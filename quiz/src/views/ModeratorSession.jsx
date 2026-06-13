@@ -430,7 +430,7 @@ export default function ModeratorSession({
   return (
     <div className="app">
       <header className="header">
-        <h1>Simulador ISTQB {certInfo.shortLabel}</h1>
+        <h1>Simulador BSTQB {certInfo.shortLabel}</h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
