@@ -45,7 +45,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
     <div className="app">
       <header className="header">
         <h1>
-          Simulador ISTQB
+          Simulador BSTQB
           {certInfo && stage !== 'cert-choice' && (
             <span className="muted" style={{ fontSize: '0.85rem', fontWeight: 'normal' }}>
               {' • '}{certInfo.shortLabel}
@@ -63,7 +63,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
           />
           <h2 style={{ marginTop: 0 }}>Estuda que a vida muda!</h2>
           <p className="muted">
-            Banco de simulados ISTQB (PT-BR) com suporte às certificações
+            Banco de simulados BSTQB (PT-BR) com suporte às certificações
             {' '}<strong>CTFL — Foundation Level</strong> e
             {' '}<strong>CT-AI — AI Testing</strong>.<br />
             Estude sozinho ou em grupo de até 10 pessoas via WebRTC P2P — sem servidor.
@@ -149,7 +149,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
                 value={name}
                 autoFocus
                 onChange={(e) => setName(e.target.value)}
-                placeholder="ex.: Tiago"
+                placeholder=""
                 maxLength={40}
               />
             </label>
@@ -194,7 +194,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
                 value={name}
                 autoFocus
                 onChange={(e) => setName(e.target.value)}
-                placeholder="ex.: Tiago"
+                placeholder=""
                 maxLength={40}
               />
             </label>
@@ -223,7 +223,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
                 <input
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="ex.: Ana"
+                  placeholder=""
                   maxLength={40}
                   autoFocus
                 />
@@ -252,8 +252,8 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
         )}
       </div>
       <footer>
-        Construído sobre os exemplos oficiais ISTQB CTFL 4.0 e CT-AI 2.0 (PT-BR).
-        As questões são propriedade do ISTQB®.
+        Construído sobre os exemplos oficiais BSTQB CTFL 4.0 e CT-AI 2.0 (PT-BR).
+        As questões são propriedade do BSTQB®.
       </footer>
     </div>
   )
