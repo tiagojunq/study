@@ -55,6 +55,7 @@ export default function ModeratorSession({
       score: 0,
       answeredCount: 0,
       chapterCorrect: {},
+      chapterPoints: {},
     },
   ])
   // Map of participantId -> array of letters answered for the current question.
@@ -69,6 +70,8 @@ export default function ModeratorSession({
   )
   // How many questions per chapter in the current quiz (computed at start).
   const [chapterTotals, setChapterTotals] = useState({})
+  // Sum of question points per chapter in the current quiz.
+  const [chapterPointTotals, setChapterPointTotals] = useState({})
   // Sum of question points in the current quiz (computed at start).
   const [totalPoints, setTotalPoints] = useState(0)
 
@@ -104,7 +107,7 @@ export default function ModeratorSession({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [roomCode])
 
-  // Tick every second for the timer — stop when finished.
+  // Tick every second for the timer - stop when finished.
   useEffect(() => {
     if (phase === 'finished') return
     const id = setInterval(() => setNow(Date.now()), 1000)
@@ -149,6 +152,7 @@ export default function ModeratorSession({
         questions.some((q) => (q.points || 1) !== (questions[0].points || 1)),
       cert,
       chapterTotals,
+      chapterPointTotals,
       startedAt,
       durationLimitSeconds,
       revealCorrect:
@@ -198,6 +202,7 @@ export default function ModeratorSession({
             score: 0,
             answeredCount: 0,
             chapterCorrect: {},
+      chapterPoints: {},
           },
         ]
       })
@@ -283,16 +288,23 @@ export default function ModeratorSession({
     // Tally how many questions belong to each chapter in this run so clients
     // can render a chapter-by-chapter breakdown at the end.
     const totals = {}
+    const pointTotals = {}
     let pointsSum = 0
     for (const q of qs) {
+      const p = q.points || 1
       totals[q.chapter] = (totals[q.chapter] || 0) + 1
-      pointsSum += q.points || 1
+      pointTotals[q.chapter] = (pointTotals[q.chapter] || 0) + p
+      pointsSum += p
     }
     setChapterTotals(totals)
+    setChapterPointTotals(pointTotals)
     setTotalPoints(pointsSum)
     // Reset running scores in case the moderator re-starts a session.
     setParticipants((prev) =>
-      prev.map((p) => ({ ...p, score: 0, answeredCount: 0, chapterCorrect: {} })),
+      prev.map((p) => ({
+        ...p, score: 0, answeredCount: 0,
+        chapterCorrect: {}, chapterPoints: {},
+      })),
     )
     setQuestions(qs)
     setDurationLimitSeconds(dur)
@@ -336,14 +348,17 @@ export default function ModeratorSession({
         if (!ans) return p
         const earned = scoreAnswer(q, ans)
         const chapterCorrect = { ...(p.chapterCorrect || {}) }
+        const chapterPoints = { ...(p.chapterPoints || {}) }
         if (earned > 0) {
           chapterCorrect[q.chapter] = (chapterCorrect[q.chapter] || 0) + 1
+          chapterPoints[q.chapter] = (chapterPoints[q.chapter] || 0) + earned
         }
         return {
           ...p,
           score: p.score + earned,
           answeredCount: p.answeredCount + 1,
           chapterCorrect,
+          chapterPoints,
         }
       }),
     )
@@ -378,14 +393,17 @@ export default function ModeratorSession({
           if (!ans) return p
           const earned = scoreAnswer(q, ans)
           const chapterCorrect = { ...(p.chapterCorrect || {}) }
+          const chapterPoints = { ...(p.chapterPoints || {}) }
           if (earned > 0) {
             chapterCorrect[q.chapter] = (chapterCorrect[q.chapter] || 0) + 1
+            chapterPoints[q.chapter] = (chapterPoints[q.chapter] || 0) + earned
           }
           return {
             ...p,
             score: p.score + earned,
             answeredCount: p.answeredCount + 1,
             chapterCorrect,
+            chapterPoints,
           }
         }),
       )
@@ -747,8 +765,10 @@ export default function ModeratorSession({
               <PerformanceBreakdown
                 participants={participants}
                 chapterTotals={chapterTotals}
+                chapterPointTotals={chapterPointTotals}
                 totalQuestions={questions.length}
                 totalPoints={totalPoints}
+                hasMixedPoints={hasMixedPoints}
                 myId={HOST_ID}
                 solo={solo}
                 cert={cert}
@@ -759,7 +779,7 @@ export default function ModeratorSession({
               <QuestionReview items={reviewItems} />
             </div>
             <div className="row">
-              <button className="primary" onClick={onExit}>
+              <button className="primary" onClick={() => setConfirmExit(true)}>
                 Voltar ao início
               </button>
             </div>

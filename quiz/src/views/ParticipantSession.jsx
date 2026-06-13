@@ -267,8 +267,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 <PerformanceBreakdown
                   participants={state.participants}
                   chapterTotals={state.chapterTotals || {}}
+                  chapterPointTotals={state.chapterPointTotals || {}}
                   totalQuestions={state.totalQuestions}
                   totalPoints={state.totalPoints}
+                  hasMixedPoints={state.hasMixedPoints === true}
                   myId={myConnId}
                   cert={state.cert}
                 />
@@ -430,8 +432,10 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
               <PerformanceBreakdown
                 participants={state.participants}
                 chapterTotals={state.chapterTotals || {}}
+                chapterPointTotals={state.chapterPointTotals || {}}
                 totalQuestions={state.totalQuestions}
                 totalPoints={state.totalPoints}
+                hasMixedPoints={state.hasMixedPoints === true}
                 myId={myConnId}
                 cert={state.cert}
               />
@@ -440,7 +444,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
               <h2>Revisão das suas questões</h2>
               <QuestionReview items={reviewItems} />
               <div className="divider" />
-              <button className="ghost" onClick={onExit}>Voltar ao início</button>
+              <button className="ghost" onClick={() => setConfirmExit(true)}>Voltar ao início</button>
             </div>
           </>
         )}

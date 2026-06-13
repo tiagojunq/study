@@ -719,7 +719,7 @@
       "a": "Incorreta. Dedicar tempo suficiente para revisão é um fator que contribui para avaliações bem-sucedidas.",
       "b": "Incorreta. Dividir projetos grandes em partes menores facilita as revisões e é uma boa prática.",
       "c": "Incorreta. Evitar comportamentos negativos (tédio, hostilidade) é essencial para um ambiente de revisão produtivo.",
-      "d": "Correta. Esta afirmação está incompleta/incorreta: as falhas devem ser reconhecidas e tratadas objetivamente, mas dizer que falhas devem ser 'valorizadas' não é um fator de sucesso — o foco deve ser na melhoria do produto, não na valorização de defeitos."
+      "d": "Correta. Esta afirmação está incompleta/incorreta: as falhas devem ser reconhecidas e tratadas objetivamente, mas dizer que falhas devem ser 'valorizadas' não é um fator de sucesso - o foco deve ser na melhoria do produto, não na valorização de defeitos."
     },
     "cert": "CTFL",
     "points": 1,
@@ -1686,7 +1686,7 @@
       "a": "Incorreta. Testes e QA não significam a mesma coisa; teste é uma forma de controle de qualidade, enquanto QA engloba processos de garantia.",
       "b": "Incorreta. Os termos não são intercambiáveis; testes são um subconjunto das atividades de qualidade.",
       "c": "Incorreta. Esta afirmação inverte os conceitos: testes não são mais abrangentes que QA; QA é mais amplo e inclui testes.",
-      "d": "Correta. QA foca em processos para prevenir defeitos; testes focam em demonstrar que o software está apto e detectar defeitos — são conceitos distintos."
+      "d": "Correta. QA foca em processos para prevenir defeitos; testes focam em demonstrar que o software está apto e detectar defeitos - são conceitos distintos."
     },
     "cert": "CTFL",
     "points": 1,
@@ -2052,7 +2052,7 @@
       "a": "Incorreta. Código executável de terceiros (iv) não pode ser revisado pela equipe interna da mesma forma; e inclui apenas i e iv.",
       "b": "Incorreta. Código executável de terceiros (iv) geralmente não pode ser submetido a revisão interna de texto.",
       "c": "Correta. Requisitos de negócio (i), cronograma (ii), orçamento de teste (iii) e histórias de usuário com critérios de aceite (v) são todos artefatos textuais revisáveis; código executável de terceiros (iv) não é.",
-      "d": "Incorreta. Orçamento (iii), código de terceiros (iv) e histórias (v) — código executável de terceiros não pode ser revisado da mesma forma."
+      "d": "Incorreta. Orçamento (iii), código de terceiros (iv) e histórias (v) - código executável de terceiros não pode ser revisado da mesma forma."
     },
     "cert": "CTFL",
     "points": 1,
@@ -2091,7 +2091,7 @@
     "explanations": {
       "a": "Incorreta. Identificar comportamentos externos anormais (i) e identificar falhas durante execução (iii) são características do teste dinâmico, não estático.",
       "b": "Incorreta. Identificar comportamentos externos (i) e falhas na execução (iii) pertencem ao teste dinâmico.",
-      "c": "Incorreta. Padrões de codificação (ii) são detectáveis estaticamente, mas falhas na execução (iii) não são — isso é teste dinâmico.",
+      "c": "Incorreta. Padrões de codificação (ii) são detectáveis estaticamente, mas falhas na execução (iii) não são - isso é teste dinâmico.",
       "d": "Correta. Testes estáticos detectam: desvios de padrões de codificação (ii), objetivam identificar defeitos cedo (iv), e identificam falta de cobertura de requisitos de segurança (v)."
     },
     "cert": "CTFL",
@@ -2211,7 +2211,7 @@
     "explanations": {
       "a": "Incorreta. BVA de 3 pontos para uma fronteira testa: valor abaixo, valor na fronteira e valor acima. Para T=12: testa 11, 12, 13. Para a fronteira superior/inferior existiria um único ponto de fronteira; 11, 12, 13 seria BVA de 3 pontos mas apenas para um lado.",
       "b": "Incorreta. BVA de 2 pontos testaria apenas 11 e 13 (valores adjacentes à fronteira), não o valor limite em si.",
-      "c": "Correta. BVA de 3 pontos com uma única fronteira (T=12): testa 10 (abaixo de 11), 11 (abaixo do limite), 12 (no limite), 13 (acima do limite), 14 (acima de 13) — 5 valores para cobertura completa de 3 pontos em ambos os lados.",
+      "c": "Correta. BVA de 3 pontos com uma única fronteira (T=12): testa 10 (abaixo de 11), 11 (abaixo do limite), 12 (no limite), 13 (acima do limite), 14 (acima de 13) - 5 valores para cobertura completa de 3 pontos em ambos os lados.",
       "d": "Incorreta. Omitir o valor 12 (o próprio limite) não seria uma cobertura de BVA de 3 pontos completa."
     },
     "cert": "CTFL",
@@ -2411,7 +2411,7 @@
     "explanations": {
       "a": "Incorreta. Na terceira rodada, há maioria clara de votos em 13; a intervenção do Product Owner não é necessária.",
       "b": "Correta. Na rodada 3, o valor 13 obteve 5 dos 7 votos (maioria), e a regra estabelecida permite aceitar o valor com mais votos quando a variação é pequena.",
-      "c": "Incorreta. Ainda há dois votos em 8, portanto não houve consenso total — mas a regra de maioria permite encerrar.",
+      "c": "Incorreta. Ainda há dois votos em 8, portanto não houve consenso total - mas a regra de maioria permite encerrar.",
       "d": "Incorreta. Remover o recurso não é necessário; a equipe tem uma regra de desempate que pode ser aplicada."
     },
     "cert": "CTFL",
@@ -2529,7 +2529,7 @@
       "a"
     ],
     "explanations": {
-      "a": "Correta. Realocação de testadores (i) afeta o processo/gestão do projeto; expectativas imprecisas dos stakeholders (iv) também são riscos de projeto — ambos são riscos de processo, não de produto.",
+      "a": "Correta. Realocação de testadores (i) afeta o processo/gestão do projeto; expectativas imprecisas dos stakeholders (iv) também são riscos de projeto - ambos são riscos de processo, não de produto.",
       "b": "Incorreta. Problemas de acessibilidade (v) são riscos de produto (falhas no software para usuários com deficiência).",
       "c": "Incorreta. Tempo de resposta excessivo (iii) é um risco de produto (falha de desempenho), não de projeto.",
       "d": "Incorreta. Não conformidade com padrões de segurança (ii) e problemas de acessibilidade (v) são riscos de produto."
@@ -2572,7 +2572,7 @@
       "a": "Incorreta. Monitorar e reportar riscos é uma atividade de acompanhamento, não um exemplo de como a análise influencia cobertura e escopo dos testes.",
       "b": "Incorreta. Integrar o sistema a banco de dados de código aberto seria mitigação do risco em nível de desenvolvimento, não uma influência nos testes.",
       "c": "Incorreta. Calcular o risco residual total é análise quantitativa de riscos, não demonstra como influencia diretamente o escopo dos testes.",
-      "d": "Correta. Riscos altos de desempenho levam a decidir realizar testes detalhados de eficiência cedo no SDLC — exemplo direto de como a análise influencia cobertura e escopo."
+      "d": "Correta. Riscos altos de desempenho levam a decidir realizar testes detalhados de eficiência cedo no SDLC - exemplo direto de como a análise influencia cobertura e escopo."
     },
     "cert": "CTFL",
     "points": 1,
@@ -2898,7 +2898,7 @@
       "a": "Incorreta. Rastreabilidade entre riscos mitigados e casos aprovados fornece nível de risco residual, mas é menos direta que a relação entre requisitos e resultados.",
       "b": "Correta. A rastreabilidade entre requisitos de usuário e resultados de testes permite medir o progresso do projeto em relação aos objetivos de negócios, mostrando quais requisitos foram validados.",
       "c": "Incorreta. Rastrear testadores a casos que falharam é uma métrica de produtividade individual, não um valor da rastreabilidade para o projeto.",
-      "d": "Incorreta. Rastreabilidade entre riscos e condições de teste serve para planejar cobertura de riscos, não para determinar quais riscos valem a pena testar — isso é análise de risco."
+      "d": "Incorreta. Rastreabilidade entre riscos e condições de teste serve para planejar cobertura de riscos, não para determinar quais riscos valem a pena testar - isso é análise de risco."
     },
     "cert": "CTFL",
     "points": 1,
@@ -3056,7 +3056,7 @@
     ],
     "explanations": {
       "a": "Incorreta. Revisar produtos na próxima fase seria tarde demais; boa prática é revisar o mais cedo possível.",
-      "b": "Correta. Revisar produtos de trabalho assim que versões preliminares estiverem disponíveis é uma boa prática aplicável a todos os SDLCs — representa o princípio de testes antecipados.",
+      "b": "Correta. Revisar produtos de trabalho assim que versões preliminares estiverem disponíveis é uma boa prática aplicável a todos os SDLCs - representa o princípio de testes antecipados.",
       "c": "Incorreta. Revisar apenas antes da análise e projeto de testes ainda é tardio; deve-se revisar assim que disponível.",
       "d": "Incorreta. Revisar imediatamente após a publicação pode ser apropriado, mas 'assim que versões preliminares estiverem disponíveis' é mais antecipado e abrangente."
     },
@@ -3258,7 +3258,7 @@
       "a": "Incorreta. Falta de usabilidade da interface é detectável apenas em execução (teste dinâmico), não por análise estática.",
       "b": "Correta. Código morto (sem caminho que o alcance) é detectável por análise estática do fluxo de controle, mas não por testes dinâmicos, pois nunca será executado.",
       "c": "Incorreta. Tempos de resposta lentos só podem ser medidos executando o sistema com carga real (teste dinâmico).",
-      "d": "Incorreta. Funcionalidades não implementadas são detectáveis tanto por revisão de requisitos vs. código (estático) quanto por execução que falha — não exclusivamente estático."
+      "d": "Incorreta. Funcionalidades não implementadas são detectáveis tanto por revisão de requisitos vs. código (estático) quanto por execução que falha - não exclusivamente estático."
     },
     "cert": "CTFL",
     "points": 1,
@@ -3417,7 +3417,7 @@
     "explanations": {
       "a": "Incorreta. Em tabela de decisão, os casos derivam das especificações/lógica de negócio, não de instruções de decisão no código.",
       "b": "Incorreta. Error guessing não é técnica de ramificação; a descrição está incorreta para ambas as técnicas.",
-      "c": "Incorreta. Esta opção inverte as definições: tabela de decisão usa fluxo de controle e ramificação usa especificação — mas está errado; é exatamente o oposto.",
+      "c": "Incorreta. Esta opção inverte as definições: tabela de decisão usa fluxo de controle e ramificação usa especificação - mas está errado; é exatamente o oposto.",
       "d": "Correta. Tabela de decisão é caixa-preta (independe da implementação) e pode ser criada antes do código; testes de ramificação são caixa-branca e exigem o código implementado."
     },
     "cert": "CTFL",
@@ -3456,8 +3456,8 @@
     ],
     "explanations": {
       "a": "Correta. Os valores 19, 20 e 30 cobrem três partições diferentes: sem desconto (19), desconto de 50% (20), e sem desconto novamente após a décima lavagem subsequente (30 = décima lavagem sem desconto especial).",
-      "b": "Incorreta. Os valores 11, 12 e 20 cobrem: partição sem desconto (11, 12) duas vezes e partição de 50% (20) — apenas 2 partições distintas.",
-      "c": "Incorreta. 1, 10, 50 cobrem: sem desconto (1), desconto de 10% (10), e 50 cai em uma lavagem sem desconto especial — apenas 2 partições interessantes.",
+      "b": "Incorreta. Os valores 11, 12 e 20 cobrem: partição sem desconto (11, 12) duas vezes e partição de 50% (20) - apenas 2 partições distintas.",
+      "c": "Incorreta. 1, 10, 50 cobrem: sem desconto (1), desconto de 10% (10), e 50 cai em uma lavagem sem desconto especial - apenas 2 partições interessantes.",
       "d": "Incorreta. 10, 29, 30, 31 cobre partições de 10% e 50%, mas com redundância e não otimiza a cobertura de 3 partições distintas."
     },
     "cert": "CTFL",
@@ -3577,7 +3577,7 @@
     "explanations": {
       "a": "Incorreta. Esta sequência (Add, Remove, Add, Add, Add) não cobre a transição de N=3 (cheio) tentando adicionar, faltando cobrir a transição de remoção de N=1.",
       "b": "Incorreta. Esta sequência tem um Add extra no início (N vai a 4 que é inválido), tornando-a incorreta.",
-      "c": "Correta. Add(N=1), Add(N=2), Add(N=3), Remove(N=2), Remove(N=1) — cobre as 5 transições válidas do diagrama: 0→1, 1→2, 2→3, 3→2, 2→1.",
+      "c": "Correta. Add(N=1), Add(N=2), Add(N=3), Remove(N=2), Remove(N=1) - cobre as 5 transições válidas do diagrama: 0→1, 1→2, 2→3, 3→2, 2→1.",
       "d": "Incorreta. Esta sequência não cobre a transição de N=2 para N=1 (a segunda remoção levaria para N=2→3 novamente, perdendo uma transição)."
     },
     "image": "/study/quiz/diagrams/b23.svg",
@@ -3745,7 +3745,7 @@
       "a": "Incorreta. 'O desenvolvedor cometeu um erro' é uma observação subjetiva sobre a causa, não um item verificável em uma lista de verificação.",
       "b": "Incorreta. 'Cobertura acima de 85%' é uma métrica de saída/critério de conclusão, não um item de checklist de testes.",
       "c": "Incorreta. 'O programa funciona corretamente' é vago demais para ser um item acionável de lista de verificação.",
-      "d": "Correta. 'Mensagens de erro escritas em linguagem compreensível pelo usuário' é um item específico, verificável e alinhado com boas práticas de usabilidade — típico de checklist."
+      "d": "Correta. 'Mensagens de erro escritas em linguagem compreensível pelo usuário' é um item específico, verificável e alinhado com boas práticas de usabilidade - típico de checklist."
     },
     "cert": "CTFL",
     "points": 1,
@@ -3862,7 +3862,7 @@
       "a"
     ],
     "explanations": {
-      "a": "Correta. Para submeter código ao controle de versão (etapa 2), o critério de entrada mais adequado é que a análise estática não retornou avisos graves — garante qualidade mínima antes da integração.",
+      "a": "Correta. Para submeter código ao controle de versão (etapa 2), o critério de entrada mais adequado é que a análise estática não retornou avisos graves - garante qualidade mínima antes da integração.",
       "b": "Incorreta. A ausência de conflitos de merge é condição para que a operação de merge seja bem-sucedida, mas não é o critério de entrada para submeter o código.",
       "c": "Incorreta. Testes de componentes compilados e prontos seria um critério de entrada para a etapa 3 (executar testes de componentes), não para a etapa 2.",
       "d": "Incorreta. 80% de cobertura de instruções seria critério de saída dos testes de componentes (etapa 3), não de entrada para submeter código."
@@ -3943,7 +3943,7 @@
     ],
     "explanations": {
       "a": "Incorreta. TC3 tem prioridade 3 e depende de TC4 que depende de TC1 e TC2; não seria o quarto.",
-      "b": "Correta. A ordem por dependências e prioridades seria: TC6(p1)→TC4(p2, dep:BUSCAR)→TC2(p4, dep:BUSCAR)→TC1(p4). Considerando dependências lógicas, BUSCAR deve vir antes: TC1 ou TC2 primeiro. A ordem correta é TC6, TC4, TC2, TC1 — o quarto seria TC1.",
+      "b": "Correta. A ordem por dependências e prioridades seria: TC6(p1)→TC4(p2, dep:BUSCAR)→TC2(p4, dep:BUSCAR)→TC1(p4). Considerando dependências lógicas, BUSCAR deve vir antes: TC1 ou TC2 primeiro. A ordem correta é TC6, TC4, TC2, TC1 - o quarto seria TC1.",
       "c": "Incorreta. TC7 tem prioridade 5 (mais baixa) e requer ADICIONAR antes; seria o último.",
       "d": "Incorreta. TC2 seria anterior a TC1 pelo mesmo nível de prioridade, mas ambos são BUSCAR; a posição exata depende da ordenação de empate."
     },
@@ -3985,7 +3985,7 @@
       "a": "Incorreta. Testes de usabilidade são voltados para o negócio e análise crítica do produto (Q3), não para tecnologia.",
       "b": "Incorreta. Testes funcionais são voltados para o negócio e suporte ao desenvolvimento (Q2), não para tecnologia.",
       "c": "Incorreta. Testes de aceite do usuário são voltados para o negócio e análise crítica (Q3 ou Q4), não Q1.",
-      "d": "Correta. Testes de integração de componentes são voltados para tecnologia (verificam interfaces técnicas) e apoiam a equipe de desenvolvimento — característicos do Q1."
+      "d": "Correta. Testes de integração de componentes são voltados para tecnologia (verificam interfaces técnicas) e apoiam a equipe de desenvolvimento - característicos do Q1."
     },
     "cert": "CTFL",
     "points": 1,
@@ -4463,8 +4463,8 @@
     ],
     "explanations": {
       "a": "Incorreta. O planejamento define escopo, objetivos e abordagem dos testes, não analisa a base para identificar condições.",
-      "b": "Correta. A análise de teste examina a base de teste (requisitos, especificações) para identificar as condições de teste — o 'o quê testar'.",
-      "c": "Incorreta. O projeto de teste transforma condições de teste em casos de teste — o 'como testar'; ocorre após a análise.",
+      "b": "Correta. A análise de teste examina a base de teste (requisitos, especificações) para identificar as condições de teste - o 'o quê testar'.",
+      "c": "Incorreta. O projeto de teste transforma condições de teste em casos de teste - o 'como testar'; ocorre após a análise.",
       "d": "Incorreta. A execução do teste executa os casos projetados e registra resultados; as condições já foram identificadas anteriormente."
     },
     "cert": "CTFL",
@@ -5469,7 +5469,7 @@
     ],
     "explanations": {
       "a": "Incorreta. Executar casos de teste e registrar resultados é a atividade de execução de testes, não de planejamento.",
-      "b": "Correta. Planejamento de teste inclui definir o escopo, a abordagem, os recursos necessários e o cronograma — atividades que estabelecem como os testes serão conduzidos.",
+      "b": "Correta. Planejamento de teste inclui definir o escopo, a abordagem, os recursos necessários e o cronograma - atividades que estabelecem como os testes serão conduzidos.",
       "c": "Incorreta. Comparar resultados obtidos com esperados é parte da execução e avaliação dos testes.",
       "d": "Incorreta. Criar procedimentos de execução de teste pertence à implementação de testes, não ao planejamento."
     },
@@ -6076,7 +6076,7 @@
     "explanations": {
       "a": "Incorreta. Não há relação com o problema descrito.",
       "b": "Incorreta. O princípio fala sobre antecipar testes, não sobre adequação ao usuário.",
-      "c": "Correta. Software sem defeitos pode ainda não atender às expectativas/necessidades reais — esta é a 'falácia da ausência de erros' (7º princípio).",
+      "c": "Correta. Software sem defeitos pode ainda não atender às expectativas/necessidades reais - esta é a 'falácia da ausência de erros' (7º princípio).",
       "d": "Incorreta. Refere-se à limitação do teste como prova; o caso descrito mostra inadequação ao usuário."
     },
     "cert": "CTFL",
@@ -8261,7 +8261,7 @@
       },
       {
         "letter": "b",
-        "text": "3 válidas (B2, C1, C2) e 3 inválidas (A1, A2, B1) — ou 1 válida e 1 inválida agrupadas."
+        "text": "3 válidas (B2, C1, C2) e 3 inválidas (A1, A2, B1) - ou 1 válida e 1 inválida agrupadas."
       },
       {
         "letter": "c",
@@ -10010,7 +10010,7 @@
     "explanations": {
       "a": "Correto. IA é o termo mais abrangente. Refere-se ao conceito geral de criar máquinas capazes de realizar tarefas que normalmente exigem inteligência humana. Isso inclui uma ampla gama de abordagens e técnicas, não apenas o machine learning. ML é um subconjunto da IA. É uma abordagem específica para alcançar a IA, na qual as máquinas recebem a capacidade de aprender a partir de dados sem serem explicitamente programadas. Em vez de escrever regras específicas para cada situação, os algoritmos de ML aprendem padrões e fazem previsões com base nos dados. DL é um subconjunto do machine learning. É um tipo especializado de machine learning que utiliza redes neurais artificiais com múltiplas camadas (daí o termo “profundo”).",
       "b": "Incorreto. A IA e o ML já existiam como conceitos e campos de estudo muito antes de o aprendizado profundo se tornar proeminente. O aprendizado profundo é um avanço relativamente recente dentro dos campos mais amplos do machine learning e da IA.",
-      "c": "Incorreto. DL e ML não são intercambiáveis. DL é um tipo específico de ML. Além disso, a IA não representa uma “abordagem separada” — ML e DL são abordagens para implementar a IA.",
+      "c": "Incorreto. DL e ML não são intercambiáveis. DL é um tipo específico de ML. Além disso, a IA não representa uma “abordagem separada” - ML e DL são abordagens para implementar a IA.",
       "d": "Incorreto. Embora seja verdade que a IA abrange o ML e o DL, “trabalhar em paralelo” não é uma forma válida de descrever a relação entre eles. O DL é um tipo de ML, não uma metodologia paralela no mesmo nível que possa ser executada em paralelo."
     }
   },
@@ -10295,7 +10295,7 @@
       "c": "Incorreta.",
       "d": "Incorreta."
     },
-    "rationale": "Considerando as descrições dos sistemas de exemplo: 1. Aprendizado por reforço - O valor gasto pode ser considerado a função de recompensa para este sistema, com o sistema alterando seu comportamento para aumentar o valor gasto. (B) 2. Classificação — O aplicativo utiliza texto no que pode ser considerado um idioma de origem e uma tradução “correta” correspondente a essa origem, empregando uma forma de aprendizado supervisionado sem nenhuma função de recompensa explícita mencionada. A classificação utiliza dados de treinamento paralelos — pares de frases correspondentes em dois idiomas (por exemplo, “Hello” em inglês e “Bonjour” em francês) — onde cada par possui um rótulo que vincula o texto de origem ao texto de destino. O modelo aprende mapeamentos por meio de treinamento supervisionado, codificando características do texto de entrada e prevendo a saída de tradução correta, minimizando erros em muitos desses pares para generalizar para novas frases. (C) 3. A regressão é usada neste cenário para prever um resultado contínuo (neste caso, o tempo até a falha do equipamento) com base em um conjunto de variáveis de entrada (dados de sensores e registros históricos de manutenção). Ao analisar a relação entre essas variáveis, o modelo ML pode identificar padrões e tendências que indicam quando o equipamento está em risco de falha. (D) 4. Agrupamento - Ao analisar as interações dos usuários (por exemplo, curtidas, comentários, conteúdo compartilhado) e os interesses declarados, a plataforma de rede social pode identificar padrões e semelhanças entre os usuários da Calibera. Esses padrões podem então ser usados para agrupar usuários em comunidades ou “clusters” que compartilham interesses e comportamentos comuns. (A) Portanto, 1B – 2C – 3D – 4A está correto e, assim, a opção a) é a opção correta."
+    "rationale": "Considerando as descrições dos sistemas de exemplo: 1. Aprendizado por reforço - O valor gasto pode ser considerado a função de recompensa para este sistema, com o sistema alterando seu comportamento para aumentar o valor gasto. (B) 2. Classificação - O aplicativo utiliza texto no que pode ser considerado um idioma de origem e uma tradução “correta” correspondente a essa origem, empregando uma forma de aprendizado supervisionado sem nenhuma função de recompensa explícita mencionada. A classificação utiliza dados de treinamento paralelos - pares de frases correspondentes em dois idiomas (por exemplo, “Hello” em inglês e “Bonjour” em francês) - onde cada par possui um rótulo que vincula o texto de origem ao texto de destino. O modelo aprende mapeamentos por meio de treinamento supervisionado, codificando características do texto de entrada e prevendo a saída de tradução correta, minimizando erros em muitos desses pares para generalizar para novas frases. (C) 3. A regressão é usada neste cenário para prever um resultado contínuo (neste caso, o tempo até a falha do equipamento) com base em um conjunto de variáveis de entrada (dados de sensores e registros históricos de manutenção). Ao analisar a relação entre essas variáveis, o modelo ML pode identificar padrões e tendências que indicam quando o equipamento está em risco de falha. (D) 4. Agrupamento - Ao analisar as interações dos usuários (por exemplo, curtidas, comentários, conteúdo compartilhado) e os interesses declarados, a plataforma de rede social pode identificar padrões e semelhanças entre os usuários da Calibera. Esses padrões podem então ser usados para agrupar usuários em comunidades ou “clusters” que compartilham interesses e comportamentos comuns. (A) Portanto, 1B – 2C – 3D – 4A está correto e, assim, a opção a) é a opção correta."
   },
   {
     "id": "AI-A-11",
@@ -10454,7 +10454,7 @@
     "explanations": {
       "a": "Incorreto. O conjunto de dados de treinamento é usado principalmente para ajustar os parâmetros do modelo, não para otimizar os hiperparâmetros. O conjunto de dados de validação é normalmente utilizado para ajustar os hiperparâmetros, e o conjunto de dados de teste nunca é usado para gerar dados de treinamento.",
       "b": "Correto. O conjunto de dados de treinamento é usado para ajustar ou criar o modelo, o conjunto de dados de validação é usado para ajustar os hiperparâmetros do modelo e evitar o overfitting, e o conjunto de dados de teste é reservado para avaliar o desempenho do modelo em dados não vistos. Isso descreve com precisão as funções distintas e sequenciais de cada conjunto de dados no fluxo de trabalho de ML.",
-      "c": "Incorreto. O conjunto de dados de treinamento não é usado para a avaliação final do modelo — essa é a função do conjunto de dados de teste. Além disso, o conjunto de dados de teste não é usado para ajustar hiperparâmetros, pois isso teria o risco de causar overfitting ao conjunto de dados de teste.",
+      "c": "Incorreto. O conjunto de dados de treinamento não é usado para a avaliação final do modelo - essa é a função do conjunto de dados de teste. Além disso, o conjunto de dados de teste não é usado para ajustar hiperparâmetros, pois isso teria o risco de causar overfitting ao conjunto de dados de teste.",
       "d": "Incorreto. O papel principal do conjunto de dados de treinamento não é garantir a generalização, mas ajustar o modelo. O conjunto de dados de validação não é usado para implantação, e o conjunto de dados de teste não é usado para avaliação inicial, mas para avaliação final após o desenvolvimento do modelo"
     }
   },
@@ -11015,7 +11015,7 @@
     "explanations": {
       "a": "Incorreto. Uma restrição de intervalo apenas valida se os valores de um único atributo estão dentro dos limites especificados, mas não verifica a relação matemática entre pagamento_mensal e valor_do_empréstimo.",
       "b": "Incorreto. Uma restrição de contagem verifica a quantidade de valores não nulos, não a correção matemática de campos calculados.",
-      "c": "Correto. Este cenário requer a validação de uma relação matemática entre dois atributos (pagamento_mensal e valor_do_empréstimo). A restrição de correlação foi projetada especificamente para verificar se os valores de um atributo se correlacionam com os valores de outro atributo de acordo com uma regra definida — neste caso, que pagamento_mensal seja igual a valor_do_empréstimo/324.",
+      "c": "Correto. Este cenário requer a validação de uma relação matemática entre dois atributos (pagamento_mensal e valor_do_empréstimo). A restrição de correlação foi projetada especificamente para verificar se os valores de um atributo se correlacionam com os valores de outro atributo de acordo com uma regra definida - neste caso, que pagamento_mensal seja igual a valor_do_empréstimo/324.",
       "d": "Incorreto. Uma restrição de duplicidade identifica valores idênticos, mas ter pagamentos mensais duplicados pode ser legítimo (diferentes candidatos podem ter o mesmo valor de pagamento)."
     }
   },
@@ -11589,7 +11589,7 @@
       "a": "Incorreto. A norma ISO/IEC/IEEE TR 29119-11 não trata de testes de IA, mas, como todas as normas, fornece diretrizes e não impõe penalidades por não conformidade.",
       "b": "Incorreto. A OCDE é um conjunto de diretrizes não obrigatórias.",
       "c": "Correto. Se o sistema estiver abrangido pela Lei de IA da UE (ou seja, se for utilizado na Europa), o não cumprimento de uma abordagem baseada no risco pode resultar em penalidades de severidade elevada.",
-      "d": "Incorreto. A ISO/IEC 25059 descreve as características de qualidade exclusivas dos sistemas de IA, mas, como todas as normas, fornece diretrizes em vez de impor penalidades por não conformidade. A4 Explicação / Fundamentação Considerando cada uma das descrições dos sistemas de exemplo, de cima para baixo: • Associação — Este sistema utiliza associação por meio da mineração de registros de pacientes não rotulados para identificar dependências entre diferentes atributos, como um gene e uma doença. Ele não prevê uma classe, mas revela a força da relação entre variáveis dentro dos dados. • Classificação - Ele aprende a partir de um conjunto de dados de imagens que foram pré- rotuladas com categorias discretas (“saudável” ou “doente”). Seu objetivo é categorizar novas imagens em uma dessas classes específicas e não numéricas, distinguindo-se da regressão. • Aprendizado por reforço - O sistema aprende por meio da interação direta com seu ambiente físico, e não a partir de um conjunto de dados pré-existente. O comportamento do robô é moldado ao longo do tempo por um sistema de recompensas (para posicionamento correto) e penalidades (para posicionamento incorreto). • Regressão - O modelo ML é treinado em dados rotulados para prever um valor numérico específico e contínuo: a quantidade de eletricidade. A saída do modelo não é uma categoria, mas uma quantidade em uma escala, o que é a característica principal da regressão. A5 Resposta correta: 1 Preparar e testar os dados de teste 3 Testar o modelo 5 Monitorar e ajustar o modelo 2 Avaliar o modelo 4 Implantar o modelo Explicação/Fundamentação"
+      "d": "Incorreto. A ISO/IEC 25059 descreve as características de qualidade exclusivas dos sistemas de IA, mas, como todas as normas, fornece diretrizes em vez de impor penalidades por não conformidade. A4 Explicação / Fundamentação Considerando cada uma das descrições dos sistemas de exemplo, de cima para baixo: • Associação - Este sistema utiliza associação por meio da mineração de registros de pacientes não rotulados para identificar dependências entre diferentes atributos, como um gene e uma doença. Ele não prevê uma classe, mas revela a força da relação entre variáveis dentro dos dados. • Classificação - Ele aprende a partir de um conjunto de dados de imagens que foram pré- rotuladas com categorias discretas (“saudável” ou “doente”). Seu objetivo é categorizar novas imagens em uma dessas classes específicas e não numéricas, distinguindo-se da regressão. • Aprendizado por reforço - O sistema aprende por meio da interação direta com seu ambiente físico, e não a partir de um conjunto de dados pré-existente. O comportamento do robô é moldado ao longo do tempo por um sistema de recompensas (para posicionamento correto) e penalidades (para posicionamento incorreto). • Regressão - O modelo ML é treinado em dados rotulados para prever um valor numérico específico e contínuo: a quantidade de eletricidade. A saída do modelo não é uma categoria, mas uma quantidade em uma escala, o que é a característica principal da regressão. A5 Resposta correta: 1 Preparar e testar os dados de teste 3 Testar o modelo 5 Monitorar e ajustar o modelo 2 Avaliar o modelo 4 Implantar o modelo Explicação/Fundamentação"
     }
   },
   {
@@ -11711,7 +11711,7 @@
       "b"
     ],
     "explanations": {
-      "a": "Correta. AI estreita resolve tarefas específicas — é o estado da arte hoje (assistentes, classificadores, etc.).",
+      "a": "Correta. AI estreita resolve tarefas específicas - é o estado da arte hoje (assistentes, classificadores, etc.).",
       "b": "Correta. AI geral é o conceito (ainda hipotético) de uma inteligência ampla, com capacidades humanas em múltiplos domínios.",
       "c": "Incorreta. Superar a inteligência humana globalmente é definição de super AI, não de AI estreita.",
       "d": "Incorreta. AI generativa é um tipo de AI estreita (foco em geração de conteúdo); não equivale à AI geral.",
@@ -11832,7 +11832,7 @@
       "b"
     ],
     "explanations": {
-      "a": "Incorreta. CPUs têm baixo paralelismo em comparação a GPUs/TPUs — tempo de treinamento explode em redes profundas.",
+      "a": "Incorreta. CPUs têm baixo paralelismo em comparação a GPUs/TPUs - tempo de treinamento explode em redes profundas.",
       "b": "Correta. GPUs e ASICs/TPUs são projetados para operações tensoriais em paralelo, viabilizando o treinamento de redes profundas.",
       "c": "Incorreta. Microcontroladores se aplicam à inferência embarcada (edge), não ao treinamento massivo.",
       "d": "Incorreta. Discos SSD são armazenamento; não realizam computação."
@@ -11875,7 +11875,7 @@
       "a": "Incorreta. A segurança em nuvem é um modelo de responsabilidade compartilhada; o contratante mantém deveres relevantes.",
       "b": "Correta. Abordagens híbridas são citadas no syllabus como forma de equilibrar requisitos de segurança, custo e escalabilidade.",
       "c": "Incorreta. Modelos em qualquer ambiente precisam de monitoramento contínuo (drift, performance, segurança).",
-      "d": "Incorreta. Conformidade regulatória depende da arquitetura adotada, jurisdições e contratos — não é automática."
+      "d": "Incorreta. Conformidade regulatória depende da arquitetura adotada, jurisdições e contratos - não é automática."
     }
   },
   {
@@ -11893,19 +11893,19 @@
     "options": [
       {
         "letter": "a",
-        "text": "1A — 2B — 3C — 4D"
+        "text": "1A - 2B - 3C - 4D"
       },
       {
         "letter": "b",
-        "text": "1B — 2D — 3A — 4C"
+        "text": "1B - 2D - 3A - 4C"
       },
       {
         "letter": "c",
-        "text": "1D — 2C — 3B — 4A"
+        "text": "1D - 2C - 3B - 4A"
       },
       {
         "letter": "d",
-        "text": "1C — 2A — 3D — 4B"
+        "text": "1C - 2A - 3D - 4B"
       }
     ],
     "correct": [
@@ -11995,7 +11995,7 @@
       "a": "Incorreta. 100% de acurácia é irrealista para classificadores em problemas reais; o syllabus recomenda critérios estatisticamente plausíveis.",
       "b": "Correta. Critérios objetivos por classe, ligados ao impacto, são a abordagem recomendada.",
       "c": "Incorreta. Critérios subjetivos sem métricas formais não são auditáveis nem repetíveis.",
-      "d": "Incorreta. Em dados desbalanceados a acurácia mascara falhas em classes minoritárias — recall/precisão por classe são essenciais."
+      "d": "Incorreta. Em dados desbalanceados a acurácia mascara falhas em classes minoritárias - recall/precisão por classe são essenciais."
     }
   },
   {
@@ -12013,19 +12013,19 @@
     "options": [
       {
         "letter": "a",
-        "text": "1D — 2B — 3A — 4C"
+        "text": "1D - 2B - 3A - 4C"
       },
       {
         "letter": "b",
-        "text": "1A — 2C — 3D — 4B"
+        "text": "1A - 2C - 3D - 4B"
       },
       {
         "letter": "c",
-        "text": "1B — 2D — 3A — 4C"
+        "text": "1B - 2D - 3A - 4C"
       },
       {
         "letter": "d",
-        "text": "1C — 2A — 3B — 4D"
+        "text": "1C - 2A - 3B - 4D"
       }
     ],
     "correct": [
@@ -12053,19 +12053,19 @@
     "options": [
       {
         "letter": "a",
-        "text": "1A — 2B — 3C — 4D"
+        "text": "1A - 2B - 3C - 4D"
       },
       {
         "letter": "b",
-        "text": "1D — 2C — 3B — 4A"
+        "text": "1D - 2C - 3B - 4A"
       },
       {
         "letter": "c",
-        "text": "1B — 2D — 3A — 4C"
+        "text": "1B - 2D - 3A - 4C"
       },
       {
         "letter": "d",
-        "text": "1C — 2A — 3D — 4B"
+        "text": "1C - 2A - 3D - 4B"
       }
     ],
     "correct": [
@@ -12273,7 +12273,7 @@
     ],
     "explanations": {
       "a": "Correta. Backpropagation propaga gradientes da perda; um otimizador (ex.: SGD/Adam) atualiza os pesos para reduzir a perda.",
-      "b": "Incorreta. A função de perda não é trocada a cada iteração — ela define o objetivo de otimização.",
+      "b": "Incorreta. A função de perda não é trocada a cada iteração - ela define o objetivo de otimização.",
       "c": "Incorreta. Reinicializar perderia o aprendizado acumulado.",
       "d": "Incorreta. Tornar todas as ativações lineares colapsaria a rede em uma única transformação linear."
     }
@@ -12312,7 +12312,7 @@
       "a"
     ],
     "explanations": {
-      "a": "Correta. Sistemas bloqueados têm o modelo congelado entre releases (i, iii). ii e iv aprendem online — são adaptativos.",
+      "a": "Correta. Sistemas bloqueados têm o modelo congelado entre releases (i, iii). ii e iv aprendem online - são adaptativos.",
       "b": "Incorreta. ii e iv são adaptativos, não bloqueados.",
       "c": "Incorreta. iv é adaptativo; não é bloqueado.",
       "d": "Incorreta. ii é adaptativo; não é bloqueado."
@@ -12474,7 +12474,7 @@
     "explanations": {
       "a": "Correta. Red teaming envolve provocar falhas (i) e fechar o ciclo com correção e revalidação (ii).",
       "b": "Incorreta. Divulgar vulnerabilidades antes da mitigação cria risco desnecessário.",
-      "c": "Incorreta. Mesmo motivo — iv é inadequado.",
+      "c": "Incorreta. Mesmo motivo - iv é inadequado.",
       "d": "Incorreta. Avaliações sem registro nem revisão por pares são frágeis e não auditáveis."
     }
   },
@@ -12632,7 +12632,7 @@
       "b"
     ],
     "explanations": {
-      "a": "Incorreta. \"Cegueira\" a atributos sensíveis não garante ausência de viés — eles podem estar correlacionados a outras variáveis.",
+      "a": "Incorreta. \"Cegueira\" a atributos sensíveis não garante ausência de viés - eles podem estar correlacionados a outras variáveis.",
       "b": "Correta. Auditoria por subgrupos com métricas de equidade é o padrão recomendado.",
       "c": "Incorreta. Acurácia global pode mascarar discriminação severa em subgrupos.",
       "d": "Incorreta. Dados sintéticos puramente aleatórios não refletem o problema real."
@@ -12993,7 +12993,7 @@
     ],
     "explanations": {
       "a": "Incorreta. \"Tradução para outro idioma\" não preserva o texto-alvo; não é uma relação metamórfica válida para OCR.",
-      "b": "Correta. Trocar a fonte (i) e ajustar brilho (iii) devem preservar o texto reconhecido — boas relações metamórficas.",
+      "b": "Correta. Trocar a fonte (i) e ajustar brilho (iii) devem preservar o texto reconhecido - boas relações metamórficas.",
       "c": "Incorreta. Rotação de 90° muda o problema de orientação; tradução não preserva o texto.",
       "d": "Incorreta. Rotação de 90° não é uma relação simples de invariância se o modelo não foi treinado para isso."
     }
@@ -13193,9 +13193,9 @@
       "c"
     ],
     "explanations": {
-      "a": "Correta. Degradação rápida em produção é um risco típico de desenvolvimento — mitigado por monitoramento + testes recorrentes.",
+      "a": "Correta. Degradação rápida em produção é um risco típico de desenvolvimento - mitigado por monitoramento + testes recorrentes.",
       "b": "Incorreta. Latência em hardware antigo é problema de infraestrutura, não de performance funcional do modelo.",
-      "c": "Correta. Modelo abaixo do alvo evidencia falha de capacidade — alvo de testes de performance funcional.",
+      "c": "Correta. Modelo abaixo do alvo evidencia falha de capacidade - alvo de testes de performance funcional.",
       "d": "Incorreta. Bibliotecas pinadas reduzem risco, não o introduzem."
     }
   },
