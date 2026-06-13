@@ -61,20 +61,21 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
         <ThemeToggle />
       </header>
       <div className="container">
-        <div className="panel" style={{ textAlign: 'center' }}>
-          <img
-            src="/study/quiz/voce-tem-brio.png"
-            alt="Você tem Brio?"
-            style={{ maxWidth: '300px', borderRadius: '8px', marginBottom: '0.75rem' }}
-          />
-          <h2 style={{ marginTop: 0 }}>Estuda que a vida muda!</h2>
-          <p className="muted">
+        <div className="panel brand-panel">
+          <div className="brand-img-wrap">
+            <img
+              src="/study/quiz/voce-tem-brio.png"
+              alt="Você tem Brio?"
+            />
+          </div>
+          <h1 className="brand-headline">Estuda que a vida muda!</h1>
+          <p className="brand-desc">
             Banco de simulados BSTQB (PT-BR) com suporte às certificações
             {' '}<strong>CTFL - Foundation Level</strong> e
             {' '}<strong>CT-AI - AI Testing</strong>.<br />
             Estude sozinho ou em grupo de até 10 pessoas via WebRTC P2P - sem servidor.
           </p>
-          <ul className="muted" style={{ marginTop: '0.5rem', textAlign: 'left' }}>
+          <ul className="brand-list">
             <li><strong>Modo solo</strong>: configure e responda no seu ritmo, sem precisar de outros participantes.</li>
             <li><strong>Em grupo</strong>: o moderador cria a sala e controla o ritmo (libera questão, libera resposta); todos respondem em tempo real.</li>
             <li>Escolha entre <strong>simulado completo</strong> ou <strong>questões por capítulo</strong> para focar no que precisa estudar.</li>
@@ -99,9 +100,10 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
                       setStage('choice')
                     }}
                   >
+                    <span className="cert-card-badge">{c.shortLabel}</span>
                     <span className="cert-card-title">{c.label}</span>
                     <span className="cert-card-desc">{c.description}</span>
-                    <span className="cert-card-stats">
+                    <span className="cert-card-footer">
                       <strong>{s.total}</strong> questões
                       {s.official > 0 && s.generated > 0 && (
                         <> • {s.official} oficiais + {s.generated} geradas</>
