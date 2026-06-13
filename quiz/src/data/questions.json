@@ -36,7 +36,8 @@
       "d": "Incorreta. Verificar todas as combinações de entradas seria testes exaustivos, o que é impossível (2º princípio BSTQB)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-2",
@@ -75,7 +76,8 @@
       "d": "Incorreta. Certificação não garante melhores casos de teste; habilidades práticas e conhecimento do domínio são mais determinantes."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-3",
@@ -114,7 +116,8 @@
       "d": "Incorreta. Testes exaustivos são impossíveis refere-se à impossibilidade de testar todas as combinações, não ao desgaste de suítes existentes."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-4",
@@ -153,7 +156,8 @@
       "d": "Incorreta. Analisar discrepâncias e reportar defeitos ocorre durante a execução dos testes."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-5",
@@ -192,7 +196,8 @@
       "d": "Incorreta. Apenas riscos e configuração do ambiente não cobrem todos os fatores mais relevantes; o SDLC e requisitos regulamentares também importam."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-6",
@@ -237,7 +242,8 @@
       "e": "Correta. Analisar a base de testes (requisitos, especificações) para identificar condições de teste é uma atividade primária da função de teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-7",
@@ -276,7 +282,8 @@
       "d": "Incorreta. Planejar e organizar o trabalho da equipe é uma habilidade gerencial, não a mais importante para um testador individual."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-8",
@@ -315,7 +322,8 @@
       "d": "Correta. Na abordagem whole team, testadores auxiliam representantes de negócios a criar testes de aceite adequados às necessidades do negócio."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-9",
@@ -354,7 +362,8 @@
       "d": "Correta. Em todos os modelos de SDLC (sequencial, incremental e iterativo) cada atividade de desenvolvimento tem uma atividade de teste correspondente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-10",
@@ -393,7 +402,8 @@
       "d": "Incorreta. Testes baseados no comportamento desejado com dado/quando/então descrevem o BDD, que é uma especialização do ATDD."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-11",
@@ -432,7 +442,8 @@
       "d": "Correta. Escrever scripts de teste antes de configurar o gerenciamento de configuração não é shift-left; é uma má prática que inverte dependências necessárias."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-12",
@@ -471,7 +482,8 @@
       "d": "Incorreta. Os cinco valores mencionados são do Scrum em geral, não especificamente das retrospectivas, e não é o argumento mais persuasivo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-13",
@@ -510,7 +522,8 @@
       "d": "Incorreta. Falhas na implementação incorreta de regras de negócio pertencem ao teste de aceite (D), não ao sistema (C)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-14",
@@ -549,7 +562,8 @@
       "d": "Incorreta. Execs 5 e 6 são re-testes de falhas conhecidas, não verificação de código inalterado."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-15",
@@ -588,7 +602,8 @@
       "d": "Incorreta. Detectar lacunas e inconsistências nos requisitos é um benefício real dos testes estáticos, especialmente revisões."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-16",
@@ -627,7 +642,8 @@
       "d": "Correta. Feedback precoce e frequente ajuda a evitar mal-entendidos sobre requisitos, alinhando expectativas entre stakeholders e equipe de desenvolvimento."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-17",
@@ -666,7 +682,8 @@
       "d": "Incorreta. Na inspeção, a reunião é conduzida por um moderador externo ao autor, não pelo próprio autor."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-18",
@@ -705,7 +722,8 @@
       "d": "Correta. Esta afirmação está incompleta/incorreta: as falhas devem ser reconhecidas e tratadas objetivamente, mas dizer que falhas devem ser 'valorizadas' não é um fator de sucesso — o foco deve ser na melhoria do produto, não na valorização de defeitos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-19",
@@ -744,7 +762,8 @@
       "d": "Incorreta. Identificar desvios em relação a requisitos é o objetivo geral de testes, não a característica específica de técnicas baseadas em experiência."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-20",
@@ -783,7 +802,8 @@
       "d": "Correta. Na BVA de 3 pontos, para cada limite são testados: o valor na fronteira, o imediatamente abaixo e o imediatamente acima."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-21",
@@ -822,7 +842,8 @@
       "d": "Incorreta. 100% não é alcançado; os TCs não cobrem todos os valores limite de BVA de 2 pontos para as 6 partições."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-22",
@@ -861,7 +882,8 @@
       "d": "Correta. R8 (não-membro, prazo não cumprido, 15º aluguel) é impossível: apenas membros acumulam locações para chegar ao 15º aluguel com direito à camiseta."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-23",
@@ -901,7 +923,8 @@
     },
     "image": "/study/quiz/diagrams/a23.svg",
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-24",
@@ -940,7 +963,8 @@
       "d": "Incorreta. Cobertura de instruções não cobre combinações de valores de entrada; isso exigiria testes exaustivos, que são impossíveis."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-25",
@@ -979,7 +1003,8 @@
       "d": "Correta. Esta afirmação é falsa: testes caixa-branca verificam a estrutura interna do código, não lacunas de requisitos; lacunas de requisitos são detectadas por testes caixa-preta e revisões."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-26",
@@ -1018,7 +1043,8 @@
       "d": "Incorreta. Error guessing não envolve reproduzir o desenvolvimento; envolve antecipar defeitos com base em experiência histórica."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-27",
@@ -1057,7 +1083,8 @@
       "d": "Incorreta. Teste de ramificação é uma técnica caixa-branca que requer acesso ao código; não é adequada para essa situação de alto nível."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-28",
@@ -1096,7 +1123,8 @@
       "d": "Incorreta. Documentar riscos em plano de testes é uma atividade de planejamento, não de documentação de critérios de aceite."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-29",
@@ -1135,7 +1163,8 @@
       "d": "Incorreta. Realocar editor para outro editor não corresponde a nenhum critério de aceite; o critério menciona reatribuir para 'proprietário do conteúdo'."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-30",
@@ -1174,7 +1203,8 @@
       "d": "Incorreta. Garantir lançamento de alta qualidade é um objetivo geral, não uma atividade específica de valor no planejamento de iteração."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-31",
@@ -1219,7 +1249,8 @@
       "e": "Correta. Automatizar os testes de regressão é um critério de saída válido para fechar a fase de testes e garantir sustentabilidade futura."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-32",
@@ -1258,7 +1289,8 @@
       "d": "Correta. Aplicando a fórmula de três pontos: (Otimista + 4×Mais provável + Pessimista) / 6 = (2 + 4×11 + 14) / 6 = 60/6 = 10 horas-pessoa."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-33",
@@ -1297,7 +1329,8 @@
       "d": "Incorreta. TC001 não tem dependências e tem prioridade mais alta entre os que não dependem de outros; seria o primeiro."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-34",
@@ -1336,7 +1369,8 @@
       "d": "Incorreta. Esta combinação coloca testes funcionais em Q3 (análise crítica do negócio), mas testes funcionais são de suporte ao desenvolvimento (Q2)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-35",
@@ -1375,7 +1409,8 @@
       "d": "Incorreta. Transferência de risco envolve repassar o risco a terceiros (ex.: seguro); os testes realizados internamente não transferem o risco."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-36",
@@ -1414,7 +1449,8 @@
       "d": "Correta. O gráfico de Burndown mostra o trabalho concluído e o restante ao longo do tempo na iteração, sendo a ferramenta ágil padrão para esse fim."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-37",
@@ -1453,7 +1489,8 @@
       "d": "Incorreta. Engenharia de requisitos lida com a elicitação e especificação de requisitos, não com versionamento de scripts."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-38",
@@ -1492,7 +1529,8 @@
       "d": "Incorreta. A prioridade (alta) está explicitamente mencionada no relatório; a gravidade pode ser inferida."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-39",
@@ -1531,7 +1569,8 @@
       "d": "Incorreta. A conclusão do teste envolve relatórios e lições aprendidas, não preparação de dados."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-40",
@@ -1570,7 +1609,8 @@
       "d": "Incorreta. Reduzir tempo alocado para testes manuais pode ser um efeito colateral, mas não é necessariamente um risco da automação; testes manuais e automatizados são complementares."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A1",
@@ -1609,7 +1649,8 @@
       "d": "Incorreta. Gestão de defeitos rastreia e administra defeitos reportados, mas não os analisa e corrige diretamente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A2",
@@ -1648,7 +1689,8 @@
       "d": "Correta. QA foca em processos para prevenir defeitos; testes focam em demonstrar que o software está apto e detectar defeitos — são conceitos distintos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A3",
@@ -1687,7 +1729,8 @@
       "d": "Correta. O limite superior codificado incorretamente é o defeito (bug no código), resultado do engano humano do programador e causa potencial de falha futura."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A4",
@@ -1726,7 +1769,8 @@
       "d": "Correta. O projeto de teste define COMO testar, produzindo entre outros as cartas de sessão de teste exploratório com escopo, objetivos e duração."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A5",
@@ -1765,7 +1809,8 @@
       "d": "Incorreta. Rastreabilidade entre base de testes, objetos e casos de teste auxilia na seleção de dados de teste, mas o exemplo mais direto de valor da rastreabilidade é a seleção para regressão."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A6",
@@ -1804,7 +1849,8 @@
       "d": "Correta. Testadores independentes questionam suposições implícitas e interpretações do desenvolvedor, evitando viés do autor e encontrando defeitos que o criador não veria."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A7",
@@ -1849,7 +1895,8 @@
       "e": "Incorreta. Testes de manutenção são realizados após a entrega do sistema em produção, não nas fases iniciais."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A8",
@@ -1888,7 +1935,8 @@
       "d": "Incorreta. DevOps reduz testes manuais repetitivos (ii é falso), e configurar automação é caro (v é falso)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A9",
@@ -1927,7 +1975,8 @@
       "d": "Incorreta. Testes caixa-branca exigem acesso à estrutura interna do código; medir tempo via execução normal é caixa-preta."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A10",
@@ -1966,7 +2015,8 @@
       "d": "Incorreta. Testes de integração verificam interfaces entre componentes; migração de dados em desativação é um cenário de manutenção."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A11",
@@ -2005,7 +2055,8 @@
       "d": "Incorreta. Orçamento (iii), código de terceiros (iv) e histórias (v) — código executável de terceiros não pode ser revisado da mesma forma."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A12",
@@ -2044,7 +2095,8 @@
       "d": "Correta. Testes estáticos detectam: desvios de padrões de codificação (ii), objetivam identificar defeitos cedo (iv), e identificam falta de cobertura de requisitos de segurança (v)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A13",
@@ -2083,7 +2135,8 @@
       "d": "Incorreta. Defeitos encontrados durante revisões são relatados formalmente; esse é um dos principais propósitos da revisão."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A14",
@@ -2122,7 +2175,8 @@
       "d": "Incorreta. Registrar decisões e informações é responsabilidade do escriba."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A15",
@@ -2161,7 +2215,8 @@
       "d": "Incorreta. Omitir o valor 12 (o próprio limite) não seria uma cobertura de BVA de 3 pontos completa."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-A16",
@@ -2200,7 +2255,8 @@
       "d": "Correta. Com 100% de cobertura de ramificações, todos os resultados de decisão (verdadeiro e falso) em cada instrução de decisão são executados."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A17",
@@ -2239,7 +2295,8 @@
       "d": "Incorreta. Error guessing baseia-se na intuição sobre prováveis defeitos, não em uma lista estruturada de boas práticas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A18",
@@ -2278,7 +2335,8 @@
       "d": "Incorreta. INVEST (Independente, Negociável, Valiosa, Estimável, Pequena, Testável) descreve critérios de qualidade de uma história, não o processo colaborativo de criação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A19",
@@ -2317,7 +2375,8 @@
       "d": "Correta. A abordagem de teste descreve os níveis de teste a usar, as técnicas, os critérios de cobertura e os requisitos de conformidade."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A20",
@@ -2356,7 +2415,8 @@
       "d": "Incorreta. Remover o recurso não é necessário; a equipe tem uma regra de desempate que pode ser aplicada."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "A-A21",
@@ -2395,7 +2455,8 @@
       "d": "Incorreta. A pirâmide tem impacto direto na construção de testes automatizados, orientando onde concentrar o esforço de automação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A22",
@@ -2434,7 +2495,8 @@
       "d": "Incorreta. A probabilidade é sempre necessária para calcular o nível total de risco (probabilidade × impacto) e definir respostas adequadas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A23",
@@ -2473,7 +2535,8 @@
       "d": "Incorreta. Não conformidade com padrões de segurança (ii) e problemas de acessibilidade (v) são riscos de produto."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A24",
@@ -2512,7 +2575,8 @@
       "d": "Correta. Riscos altos de desempenho levam a decidir realizar testes detalhados de eficiência cedo no SDLC — exemplo direto de como a análise influencia cobertura e escopo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "A-A25",
@@ -2557,7 +2621,8 @@
       "e": "Incorreta. Tempo para reparar um defeito é uma métrica de eficiência do processo de correção, não de qualidade do produto em teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "A-A26",
@@ -2596,7 +2661,8 @@
       "d": "Incorreta. Novos riscos identificados são críticos para representantes comerciais tomarem decisões sobre lançamento e prioridades."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-1",
@@ -2635,7 +2701,8 @@
       "d": "Correta. Revisões melhoram a qualidade das especificações de requisitos, reduzindo mal-entendidos e a necessidade de retrabalho em artefatos derivados."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-2",
@@ -2674,7 +2741,8 @@
       "d": "Incorreta. Embora verdadeira como conceito, esta opção é idêntica à opção b; a resposta correta é b."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-3",
@@ -2713,7 +2781,8 @@
       "d": "Correta. Particionamento de equivalência e análise de valores limite são técnicas que permitem representar classes de entrada com um número reduzido de casos, tornando os testes práticos sem ser exaustivos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-4",
@@ -2752,7 +2821,8 @@
       "d": "Incorreta. A implementação de teste concretiza os casos em scripts executáveis, utilizando o que foi projetado."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-5",
@@ -2791,7 +2861,8 @@
       "d": "Incorreta. A estrutura organizacional do usuário final não é um fator que impacte significativamente a abordagem de testes."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-6",
@@ -2830,7 +2901,8 @@
       "d": "Incorreta. Rastreabilidade entre riscos e condições de teste serve para planejar cobertura de riscos, não para determinar quais riscos valem a pena testar — isso é análise de risco."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-7",
@@ -2869,7 +2941,8 @@
       "d": "Incorreta. Gerar casos de teste metodicamente antes de testes exploratórios é uma habilidade específica de teste (planejamento e projeto), não genérica."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-8",
@@ -2908,7 +2981,8 @@
       "d": "Correta. A sinergia gerada quando todos os membros se sentem responsáveis pela qualidade beneficia todo o projeto, melhorando comunicação e detecção precoce de problemas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-9",
@@ -2947,7 +3021,8 @@
       "d": "Incorreta. Em modelos incrementais, tanto testes estáticos quanto dinâmicos ocorrem em cada incremento, não apenas um tipo por fase."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-10",
@@ -2986,7 +3061,8 @@
       "d": "Incorreta. Revisar imediatamente após a publicação pode ser apropriado, mas 'assim que versões preliminares estiverem disponíveis' é mais antecipado e abrangente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-11",
@@ -3025,7 +3101,8 @@
       "d": "Incorreta. Desenvolvimento orientado a funcionalidades (Feature-Driven Development) é uma metodologia ágil diferente do TDD."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-12",
@@ -3064,7 +3141,8 @@
       "d": "Incorreta. DevOps não elimina testes manuais completamente; testes manuais exploratórios e de aceite complementam a automação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-13",
@@ -3103,7 +3181,8 @@
       "d": "Incorreta. Testar interações entre UI e banco de dados é teste de integração de componentes, não teste de sistema completo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-14",
@@ -3142,7 +3221,8 @@
       "d": "Correta. Testes de regressão focam em efeitos adversos em código não modificado causados por mudanças; testes de confirmação focam em verificar o código que foi corrigido."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-15",
@@ -3181,7 +3261,8 @@
       "d": "Incorreta. Funcionalidades não implementadas são detectáveis tanto por revisão de requisitos vs. código (estático) quanto por execução que falha — não exclusivamente estático."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-16",
@@ -3220,7 +3301,8 @@
       "d": "Incorreta. Usuários finais compreenderem atrasos não é um benefício do feedback de qualidade; é consequência de boa comunicação geral."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-17",
@@ -3259,7 +3341,8 @@
       "d": "Correta. Planejamento (C) inclui selecionar características e critérios de saída (1); Início (B) distribui o acesso ao documento (2); Revisão individual (A) identifica anomalias (3); Comunicação/análise (D) discute as anomalias (4)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-18",
@@ -3298,7 +3381,8 @@
       "d": "Incorreta. Esta combinação atribui ao líder de revisão o papel do facilitador."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-19",
@@ -3337,7 +3421,8 @@
       "d": "Correta. Tabela de decisão é caixa-preta (independe da implementação) e pode ser criada antes do código; testes de ramificação são caixa-branca e exigem o código implementado."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-20",
@@ -3376,7 +3461,8 @@
       "d": "Incorreta. 10, 29, 30, 31 cobre partições de 10% e 50%, mas com redundância e não otimiza a cobertura de 3 partições distintas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-21",
@@ -3415,7 +3501,8 @@
       "d": "Correta. BVA de 3 pontos adiciona os valores adjacentes externos (1=2 abaixo do inf, 4=2 abaixo do inf, 14=2 acima do sup) mais valores internos adjacentes (7 e 11) aos já testados por BVA de 2 pontos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-22",
@@ -3454,7 +3541,8 @@
       "d": "Incorreta. Para 100%, todas as 5 regras precisariam ser cobertas; a Regra 2 e Regra 3 não são cobertas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-23",
@@ -3494,7 +3582,8 @@
     },
     "image": "/study/quiz/diagrams/b23.svg",
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-24",
@@ -3533,7 +3622,8 @@
       "d": "Incorreta. Cobertura de instruções não implica cobertura de ramificações; uma instrução pode ser alcançada por apenas um ramo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-25",
@@ -3572,7 +3662,8 @@
       "d": "Incorreta. Usar 'resultados de decisão' no denominador confunde cobertura de ramificação com cobertura de decisão."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-26",
@@ -3617,7 +3708,8 @@
       "e": "Correta. Experiência na área de negócios e boas habilidades analíticas são os atributos que maximizam a eficácia dos testes exploratórios."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-27",
@@ -3656,7 +3748,8 @@
       "d": "Correta. 'Mensagens de erro escritas em linguagem compreensível pelo usuário' é um item específico, verificável e alinhado com boas práticas de usabilidade — típico de checklist."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-28",
@@ -3695,7 +3788,8 @@
       "d": "Incorreta. Orientado a processos descreveria fluxos de trabalho e processos, não cenários de interação do usuário."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-29",
@@ -3734,7 +3828,8 @@
       "d": "Correta. Registrar novo cliente não tem relação com a história de 'visualizar pedidos anteriores' de um cliente já cadastrado; este teste testa funcionalidade de cadastro, não de visualização de histórico."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-30",
@@ -3773,7 +3868,8 @@
       "d": "Incorreta. 80% de cobertura de instruções seria critério de saída dos testes de componentes (etapa 3), não de entrada para submeter código."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-31",
@@ -3812,7 +3908,8 @@
       "d": "Incorreta. $82.500 não corresponde ao cálculo correto da proporção média dos quatro projetos históricos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-32",
@@ -3851,7 +3948,8 @@
       "d": "Incorreta. TC2 seria anterior a TC1 pelo mesmo nível de prioridade, mas ambos são BUSCAR; a posição exata depende da ordenação de empate."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-33",
@@ -3890,7 +3988,8 @@
       "d": "Correta. Testes de integração de componentes são voltados para tecnologia (verificam interfaces técnicas) e apoiam a equipe de desenvolvimento — característicos do Q1."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-34",
@@ -3929,7 +4028,8 @@
       "d": "Incorreta. Esta combinação usa BVA para loop e performance para idade, quando deveria ser o contrário."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-35",
@@ -3968,7 +4068,8 @@
       "d": "Incorreta. Percentagem de detecção de defeitos é uma métrica da eficácia do processo de teste, não de qualidade do produto."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "B-36",
@@ -4007,7 +4108,8 @@
       "d": "Incorreta. Videoconferência é eficaz para equipes distribuídas, aproximando-se da reunião presencial virtualmente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-37",
@@ -4046,7 +4148,8 @@
       "d": "Incorreta. Gerar dados de teste a partir do número de versão do caso de teste não é uma função de gerenciamento de configuração."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-38",
@@ -4085,7 +4188,8 @@
       "d": "Incorreta. Os casos de teste têm dados válidos (duplicatas são entradas legítimas); o defeito está no sistema, não nos casos de teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "B-39",
@@ -4124,7 +4228,8 @@
       "d": "Incorreta. Esta combinação coloca comunicação em DevOps e máquinas virtuais em análise estática, o que está errado."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "B-40",
@@ -4163,7 +4268,8 @@
       "d": "Incorreta. Ferramentas de automação executam testes, mas não geram casos de teste a partir da análise do código do programa (isso seria geração automática de testes, diferente)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-1",
@@ -4202,7 +4308,8 @@
       "d": "Incorreta. Verificar conformidade com requisitos contratuais ou legais é um objetivo válido, especialmente em domínios regulamentados."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-2",
@@ -4241,7 +4348,8 @@
       "d": "Incorreta. A falha é a manifestação do defeito durante execução, não um passo intermediário entre engano e defeito."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-3",
@@ -4280,7 +4388,8 @@
       "d": "Incorreta. Agrupamento de defeitos descreve que defeitos tendem a se concentrar em poucos módulos, não que testes repetidos perdem eficácia."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-4",
@@ -4319,7 +4428,8 @@
       "d": "Incorreta. Defeitos nem sempre causam falhas visíveis; há defeitos latentes que só manifestam em condições específicas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-5",
@@ -4358,7 +4468,8 @@
       "d": "Incorreta. A execução do teste executa os casos projetados e registra resultados; as condições já foram identificadas anteriormente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-6",
@@ -4397,7 +4508,8 @@
       "d": "Incorreta. A conclusão do teste produz relatórios finais e lições aprendidas; casos de teste não são criados nesta fase."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-7",
@@ -4436,7 +4548,8 @@
       "d": "Incorreta. Automação de casos de teste não é uma vantagem da independência; é uma questão de abordagem técnica."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-8",
@@ -4475,7 +4588,8 @@
       "d": "Incorreta. Trabalhar de forma isolada contradiz o princípio de whole team approach; colaboração é essencial para testadores."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-9",
@@ -4514,7 +4628,8 @@
       "d": "Correta. No modelo V, os requisitos de negócio/necessidades do usuário (nível mais alto de especificação) correspondem diretamente ao teste de aceitação (nível mais alto de teste)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-10",
@@ -4553,7 +4668,8 @@
       "d": "Incorreta. Teste de aceitação operacional verifica se o sistema está pronto para operação (instalação, recuperação), não a comunicação entre componentes."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-11",
@@ -4592,7 +4708,8 @@
       "d": "Incorreta. Teste de integração é um nível de teste, não um tipo funcional/não funcional; verifica interfaces que podem ser funcionais ou não."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-12",
@@ -4631,7 +4748,8 @@
       "d": "Incorreta. O re-teste foca no defeito corrigido, não no sistema completo; o teste de regressão pode cobrir áreas além do módulo corrigido."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-13",
@@ -4670,7 +4788,8 @@
       "d": "Incorreta. Documentação de teste detalhada não é obrigatória em cada sprint; agilidade prioriza testes funcionais sobre documentação extensa."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-14",
@@ -4709,7 +4828,8 @@
       "d": "Incorreta. Revisão técnica do código durante desenvolvimento é teste estático no ciclo de desenvolvimento, não manutenção."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-15",
@@ -4748,7 +4868,8 @@
       "d": "Incorreta. Testes estáticos exigem esforço humano para revisão; não necessariamente requerem menos esforço que os dinâmicos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-16",
@@ -4787,7 +4908,8 @@
       "d": "Correta. A inspeção é o tipo mais formal de revisão, com funções bem definidas, moderador externo e processo sistemático focado em detecção de defeitos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-17",
@@ -4826,7 +4948,8 @@
       "d": "Incorreta. Tomar decisões sobre melhorias pode envolver vários papéis; o autor apresenta, não decide sozinho."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-18",
@@ -4865,7 +4988,8 @@
       "d": "Incorreta. O sistema rejeitar entradas válidas é um defeito funcional detectável apenas executando o sistema."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-19",
@@ -4904,7 +5028,8 @@
       "d": "Incorreta. 17 e 18 cobrem a partição inválida abaixo e o início da válida, mas 65 também é válido; falta a partição inválida acima."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "C-20",
@@ -4943,7 +5068,8 @@
       "d": "Incorreta. 9, 11, 49, 51 são os valores adjacentes externos e internos, característicos de BVA de 3 pontos, não de 2 pontos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "C-21",
@@ -4982,7 +5108,8 @@
       "d": "Incorreta. 8 valores seria mais do que o necessário para BVA de 3 pontos com dois limites."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "C-22",
@@ -5021,7 +5148,8 @@
       "d": "Incorreta. Teste de caso de uso verifica fluxos de interação do usuário, não combinações sistemáticas de condições."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-23",
@@ -5060,7 +5188,8 @@
       "d": "Incorreta. 12 seria 4×3 ou maior que 2³; não corresponde ao cálculo correto para 3 condições binárias."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-24",
@@ -5099,7 +5228,8 @@
       "d": "Incorreta. Sistemas sem interface com usuário podem ou não ter estados; a ausência de UI não determina a aplicabilidade do teste de transição."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-25",
@@ -5138,7 +5268,8 @@
       "d": "Incorreta. Testar todas as combinações de condições seria cobertura de condições múltiplas (MC/DC), muito mais completa."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-26",
@@ -5177,7 +5308,8 @@
       "d": "Incorreta. Cobertura de condições verifica cada condição simples dentro de uma decisão composta, que é diferente de cobrir cada branch como V e F."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-27",
@@ -5216,7 +5348,8 @@
       "d": "Incorreta. Teste de transição de estado é uma técnica caixa-preta estruturada baseada em modelos de estados, não em experiência/intuição."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-28",
@@ -5255,7 +5388,8 @@
       "d": "Incorreta. Testes exploratórios são eficazes para testadores com qualquer nível de experiência, especialmente quando combinados com bom conhecimento do domínio."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-29",
@@ -5300,7 +5434,8 @@
       "e": "Incorreta. Técnicas caixa-preta não requerem acesso ao código-fonte; baseiam-se apenas nas especificações externas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-30",
@@ -5339,7 +5474,8 @@
       "d": "Incorreta. Criar procedimentos de execução de teste pertence à implementação de testes, não ao planejamento."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-31",
@@ -5378,7 +5514,8 @@
       "d": "Incorreta. Script de teste é um conjunto de instruções para execução automatizada ou manual de um caso de teste específico."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-32",
@@ -5417,7 +5554,8 @@
       "d": "Incorreta. A distinção entre riscos de produto e projeto é fundamental para o planejamento baseado em riscos no BSTQB."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-33",
@@ -5456,7 +5594,8 @@
       "d": "Incorreta. A análise de risco pode indicar que testes de regressão são necessários em áreas de alto risco; não elimina essa necessidade."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-34",
@@ -5495,7 +5634,8 @@
       "d": "Incorreta. Total de linhas de código é uma métrica de tamanho do sistema, não de progresso dos testes."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "C-35",
@@ -5534,7 +5674,8 @@
       "d": "Incorreta. Documentar defeitos a corrigir na próxima versão é uma lista de pendências; o relatório de conclusão tem escopo mais amplo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-36",
@@ -5573,7 +5714,8 @@
       "d": "Incorreta. O gerenciamento de configuração é necessário em qualquer projeto de software, independentemente do número de testadores."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "C-37",
@@ -5612,7 +5754,8 @@
       "d": "Incorreta. Critérios de saída se aplicam a todos os níveis e fases de teste, não somente ao teste de aceitação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-38",
@@ -5657,7 +5800,8 @@
       "e": "Incorreta. Lista de defeitos corrigidos pelo desenvolvedor pertence ao relatório de acompanhamento de defeitos, não ao plano de teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-39",
@@ -5696,7 +5840,8 @@
       "d": "Incorreta. A automação de regressão não reduz automaticamente o tempo de desenvolvimento de novas funcionalidades."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "C-40",
@@ -5735,7 +5880,8 @@
       "d": "Incorreta. Scripts de automação precisam ser atualizados quando a interface ou comportamento do sistema muda; a automação não elimina essa necessidade."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-1",
@@ -5774,7 +5920,8 @@
       "d": "Incorreta. Nenhum teste prova segurança absoluta; o teste reduz risco, não o elimina."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-2",
@@ -5813,7 +5960,8 @@
       "d": "Incorreta. Marina identificou a falha (teste); João depurou. Teste de confirmação seria reexecutar após correção."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-3",
@@ -5852,7 +6000,8 @@
       "d": "Incorreta. O agrupamento de defeitos não justifica o pedido do gerente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-4",
@@ -5891,7 +6040,8 @@
       "d": "Incorreta. Refere-se à variabilidade do teste conforme contexto, não à perda de eficácia."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-5",
@@ -5930,7 +6080,8 @@
       "d": "Incorreta. Refere-se à limitação do teste como prova; o caso descrito mostra inadequação ao usuário."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-6",
@@ -5969,7 +6120,8 @@
       "d": "Incorreta. Execução não vem antes de design e análise."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-7",
@@ -6008,7 +6160,8 @@
       "d": "Incorreta. Relatório de fechamento é produto da atividade de conclusão."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-8",
@@ -6047,7 +6200,8 @@
       "d": "Incorreta. Aprovação formal cabe ao patrocinador/cliente, não ao líder de teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-9",
@@ -6086,7 +6240,8 @@
       "d": "Incorreta. Programação de baixo nível raramente é requisito para testadores."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-10",
@@ -6125,7 +6280,8 @@
       "d": "Incorreta. Bom teste exige colaboração; o BSTQB ressalta isso."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-11",
@@ -6164,7 +6320,8 @@
       "d": "Incorreta. Reclamação de cliente não é definida como falha pelo BSTQB."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-12",
@@ -6203,7 +6360,8 @@
       "d": "Incorreta. Ignorar dados históricos é contrário à abordagem baseada em risco."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-13",
@@ -6242,7 +6400,8 @@
       "d": "Incorreta. Comunicação é fundamental; independência não significa isolamento."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-14",
@@ -6281,7 +6440,8 @@
       "d": "Incorreta. Teste é uma das principais atividades de QC."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-15",
@@ -6320,7 +6480,8 @@
       "d": "Incorreta. Testar apenas após produção contraria o princípio."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-16",
@@ -6359,7 +6520,8 @@
       "d": "Incorreta. Rastreabilidade não automatiza codificação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-17",
@@ -6398,7 +6560,8 @@
       "d": "Incorreta. AVL é habilidade técnica do testador."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-18",
@@ -6438,7 +6601,8 @@
       "d": "Incorreta. Comunicação aberta é essencial."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-19",
@@ -6477,7 +6641,8 @@
       "d": "Incorreta. Aplicativos amadores tipicamente têm menor complexidade."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-20",
@@ -6516,7 +6681,8 @@
       "d": "Incorreta. Atender requisitos não basta se as necessidades reais não forem atendidas (falácia da ausência de erros)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-21",
@@ -6555,7 +6721,8 @@
       "d": "Incorreta. Esse comportamento é característico de DevOps/ágil."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-22",
@@ -6594,7 +6761,8 @@
       "d": "Incorreta. A ordem de execução é unitário → integração → sistema → aceitação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-23",
@@ -6633,7 +6801,8 @@
       "d": "Incorreta. Em ágil, equipes são tipicamente multifuncionais e auto-organizadas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-24",
@@ -6672,7 +6841,8 @@
       "d": "Incorreta. CI faz parte do desenvolvimento, não o substitui."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-25",
@@ -6711,7 +6881,8 @@
       "d": "Incorreta. Integração de sistemas envolve múltiplos sistemas distintos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-26",
@@ -6750,7 +6921,8 @@
       "d": "Incorreta. Carga/performance são tipos não-funcionais, não definem o nível."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-27",
@@ -6789,7 +6961,8 @@
       "d": "Incorreta. Contratual envolve verificação de cláusulas contratuais específicas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-28",
@@ -6828,7 +7001,8 @@
       "d": "Incorreta. Esse é teste de acessibilidade (não-funcional)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-29",
@@ -6867,7 +7041,8 @@
       "d": "Incorreta. Verificar valor do relatório é funcional."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-30",
@@ -6906,7 +7081,8 @@
       "d": "Incorreta. Performance avalia atributos não-funcionais."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-31",
@@ -6945,7 +7121,8 @@
       "d": "Incorreta. Preventiva visa evitar problemas futuros."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-32",
@@ -6984,7 +7161,8 @@
       "d": "Incorreta. 'Preditiva' não é categoria padrão do BSTQB."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-33",
@@ -7023,7 +7201,8 @@
       "d": "Incorreta. Não tem relação com volume de documentação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-34",
@@ -7063,7 +7242,8 @@
       "d": "Incorreta. Pode ser caixa-preta sem código-fonte."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-35",
@@ -7102,7 +7282,8 @@
       "d": "Incorreta. Shift-left antecipa, não posterga."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-36",
@@ -7141,7 +7322,8 @@
       "d": "Incorreta. Ambos podem ser automatizados ou manuais conforme o tipo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-37",
@@ -7180,7 +7362,8 @@
       "d": "Incorreta. Revisões de código permanecem úteis."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-38",
@@ -7219,7 +7402,8 @@
       "d": "Correta. Inspeção é o tipo mais formal, com regras, métricas e papéis bem definidos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-39",
@@ -7258,7 +7442,8 @@
       "d": "Incorreta. Walkthrough é manual, não automatizado."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-40",
@@ -7297,7 +7482,8 @@
       "d": "Incorreta. Decisão final cabe à gerência ou stakeholders, não ao moderador."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-41",
@@ -7336,7 +7522,8 @@
       "d": "Incorreta. O revisor analisa o artefato e levanta questões."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-42",
@@ -7375,7 +7562,8 @@
       "d": "Incorreta. Métricas detalhadas são da inspeção."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-43",
@@ -7414,7 +7602,8 @@
       "d": "Incorreta. Regressão é teste dinâmico."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-44",
@@ -7454,7 +7643,8 @@
       "d": "Incorreta. Nenhuma técnica garante qualidade total."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-45",
@@ -7493,7 +7683,8 @@
       "d": "Incorreta. Prazos são objeto de gestão de projeto, não da revisão técnica."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-46",
@@ -7532,7 +7723,8 @@
       "d": "Incorreta. Ambas podem ser automatizadas ou manuais."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-47",
@@ -7571,7 +7763,8 @@
       "d": "Incorreta. As faixas fora de 18-65 são inválidas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-48",
@@ -7610,7 +7803,8 @@
       "d": "Incorreta. Não foca nos limites."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-49",
@@ -7649,7 +7843,8 @@
       "d": "Incorreta. Não cobre os limites internos (1 e 10)."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-50",
@@ -7688,7 +7883,8 @@
       "d": "Incorreta. Sem técnica é menos eficaz."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-51",
@@ -7727,7 +7923,8 @@
       "d": "Incorreta. Partição não captura sequência de estados."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-52",
@@ -7766,7 +7963,8 @@
       "d": "Incorreta. Faltam 25 instruções para cobrir tudo."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-53",
@@ -7805,7 +8003,8 @@
       "d": "Incorreta. Não depende do número de variáveis para decisão."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-54",
@@ -7844,7 +8043,8 @@
       "d": "Incorreta. Não há essa relação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-55",
@@ -7883,7 +8083,8 @@
       "d": "Incorreta. Cobertura de ramo é caixa-branca."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-56",
@@ -7922,7 +8123,8 @@
       "d": "Incorreta. Complementa, não substitui."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-57",
@@ -7961,7 +8163,8 @@
       "d": "Incorreta. Padrão de testes unitários, não BDD."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-58",
@@ -8000,7 +8203,8 @@
       "d": "Incorreta. ATDD envolve múltiplas perspectivas."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-59",
@@ -8039,7 +8243,8 @@
       "d": "Incorreta. Esses são tipos de stakeholders externos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-60",
@@ -8078,7 +8283,8 @@
       "d": "Incorreta. Partição se aplica também a valores discretos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-61",
@@ -8117,7 +8323,8 @@
       "d": "Incorreta. Excessivo para o tipo de cobertura."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-62",
@@ -8156,7 +8363,8 @@
       "d": "Incorreta. 9 não corresponde a combinações binárias de 3."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-63",
@@ -8196,7 +8404,8 @@
       "d": "Incorreta. Cobertura de ramo é caixa-branca."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-64",
@@ -8235,7 +8444,8 @@
       "d": "Incorreta. AVL é uma técnica formal de partição."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-65",
@@ -8274,7 +8484,8 @@
       "d": "Incorreta. Análise estática precisa de artefatos prontos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-66",
@@ -8313,7 +8524,8 @@
       "d": "Incorreta. AVL de 2 valores também testa adjacentes inválidos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-67",
@@ -8352,7 +8564,8 @@
       "d": "Incorreta. Automação é consequência possível, mas não meta universal."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-68",
@@ -8391,7 +8604,8 @@
       "d": "Incorreta. Aceitação tipicamente é caixa-preta."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-69",
@@ -8430,7 +8644,8 @@
       "d": "Incorreta. Complementa, não substitui."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-70",
@@ -8469,7 +8684,8 @@
       "d": "Incorreta. Cobertura de instrução é caixa-branca, não combina condições."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-71",
@@ -8508,7 +8724,8 @@
       "d": "Incorreta. Excessivo; corresponderia a combinações."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-72",
@@ -8547,7 +8764,8 @@
       "d": "Incorreta. Cobertura de ramo é caixa-branca."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-73",
@@ -8586,7 +8804,8 @@
       "d": "Incorreta. Não modela estados e transições."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-74",
@@ -8625,7 +8844,8 @@
       "d": "Incorreta. Salários não fazem parte do plano de teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-75",
@@ -8664,7 +8884,8 @@
       "d": "Incorreta. Estratégia não trata apenas de orçamento."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-76",
@@ -8703,7 +8924,8 @@
       "d": "Incorreta. Não são métricas, são condições para começar."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-77",
@@ -8742,7 +8964,8 @@
       "d": "Incorreta. Proporção usa relação com projetos anteriores."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-78",
@@ -8781,7 +9004,8 @@
       "d": "Incorreta. Não tem relação com fases."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-79",
@@ -8820,7 +9044,8 @@
       "d": "Incorreta. São métricas de tamanho, não risco."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-80",
@@ -8859,7 +9084,8 @@
       "d": "Incorreta. Cronograma é risco de projeto."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-81",
@@ -8898,7 +9124,8 @@
       "d": "Incorreta. Riscos raramente podem ser eliminados totalmente."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-82",
@@ -8937,7 +9164,8 @@
       "d": "Incorreta. Irrelevante."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-83",
@@ -8976,7 +9204,8 @@
       "d": "Incorreta. Implementação prepara o ambiente e dados."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-84",
@@ -9015,7 +9244,8 @@
       "d": "Incorreta. Informação irrelevante e confidencial."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-85",
@@ -9054,7 +9284,8 @@
       "d": "Incorreta. Não substitui o teste."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-86",
@@ -9093,7 +9324,8 @@
       "d": "Correta. Relatório deve ser objetivo, factual e isento de julgamentos pessoais."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-87",
@@ -9132,7 +9364,8 @@
       "d": "Incorreta. Sequência impossível."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-88",
@@ -9171,7 +9404,8 @@
       "d": "Incorreta. Existe urgência de negócio."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-89",
@@ -9211,7 +9445,8 @@
       "d": "Incorreta. Pelo contrário, requer planejamento cuidadoso."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-90",
@@ -9250,7 +9485,8 @@
       "d": "Incorreta. Especialista único depende de opinião individual."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-91",
@@ -9289,7 +9525,8 @@
       "d": "Incorreta. Boa gestão promove comunicação."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K3"
   },
   {
     "id": "D-92",
@@ -9328,7 +9565,8 @@
       "d": "Incorreta. Reuniões não medem qualidade do produto."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-93",
@@ -9367,7 +9605,8 @@
       "d": "Incorreta. Recursos são parte do plano."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-94",
@@ -9406,7 +9645,8 @@
       "d": "Incorreta. Análise estática é técnica, não princípio de gestão."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-95",
@@ -9445,7 +9685,8 @@
       "d": "Incorreta. Não tem relação com pessoal."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-96",
@@ -9484,7 +9725,8 @@
       "d": "Incorreta. UML é modelagem de design."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-97",
@@ -9523,7 +9765,8 @@
       "d": "Incorreta. Revisão é manual."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K2"
   },
   {
     "id": "D-98",
@@ -9562,7 +9805,8 @@
       "d": "Incorreta. Nenhum teste garante ausência de defeitos."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-99",
@@ -9601,7 +9845,8 @@
       "d": "Incorreta. Automação não garante cobertura total."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "D-100",
@@ -9640,7 +9885,8 @@
       "d": "Incorreta. Decisão deve ser baseada em múltiplos critérios."
     },
     "cert": "CTFL",
-    "points": 1
+    "points": 1,
+    "cognitive": "K1"
   },
   {
     "id": "AI-A-1",
@@ -11384,6 +11630,1613 @@
       "b": "Incorreto. A cobertura estrutural é um método para avaliar a exaustividade dos testes de um único modelo, não para comparar modelos diferentes. Embora o tamanho do modelo possa afetar os números brutos de cobertura, os valores calculados são normalmente apresentados como porcentagens e, portanto, isso não é uma limitação para o seu propósito pretendido.",
       "c": "Correto. Aborda diretamente as principais limitações das medições de cobertura usadas isoladamente. As redes neurais podem aprender correlações espúrias, levando a ativações corretas por motivos incorretos, o que significa que o modelo poderia atingir alta cobertura estrutural enquanto toma decisões com base em características irrelevantes.",
       "d": "Incorreto. A cobertura estrutural é um complemento valioso que deve ser combinado com outros métodos. Seu objetivo é aprimorar, e não substituir, outras atividades de teste, como a avaliação da correção funcional e da utilidade das saídas do modelo."
+    }
+  },
+  {
+    "id": "AI-B-1",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "1",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "AI-1.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Uma equipe de testes está avaliando dois sistemas: um classificador de e-mails que aprende novos padrões de spam continuamente com base no feedback dos usuários; e um sistema de cobrança que aplica uma tabela fixa de impostos definida no banco de dados. Qual afirmação melhor compara um sistema convencional a um sistema baseado em AI?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Sistemas convencionais executam exatamente as regras codificadas, enquanto sistemas baseados em AI tendem a aprender padrões a partir dos dados e podem produzir resultados diferentes para a mesma entrada ao longo do tempo."
+      },
+      {
+        "letter": "b",
+        "text": "Sistemas convencionais e sistemas baseados em AI são igualmente determinísticos; a única diferença é a tecnologia de armazenamento utilizada."
+      },
+      {
+        "letter": "c",
+        "text": "Sistemas baseados em AI produzem sempre as mesmas saídas para as mesmas entradas, enquanto sistemas convencionais variam suas respostas conforme o ambiente."
+      },
+      {
+        "letter": "d",
+        "text": "Sistemas convencionais não podem ser testados, enquanto sistemas baseados em AI são totalmente verificáveis sem técnicas estatísticas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Convencionais seguem regras predefinidas; sistemas AI aprendem padrões e podem ter comportamento variável após atualizações ou retreinamento.",
+      "b": "Incorreta. Sistemas AI são tipicamente probabilísticos; tratá-los como determinísticos como os convencionais é justamente uma das fontes de risco.",
+      "c": "Incorreta. A relação está invertida: convencionais tendem a ser determinísticos e AI tendem a ser probabilísticos.",
+      "d": "Incorreta. Ambos podem ser testados; sistemas AI exigem técnicas estatísticas justamente porque a verificação clássica não basta."
+    }
+  },
+  {
+    "id": "AI-B-2",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "2",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "AI-1.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 2,
+    "stem": "Considere as seguintes descrições de tecnologias de AI. Quais duas opções a seguir descrevem corretamente AI estreita e AI geral?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "AI estreita é otimizada para tarefas específicas, como tradução automática ou detecção de fraudes."
+      },
+      {
+        "letter": "b",
+        "text": "AI geral, se alcançada, exibiria capacidades cognitivas amplas comparáveis às de um ser humano em diversas áreas."
+      },
+      {
+        "letter": "c",
+        "text": "AI estreita supera a inteligência humana em qualquer domínio cognitivo."
+      },
+      {
+        "letter": "d",
+        "text": "AI geral é sinônimo de AI generativa e já é oferecida comercialmente como um produto pronto."
+      },
+      {
+        "letter": "e",
+        "text": "AI estreita e AI geral são termos intercambiáveis; a diferença é apenas linguística."
+      }
+    ],
+    "correct": [
+      "a",
+      "b"
+    ],
+    "explanations": {
+      "a": "Correta. AI estreita resolve tarefas específicas — é o estado da arte hoje (assistentes, classificadores, etc.).",
+      "b": "Correta. AI geral é o conceito (ainda hipotético) de uma inteligência ampla, com capacidades humanas em múltiplos domínios.",
+      "c": "Incorreta. Superar a inteligência humana globalmente é definição de super AI, não de AI estreita.",
+      "d": "Incorreta. AI generativa é um tipo de AI estreita (foco em geração de conteúdo); não equivale à AI geral.",
+      "e": "Incorreta. Os termos têm definições distintas no syllabus do CT-AI."
+    }
+  },
+  {
+    "id": "AI-B-3",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "3",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "AI-1.1.3",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em uma reunião técnica, um líder afirma: \"DL faz parte de ML, que por sua vez faz parte de AI.\" Qual das opções a seguir descreve melhor essa relação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Trata-se de uma hierarquia onde Deep Learning (DL) é um subconjunto de Machine Learning (ML), e ML é um subconjunto da Inteligência Artificial (AI)."
+      },
+      {
+        "letter": "b",
+        "text": "AI é apenas um subconjunto de ML, e DL é independente das duas, focado exclusivamente em hardware."
+      },
+      {
+        "letter": "c",
+        "text": "ML e DL são abordagens equivalentes; AI é apenas uma sigla de marketing para indicar produtos sofisticados."
+      },
+      {
+        "letter": "d",
+        "text": "DL e AI são sinônimos; ML é uma técnica histórica, hoje superada e em desuso."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Essa é a hierarquia clássica reconhecida no syllabus: AI ⊃ ML ⊃ DL.",
+      "b": "Incorreta. AI é o conjunto mais amplo, não o subconjunto.",
+      "c": "Incorreta. AI, ML e DL têm definições técnicas distintas, não são equivalentes.",
+      "d": "Incorreta. ML continua amplamente utilizado em produção; DL é um subconjunto específico baseado em redes neurais profundas."
+    }
+  },
+  {
+    "id": "AI-B-4",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "4",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "AI-1.1.4",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual das alternativas a seguir descreve melhor uma característica essencial da AI generativa?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ela apenas classifica entradas existentes em rótulos preestabelecidos, sem produzir conteúdo novo."
+      },
+      {
+        "letter": "b",
+        "text": "Ela aprende a estrutura estatística de um conjunto de dados e produz amostras inéditas plausíveis a partir dele, como textos, imagens ou áudios."
+      },
+      {
+        "letter": "c",
+        "text": "Ela exige que cada saída seja explicitamente cadastrada em uma base de regras antes da execução."
+      },
+      {
+        "letter": "d",
+        "text": "Ela é determinística por construção: para a mesma entrada gera sempre a mesma saída."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Essa é a função de modelos discriminativos (ex.: classificadores), não geradores.",
+      "b": "Correta. Modelos generativos aprendem distribuições e geram conteúdo novo a partir delas; é a definição central de AI generativa.",
+      "c": "Incorreta. A AI generativa não trabalha por regras pré-cadastradas; ela amostra a partir de distribuições aprendidas.",
+      "d": "Incorreta. Sem semente fixa, modelos generativos tendem a produzir saídas distintas para a mesma entrada."
+    }
+  },
+  {
+    "id": "AI-B-5",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "5",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "AI-1.1.5",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Uma startup precisa decidir o hardware para treinar redes neurais profundas com grandes volumes de imagens. Qual recomendação está mais alinhada às boas práticas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Usar exclusivamente CPUs de propósito geral, pois oferecem o melhor desempenho para multiplicação massiva de matrizes."
+      },
+      {
+        "letter": "b",
+        "text": "Usar GPUs ou aceleradores especializados (TPU/ASIC), pois suportam o paralelismo massivo necessário para treinar redes profundas com eficiência."
+      },
+      {
+        "letter": "c",
+        "text": "Treinar exclusivamente em microcontroladores embarcados; eles substituem todas as outras categorias de hardware para ML."
+      },
+      {
+        "letter": "d",
+        "text": "Evitar qualquer aceleração de hardware e fazer o treinamento direto em discos SSD."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. CPUs têm baixo paralelismo em comparação a GPUs/TPUs — tempo de treinamento explode em redes profundas.",
+      "b": "Correta. GPUs e ASICs/TPUs são projetados para operações tensoriais em paralelo, viabilizando o treinamento de redes profundas.",
+      "c": "Incorreta. Microcontroladores se aplicam à inferência embarcada (edge), não ao treinamento massivo.",
+      "d": "Incorreta. Discos SSD são armazenamento; não realizam computação."
+    }
+  },
+  {
+    "id": "AI-B-6",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "6",
+    "isAppendix": false,
+    "chapter": 1,
+    "lo": "AI-1.1.6",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Sobre desenvolvimento e hospedagem de modelos de AI em ambientes de nuvem, qual afirmação é correta?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "A hospedagem em nuvem pública é sempre a opção mais segura, dispensando qualquer controle adicional do contratante."
+      },
+      {
+        "letter": "b",
+        "text": "Uma abordagem híbrida pode combinar processamento local de dados sensíveis com infraestrutura em nuvem para treinamento e inferência em larga escala, equilibrando custo, escalabilidade e proteção de dados."
+      },
+      {
+        "letter": "c",
+        "text": "Modelos hospedados em nuvem privada não precisam ser monitorados após o deploy."
+      },
+      {
+        "letter": "d",
+        "text": "Nuvem pública garante automaticamente conformidade com qualquer regulamentação local sobre proteção de dados."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. A segurança em nuvem é um modelo de responsabilidade compartilhada; o contratante mantém deveres relevantes.",
+      "b": "Correta. Abordagens híbridas são citadas no syllabus como forma de equilibrar requisitos de segurança, custo e escalabilidade.",
+      "c": "Incorreta. Modelos em qualquer ambiente precisam de monitoramento contínuo (drift, performance, segurança).",
+      "d": "Incorreta. Conformidade regulatória depende da arquitetura adotada, jurisdições e contratos — não é automática."
+    }
+  },
+  {
+    "id": "AI-B-7",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "7",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "AI-2.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Considere as seguintes características de qualidade adicionais para sistemas baseados em AI definidas na ISO/IEC 25059:\n\n   1. Robustez da AI\n   2. Adaptabilidade funcional\n   3. Intervenibilidade\n   4. Transparência\n\nE os exemplos a seguir:\n\n   A. O sistema permite que um operador humano interrompa imediatamente uma decisão automatizada considerada perigosa\n   B. O modelo de previsão mantém desempenho aceitável quando os dados de entrada apresentam pequenas variações ou ruído\n   C. O sistema disponibiliza informações suficientes sobre como uma decisão foi tomada, em linguagem acessível ao usuário\n   D. O sistema é capaz de continuar aprendendo após o deploy quando novos dados ficam disponíveis\n\nQual associação corresponde corretamente às características com os exemplos?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1A — 2B — 3C — 4D"
+      },
+      {
+        "letter": "b",
+        "text": "1B — 2D — 3A — 4C"
+      },
+      {
+        "letter": "c",
+        "text": "1D — 2C — 3B — 4A"
+      },
+      {
+        "letter": "d",
+        "text": "1C — 2A — 3D — 4B"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Robustez refere-se à manutenção do desempenho sob perturbações (item B), não à intervenção humana.",
+      "b": "Correta. Robustez ↔ tolerância a ruído; adaptabilidade ↔ aprendizado contínuo; intervenibilidade ↔ interrupção humana; transparência ↔ explicabilidade.",
+      "c": "Incorreta. As atribuições estão trocadas em relação às definições da ISO/IEC 25059.",
+      "d": "Incorreta. Transparência não é o exemplo de aprendizado contínuo; aprendizado é adaptabilidade."
+    }
+  },
+  {
+    "id": "AI-B-8",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "8",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "AI-2.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual afirmação descreve melhor um desafio de segurança específico em sistemas baseados em AI quando comparado a sistemas convencionais?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Sistemas AI são imunes a entradas adversariais porque seus modelos são treinados com dados reais."
+      },
+      {
+        "letter": "b",
+        "text": "Sistemas AI podem ser enganados por entradas adversariais cuidadosamente perturbadas, exigindo medidas de mitigação como detecção de outliers e treinamento adversarial."
+      },
+      {
+        "letter": "c",
+        "text": "Sistemas AI não requerem testes de segurança após o deploy, pois o modelo já generaliza para qualquer cenário."
+      },
+      {
+        "letter": "d",
+        "text": "Sistemas AI utilizam exclusivamente criptografia simétrica, eliminando completamente os riscos de segurança."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Ataques adversariais são um dos principais desafios de segurança em sistemas AI.",
+      "b": "Correta. Pequenas perturbações imperceptíveis podem mudar a classificação do modelo; mitigação é tema central no syllabus.",
+      "c": "Incorreta. Testes contínuos pós-deploy são essenciais em sistemas AI.",
+      "d": "Incorreta. Criptografia trata confidencialidade, não as vulnerabilidades estruturais do modelo."
+    }
+  },
+  {
+    "id": "AI-B-9",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "9",
+    "isAppendix": false,
+    "chapter": 2,
+    "lo": "AI-2.2.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Ao definir critérios de aceite para um sistema baseado em AI usado em diagnóstico médico, qual abordagem está mais alinhada às boas práticas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Exigir 100% de acurácia, pois trata-se de uma aplicação crítica."
+      },
+      {
+        "letter": "b",
+        "text": "Definir métricas objetivas e limiares mínimos por classe (ex.: sensibilidade ≥ X%, especificidade ≥ Y%), considerando o impacto clínico de falsos positivos e falsos negativos."
+      },
+      {
+        "letter": "c",
+        "text": "Aceitar o modelo com base apenas na opinião subjetiva de um especialista, sem métricas formais."
+      },
+      {
+        "letter": "d",
+        "text": "Usar exclusivamente a acurácia global, mesmo em conjuntos de dados altamente desbalanceados."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. 100% de acurácia é irrealista para classificadores em problemas reais; o syllabus recomenda critérios estatisticamente plausíveis.",
+      "b": "Correta. Critérios objetivos por classe, ligados ao impacto, são a abordagem recomendada.",
+      "c": "Incorreta. Critérios subjetivos sem métricas formais não são auditáveis nem repetíveis.",
+      "d": "Incorreta. Em dados desbalanceados a acurácia mascara falhas em classes minoritárias — recall/precisão por classe são essenciais."
+    }
+  },
+  {
+    "id": "AI-B-10",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "10",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Considere as seguintes formas de ML:\n\n   1. Aprendizado supervisionado\n   2. Aprendizado não supervisionado\n   3. Aprendizado por reforço\n   4. Aprendizado semi-supervisionado\n\nE os exemplos:\n\n   A. Um robô de armazém aprende a movimentar caixas por tentativa e erro, maximizando recompensas\n   B. Um banco agrupa clientes em segmentos de comportamento sem rótulos prévios\n   C. Um modelo é treinado com 10 mil imagens rotuladas e 90 mil sem rótulo para classificar tumores\n   D. Um classificador de e-mail é treinado com mensagens já rotuladas como spam/não-spam\n\nQual opção associa corretamente cada forma de ML ao seu exemplo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1D — 2B — 3A — 4C"
+      },
+      {
+        "letter": "b",
+        "text": "1A — 2C — 3D — 4B"
+      },
+      {
+        "letter": "c",
+        "text": "1B — 2D — 3A — 4C"
+      },
+      {
+        "letter": "d",
+        "text": "1C — 2A — 3B — 4D"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Supervisionado ↔ dados rotulados (D); Não supervisionado ↔ agrupamento sem rótulos (B); Reforço ↔ recompensa por tentativa (A); Semi-supervisionado ↔ pequena fração rotulada (C).",
+      "b": "Incorreta. As associações de supervisionado e reforço estão trocadas.",
+      "c": "Incorreta. Supervisionado não corresponde a agrupamento sem rótulos.",
+      "d": "Incorreta. As associações de não supervisionado e semi-supervisionado estão invertidas."
+    }
+  },
+  {
+    "id": "AI-B-11",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "11",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Considere as seguintes atividades do fluxo de trabalho de ML:\n\n   1. Coletar e preparar dados\n   2. Treinar o modelo\n   3. Avaliar o modelo\n   4. Implantar o modelo\n\nE as descrições:\n\n   A. Disponibilizar o modelo treinado para uso por aplicações em produção\n   B. Calcular métricas de performance utilizando um conjunto independente de teste\n   C. Aplicar o algoritmo escolhido sobre os dados de treinamento para ajustar parâmetros\n   D. Reunir, limpar e dividir os dados em conjuntos de treinamento, validação e teste\n\nQual associação corresponde corretamente?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "1A — 2B — 3C — 4D"
+      },
+      {
+        "letter": "b",
+        "text": "1D — 2C — 3B — 4A"
+      },
+      {
+        "letter": "c",
+        "text": "1B — 2D — 3A — 4C"
+      },
+      {
+        "letter": "d",
+        "text": "1C — 2A — 3D — 4B"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Coleta não corresponde à implantação, e treinamento não corresponde à avaliação.",
+      "b": "Correta. Coleta/preparação ↔ D; Treinamento ↔ C; Avaliação ↔ B; Implantação ↔ A.",
+      "c": "Incorreta. Os papéis de cada etapa estão trocados.",
+      "d": "Incorreta. Treinamento não é avaliação; as associações estão invertidas."
+    }
+  },
+  {
+    "id": "AI-B-12",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "12",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.1.4",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual afirmação sobre Retrieval-Augmented Generation (RAG) e modelos pré-treinados está correta?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "RAG elimina a necessidade de retreinamento ao combinar um modelo pré-treinado com uma base externa de conhecimento recuperada em tempo de consulta."
+      },
+      {
+        "letter": "b",
+        "text": "RAG substitui completamente o ajuste fino e impede qualquer especialização adicional do modelo."
+      },
+      {
+        "letter": "c",
+        "text": "Modelos pré-treinados sempre devem ser treinados do zero antes de qualquer uso comercial."
+      },
+      {
+        "letter": "d",
+        "text": "Ajuste fino (fine-tuning) é incompatível com modelos pré-treinados grandes."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. RAG complementa o conhecimento do modelo recuperando documentos relevantes no momento da consulta, sem alterar os pesos do modelo.",
+      "b": "Incorreta. RAG e fine-tuning são técnicas complementares, não excludentes.",
+      "c": "Incorreta. O propósito de modelos pré-treinados é justamente evitar o custo do treino do zero.",
+      "d": "Incorreta. O fine-tuning é uma das principais formas de adaptar modelos pré-treinados a domínios específicos."
+    }
+  },
+  {
+    "id": "AI-B-13",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "13",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.2.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual atividade representa melhor a preparação de dados para um modelo de ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Implantar o modelo em produção e monitorar sua latência."
+      },
+      {
+        "letter": "b",
+        "text": "Coletar dados de diferentes fontes, tratar valores faltantes/ruidosos, normalizar variáveis e dividir o conjunto em treino, validação e teste."
+      },
+      {
+        "letter": "c",
+        "text": "Comparar a acurácia do modelo final com a de outros modelos de referência (benchmark)."
+      },
+      {
+        "letter": "d",
+        "text": "Selecionar a função de ativação da camada de saída de uma rede neural."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Implantação e monitoramento são etapas posteriores no fluxo de ML.",
+      "b": "Correta. Coleta, limpeza, transformação e divisão dos dados compõem a preparação de dados.",
+      "c": "Incorreta. Benchmark é parte da avaliação, não da preparação de dados.",
+      "d": "Incorreta. Definir função de ativação é parte do design do modelo, não da preparação de dados."
+    }
+  },
+  {
+    "id": "AI-B-14",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "14",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.2.3",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual afirmação descreve melhor as funções dos conjuntos de treinamento, validação e teste em ML supervisionado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Treinamento ajusta os pesos do modelo; validação é usada para selecionar/ajustar hiperparâmetros sem contaminar o teste; teste mede o desempenho final em dados nunca vistos durante a calibração."
+      },
+      {
+        "letter": "b",
+        "text": "Os três conjuntos são usados juntos para treinar o modelo final, depois descartados antes da avaliação."
+      },
+      {
+        "letter": "c",
+        "text": "O conjunto de teste é utilizado para ajustar hiperparâmetros e pesos; treinamento e validação medem o desempenho."
+      },
+      {
+        "letter": "d",
+        "text": "Validação e teste são sinônimos; basta usar um deles e ignorar o outro."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Essa é a definição canônica dos três conjuntos no fluxo de ML supervisionado.",
+      "b": "Incorreta. Os conjuntos têm papéis distintos e não podem ser misturados.",
+      "c": "Incorreta. Usar o teste para ajustar hiperparâmetros contamina a avaliação (data leakage).",
+      "d": "Incorreta. Validação e teste têm propósitos diferentes (seleção vs avaliação final)."
+    }
+  },
+  {
+    "id": "AI-B-15",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "15",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.3.1",
+    "cognitive": "K3",
+    "points": 2,
+    "selectCount": 1,
+    "stem": "Considere a seguinte matriz de confusão para um classificador binário:\n\n  Confusion Matrix   Predicted Positive   Predicted Negative\n  Actual Positive    180                  20\n  Actual Negative    30                   270\n\nQual fórmula representa corretamente o cálculo da revocação (recall) do classificador?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "(180/300) * 100"
+      },
+      {
+        "letter": "b",
+        "text": "(180/200) * 100"
+      },
+      {
+        "letter": "c",
+        "text": "(180/210) * 100"
+      },
+      {
+        "letter": "d",
+        "text": "(270/300) * 100"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. 300 é o total de negativos reais; não é o denominador do recall (que considera positivos reais).",
+      "b": "Correta. Recall = TP / (TP + FN) = 180 / (180 + 20) = 180/200 = 90%.",
+      "c": "Incorreta. 210 = TP + FP é o denominador da precisão, não do recall.",
+      "d": "Incorreta. Essa é a especificidade (TN / (TN + FP)), não o recall."
+    }
+  },
+  {
+    "id": "AI-B-16",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "16",
+    "isAppendix": false,
+    "chapter": 3,
+    "lo": "AI-3.4.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Durante o treinamento de uma rede neural profunda, a saída é calculada e a função de perda mede o erro. Qual é a etapa seguinte do processo de aprendizado?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Realizar a retropropagação do erro e atualizar pesos e biases para reduzir a perda na próxima iteração."
+      },
+      {
+        "letter": "b",
+        "text": "Substituir a função de perda por outra arbitrariamente diferente."
+      },
+      {
+        "letter": "c",
+        "text": "Reinicializar todas as camadas com pesos aleatórios para começar do zero."
+      },
+      {
+        "letter": "d",
+        "text": "Trocar permanentemente a função de ativação de todas as camadas para uma função linear."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Backpropagation propaga gradientes da perda; um otimizador (ex.: SGD/Adam) atualiza os pesos para reduzir a perda.",
+      "b": "Incorreta. A função de perda não é trocada a cada iteração — ela define o objetivo de otimização.",
+      "c": "Incorreta. Reinicializar perderia o aprendizado acumulado.",
+      "d": "Incorreta. Tornar todas as ativações lineares colapsaria a rede em uma única transformação linear."
+    }
+  },
+  {
+    "id": "AI-B-17",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "17",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Considere os exemplos de sistemas baseados em AI:\n\n   i. Um filtro antispam que utiliza um modelo congelado, atualizado apenas em releases programadas\n   ii. Um sistema de recomendação que aprende continuamente com as interações do usuário\n   iii. Um classificador de fraudes cujo modelo é re-treinado mensalmente em batch\n   iv. Um assistente de voz que ajusta seu modelo a cada nova consulta\n\nQuais opções descrevem sistemas bloqueados (não adaptativos pós-deploy)?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "i e iii"
+      },
+      {
+        "letter": "b",
+        "text": "ii e iv"
+      },
+      {
+        "letter": "c",
+        "text": "i e iv"
+      },
+      {
+        "letter": "d",
+        "text": "iii e ii"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Sistemas bloqueados têm o modelo congelado entre releases (i, iii). ii e iv aprendem online — são adaptativos.",
+      "b": "Incorreta. ii e iv são adaptativos, não bloqueados.",
+      "c": "Incorreta. iv é adaptativo; não é bloqueado.",
+      "d": "Incorreta. ii é adaptativo; não é bloqueado."
+    }
+  },
+  {
+    "id": "AI-B-18",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "18",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Por que abordagens estatísticas são necessárias ao testar sistemas baseados em AI?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Porque o comportamento desses sistemas é tipicamente não determinístico e tem distribuição de erros que só é avaliada de forma confiável com amostras grandes e representativas."
+      },
+      {
+        "letter": "b",
+        "text": "Porque um único caso de teste é suficiente para concluir sobre a qualidade global do modelo."
+      },
+      {
+        "letter": "c",
+        "text": "Porque os modelos AI são totalmente determinísticos e só toleram análise estatística."
+      },
+      {
+        "letter": "d",
+        "text": "Porque o syllabus exige sempre o uso de testes manuais em vez de qualquer automação estatística."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Modelos AI exigem amostragem representativa e análise estatística porque o comportamento varia conforme a entrada e a aleatoriedade interna.",
+      "b": "Incorreta. Um único caso não captura a distribuição de comportamento do modelo.",
+      "c": "Incorreta. Os modelos são em geral probabilísticos, não determinísticos.",
+      "d": "Incorreta. O syllabus não proíbe automação; aliás, recomenda apoio de ferramentas estatísticas."
+    }
+  },
+  {
+    "id": "AI-B-19",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "19",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.1.3",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Por que definir um oráculo de teste é considerado um desafio em sistemas baseados em AI?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Porque, para muitas tarefas (ex.: geração de texto, sumarização, detecção de anomalias), não existe uma única \"resposta correta\" objetiva; o que se considera \"aceitável\" pode variar conforme contexto, juízo humano ou métricas indiretas."
+      },
+      {
+        "letter": "b",
+        "text": "Porque oráculos podem ser sempre obtidos copiando-se as respostas do próprio modelo."
+      },
+      {
+        "letter": "c",
+        "text": "Porque qualquer função matemática pode servir como oráculo, sem revisão por especialistas."
+      },
+      {
+        "letter": "d",
+        "text": "Porque o oráculo de teste é desnecessário em sistemas AI."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Em muitas tarefas de AI o conceito de \"resposta certa\" é fuzzy ou subjetivo, exigindo proxies, juízo de especialistas ou métricas estatísticas.",
+      "b": "Incorreta. Usar a saída do próprio modelo como oráculo é circular e inválido.",
+      "c": "Incorreta. Sem revisão por especialistas, o oráculo perde validade.",
+      "d": "Incorreta. Sem oráculo não há como avaliar a corretude do sistema."
+    }
+  },
+  {
+    "id": "AI-B-20",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "20",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.2.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual prática é mais adequada para testar um LLM generativo destinado a atendimento ao cliente?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Confiar apenas em métricas automáticas como BLEU/ROUGE para todas as respostas."
+      },
+      {
+        "letter": "b",
+        "text": "Combinar métricas automáticas com avaliação humana, casos de borda, prompts adversariais e verificação de aderência a políticas e tom da marca."
+      },
+      {
+        "letter": "c",
+        "text": "Testar exclusivamente prompts \"felizes\" definidos no caso de uso principal."
+      },
+      {
+        "letter": "d",
+        "text": "Avaliar o modelo somente após o lançamento em produção, sem testes pré-deploy."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Métricas automáticas isoladas não capturam adequação tonal, factualidade e segurança.",
+      "b": "Correta. Avaliação multifacetada é o recomendado para LLMs em atendimento.",
+      "c": "Incorreta. Casos de borda e adversariais revelam grande parte dos riscos reais.",
+      "d": "Incorreta. Testes pré-deploy são essenciais para minimizar incidentes em produção."
+    }
+  },
+  {
+    "id": "AI-B-21",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "21",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.2.2",
+    "cognitive": "K3",
+    "points": 2,
+    "selectCount": 1,
+    "stem": "Uma equipe está conduzindo uma sessão de red teaming sobre um LLM corporativo. Quais práticas a seguir são mais adequadas para essa atividade?\n\n   i. Tentar induzir o modelo a quebrar suas políticas de uso por meio de prompts adversariais\n   ii. Documentar tipos de falha, mitigá-las e validar as correções com um novo round de prompts\n   iii. Validar respostas apenas com base na opinião subjetiva de um único avaliador, sem registro\n   iv. Compartilhar publicamente as vulnerabilidades exploradas antes de qualquer mitigação\n\nQual opção contém as melhores práticas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "i e ii"
+      },
+      {
+        "letter": "b",
+        "text": "ii e iv"
+      },
+      {
+        "letter": "c",
+        "text": "i e iv"
+      },
+      {
+        "letter": "d",
+        "text": "iii e ii"
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Red teaming envolve provocar falhas (i) e fechar o ciclo com correção e revalidação (ii).",
+      "b": "Incorreta. Divulgar vulnerabilidades antes da mitigação cria risco desnecessário.",
+      "c": "Incorreta. Mesmo motivo — iv é inadequado.",
+      "d": "Incorreta. Avaliações sem registro nem revisão por pares são frágeis e não auditáveis."
+    }
+  },
+  {
+    "id": "AI-B-22",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "22",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.3.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em sistemas de ML, qual conjunto de níveis de teste é mais adequado para garantir cobertura adequada antes da implantação?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Apenas teste de aceitação de usuário, dispensando outros níveis."
+      },
+      {
+        "letter": "b",
+        "text": "Testes de dados de entrada, testes do modelo, testes de integração com o sistema hospedeiro e testes de aceitação em condições próximas às de produção."
+      },
+      {
+        "letter": "c",
+        "text": "Apenas teste unitário do código que carrega o modelo."
+      },
+      {
+        "letter": "d",
+        "text": "Somente testes de stress de hardware."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Aceitação isolada não captura defeitos de dados, do modelo nem da integração.",
+      "b": "Correta. O syllabus recomenda combinar níveis: dados, modelo, integração e aceitação.",
+      "c": "Incorreta. Testes unitários do carregador são insuficientes para um sistema AI.",
+      "d": "Incorreta. Stress de hardware não cobre qualidade do modelo nem dos dados."
+    }
+  },
+  {
+    "id": "AI-B-23",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "23",
+    "isAppendix": false,
+    "chapter": 4,
+    "lo": "AI-4.3.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em testes baseados em risco de um sistema AI, qual é o critério principal para priorizar casos de teste?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Combinação do impacto da falha (ex.: segurança, financeiro, reputacional) com a probabilidade de o defeito ocorrer (ex.: cobertura de dados, robustez)."
+      },
+      {
+        "letter": "b",
+        "text": "Apenas o tempo de execução do caso de teste."
+      },
+      {
+        "letter": "c",
+        "text": "Ordem alfabética dos cenários documentados."
+      },
+      {
+        "letter": "d",
+        "text": "A quantidade de linhas de código alteradas, ignorando o impacto da falha."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Risco = impacto × probabilidade é a base da priorização baseada em risco.",
+      "b": "Incorreta. Tempo de execução não reflete risco.",
+      "c": "Incorreta. Ordem alfabética não tem relação com risco.",
+      "d": "Incorreta. Volume de código alterado é apenas um indicador, e ignora impacto."
+    }
+  },
+  {
+    "id": "AI-B-24",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "24",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "AI-5.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual dos seguintes é um risco típico associado aos dados de entrada usados para treinar um modelo de ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Dados ruidosos, incompletos ou enviesados que levam o modelo a aprender padrões espúrios e a apresentar baixo desempenho em produção."
+      },
+      {
+        "letter": "b",
+        "text": "Excesso de cores em gráficos do dashboard usado pelos cientistas de dados."
+      },
+      {
+        "letter": "c",
+        "text": "Tamanho da fonte usada nos scripts de treinamento."
+      },
+      {
+        "letter": "d",
+        "text": "Cor de fundo do notebook Jupyter."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Qualidade e representatividade dos dados é o principal vetor de risco em ML.",
+      "b": "Incorreta. Estilo visual do dashboard não afeta o aprendizado do modelo.",
+      "c": "Incorreta. Fonte do código não influencia a saída do modelo.",
+      "d": "Incorreta. Tema do IDE é irrelevante para a qualidade do modelo."
+    }
+  },
+  {
+    "id": "AI-B-25",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "25",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "AI-5.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual abordagem é mais adequada para detectar e mitigar viés em um modelo de concessão de crédito?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Ignorar variáveis demográficas e assumir que o modelo é justo por construção."
+      },
+      {
+        "letter": "b",
+        "text": "Auditar o desempenho por subgrupos (gênero, raça, idade), aplicar métricas de equidade (ex.: paridade demográfica, igualdade de oportunidade) e ajustar dados/modelo quando houver discrepâncias relevantes."
+      },
+      {
+        "letter": "c",
+        "text": "Aceitar qualquer disparidade entre subgrupos, desde que a acurácia global seja alta."
+      },
+      {
+        "letter": "d",
+        "text": "Eliminar todos os dados históricos e treinar o modelo apenas com dados sintéticos aleatórios."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. \"Cegueira\" a atributos sensíveis não garante ausência de viés — eles podem estar correlacionados a outras variáveis.",
+      "b": "Correta. Auditoria por subgrupos com métricas de equidade é o padrão recomendado.",
+      "c": "Incorreta. Acurácia global pode mascarar discriminação severa em subgrupos.",
+      "d": "Incorreta. Dados sintéticos puramente aleatórios não refletem o problema real."
+    }
+  },
+  {
+    "id": "AI-B-26",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "26",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "AI-5.1.3",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual é o principal objetivo de testar o pipeline de dados em um sistema de ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Garantir que cada etapa (ingestão, limpeza, transformação, divisão) produza dados corretos, consistentes e rastreáveis ao longo do tempo, evitando defeitos silenciosos que comprometem o modelo."
+      },
+      {
+        "letter": "b",
+        "text": "Medir apenas a latência da inferência em produção."
+      },
+      {
+        "letter": "c",
+        "text": "Verificar a aparência visual dos gráficos exploratórios."
+      },
+      {
+        "letter": "d",
+        "text": "Substituir a necessidade de testar o modelo."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Defeitos no pipeline propagam para o modelo; testá-lo end-to-end é essencial.",
+      "b": "Incorreta. Latência é apenas uma das métricas, não o objetivo central.",
+      "c": "Incorreta. Estética de gráficos não é o foco do teste de pipeline.",
+      "d": "Incorreta. Testes de pipeline complementam, não substituem, os testes do modelo."
+    }
+  },
+  {
+    "id": "AI-B-27",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "27",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "AI-5.1.4",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Por que a representatividade dos dados é crítica em ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Porque um conjunto de treinamento que não reflete a distribuição real de produção leva a degradação de desempenho e falhas em subpopulações sub-representadas."
+      },
+      {
+        "letter": "b",
+        "text": "Porque dados representativos eliminam totalmente a necessidade de validação."
+      },
+      {
+        "letter": "c",
+        "text": "Porque modelos AI não dependem dos dados, apenas dos hiperparâmetros."
+      },
+      {
+        "letter": "d",
+        "text": "Porque a representatividade não tem efeito sobre o desempenho do modelo."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Falta de representatividade é uma das causas principais de drift e baixa performance em produção.",
+      "b": "Incorreta. Validação continua necessária mesmo com bons dados.",
+      "c": "Incorreta. Dados são a matéria-prima dos modelos AI.",
+      "d": "Incorreta. Representatividade afeta diretamente generalização e equidade."
+    }
+  },
+  {
+    "id": "AI-B-28",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "28",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "AI-5.1.5",
+    "cognitive": "K3",
+    "points": 2,
+    "selectCount": 1,
+    "stem": "Considere um conjunto de dados de clientes com a restrição: o salário mensal de cada registro deve estar entre R$ 1.000 e R$ 100.000. Foi observado que 4% dos registros estão com salário R$ 0 e 1% com salário R$ 999.999,99. Qual é a ação mais adequada para preservar a integridade do conjunto de dados antes do treinamento?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Manter os registros como estão, pois 5% é uma fração pequena."
+      },
+      {
+        "letter": "b",
+        "text": "Substituir todos os valores fora do intervalo pela média global de salários, sem registrar a alteração."
+      },
+      {
+        "letter": "c",
+        "text": "Identificar os registros fora da restrição, investigar a causa raiz (entrada incorreta, valor sentinela, outlier real) e tratar de forma rastreável (remover, imputar ou marcar) documentando a regra aplicada."
+      },
+      {
+        "letter": "d",
+        "text": "Descartar imediatamente o conjunto de dados completo, sem análise."
+      }
+    ],
+    "correct": [
+      "c"
+    ],
+    "explanations": {
+      "a": "Incorreta. Manter dados violando restrições enviesa o modelo e mascara defeitos do pipeline.",
+      "b": "Incorreta. Imputar pela média sem registro destrói a rastreabilidade e introduz viés silencioso.",
+      "c": "Correta. Tratar violações de restrição com investigação de causa e ação rastreável é a prática recomendada.",
+      "d": "Incorreta. Descartar tudo é desproporcional; a maior parte dos dados pode ser válida."
+    }
+  },
+  {
+    "id": "AI-B-29",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "29",
+    "isAppendix": false,
+    "chapter": 5,
+    "lo": "AI-5.1.6",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em label correctness testing (teste de correção de rótulos), qual é o objetivo principal?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Verificar se os rótulos atribuídos aos exemplos refletem corretamente a classe ou valor verdadeiro, evitando que o modelo aprenda a partir de rótulos errados."
+      },
+      {
+        "letter": "b",
+        "text": "Medir a latência do servidor de inferência."
+      },
+      {
+        "letter": "c",
+        "text": "Calcular a média móvel dos pesos das camadas internas."
+      },
+      {
+        "letter": "d",
+        "text": "Renomear arquivos do conjunto de dados em ordem alfabética."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Rótulos incorretos contaminam o aprendizado e limitam o teto de desempenho do modelo.",
+      "b": "Incorreta. Latência é uma métrica de runtime, não de correção de rótulos.",
+      "c": "Incorreta. Pesos internos não são rótulos.",
+      "d": "Incorreta. Nomes de arquivos não afetam rótulos."
+    }
+  },
+  {
+    "id": "AI-B-30",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "30",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual é o objetivo principal do teste de modelo em sistemas baseados em ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Avaliar o comportamento do modelo em condições controladas, identificar riscos específicos (viés, drift, ataques adversariais, overfitting) e mitigá-los antes da implantação."
+      },
+      {
+        "letter": "b",
+        "text": "Verificar apenas a versão do framework de ML utilizado."
+      },
+      {
+        "letter": "c",
+        "text": "Substituir o modelo treinado por outro escolhido aleatoriamente."
+      },
+      {
+        "letter": "d",
+        "text": "Eliminar a necessidade de qualquer outro tipo de teste no sistema."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. O teste de modelo busca evidências de robustez, equidade e generalização antes do deploy.",
+      "b": "Incorreta. Verificar a versão do framework é apenas configuração, não teste de modelo.",
+      "c": "Incorreta. Substituir o modelo aleatoriamente não é teste.",
+      "d": "Incorreta. Testes de modelo complementam outros níveis (dados, integração)."
+    }
+  },
+  {
+    "id": "AI-B-31",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "31",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual prática descreve melhor a documentação e a revisão de um modelo de ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Manter \"model cards\" ou fichas equivalentes que descrevam dados de treinamento, métricas, limitações e usos previstos, submetidas a revisão por pares antes da implantação."
+      },
+      {
+        "letter": "b",
+        "text": "Não documentar nada para manter sigilo total sobre o modelo."
+      },
+      {
+        "letter": "c",
+        "text": "Compartilhar apenas a versão binária do modelo, sem qualquer metadado."
+      },
+      {
+        "letter": "d",
+        "text": "Considerar o código de treinamento como a única documentação necessária."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Documentação estruturada (ex.: model cards) e revisão por pares são as boas práticas reconhecidas pelo syllabus.",
+      "b": "Incorreta. A falta de documentação compromete auditoria, manutenção e segurança.",
+      "c": "Incorreta. Sem metadados, o modelo se torna uma caixa-preta indecifrável.",
+      "d": "Incorreta. Código sozinho não explica decisões de dados, métricas ou limitações."
+    }
+  },
+  {
+    "id": "AI-B-32",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "32",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.3",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em testes de performance funcional de modelos probabilísticos, qual abordagem é mais adequada?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Estimar intervalos de confiança para as métricas (acurácia, F1, etc.) a partir de várias execuções/amostras, em vez de reportar apenas um único valor pontual."
+      },
+      {
+        "letter": "b",
+        "text": "Reportar apenas a métrica observada em uma única execução, sem qualquer indicação de incerteza."
+      },
+      {
+        "letter": "c",
+        "text": "Garantir que a métrica observada seja exatamente igual entre diferentes execuções."
+      },
+      {
+        "letter": "d",
+        "text": "Substituir métricas estatísticas por opiniões subjetivas."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Reportar incerteza (ex.: intervalos de confiança) é essencial em modelos probabilísticos.",
+      "b": "Incorreta. Um único ponto sem incerteza pode levar a conclusões equivocadas.",
+      "c": "Incorreta. Em modelos probabilísticos é esperada alguma variação entre execuções.",
+      "d": "Incorreta. Opiniões subjetivas não substituem evidência estatística."
+    }
+  },
+  {
+    "id": "AI-B-33",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "33",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.4",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em um teste contraditório (adversarial test), qual é o procedimento típico?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Gerar entradas levemente perturbadas, projetadas para enganar o modelo, e medir quanto sua decisão muda; o objetivo é avaliar e melhorar a robustez do modelo."
+      },
+      {
+        "letter": "b",
+        "text": "Treinar o modelo sem nenhuma rotulagem e esperar que ele aprenda sozinho."
+      },
+      {
+        "letter": "c",
+        "text": "Trocar o algoritmo de otimização por outro arbitrário."
+      },
+      {
+        "letter": "d",
+        "text": "Reescrever o pipeline em outra linguagem de programação."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Testes contraditórios geram entradas adversariais para avaliar robustez e identificar pontos fracos.",
+      "b": "Incorreta. Essa descrição corresponde a aprendizado não supervisionado, não a teste contraditório.",
+      "c": "Incorreta. Trocar otimizador é uma alteração de configuração de treinamento.",
+      "d": "Incorreta. Reescrever em outra linguagem não testa robustez."
+    }
+  },
+  {
+    "id": "AI-B-34",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "34",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.5",
+    "cognitive": "K3",
+    "points": 2,
+    "selectCount": 1,
+    "stem": "Um modelo de OCR foi testado em uma fonte específica (\"Arial\") com acurácia de 96%. A equipe quer aplicar testes metamórficos para verificar sua robustez. Considere as relações metamórficas:\n\n   i. Mesmo texto em fonte \"Calibri\" (mesmo tamanho)\n   ii. Mesmo texto rotacionado em 90°\n   iii. Mesmo texto com leve aumento de brilho (+5%)\n   iv. Mesmo texto traduzido para outro idioma\n\nQuais opções são relações metamórficas adequadas para verificar invariância esperada do modelo?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "i e iv"
+      },
+      {
+        "letter": "b",
+        "text": "i e iii"
+      },
+      {
+        "letter": "c",
+        "text": "ii e iv"
+      },
+      {
+        "letter": "d",
+        "text": "i, ii e iii"
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. \"Tradução para outro idioma\" não preserva o texto-alvo; não é uma relação metamórfica válida para OCR.",
+      "b": "Correta. Trocar a fonte (i) e ajustar brilho (iii) devem preservar o texto reconhecido — boas relações metamórficas.",
+      "c": "Incorreta. Rotação de 90° muda o problema de orientação; tradução não preserva o texto.",
+      "d": "Incorreta. Rotação de 90° não é uma relação simples de invariância se o modelo não foi treinado para isso."
+    }
+  },
+  {
+    "id": "AI-B-35",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "35",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.7",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "O que descreve melhor o teste de desvio (drift) em ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Monitorar continuamente diferenças entre a distribuição dos dados de produção e os de treinamento, e/ou queda das métricas, sinalizando a necessidade de re-treino."
+      },
+      {
+        "letter": "b",
+        "text": "Alterar a arquitetura do modelo a cada deploy."
+      },
+      {
+        "letter": "c",
+        "text": "Ignorar mudanças no comportamento do sistema após o deploy."
+      },
+      {
+        "letter": "d",
+        "text": "Treinar novamente o modelo a cada requisição."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Drift é a mudança de distribuição/qualidade ao longo do tempo; teste de drift detecta esse desvio.",
+      "b": "Incorreta. Alterar arquitetura é decisão de design, não detecção de drift.",
+      "c": "Incorreta. Ignorar mudanças contradiz o propósito do teste de drift.",
+      "d": "Incorreta. Retreinar a cada requisição é inviável e não detecta drift."
+    }
+  },
+  {
+    "id": "AI-B-36",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "36",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.8",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual sinal sugere que um modelo está em overfitting?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Acurácia muito alta no conjunto de treinamento e queda significativa no conjunto de validação/teste."
+      },
+      {
+        "letter": "b",
+        "text": "Acurácia igualmente baixa em treinamento, validação e teste."
+      },
+      {
+        "letter": "c",
+        "text": "Acurácia maior no conjunto de validação do que no de treinamento, sem nenhuma explicação."
+      },
+      {
+        "letter": "d",
+        "text": "Acurácia perfeita em todos os conjuntos, inclusive em dados nunca vistos."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Overfitting se caracteriza por aprender ruído do treino, com gap grande em validação/teste.",
+      "b": "Incorreta. Esse cenário é underfitting (modelo não aprendeu o suficiente).",
+      "c": "Incorreta. Esse sinal isolado costuma indicar vazamento de dados ou ruído amostral, não overfitting.",
+      "d": "Incorreta. Acurácia perfeita em dados nunca vistos é praticamente impossível em problemas reais; pode indicar contaminação."
+    }
+  },
+  {
+    "id": "AI-B-37",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "37",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.9",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Em um teste A/B entre duas versões de um modelo de recomendação, qual decisão é a mais alinhada às boas práticas?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Decidir pela vitória da versão A após uma hora, com 0,5% de diferença e poucas amostras."
+      },
+      {
+        "letter": "b",
+        "text": "Definir hipótese, métrica principal, tamanho de amostra e duração antes do experimento; e só concluir a partir de significância estatística adequada."
+      },
+      {
+        "letter": "c",
+        "text": "Direcionar 99% do tráfego à versão B sem análise estatística."
+      },
+      {
+        "letter": "d",
+        "text": "Anunciar a versão vencedora antes do início do experimento."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Concluir com amostra insuficiente leva a decisões enviesadas por ruído.",
+      "b": "Correta. Definir métricas, hipóteses e potencial estatístico previamente é a boa prática em A/B.",
+      "c": "Incorreta. Concentrar tráfego sem análise não constitui experimento.",
+      "d": "Incorreta. Decidir o vencedor antes da execução invalida o experimento."
+    }
+  },
+  {
+    "id": "AI-B-38",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "38",
+    "isAppendix": false,
+    "chapter": 6,
+    "lo": "AI-6.1.10",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual é o objetivo do teste back-to-back em ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Comparar as saídas do modelo novo (ou de uma nova versão) com as do modelo de referência sobre as mesmas entradas, sinalizando divergências para análise."
+      },
+      {
+        "letter": "b",
+        "text": "Executar o mesmo modelo duas vezes na mesma entrada e tirar média das saídas."
+      },
+      {
+        "letter": "c",
+        "text": "Encadear modelos diferentes em uma única pipeline."
+      },
+      {
+        "letter": "d",
+        "text": "Eliminar a necessidade de qualquer outro tipo de teste."
+      }
+    ],
+    "correct": [
+      "a"
+    ],
+    "explanations": {
+      "a": "Correta. Back-to-back compara modelo atual vs novo (ou referência) sobre as mesmas entradas para detectar regressões.",
+      "b": "Incorreta. Isso seria uma média de execuções, não teste comparativo.",
+      "c": "Incorreta. Encadear modelos descreve uma pipeline, não o teste.",
+      "d": "Incorreta. Back-to-back é complementar; não substitui os demais testes."
+    }
+  },
+  {
+    "id": "AI-B-39",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "39",
+    "isAppendix": false,
+    "chapter": 7,
+    "lo": "AI-7.1.1",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 2,
+    "stem": "Quais duas situações descrevem riscos típicos durante o desenvolvimento de ML que podem ser mitigados por testes de performance funcional adequados?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Um modelo que apresenta acurácia razoável em validação mas degrada rapidamente em produção, indicando data/concept drift não monitorado."
+      },
+      {
+        "letter": "b",
+        "text": "Um modelo que apresenta latência elevada em hardware antigo, sem variação no comportamento estatístico das saídas."
+      },
+      {
+        "letter": "c",
+        "text": "Um modelo que entrega métrica estatística consistentemente abaixo do alvo definido, mesmo com dados representativos, indicando falha de capacidade do modelo."
+      },
+      {
+        "letter": "d",
+        "text": "Um modelo que utiliza uma biblioteca com versão pinada igual à do ambiente de produção."
+      }
+    ],
+    "correct": [
+      "a",
+      "c"
+    ],
+    "explanations": {
+      "a": "Correta. Degradação rápida em produção é um risco típico de desenvolvimento — mitigado por monitoramento + testes recorrentes.",
+      "b": "Incorreta. Latência em hardware antigo é problema de infraestrutura, não de performance funcional do modelo.",
+      "c": "Correta. Modelo abaixo do alvo evidencia falha de capacidade — alvo de testes de performance funcional.",
+      "d": "Incorreta. Bibliotecas pinadas reduzem risco, não o introduzem."
+    }
+  },
+  {
+    "id": "AI-B-40",
+    "cert": "CTAI",
+    "exam": "B",
+    "number": "40",
+    "isAppendix": false,
+    "chapter": 7,
+    "lo": "AI-7.1.2",
+    "cognitive": "K2",
+    "points": 1,
+    "selectCount": 1,
+    "stem": "Qual prática é mais adequada para a implantação (deployment) de um modelo de ML?",
+    "options": [
+      {
+        "letter": "a",
+        "text": "Subir o modelo diretamente em produção sem testes em ambiente equivalente."
+      },
+      {
+        "letter": "b",
+        "text": "Realizar deploy em estágios (canary, blue/green ou shadow), com monitoramento de métricas (acurácia, latência, drift) e rollback automatizado em caso de regressão."
+      },
+      {
+        "letter": "c",
+        "text": "Implantar o modelo manualmente em cada servidor, sem versionamento."
+      },
+      {
+        "letter": "d",
+        "text": "Considerar concluído o ciclo de testes imediatamente após o deploy, sem monitoramento posterior."
+      }
+    ],
+    "correct": [
+      "b"
+    ],
+    "explanations": {
+      "a": "Incorreta. Deploy sem teste em ambiente equivalente expõe usuários a defeitos óbvios.",
+      "b": "Correta. Deploy progressivo, monitoramento e rollback são práticas recomendadas para mitigar risco.",
+      "c": "Incorreta. Falta de versionamento impede rollback e auditoria.",
+      "d": "Incorreta. O ciclo de vida do modelo continua após o deploy (monitoramento contínuo)."
     }
   }
 ]
