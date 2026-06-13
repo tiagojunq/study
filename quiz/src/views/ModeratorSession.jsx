@@ -121,8 +121,15 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
           : null,
       participants,
       currentAnswers, // public reveals only after `reveal` phase, but
-      // we send a sanitized view for the lobby UI badge ("answered")
-      answeredIds: Object.keys(currentAnswers),
+      // we send a sanitized view for the lobby UI badge ("answered").
+      // Include the moderator as "answered" while they have a draft so
+      // participants see the same lobby status the moderator sees.
+      answeredIds: (() => {
+        const ids = Object.keys(currentAnswers)
+        const hostShown =
+          phase === 'reveal' || hostDraft.length > 0 || ids.includes(HOST_ID)
+        return hostShown && !ids.includes(HOST_ID) ? [...ids, HOST_ID] : ids
+      })(),
       totalQuestions: questions.length,
       chapterTotals,
       startedAt,
@@ -147,7 +154,7 @@ export default function ModeratorSession({ moderatorName, onExit, solo = false }
     if (peerStatus !== 'open') return
     broadcastState()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [phase, currentIndex, participants, currentAnswers, questions, startedAt, chapterTotals])
+  }, [phase, currentIndex, participants, currentAnswers, questions, startedAt, chapterTotals, hostDraft.length])
 
   // --- Client message handler -----------------------------------------
   const handleClientMessage = (connId, msg, conn) => {

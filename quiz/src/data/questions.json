@@ -155,7 +155,7 @@
     "chapter": 1,
     "lo": "FL-1.4.2",
     "selectCount": 1,
-    "stem": "Qual dos seguintes fatores tem uma influência SIGNIFICATIVA na abordagem do teste?\n               i.       O SDLC\n               ii.      O número de defeitos detectados em projetos anteriores\n              iii.      Os riscos identificados do produto\n              iv.       Novos requisitos regulamentares impõem testes caixa-branca formais.\n               v.       Configuração do ambiente de teste",
+    "stem": "Qual dos seguintes fatores tem uma influência significativa na abordagem do teste?\n               i.       O SDLC\n               ii.      O número de defeitos detectados em projetos anteriores\n              iii.      Os riscos identificados do produto\n              iv.       Novos requisitos regulamentares impõem testes caixa-branca formais.\n               v.       Configuração do ambiente de teste",
     "options": [
       {
         "letter": "a",
@@ -192,7 +192,7 @@
     "chapter": 1,
     "lo": "FL-1.4.5",
     "selectCount": 2,
-    "stem": "Quais das DUAS tarefas a seguir pertencem PRINCIPALMENTE a uma função de teste?",
+    "stem": "Quais das duas tarefas a seguir pertencem principalmente a uma função de teste?",
     "options": [
       {
         "letter": "a",
@@ -235,7 +235,7 @@
     "chapter": 1,
     "lo": "FL-1.5.1",
     "selectCount": 1,
-    "stem": "Quais das seguintes habilidades (iv) são as habilidades MAIS importantes de um testador?\n                i.      Ter conhecimento da área\n               ii.      Criando uma visão de produto\n             iii.       Ser um bom jogador de equipe\n              iv.       Planejar e organizar o trabalho da equipe.\n               v.       Pensamento crítico",
+    "stem": "Quais das seguintes habilidades (iv) são as habilidades mais importantes de um testador?\n                i.      Ter conhecimento da área\n               ii.      Criando uma visão de produto\n             iii.       Ser um bom jogador de equipe\n              iv.       Planejar e organizar o trabalho da equipe.\n               v.       Pensamento crítico",
     "options": [
       {
         "letter": "a",
@@ -346,7 +346,7 @@
     "chapter": 2,
     "lo": "FL-2.1.3",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações descreve MELHOR a abordagem de desenvolvimento orientado a\ntestes de aceite (ATDD)?",
+    "stem": "Qual das seguintes afirmações descreve melhor a abordagem de desenvolvimento orientado a\ntestes de aceite (ATDD)?",
     "options": [
       {
         "letter": "a",
@@ -383,7 +383,7 @@
     "chapter": 2,
     "lo": "FL-2.1.5",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções NÃO é um exemplo da abordagem \"shift-left\"?",
+    "stem": "Qual das seguintes opções não é um exemplo da abordagem \"shift-left\"?",
     "options": [
       {
         "letter": "a",
@@ -531,7 +531,7 @@
     "chapter": 3,
     "lo": "FL-3.1.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções NÃO é um benefício dos testes estáticos?",
+    "stem": "Qual das seguintes opções não é um benefício dos testes estáticos?",
     "options": [
       {
         "letter": "a",
@@ -605,7 +605,7 @@
     "chapter": 3,
     "lo": "FL-3.2.4",
     "selectCount": 1,
-    "stem": "As avaliações utilizadas na sua organização possuem os seguintes atributos:\n            •      Existe a função de um escriba.\n            •      O principal objetivo é avaliar a qualidade.\n            •      A reunião é conduzida pelo autor do produto do trabalho.\n            •      Existe preparação individual.\n            •      É produzido um relatório de revisão.\nQual dos seguintes tipos de avaliação é MAIS provável de ser usado?",
+    "stem": "As avaliações utilizadas na sua organização possuem os seguintes atributos:\n            •      Existe a função de um escriba.\n            •      O principal objetivo é avaliar a qualidade.\n            •      A reunião é conduzida pelo autor do produto do trabalho.\n            •      Existe preparação individual.\n            •      É produzido um relatório de revisão.\nQual dos seguintes tipos de avaliação é mais provável de ser usado?",
     "options": [
       {
         "letter": "a",
@@ -642,7 +642,7 @@
     "chapter": 3,
     "lo": "FL-3.2.5",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações NÃO é um fator que contribui para avaliações bem-sucedidas?",
+    "stem": "Qual das seguintes afirmações não é um fator que contribui para avaliações bem-sucedidas?",
     "options": [
       {
         "letter": "a",
@@ -790,7 +790,7 @@
     "chapter": 4,
     "lo": "FL-4.2.3",
     "selectCount": 1,
-    "stem": "Sua loja favorita de aluguel de bicicletas acaba de implementar um novo sistema de Gestão de\nRelacionamento com o Cliente e pediu a você, um de seus clientes mais fiéis, para testá-lo.\nAs funcionalidades implementadas são as seguintes:\n•     Qualquer pessoa pode alugar uma bicicleta, mas os membros recebem um desconto de 20%.\n•     No entanto, se o prazo de devolução for perdido, o desconto não estará mais disponível.\n•     Após 15 aluguéis, os membros ganham um presente: uma camiseta.\nA tabela de decisão que descreve as funcionalidades implementadas tem a seguinte aparência:\n                           Condições                     R1    R2    R3   R4    R5   R6   R7   R8\n                               Ser membro                T     T     T    T     F    F    F    F\n                                 Prazo não\n                                                         T      F    T     F    T    F    F    T\n                                  cumprido\n                                15º aluguel              F      F    T     T    F    F    T    T\n                           Ações\n                           20% de desconto                      X          X\n                               Camiseta de\n                                                                     X     X                   X\n                                  presente\n\nCom base APENAS na descrição das funcionalidades do sistema de Gestão de Relacionamento\ncom o Cliente (CRM) , qual das regras acima descreve uma situação impossível?",
+    "stem": "Sua loja favorita de aluguel de bicicletas acaba de implementar um novo sistema de Gestão de\nRelacionamento com o Cliente e pediu a você, um de seus clientes mais fiéis, para testá-lo.\nAs funcionalidades implementadas são as seguintes:\n•     Qualquer pessoa pode alugar uma bicicleta, mas os membros recebem um desconto de 20%.\n•     No entanto, se o prazo de devolução for perdido, o desconto não estará mais disponível.\n•     Após 15 aluguéis, os membros ganham um presente: uma camiseta.\nA tabela de decisão que descreve as funcionalidades implementadas tem a seguinte aparência:\n                           Condições                     R1    R2    R3   R4    R5   R6   R7   R8\n                               Ser membro                T     T     T    T     F    F    F    F\n                                 Prazo não\n                                                         T      F    T     F    T    F    F    T\n                                  cumprido\n                                15º aluguel              F      F    T     T    F    F    T    T\n                           Ações\n                           20% de desconto                      X          X\n                               Camiseta de\n                                                                     X     X                   X\n                                  presente\n\nCom base apenas na descrição das funcionalidades do sistema de Gestão de Relacionamento\ncom o Cliente (CRM) , qual das regras acima descreve uma situação impossível?",
     "options": [
       {
         "letter": "a",
@@ -827,7 +827,7 @@
     "chapter": 4,
     "lo": "FL-4.2.4",
     "selectCount": 1,
-    "stem": "Você testa um sistema cujo ciclo de vida é modelado pelo diagrama de transição de estados\nmostrado abaixo. O sistema inicia no estado INIT e termina sua operação no estado OFF.\n\nQual é o número MÍNIMO de casos de teste para obter uma cobertura de transições válida?",
+    "stem": "Você testa um sistema cujo ciclo de vida é modelado pelo diagrama de transição de estados\nmostrado abaixo. O sistema inicia no estado INIT e termina sua operação no estado OFF.\n\nQual é o número mínimo de casos de teste para obter uma cobertura de transições válida?",
     "options": [
       {
         "letter": "a",
@@ -902,7 +902,7 @@
     "chapter": 4,
     "lo": "FL-4.3.3",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações NÃO é verdadeira para testes caixa-branca?",
+    "stem": "Qual das seguintes afirmações não é verdadeira para testes caixa-branca?",
     "options": [
       {
         "letter": "a",
@@ -939,7 +939,7 @@
     "chapter": 4,
     "lo": "FL-4.4.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções descreve MELHOR o conceito por trás do palpite errôneo?",
+    "stem": "Qual das seguintes opções descreve melhor o conceito por trás do palpite errôneo?",
     "options": [
       {
         "letter": "a",
@@ -1013,7 +1013,7 @@
     "chapter": 4,
     "lo": "FL-4.5.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções descreve MELHOR a forma como os critérios de aceite pode ser\ndocumentado?",
+    "stem": "Qual das seguintes opções descreve melhor a forma como os critérios de aceite pode ser\ndocumentado?",
     "options": [
       {
         "letter": "a",
@@ -1050,7 +1050,7 @@
     "chapter": 4,
     "lo": "FL-4.5.3",
     "selectCount": 1,
-    "stem": "Considere a seguinte história de usuário:\n                   Como editor\n                   Quero revisar o conteúdo antes de ser publicado.\n                   para que eu possa garantir que a gramática esteja correta.\n\ne seus critérios de aceite:\n• O usuário pode fazer login no sistema de gerenciamento de conteúdo com a função de \"Editor\".\n• O editor pode visualizar páginas de conteúdo existentes.\n• O editor pode editar o conteúdo da página.\n• O editor pode adicionar comentários de marcação.\n• O editor pode salvar as alterações.\n• O editor pode reatribuir a função de \"proprietário do conteúdo\" para fazer atualizações.\nQual das seguintes opções é o MELHOR exemplo de um teste ATDD para esta história de\nusuário?",
+    "stem": "Considere a seguinte história de usuário:\n                   Como editor\n                   Quero revisar o conteúdo antes de ser publicado.\n                   para que eu possa garantir que a gramática esteja correta.\n\ne seus critérios de aceite:\n• O usuário pode fazer login no sistema de gerenciamento de conteúdo com a função de \"Editor\".\n• O editor pode visualizar páginas de conteúdo existentes.\n• O editor pode editar o conteúdo da página.\n• O editor pode adicionar comentários de marcação.\n• O editor pode salvar as alterações.\n• O editor pode reatribuir a função de \"proprietário do conteúdo\" para fazer atualizações.\nQual das seguintes opções é o melhor exemplo de um teste ATDD para esta história de\nusuário?",
     "options": [
       {
         "letter": "a",
@@ -1124,7 +1124,7 @@
     "chapter": 5,
     "lo": "FL-5.1.3",
     "selectCount": 2,
-    "stem": "Quais das DUAS opções a seguir são critérios de saída para testar um sistema?",
+    "stem": "Quais das duas opções a seguir são critérios de saída para testar um sistema?",
     "options": [
       {
         "letter": "a",
@@ -1389,7 +1389,7 @@
     "chapter": 5,
     "lo": "FL-5.5.1",
     "selectCount": 1,
-    "stem": "Você recebeu o seguinte relatório de defeito dos desenvolvedores, informando que a anomalia\ndescrita neste relatório de teste não é reproduzível.\n      O aplicativo trava.\n      03/05/2022 – John Doe – Rejeitado\n      O aplicativo trava após inserir “Entrada de teste: $ä” no campo Nome na tela de criação de\n      novo usuário. Tentei sair e entrar com a conta test_admin01, mas o problema persiste. Tentei\n      com outras contas de administrador de teste, e o problema continua. Nenhuma mensagem de\n      erro é exibida; o log (em anexo) contém a notificação de erro fatal. De acordo com o caso de\n      teste TC-1305, o aplicativo deveria aceitar a entrada fornecida e criar o usuário. Por favor,\n      corrijam isso com alta prioridade, pois essa funcionalidade está relacionada ao REQ-0012, que\n      é um novo requisito crítico para o negócio.\nQue informações essenciais estão FALTANDO neste relatório de testes e que teriam sido úteis\npara os desenvolvedores?",
+    "stem": "Você recebeu o seguinte relatório de defeito dos desenvolvedores, informando que a anomalia\ndescrita neste relatório de teste não é reproduzível.\n      O aplicativo trava.\n      03/05/2022 – John Doe – Rejeitado\n      O aplicativo trava após inserir “Entrada de teste: $ä” no campo Nome na tela de criação de\n      novo usuário. Tentei sair e entrar com a conta test_admin01, mas o problema persiste. Tentei\n      com outras contas de administrador de teste, e o problema continua. Nenhuma mensagem de\n      erro é exibida; o log (em anexo) contém a notificação de erro fatal. De acordo com o caso de\n      teste TC-1305, o aplicativo deveria aceitar a entrada fornecida e criar o usuário. Por favor,\n      corrijam isso com alta prioridade, pois essa funcionalidade está relacionada ao REQ-0012, que\n      é um novo requisito crítico para o negócio.\nQue informações essenciais estão faltando neste relatório de testes e que teriam sido úteis\npara os desenvolvedores?",
     "options": [
       {
         "letter": "a",
@@ -1648,7 +1648,7 @@
     "chapter": 1,
     "lo": "FL-1.4.4",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções é o MELHOR exemplo de como a rastreabilidade auxilia nos testes?",
+    "stem": "Qual das seguintes opções é o melhor exemplo de como a rastreabilidade auxilia nos testes?",
     "options": [
       {
         "letter": "a",
@@ -1722,7 +1722,7 @@
     "chapter": 2,
     "lo": "FL-2.1.1",
     "selectCount": 2,
-    "stem": "Você trabalha como testador em uma equipe que segue o modelo V. Qual das seguintes\natividades PODE ser realizada nas fases iniciais do SDLC (Ciclo de Vida de Desenvolvimento de\nSoftware)?",
+    "stem": "Você trabalha como testador em uma equipe que segue o modelo V. Qual das seguintes\natividades pode ser realizada nas fases iniciais do SDLC (Ciclo de Vida de Desenvolvimento de\nSoftware)?",
     "options": [
       {
         "letter": "a",
@@ -1839,7 +1839,7 @@
     "chapter": 2,
     "lo": "FL-2.3.1",
     "selectCount": 1,
-    "stem": "A estratégia de testes da sua organização sugere que, quando um sistema for desativado , a\nmigração de dados deverá ser testada. Em qual tipo de teste é MAIS provável que esse teste seja\nrealizado?",
+    "stem": "A estratégia de testes da sua organização sugere que, quando um sistema for desativado , a\nmigração de dados deverá ser testada. Em qual tipo de teste é mais provável que esse teste seja\nrealizado?",
     "options": [
       {
         "letter": "a",
@@ -1950,7 +1950,7 @@
     "chapter": 3,
     "lo": "FL-3.2.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre avaliações formais é VERDADEIRA?",
+    "stem": "Qual das seguintes afirmações sobre avaliações formais é verdadeira?",
     "options": [
       {
         "letter": "a",
@@ -2024,7 +2024,7 @@
     "chapter": 4,
     "lo": "FL-4.2.2",
     "selectCount": 1,
-    "stem": "Um sistema de armazenamento de vinho utiliza um dispositivo de controle que mede a\ntemperatura T da adega (medida em °C, arredondada para o grau mais próximo) e alerta o\nusuário caso ela se desvie do valor ideal de 12, de acordo com as seguintes regras:\n                 •      Se T = 12, o sistema indica \"temperatura ideal\".\n                 •      Se T < 12, o sistema diz: \"a temperatura está muito baixa!\"\n                 •      Se T > 12, o sistema diz: \"a temperatura está muito alta!\"\n\nDeseja-se utilizar a análise de valor de contorno (BVA) de 3 pontos para verificar o\ncomportamento do dispositivo de controle. Uma entrada de teste é a temperatura em °C fornecida\npelo dispositivo.\nQual é o conjunto MÍNIMO de entradas de teste que atinge 100% da cobertura desejada?",
+    "stem": "Um sistema de armazenamento de vinho utiliza um dispositivo de controle que mede a\ntemperatura T da adega (medida em °C, arredondada para o grau mais próximo) e alerta o\nusuário caso ela se desvie do valor ideal de 12, de acordo com as seguintes regras:\n                 •      Se T = 12, o sistema indica \"temperatura ideal\".\n                 •      Se T < 12, o sistema diz: \"a temperatura está muito baixa!\"\n                 •      Se T > 12, o sistema diz: \"a temperatura está muito alta!\"\n\nDeseja-se utilizar a análise de valor de contorno (BVA) de 3 pontos para verificar o\ncomportamento do dispositivo de controle. Uma entrada de teste é a temperatura em °C fornecida\npelo dispositivo.\nQual é o conjunto mínimo de entradas de teste que atinge 100% da cobertura desejada?",
     "options": [
       {
         "letter": "a",
@@ -2061,7 +2061,7 @@
     "chapter": 4,
     "lo": "FL-4.3.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre testes de ramificação está CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre testes de ramificação está correta?",
     "options": [
       {
         "letter": "a",
@@ -2098,7 +2098,7 @@
     "chapter": 4,
     "lo": "FL-4.4.3",
     "selectCount": 1,
-    "stem": "Você está testando um aplicativo móvel que permite aos clientes acessar e gerenciar suas contas\nbancárias. Você está executando um conjunto de testes que envolve a avaliação de cada tela e de\ncada campo em cada tela, comparando-os com uma lista geral de boas práticas de interface do\nusuário, derivada de um livro popular sobre o assunto, que visa maximizar a usabilidade de tais\naplicativos.\nQual das seguintes opções MELHOR categoriza a técnica de teste que você está utilizando?",
+    "stem": "Você está testando um aplicativo móvel que permite aos clientes acessar e gerenciar suas contas\nbancárias. Você está executando um conjunto de testes que envolve a avaliação de cada tela e de\ncada campo em cada tela, comparando-os com uma lista geral de boas práticas de interface do\nusuário, derivada de um livro popular sobre o assunto, que visa maximizar a usabilidade de tais\naplicativos.\nQual das seguintes opções melhor categoriza a técnica de teste que você está utilizando?",
     "options": [
       {
         "letter": "a",
@@ -2135,7 +2135,7 @@
     "chapter": 4,
     "lo": "FL-4.5.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções descreve MELHOR a abordagem colaborativa para a escrita de\nhistórias de usuário?",
+    "stem": "Qual das seguintes opções descreve melhor a abordagem colaborativa para a escrita de\nhistórias de usuário?",
     "options": [
       {
         "letter": "a",
@@ -2209,7 +2209,7 @@
     "chapter": 5,
     "lo": "FL-5.1.4",
     "selectCount": 1,
-    "stem": "Sua equipe usa o Planning Poker para estimar o esforço de teste necessário para um novo\nrecurso. Existe uma regra na equipe que permite aplicar regras como \"aceitar o número com mais\nvotos\" caso não haja tempo suficiente para chegar a um consenso e a variação nos resultados\nseja pequena.\nApós duas rodadas, não se chegou a um consenso, então a terceira rodada foi iniciada. Você\npode ver os resultados da estimativa do teste na tabela abaixo.\n                                                          Estimativas dos membros da equipe\n                                       Rodada 1          21    2     5    34  13     8    2\n                                       Rodada 2          13    8     8    34  13     8    5\n                                       Rodada 3          13    8    13    13  13    13    8\n\nQual das seguintes opções é o MELHOR exemplo do próximo passo?",
+    "stem": "Sua equipe usa o Planning Poker para estimar o esforço de teste necessário para um novo\nrecurso. Existe uma regra na equipe que permite aplicar regras como \"aceitar o número com mais\nvotos\" caso não haja tempo suficiente para chegar a um consenso e a variação nos resultados\nseja pequena.\nApós duas rodadas, não se chegou a um consenso, então a terceira rodada foi iniciada. Você\npode ver os resultados da estimativa do teste na tabela abaixo.\n                                                          Estimativas dos membros da equipe\n                                       Rodada 1          21    2     5    34  13     8    2\n                                       Rodada 2          13    8     8    34  13     8    5\n                                       Rodada 3          13    8    13    13  13    13    8\n\nQual das seguintes opções é o melhor exemplo do próximo passo?",
     "options": [
       {
         "letter": "a",
@@ -2246,7 +2246,7 @@
     "chapter": 5,
     "lo": "FL-5.1.6",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações é VERDADEIRA em relação à pirâmide de testes?",
+    "stem": "Qual das seguintes afirmações é verdadeira em relação à pirâmide de testes?",
     "options": [
       {
         "letter": "a",
@@ -2394,7 +2394,7 @@
     "chapter": 5,
     "lo": "FL-5.3.1",
     "selectCount": 2,
-    "stem": "Quais das DUAS opções a seguir são métricas comuns usadas para relatar o nível de qualidade\ndo objeto de teste?",
+    "stem": "Quais das duas opções a seguir são métricas comuns usadas para relatar o nível de qualidade\ndo objeto de teste?",
     "options": [
       {
         "letter": "a",
@@ -2437,7 +2437,7 @@
     "chapter": 5,
     "lo": "FL-5.3.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes informações contidas em um relatório de progresso de teste é a MENOS útil\npara representantes comerciais?",
+    "stem": "Qual das seguintes informações contidas em um relatório de progresso de teste é a menos útil\npara representantes comerciais?",
     "options": [
       {
         "letter": "a",
@@ -2622,7 +2622,7 @@
     "chapter": 1,
     "lo": "FL-1.4.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções tem MAIOR probabilidade de impactar a forma como os testes são\nrealizados para um determinado objeto de teste?",
+    "stem": "Qual das seguintes opções tem maior probabilidade de impactar a forma como os testes são\nrealizados para um determinado objeto de teste?",
     "options": [
       {
         "letter": "a",
@@ -2659,7 +2659,7 @@
     "chapter": 1,
     "lo": "FL-1.4.4",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações é um exemplo CORRETO do valor da rastreabilidade?",
+    "stem": "Qual das seguintes afirmações é um exemplo correto do valor da rastreabilidade?",
     "options": [
       {
         "letter": "a",
@@ -2696,7 +2696,7 @@
     "chapter": 1,
     "lo": "FL-1.5.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções é MAIS provável de ser um exemplo de um testador usando uma\nhabilidade genérica durante os testes?",
+    "stem": "Qual das seguintes opções é mais provável de ser um exemplo de um testador usando uma\nhabilidade genérica durante os testes?",
     "options": [
       {
         "letter": "a",
@@ -2770,7 +2770,7 @@
     "chapter": 2,
     "lo": "FL-2.1.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre o ciclo de vida de desenvolvimento de software escolhido\nestá CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre o ciclo de vida de desenvolvimento de software escolhido\nestá correta?",
     "options": [
       {
         "letter": "a",
@@ -2881,7 +2881,7 @@
     "chapter": 2,
     "lo": "FL-2.1.4",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre DevOps está CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre DevOps está correta?",
     "options": [
       {
         "letter": "a",
@@ -2918,7 +2918,7 @@
     "chapter": 2,
     "lo": "FL-2.2.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções tem MAIOR probabilidade de ser realizada como parte dos testes de\nsistema?",
+    "stem": "Qual das seguintes opções tem maior probabilidade de ser realizada como parte dos testes de\nsistema?",
     "options": [
       {
         "letter": "a",
@@ -2955,7 +2955,7 @@
     "chapter": 2,
     "lo": "FL-2.2.3",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações está CORRETA?",
+    "stem": "Qual das seguintes afirmações está correta?",
     "options": [
       {
         "letter": "a",
@@ -2992,7 +2992,7 @@
     "chapter": 3,
     "lo": "FL-3.1.3",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções é um exemplo de defeito que pode ser encontrado por meio de testes\nestáticos, mas NÃO por meio de testes dinâmicos?",
+    "stem": "Qual das seguintes opções é um exemplo de defeito que pode ser encontrado por meio de testes\nestáticos, mas não por meio de testes dinâmicos?",
     "options": [
       {
         "letter": "a",
@@ -3066,7 +3066,7 @@
     "chapter": 3,
     "lo": "FL-3.2.2",
     "selectCount": 1,
-    "stem": "Dadas as seguintes descrições de tarefas:\n       1. As características de qualidade a serem avaliadas e os critérios de saída são\n          selecionados.\n       2. Todos têm acesso ao produto do trabalho.\n       3. Anomalias são identificadas no produto do trabalho.\n       4. As anomalias são discutidas.\n\nE as seguintes atividades de revisão\n       A. Revisão individual\n       B. Início da revisão\n       C. Planejamento\n       D. Comunicação e análise\n\nQual das seguintes opções MELHOR corresponde às descrições das tarefas e atividades?",
+    "stem": "Dadas as seguintes descrições de tarefas:\n       1. As características de qualidade a serem avaliadas e os critérios de saída são\n          selecionados.\n       2. Todos têm acesso ao produto do trabalho.\n       3. Anomalias são identificadas no produto do trabalho.\n       4. As anomalias são discutidas.\n\nE as seguintes atividades de revisão\n       A. Revisão individual\n       B. Início da revisão\n       C. Planejamento\n       D. Comunicação e análise\n\nQual das seguintes opções melhor corresponde às descrições das tarefas e atividades?",
     "options": [
       {
         "letter": "a",
@@ -3103,7 +3103,7 @@
     "chapter": 3,
     "lo": "FL-3.2.3",
     "selectCount": 1,
-    "stem": "Considerando os seguintes papéis nas avaliações:\n       1. Escriba\n       2. Líder da revisão\n       3. Facilitador\n       4. Gerente\n\nE as seguintes responsabilidades nas avaliações :\n       A. Garante o bom funcionamento das reuniões de avaliação e a criação de um ambiente\n           seguro para a avaliação.\n       B. Informações de revisão de registros, como decisões e novas anomalias encontradas\n           durante a reunião de revisão.\n       C. Decide o que deve ser analisado e fornece recursos, como pessoal e tempo para a\n           análise.\n       D. Assume a responsabilidade geral pela revisão, incluindo a organização de quando e\n           onde ela ocorrerá.\n\nQual das seguintes opções MELHOR descreve as funções e responsabilidades?",
+    "stem": "Considerando os seguintes papéis nas avaliações:\n       1. Escriba\n       2. Líder da revisão\n       3. Facilitador\n       4. Gerente\n\nE as seguintes responsabilidades nas avaliações :\n       A. Garante o bom funcionamento das reuniões de avaliação e a criação de um ambiente\n           seguro para a avaliação.\n       B. Informações de revisão de registros, como decisões e novas anomalias encontradas\n           durante a reunião de revisão.\n       C. Decide o que deve ser analisado e fornece recursos, como pessoal e tempo para a\n           análise.\n       D. Assume a responsabilidade geral pela revisão, incluindo a organização de quando e\n           onde ela ocorrerá.\n\nQual das seguintes opções melhor descreve as funções e responsabilidades?",
     "options": [
       {
         "letter": "a",
@@ -3140,7 +3140,7 @@
     "chapter": 4,
     "lo": "FL-4.1.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações descreve MELHOR a diferença entre testes de tabela de decisão e\ntestes de ramificação?",
+    "stem": "Qual das seguintes afirmações descreve melhor a diferença entre testes de tabela de decisão e\ntestes de ramificação?",
     "options": [
       {
         "letter": "a",
@@ -3400,7 +3400,7 @@
     "chapter": 4,
     "lo": "FL-4.4.2",
     "selectCount": 2,
-    "stem": "Quais das DUAS afirmações a seguir fornecem a MELHOR justificativa para o uso de testes\nexploratórios?",
+    "stem": "Quais das duas afirmações a seguir fornecem a melhor justificativa para o uso de testes\nexploratórios?",
     "options": [
       {
         "letter": "a",
@@ -3443,7 +3443,7 @@
     "chapter": 4,
     "lo": "FL-4.4.3",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções MELHOR se encaixa como um elemento da lista de verificação usada\nem testes baseados em listas de verificação?",
+    "stem": "Qual das seguintes opções melhor se encaixa como um elemento da lista de verificação usada\nem testes baseados em listas de verificação?",
     "options": [
       {
         "letter": "a",
@@ -3517,7 +3517,7 @@
     "chapter": 4,
     "lo": "FL-4.5.3",
     "selectCount": 1,
-    "stem": "Sua equipe analisa a seguinte história de usuário para definir os critérios de aceite:\n\n                   Como cliente cadastrado, quero poder visualizar meus pedidos anteriores no site da\n                   empresa para acompanhar minhas compras.\n\nQual dos seguintes casos de teste NÃO será relevante para esta história de usuário?",
+    "stem": "Sua equipe analisa a seguinte história de usuário para definir os critérios de aceite:\n\n                   Como cliente cadastrado, quero poder visualizar meus pedidos anteriores no site da\n                   empresa para acompanhar minhas compras.\n\nQual dos seguintes casos de teste não será relevante para esta história de usuário?",
     "options": [
       {
         "letter": "a",
@@ -3554,7 +3554,7 @@
     "chapter": 5,
     "lo": "FL-5.1.3",
     "selectCount": 1,
-    "stem": "Sua equipe segue o processo que utiliza o pipeline de entrega DevOps. Os três primeiros passos\ndesse processo são:\n\n                 (1) Desenvolvimento de código\n                 (2) Submeta o código a um sistema de controle de versão e faça o merge com ele na\n                     branch “test”.\n                 (3) Realizar testes de componentes para o código submetido.\nQual dos seguintes é o critério de entrada MAIS adequado para a etapa (2) deste pipeline?",
+    "stem": "Sua equipe segue o processo que utiliza o pipeline de entrega DevOps. Os três primeiros passos\ndesse processo são:\n\n                 (1) Desenvolvimento de código\n                 (2) Submeta o código a um sistema de controle de versão e faça o merge com ele na\n                     branch “test”.\n                 (3) Realizar testes de componentes para o código submetido.\nQual dos seguintes é o critério de entrada mais adequado para a etapa (2) deste pipeline?",
     "options": [
       {
         "letter": "a",
@@ -3628,7 +3628,7 @@
     "chapter": 5,
     "lo": "FL-5.1.5",
     "selectCount": 1,
-    "stem": "Você está testando um aplicativo web que permite aos usuários PESQUISAR produtos,\nVISUALIZAR detalhes do produto, ADICIONAR produtos a um carrinho de compras e FAZER UM\nPEDIDO.\nVocê preparou os seguintes sete casos de teste, e deseja executar todos eles. Os testes devem\nser executados na melhor ordem, com base na prioridade de cada um.\n\n                     Teste                                                    Prioridade ( 1 = prioridade mais alta)\n      TC1            BUSCAR produto A                                         4\n      TC2            BUSCAR produto B                                         4\n      TC3            VER detalhes do produto                                  3\n      TC4            VER detalhes do produto B                                2\n      TC5            Adicione o produto A ao carrinho de compras.             3\n      TC6            Adicione o produto B ao carrinho de compras.             1\n      TC7            Faça um pedido                                           5\n\nVocê também identificou as seguintes dependências lógicas entre os casos de teste:\n         • A funcionalidade de BUSCA deve ser testada antes que a funcionalidade de\n            VISUALIZAÇÃO possa ser testada.\n         • A funcionalidade de VISUALIZAÇÃO deve ser testada antes da funcionalidade de\n            ADIÇÃO.\n         • A funcionalidade ADICIONAR deve ser testada antes da funcionalidade PEDIR.\nQual caso de teste deve ser executado como o quarto?",
+    "stem": "Você está testando um aplicativo web que permite aos usuários pesquisar produtos,\nvisualizar detalhes do produto, adicionar produtos a um carrinho de compras e fazer um\npedido.\nVocê preparou os seguintes sete casos de teste, e deseja executar todos eles. Os testes devem\nser executados na melhor ordem, com base na prioridade de cada um.\n\n                     Teste                                                    Prioridade ( 1 = prioridade mais alta)\n      TC1            buscar produto A                                         4\n      TC2            buscar produto B                                         4\n      TC3            ver detalhes do produto                                  3\n      TC4            ver detalhes do produto B                                2\n      TC5            Adicione o produto A ao carrinho de compras.             3\n      TC6            Adicione o produto B ao carrinho de compras.             1\n      TC7            Faça um pedido                                           5\n\nVocê também identificou as seguintes dependências lógicas entre os casos de teste:\n         • A funcionalidade de busca deve ser testada antes que a funcionalidade de\n            visualização possa ser testada.\n         • A funcionalidade de visualização deve ser testada antes da funcionalidade de\n            adição.\n         • A funcionalidade adicionar deve ser testada antes da funcionalidade pedir.\nQual caso de teste deve ser executado como o quarto?",
     "options": [
       {
         "letter": "a",
@@ -3702,7 +3702,7 @@
     "chapter": 5,
     "lo": "FL-5.2.4",
     "selectCount": 1,
-    "stem": "Considerando os seguintes riscos:\n         1. A implementação ineficaz do loop causa respostas longas do sistema.\n         2. Os consumidores mudam suas preferências.\n         3. Inundação da sala de servidores\n         4. Pacientes acima de uma certa idade recebem relatórios imprecisos.\n\nE as seguintes atividades de mitigação:\n          A. aceite do risco\n          B. Testando a eficiência do desempenho\n          C. Utilizando a análise de valores limite como técnica de teste.\n          D. Transferência de risco\n\nQual das seguintes opções MELHOR relaciona os riscos com as atividades de mitigação?",
+    "stem": "Considerando os seguintes riscos:\n         1. A implementação ineficaz do loop causa respostas longas do sistema.\n         2. Os consumidores mudam suas preferências.\n         3. Inundação da sala de servidores\n         4. Pacientes acima de uma certa idade recebem relatórios imprecisos.\n\nE as seguintes atividades de mitigação:\n          A. aceite do risco\n          B. Testando a eficiência do desempenho\n          C. Utilizando a análise de valores limite como técnica de teste.\n          D. Transferência de risco\n\nQual das seguintes opções melhor relaciona os riscos com as atividades de mitigação?",
     "options": [
       {
         "letter": "a",
@@ -3776,7 +3776,7 @@
     "chapter": 5,
     "lo": "FL-5.3.3",
     "selectCount": 1,
-    "stem": "Você faz parte de uma equipe de testes localizada na América do Norte, que desenvolve um\nproduto para um cliente na Europa. A equipe é ágil, segue a abordagem DevOps e utiliza um\npipeline de integração contínua/entrega contínua.\n\nQual das seguintes opções é a forma MENOS eficaz de comunicar o progresso dos testes ao\ncliente?",
+    "stem": "Você faz parte de uma equipe de testes localizada na América do Norte, que desenvolve um\nproduto para um cliente na Europa. A equipe é ágil, segue a abordagem DevOps e utiliza um\npipeline de integração contínua/entrega contínua.\n\nQual das seguintes opções é a forma menos eficaz de comunicar o progresso dos testes ao\ncliente?",
     "options": [
       {
         "letter": "a",
@@ -3813,7 +3813,7 @@
     "chapter": 5,
     "lo": "FL-5.4.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções descreve MELHOR um exemplo de como o gerenciamento de\nconfiguração (CM) auxilia nos testes?",
+    "stem": "Qual das seguintes opções descreve melhor um exemplo de como o gerenciamento de\nconfiguração (CM) auxilia nos testes?",
     "options": [
       {
         "letter": "a",
@@ -3850,7 +3850,7 @@
     "chapter": 5,
     "lo": "FL-5.5.1",
     "selectCount": 1,
-    "stem": "Você está testando uma função de ordenação que recebe um conjunto de números como entrada\ne retorna o mesmo conjunto de números ordenados em ordem crescente. O log da execução do\nteste é semelhante ao seguinte.\n\nConfiguração do ambiente: função de classificação versão 2.002.2182, conjunto de casos de teste:\nTCS- 3, número de TCs: 5\nID da execução do teste: 736\nInício 12:43:21.003\n12:43:21.003 Execução TC1. Entrada: 3              Saída: 3        Resultado: aprovado\n12:43:21.003 Execução TC2. Entrada: 3 11 6 5       Saída: 3 5 6 11 Resultado: aprovado\n12:43:21.004 Execução TC3. Entrada: 8 7 3 7 1      Saída: 1 3 7 8 Resultado: reprovado\n12:43:21.005 Execução TC4. Entrada: -2 -2 -2 -3 -3 Saída: -3 -2    Resultado: falha\n12:43:21.005 Execução TC5. Entrada: 0 -2 0 3 4 4 Saída: -2 0 3 4 Resultado: falha\nFim 12:43:21.005\nTempo total do ciclo de teste: 0:00:00.002\n\nQual das seguintes opções fornece a MELHOR descrição da falha que pode ser usada em um\nrelatório de defeitos?",
+    "stem": "Você está testando uma função de ordenação que recebe um conjunto de números como entrada\ne retorna o mesmo conjunto de números ordenados em ordem crescente. O log da execução do\nteste é semelhante ao seguinte.\n\nConfiguração do ambiente: função de classificação versão 2.002.2182, conjunto de casos de teste:\nTCS- 3, número de TCs: 5\nID da execução do teste: 736\nInício 12:43:21.003\n12:43:21.003 Execução TC1. Entrada: 3              Saída: 3        Resultado: aprovado\n12:43:21.003 Execução TC2. Entrada: 3 11 6 5       Saída: 3 5 6 11 Resultado: aprovado\n12:43:21.004 Execução TC3. Entrada: 8 7 3 7 1      Saída: 1 3 7 8 Resultado: reprovado\n12:43:21.005 Execução TC4. Entrada: -2 -2 -2 -3 -3 Saída: -3 -2    Resultado: falha\n12:43:21.005 Execução TC5. Entrada: 0 -2 0 3 4 4 Saída: -2 0 3 4 Resultado: falha\nFim 12:43:21.005\nTempo total do ciclo de teste: 0:00:00.002\n\nQual das seguintes opções fornece a melhor descrição da falha que pode ser usada em um\nrelatório de defeitos?",
     "options": [
       {
         "letter": "a",
@@ -3887,7 +3887,7 @@
     "chapter": 6,
     "lo": "FL-6.1.1",
     "selectCount": 1,
-    "stem": "Dadas as seguintes descrições:\n\n                 1.     Acompanhamento do fluxo de trabalho de suporte\n                 2.     Facilitar a comunicação\n                 3.     Máquinas virtuais\n                 4.     Avaliações de suporte\n\nE as seguintes categorias de ferramentas de teste:\n\n                 A. Ferramentas de teste estático\n                 B. Ferramentas que suportam escalabilidade e padronização de implantação\n                 C. Ferramentas DevOps\n                 D. Ferramentas de colaboração\nQual das seguintes opções MELHOR corresponde às descrições e categorias?",
+    "stem": "Dadas as seguintes descrições:\n\n                 1.     Acompanhamento do fluxo de trabalho de suporte\n                 2.     Facilitar a comunicação\n                 3.     Máquinas virtuais\n                 4.     Avaliações de suporte\n\nE as seguintes categorias de ferramentas de teste:\n\n                 A. Ferramentas de teste estático\n                 B. Ferramentas que suportam escalabilidade e padronização de implantação\n                 C. Ferramentas DevOps\n                 D. Ferramentas de colaboração\nQual das seguintes opções melhor corresponde às descrições e categorias?",
     "options": [
       {
         "letter": "a",
@@ -3924,7 +3924,7 @@
     "chapter": 6,
     "lo": "FL-6.2.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes opções é MAIS provável de ser um benefício da automação de testes?",
+    "stem": "Qual das seguintes opções é mais provável de ser um benefício da automação de testes?",
     "options": [
       {
         "letter": "a",
@@ -3961,7 +3961,7 @@
     "chapter": 1,
     "lo": "FL-1.1.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações descreve um objetivo de teste NÃO válido?",
+    "stem": "Qual das seguintes afirmações descreve um objetivo de teste não válido?",
     "options": [
       {
         "letter": "a",
@@ -4331,7 +4331,7 @@
     "chapter": 2,
     "lo": "FL-2.2.1",
     "selectCount": 1,
-    "stem": "Qual dos seguintes é um tipo de teste NÃO funcional?",
+    "stem": "Qual dos seguintes é um tipo de teste não funcional?",
     "options": [
       {
         "letter": "a",
@@ -4405,7 +4405,7 @@
     "chapter": 2,
     "lo": "FL-2.3.1",
     "selectCount": 1,
-    "stem": "Em métodos de desenvolvimento iterativo e incremental, como o Scrum, qual afirmação sobre os testes é CORRETA?",
+    "stem": "Em métodos de desenvolvimento iterativo e incremental, como o Scrum, qual afirmação sobre os testes é correta?",
     "options": [
       {
         "letter": "a",
@@ -4960,7 +4960,7 @@
     "chapter": 4,
     "lo": "FL-4.6.2",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre o teste exploratório é CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre o teste exploratório é correta?",
     "options": [
       {
         "letter": "a",
@@ -4997,7 +4997,7 @@
     "chapter": 4,
     "lo": "FL-4.1.1",
     "selectCount": 2,
-    "stem": "Quais das DUAS afirmações a seguir descrevem corretamente técnicas de teste de caixa preta (black-box)?",
+    "stem": "Quais das duas afirmações a seguir descrevem corretamente técnicas de teste de caixa preta (black-box)?",
     "options": [
       {
         "letter": "a",
@@ -5299,7 +5299,7 @@
     "chapter": 5,
     "lo": "FL-5.1.3",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre critérios de saída de teste (exit criteria) é CORRETA?",
+    "stem": "Qual das seguintes afirmações sobre critérios de saída de teste (exit criteria) é correta?",
     "options": [
       {
         "letter": "a",
@@ -5336,7 +5336,7 @@
     "chapter": 5,
     "lo": "FL-5.6.1",
     "selectCount": 2,
-    "stem": "Quais das DUAS opções a seguir são informações tipicamente incluídas em um plano de teste?",
+    "stem": "Quais das duas opções a seguir são informações tipicamente incluídas em um plano de teste?",
     "options": [
       {
         "letter": "a",
@@ -5416,7 +5416,7 @@
     "chapter": 6,
     "lo": "FL-6.2.1",
     "selectCount": 1,
-    "stem": "Qual das seguintes afirmações sobre a introdução de ferramentas de automação de teste é VERDADEIRA?",
+    "stem": "Qual das seguintes afirmações sobre a introdução de ferramentas de automação de teste é verdadeira?",
     "options": [
       {
         "letter": "a",
@@ -5452,7 +5452,7 @@
     "chapter": 1,
     "lo": "FL-1.1.1",
     "isAppendix": false,
-    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste VÁLIDO segundo o ISTQB?",
+    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste válido segundo o ISTQB?",
     "options": [
       {
         "letter": "a",
@@ -5489,7 +5489,7 @@
     "chapter": 1,
     "lo": "FL-1.1.2",
     "isAppendix": false,
-    "stem": "Na equipe da 'Livraria Online Letrarte', Marina identifica que ao buscar por título com acento, o sistema retorna lista vazia. João, desenvolvedor, então localiza no código a linha que filtra os caracteres e a corrige. Qual afirmação é VERDADEIRA sobre as atividades de Marina e João?",
+    "stem": "Na equipe da 'Livraria Online Letrarte', Marina identifica que ao buscar por título com acento, o sistema retorna lista vazia. João, desenvolvedor, então localiza no código a linha que filtra os caracteres e a corrige. Qual afirmação é verdadeira sobre as atividades de Marina e João?",
     "options": [
       {
         "letter": "a",
@@ -5526,7 +5526,7 @@
     "chapter": 1,
     "lo": "FL-1.2.1",
     "isAppendix": false,
-    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste TODAS as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio ISTQB esse gerente está ignorando?",
+    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste todas as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio ISTQB esse gerente está ignorando?",
     "options": [
       {
         "letter": "a",
@@ -5637,7 +5637,7 @@
     "chapter": 1,
     "lo": "FL-1.3.1",
     "isAppendix": false,
-    "stem": "Qual sequência representa CORRETAMENTE as principais atividades de teste, na ordem em que normalmente ocorrem?",
+    "stem": "Qual sequência representa corretamente as principais atividades de teste, na ordem em que normalmente ocorrem?",
     "options": [
       {
         "letter": "a",
@@ -5674,7 +5674,7 @@
     "chapter": 1,
     "lo": "FL-1.3.1",
     "isAppendix": false,
-    "stem": "Durante a atividade de DESIGN de teste do projeto 'BibliotecaCloud', qual produto de trabalho é tipicamente criado?",
+    "stem": "Durante a atividade de design de teste do projeto 'BibliotecaCloud', qual produto de trabalho é tipicamente criado?",
     "options": [
       {
         "letter": "a",
@@ -5711,7 +5711,7 @@
     "chapter": 1,
     "lo": "FL-1.4.1",
     "isAppendix": false,
-    "stem": "Em uma equipe ágil que desenvolve uma 'Plataforma de Telemedicina', qual responsabilidade é tipicamente do LÍDER DE TESTE (test manager)?",
+    "stem": "Em uma equipe ágil que desenvolve uma 'Plataforma de Telemedicina', qual responsabilidade é tipicamente do líder de teste (test manager)?",
     "options": [
       {
         "letter": "a",
@@ -5748,7 +5748,7 @@
     "chapter": 1,
     "lo": "FL-1.4.1",
     "isAppendix": false,
-    "stem": "Qual conjunto de habilidades é MAIS importante para um testador eficaz, segundo o ISTQB?",
+    "stem": "Qual conjunto de habilidades é mais importante para um testador eficaz, segundo o ISTQB?",
     "options": [
       {
         "letter": "a",
@@ -5785,7 +5785,7 @@
     "chapter": 1,
     "lo": "FL-1.5.1",
     "isAppendix": false,
-    "stem": "Qual característica MELHOR descreve o 'mindset de teste' (testing mindset) em comparação ao 'mindset de desenvolvimento'?",
+    "stem": "Qual característica melhor descreve o 'mindset de teste' (testing mindset) em comparação ao 'mindset de desenvolvimento'?",
     "options": [
       {
         "letter": "a",
@@ -5896,7 +5896,7 @@
     "chapter": 1,
     "lo": "FL-1.3.1",
     "isAppendix": false,
-    "stem": "Qual afirmação sobre INDEPENDÊNCIA DE TESTE é VERDADEIRA?",
+    "stem": "Qual afirmação sobre independência de teste é verdadeira?",
     "options": [
       {
         "letter": "a",
@@ -5933,7 +5933,7 @@
     "chapter": 1,
     "lo": "FL-1.1.1",
     "isAppendix": false,
-    "stem": "Qual afirmação descreve CORRETAMENTE a relação entre Garantia da Qualidade (QA), Controle de Qualidade (QC) e Teste?",
+    "stem": "Qual afirmação descreve corretamente a relação entre Garantia da Qualidade (QA), Controle de Qualidade (QC) e Teste?",
     "options": [
       {
         "letter": "a",
@@ -5970,7 +5970,7 @@
     "chapter": 1,
     "lo": "FL-1.2.1",
     "isAppendix": false,
-    "stem": "Em qual situação o princípio 'testes antecipados economizam tempo e dinheiro' é MELHOR aplicado?",
+    "stem": "Em qual situação o princípio 'testes antecipados economizam tempo e dinheiro' é melhor aplicado?",
     "options": [
       {
         "letter": "a",
@@ -6044,7 +6044,7 @@
     "chapter": 1,
     "lo": "FL-1.4.1",
     "isAppendix": false,
-    "stem": "Qual das habilidades a seguir é MAIS associada ao papel de líder de teste em comparação ao testador?",
+    "stem": "Qual das habilidades a seguir é mais associada ao papel de líder de teste em comparação ao testador?",
     "options": [
       {
         "letter": "a",
@@ -6081,7 +6081,7 @@
     "chapter": 1,
     "lo": "FL-1.5.1",
     "isAppendix": false,
-    "stem": "Selecione DUAS características que melhor descrevem o mindset esperado de um testador eficaz.",
+    "stem": "Selecione duas características que melhor descrevem o mindset esperado de um testador eficaz.",
     "options": [
       {
         "letter": "a",
@@ -6156,7 +6156,7 @@
     "chapter": 1,
     "lo": "FL-1.1.1",
     "isAppendix": false,
-    "stem": "No projeto 'PetShop Online', a equipe verificou que o sistema implementa corretamente todos os requisitos do documento, mas usuários disseram que o sistema não atende às suas necessidades reais. Qual conceito explica MELHOR essa situação?",
+    "stem": "No projeto 'PetShop Online', a equipe verificou que o sistema implementa corretamente todos os requisitos do documento, mas usuários disseram que o sistema não atende às suas necessidades reais. Qual conceito explica melhor essa situação?",
     "options": [
       {
         "letter": "a",
@@ -6193,7 +6193,7 @@
     "chapter": 2,
     "lo": "FL-2.1.1",
     "isAppendix": false,
-    "stem": "A equipe da 'ConstrutoraDigital' utiliza o modelo Cascata. Qual característica é VERDADEIRA sobre o teste nesse modelo?",
+    "stem": "A equipe da 'ConstrutoraDigital' utiliza o modelo Cascata. Qual característica é verdadeira sobre o teste nesse modelo?",
     "options": [
       {
         "letter": "a",
@@ -6378,7 +6378,7 @@
     "chapter": 2,
     "lo": "FL-2.2.1",
     "isAppendix": false,
-    "stem": "Qual é o objetivo PRINCIPAL do teste de integração de componentes?",
+    "stem": "Qual é o objetivo principal do teste de integração de componentes?",
     "options": [
       {
         "letter": "a",
@@ -6452,7 +6452,7 @@
     "chapter": 2,
     "lo": "FL-2.3.1",
     "isAppendix": false,
-    "stem": "Qual exemplo melhor caracteriza um teste FUNCIONAL no sistema 'AgendaMédica'?",
+    "stem": "Qual exemplo melhor caracteriza um teste funcional no sistema 'AgendaMédica'?",
     "options": [
       {
         "letter": "a",
@@ -6489,7 +6489,7 @@
     "chapter": 2,
     "lo": "FL-2.3.1",
     "isAppendix": false,
-    "stem": "Qual destes é um exemplo de teste NÃO-FUNCIONAL?",
+    "stem": "Qual destes é um exemplo de teste não-funcional?",
     "options": [
       {
         "letter": "a",
@@ -6526,7 +6526,7 @@
     "chapter": 2,
     "lo": "FL-2.3.1",
     "isAppendix": false,
-    "stem": "Que tipo de teste FOCA na estrutura interna do código, com objetivo de exercitar caminhos, instruções e ramos?",
+    "stem": "Que tipo de teste foca na estrutura interna do código, com objetivo de exercitar caminhos, instruções e ramos?",
     "options": [
       {
         "letter": "a",
@@ -6637,7 +6637,7 @@
     "chapter": 2,
     "lo": "FL-2.4.1",
     "isAppendix": false,
-    "stem": "Por que a ANÁLISE DE IMPACTO é importante no teste de manutenção?",
+    "stem": "Por que a análise de impacto é importante no teste de manutenção?",
     "options": [
       {
         "letter": "a",
@@ -6674,7 +6674,7 @@
     "chapter": 2,
     "lo": "FL-2.2.1",
     "isAppendix": false,
-    "stem": "Selecione DUAS características do teste de SISTEMA.",
+    "stem": "Selecione duas características do teste de sistema.",
     "options": [
       {
         "letter": "a",
@@ -6749,7 +6749,7 @@
     "chapter": 3,
     "lo": "FL-3.1.1",
     "isAppendix": false,
-    "stem": "Qual é a principal diferença entre TESTE ESTÁTICO e TESTE DINÂMICO?",
+    "stem": "Qual é a principal diferença entre teste estático e teste dinâmico?",
     "options": [
       {
         "letter": "a",
@@ -6786,7 +6786,7 @@
     "chapter": 3,
     "lo": "FL-3.1.1",
     "isAppendix": false,
-    "stem": "Qual benefício é PRINCIPAL ao usar revisões estáticas em requisitos antes da codificação?",
+    "stem": "Qual benefício é principal ao usar revisões estáticas em requisitos antes da codificação?",
     "options": [
       {
         "letter": "a",
@@ -6823,7 +6823,7 @@
     "chapter": 3,
     "lo": "FL-3.2.1",
     "isAppendix": false,
-    "stem": "Qual tipo de revisão é caracterizado por ser o MAIS formal, com regras estritas, papéis definidos e métricas?",
+    "stem": "Qual tipo de revisão é caracterizado por ser o mais formal, com regras estritas, papéis definidos e métricas?",
     "options": [
       {
         "letter": "a",
@@ -6860,7 +6860,7 @@
     "chapter": 3,
     "lo": "FL-3.2.1",
     "isAppendix": false,
-    "stem": "Em uma revisão tipo WALKTHROUGH:",
+    "stem": "Em uma revisão tipo walkthrough:",
     "options": [
       {
         "letter": "a",
@@ -6897,7 +6897,7 @@
     "chapter": 3,
     "lo": "FL-3.2.2",
     "isAppendix": false,
-    "stem": "Em uma INSPEÇÃO formal, qual é o papel do MODERADOR (líder de revisão)?",
+    "stem": "Em uma inspeção formal, qual é o papel do moderador (líder de revisão)?",
     "options": [
       {
         "letter": "a",
@@ -6934,7 +6934,7 @@
     "chapter": 3,
     "lo": "FL-3.2.2",
     "isAppendix": false,
-    "stem": "Qual papel em uma revisão formal é responsável por DOCUMENTAR todos os achados, ações e decisões durante a reunião?",
+    "stem": "Qual papel em uma revisão formal é responsável por documentar todos os achados, ações e decisões durante a reunião?",
     "options": [
       {
         "letter": "a",
@@ -6971,7 +6971,7 @@
     "chapter": 3,
     "lo": "FL-3.2.1",
     "isAppendix": false,
-    "stem": "Qual característica MELHOR descreve uma revisão INFORMAL?",
+    "stem": "Qual característica melhor descreve uma revisão informal?",
     "options": [
       {
         "letter": "a",
@@ -7008,7 +7008,7 @@
     "chapter": 3,
     "lo": "FL-3.1.1",
     "isAppendix": false,
-    "stem": "Qual destas atividades é um exemplo de ANÁLISE ESTÁTICA?",
+    "stem": "Qual destas atividades é um exemplo de análise estática?",
     "options": [
       {
         "letter": "a",
@@ -7045,7 +7045,7 @@
     "chapter": 3,
     "lo": "FL-3.1.1",
     "isAppendix": false,
-    "stem": "Selecione DUAS razões pelas quais revisões antecipadas são valiosas no projeto.",
+    "stem": "Selecione duas razões pelas quais revisões antecipadas são valiosas no projeto.",
     "options": [
       {
         "letter": "a",
@@ -7083,7 +7083,7 @@
     "chapter": 3,
     "lo": "FL-3.2.1",
     "isAppendix": false,
-    "stem": "Qual é o objetivo principal de uma REVISÃO TÉCNICA?",
+    "stem": "Qual é o objetivo principal de uma revisão técnica?",
     "options": [
       {
         "letter": "a",
@@ -7120,7 +7120,7 @@
     "chapter": 4,
     "lo": "FL-4.1.1",
     "isAppendix": false,
-    "stem": "Qual descrição diferencia CORRETAMENTE técnicas de caixa-preta e caixa-branca?",
+    "stem": "Qual descrição diferencia corretamente técnicas de caixa-preta e caixa-branca?",
     "options": [
       {
         "letter": "a",
@@ -7157,7 +7157,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "Um campo aceita idades de 18 a 65 anos para um cartão da 'AcademiaForma'. Quantas partições de equivalência VÁLIDAS e INVÁLIDAS existem para esse campo, considerando partições padrão?",
+    "stem": "Um campo aceita idades de 18 a 65 anos para um cartão da 'AcademiaForma'. Quantas partições de equivalência válidas e inválidas existem para esse campo, considerando partições padrão?",
     "options": [
       {
         "letter": "a",
@@ -7194,7 +7194,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "Para o mesmo campo de idade (18 a 65), aplicando Análise de Valor Limite com a abordagem de 2 valores (limite e valor adjacente), quais valores devem ser testados nos LIMITES?",
+    "stem": "Para o mesmo campo de idade (18 a 65), aplicando Análise de Valor Limite com a abordagem de 2 valores (limite e valor adjacente), quais valores devem ser testados nos limites?",
     "options": [
       {
         "letter": "a",
@@ -7231,7 +7231,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "Na abordagem de AVL com 3 valores para o intervalo 1-10, quais valores são testados em CADA limite?",
+    "stem": "Na abordagem de AVL com 3 valores para o intervalo 1-10, quais valores são testados em cada limite?",
     "options": [
       {
         "letter": "a",
@@ -7268,7 +7268,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "A 'Locadora CarroFácil' aplica desconto: clientes VIP com mais de 5 dias de locação ganham 20%; clientes regulares com mais de 5 dias ganham 10%; menos de 5 dias não tem desconto. Qual técnica é MAIS adequada para testar essa lógica?",
+    "stem": "A 'Locadora CarroFácil' aplica desconto: clientes VIP com mais de 5 dias de locação ganham 20%; clientes regulares com mais de 5 dias ganham 10%; menos de 5 dias não tem desconto. Qual técnica é mais adequada para testar essa lógica?",
     "options": [
       {
         "letter": "a",
@@ -7379,7 +7379,7 @@
     "chapter": 4,
     "lo": "FL-4.3.1",
     "isAppendix": false,
-    "stem": "Para alcançar 100% de cobertura de DECISÃO em um código com um único IF, quantos casos de teste são MÍNIMOS?",
+    "stem": "Para alcançar 100% de cobertura de decisão em um código com um único IF, quantos casos de teste são mínimos?",
     "options": [
       {
         "letter": "a",
@@ -7416,7 +7416,7 @@
     "chapter": 4,
     "lo": "FL-4.3.1",
     "isAppendix": false,
-    "stem": "Qual afirmação é VERDADEIRA sobre a relação entre cobertura de instrução e cobertura de decisão?",
+    "stem": "Qual afirmação é verdadeira sobre a relação entre cobertura de instrução e cobertura de decisão?",
     "options": [
       {
         "letter": "a",
@@ -7490,7 +7490,7 @@
     "chapter": 4,
     "lo": "FL-4.4.1",
     "isAppendix": false,
-    "stem": "Qual descrição é CORRETA sobre TESTE EXPLORATÓRIO?",
+    "stem": "Qual descrição é correta sobre teste exploratório?",
     "options": [
       {
         "letter": "a",
@@ -7564,7 +7564,7 @@
     "chapter": 4,
     "lo": "FL-4.5.1",
     "isAppendix": false,
-    "stem": "Em ATDD (Acceptance Test-Driven Development), quem normalmente colabora para definir os critérios de aceitação ANTES da codificação?",
+    "stem": "Em ATDD (Acceptance Test-Driven Development), quem normalmente colabora para definir os critérios de aceitação antes da codificação?",
     "options": [
       {
         "letter": "a",
@@ -7675,7 +7675,7 @@
     "chapter": 4,
     "lo": "FL-4.3.1",
     "isAppendix": false,
-    "stem": "Em um código com a estrutura: IF (a > 0) THEN x=1 ELSE x=2. Quantos casos de teste são NECESSÁRIOS para 100% de cobertura de ramo?",
+    "stem": "Em um código com a estrutura: IF (a > 0) THEN x=1 ELSE x=2. Quantos casos de teste são necessários para 100% de cobertura de ramo?",
     "options": [
       {
         "letter": "a",
@@ -7712,7 +7712,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "Uma regra do site 'CinemaIngressoX' tem 3 condições binárias independentes (sim/não). Quantas REGRAS (colunas) terá a tabela de decisão completa?",
+    "stem": "Uma regra do site 'CinemaIngressoX' tem 3 condições binárias independentes (sim/não). Quantas regras (colunas) terá a tabela de decisão completa?",
     "options": [
       {
         "letter": "a",
@@ -7749,7 +7749,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "Selecione DUAS técnicas que são de caixa-preta (baseadas em especificação).",
+    "stem": "Selecione duas técnicas que são de caixa-preta (baseadas em especificação).",
     "options": [
       {
         "letter": "a",
@@ -7787,7 +7787,7 @@
     "chapter": 4,
     "lo": "FL-4.4.1",
     "isAppendix": false,
-    "stem": "Que técnica de teste baseada em experiência usa LISTAS DE VERIFICAÇÃO com tópicos a serem testados em vez de casos detalhados?",
+    "stem": "Que técnica de teste baseada em experiência usa listas de verificação com tópicos a serem testados em vez de casos detalhados?",
     "options": [
       {
         "letter": "a",
@@ -7824,7 +7824,7 @@
     "chapter": 4,
     "lo": "FL-4.1.1",
     "isAppendix": false,
-    "stem": "A equipe do 'Sistema de Gestão Escolar EduFlow' precisa testar uma funcionalidade nova SEM código disponível ainda, baseando-se apenas na especificação. Qual conjunto de técnicas é o MAIS adequado?",
+    "stem": "A equipe do 'Sistema de Gestão Escolar EduFlow' precisa testar uma funcionalidade nova sem código disponível ainda, baseando-se apenas na especificação. Qual conjunto de técnicas é o mais adequado?",
     "options": [
       {
         "letter": "a",
@@ -7898,7 +7898,7 @@
     "chapter": 4,
     "lo": "FL-4.5.1",
     "isAppendix": false,
-    "stem": "Qual é o PRINCIPAL benefício das abordagens colaborativas baseadas em comportamento (BDD, ATDD)?",
+    "stem": "Qual é o principal benefício das abordagens colaborativas baseadas em comportamento (BDD, ATDD)?",
     "options": [
       {
         "letter": "a",
@@ -7935,7 +7935,7 @@
     "chapter": 4,
     "lo": "FL-4.3.1",
     "isAppendix": false,
-    "stem": "Quando técnicas de teste de CAIXA-BRANCA são MAIS adequadas?",
+    "stem": "Quando técnicas de teste de caixa-branca são mais adequadas?",
     "options": [
       {
         "letter": "a",
@@ -7972,7 +7972,7 @@
     "chapter": 4,
     "lo": "FL-4.4.1",
     "isAppendix": false,
-    "stem": "Qual é uma VANTAGEM do teste exploratório em comparação a técnicas baseadas em especificação?",
+    "stem": "Qual é uma vantagem do teste exploratório em comparação a técnicas baseadas em especificação?",
     "options": [
       {
         "letter": "a",
@@ -8009,7 +8009,7 @@
     "chapter": 4,
     "lo": "FL-4.2.1",
     "isAppendix": false,
-    "stem": "Que técnica é MELHOR para garantir cobertura de combinações de condições no cálculo de um seguro de carro, onde múltiplas variáveis (idade, histórico, modelo) interagem para produzir o preço?",
+    "stem": "Que técnica é melhor para garantir cobertura de combinações de condições no cálculo de um seguro de carro, onde múltiplas variáveis (idade, histórico, modelo) interagem para produzir o preço?",
     "options": [
       {
         "letter": "a",
@@ -8046,7 +8046,7 @@
     "chapter": 4,
     "lo": "FL-4.3.1",
     "isAppendix": false,
-    "stem": "Em um trecho de código com 4 decisões (IFs), cada uma com seus dois ramos (V e F), quantos ramos PRECISAM ser cobertos para 100% de cobertura de ramo?",
+    "stem": "Em um trecho de código com 4 decisões (IFs), cada uma com seus dois ramos (V e F), quantos ramos precisam ser cobertos para 100% de cobertura de ramo?",
     "options": [
       {
         "letter": "a",
@@ -8157,7 +8157,7 @@
     "chapter": 5,
     "lo": "FL-5.1.1",
     "isAppendix": false,
-    "stem": "Qual conteúdo TÍPICO faz parte de um plano de teste?",
+    "stem": "Qual conteúdo típico faz parte de um plano de teste?",
     "options": [
       {
         "letter": "a",
@@ -8194,7 +8194,7 @@
     "chapter": 5,
     "lo": "FL-5.1.1",
     "isAppendix": false,
-    "stem": "Qual a diferença entre ESTRATÉGIA de teste e PLANO de teste?",
+    "stem": "Qual a diferença entre estratégia de teste e plano de teste?",
     "options": [
       {
         "letter": "a",
@@ -8305,7 +8305,7 @@
     "chapter": 5,
     "lo": "FL-5.1.1",
     "isAppendix": false,
-    "stem": "Na estimativa por 3 PONTOS, quais valores são considerados para calcular a estimativa esperada?",
+    "stem": "Na estimativa por 3 pontos, quais valores são considerados para calcular a estimativa esperada?",
     "options": [
       {
         "letter": "a",
@@ -8342,7 +8342,7 @@
     "chapter": 5,
     "lo": "FL-5.2.1",
     "isAppendix": false,
-    "stem": "Para priorizar testes baseados em risco, quais DOIS fatores são tipicamente avaliados para cada item de risco?",
+    "stem": "Para priorizar testes baseados em risco, quais dois fatores são tipicamente avaliados para cada item de risco?",
     "options": [
       {
         "letter": "a",
@@ -8453,7 +8453,7 @@
     "chapter": 5,
     "lo": "FL-5.3.1",
     "isAppendix": false,
-    "stem": "Qual métrica é típica para MONITORAR o progresso do teste?",
+    "stem": "Qual métrica é típica para monitorar o progresso do teste?",
     "options": [
       {
         "letter": "a",
@@ -8527,7 +8527,7 @@
     "chapter": 5,
     "lo": "FL-5.3.1",
     "isAppendix": false,
-    "stem": "O que TIPICAMENTE faz parte de um relatório de progresso de teste?",
+    "stem": "O que tipicamente faz parte de um relatório de progresso de teste?",
     "options": [
       {
         "letter": "a",
@@ -8564,7 +8564,7 @@
     "chapter": 5,
     "lo": "FL-5.4.1",
     "isAppendix": false,
-    "stem": "Por que a GESTÃO DE CONFIGURAÇÃO é importante para o teste?",
+    "stem": "Por que a gestão de configuração é importante para o teste?",
     "options": [
       {
         "letter": "a",
@@ -8601,7 +8601,7 @@
     "chapter": 5,
     "lo": "FL-5.5.1",
     "isAppendix": false,
-    "stem": "O que NÃO deve estar incluído em um bom relatório de defeito?",
+    "stem": "O que não deve estar incluído em um bom relatório de defeito?",
     "options": [
       {
         "letter": "a",
@@ -8638,7 +8638,7 @@
     "chapter": 5,
     "lo": "FL-5.5.1",
     "isAppendix": false,
-    "stem": "Qual sequência representa estados TÍPICOS de um defeito do registro à finalização?",
+    "stem": "Qual sequência representa estados típicos de um defeito do registro à finalização?",
     "options": [
       {
         "letter": "a",
@@ -8675,7 +8675,7 @@
     "chapter": 5,
     "lo": "FL-5.5.1",
     "isAppendix": false,
-    "stem": "Um defeito visual num botão da página de 'Sobre Nós' do 'site PetClub' não impede uso, mas o marketing quer corrigir antes do evento da semana. Qual classificação é MAIS apropriada?",
+    "stem": "Um defeito visual num botão da página de 'Sobre Nós' do 'site PetClub' não impede uso, mas o marketing quer corrigir antes do evento da semana. Qual classificação é mais apropriada?",
     "options": [
       {
         "letter": "a",
@@ -8712,7 +8712,7 @@
     "chapter": 5,
     "lo": "FL-5.2.1",
     "isAppendix": false,
-    "stem": "Selecione DUAS afirmações VERDADEIRAS sobre teste baseado em risco.",
+    "stem": "Selecione duas afirmações verdadeiras sobre teste baseado em risco.",
     "options": [
       {
         "letter": "a",
@@ -8787,7 +8787,7 @@
     "chapter": 5,
     "lo": "FL-5.5.1",
     "isAppendix": false,
-    "stem": "Qual é a PRINCIPAL razão para implementar um processo formal de gestão de defeitos?",
+    "stem": "Qual é a principal razão para implementar um processo formal de gestão de defeitos?",
     "options": [
       {
         "letter": "a",
@@ -8824,7 +8824,7 @@
     "chapter": 5,
     "lo": "FL-5.3.1",
     "isAppendix": false,
-    "stem": "Qual métrica é mais útil para o líder de teste avaliar a QUALIDADE do objeto de teste no momento atual?",
+    "stem": "Qual métrica é mais útil para o líder de teste avaliar a qualidade do objeto de teste no momento atual?",
     "options": [
       {
         "letter": "a",
@@ -8861,7 +8861,7 @@
     "chapter": 5,
     "lo": "FL-5.1.1",
     "isAppendix": false,
-    "stem": "A líder do projeto 'CarrosFáceis Compartilhamento' está organizando o plano de teste. O que ela NÃO deve incluir como parte central do plano?",
+    "stem": "A líder do projeto 'CarrosFáceis Compartilhamento' está organizando o plano de teste. O que ela não deve incluir como parte central do plano?",
     "options": [
       {
         "letter": "a",
@@ -8972,7 +8972,7 @@
     "chapter": 6,
     "lo": "FL-6.1.1",
     "isAppendix": false,
-    "stem": "Qual categoria de ferramenta de teste é MAIS adequada para a equipe da 'PortalGov' rastrear casos de teste, execuções e defeitos?",
+    "stem": "Qual categoria de ferramenta de teste é mais adequada para a equipe da 'PortalGov' rastrear casos de teste, execuções e defeitos?",
     "options": [
       {
         "letter": "a",
@@ -9009,7 +9009,7 @@
     "chapter": 6,
     "lo": "FL-6.1.1",
     "isAppendix": false,
-    "stem": "Para verificar se o site 'GuruDoTreino' suporta 5.000 usuários simultâneos, qual tipo de ferramenta é APROPRIADO?",
+    "stem": "Para verificar se o site 'GuruDoTreino' suporta 5.000 usuários simultâneos, qual tipo de ferramenta é apropriado?",
     "options": [
       {
         "letter": "a",
@@ -9046,7 +9046,7 @@
     "chapter": 6,
     "lo": "FL-6.2.1",
     "isAppendix": false,
-    "stem": "Qual é um BENEFÍCIO clássico da automação de testes?",
+    "stem": "Qual é um benefício clássico da automação de testes?",
     "options": [
       {
         "letter": "a",
@@ -9083,7 +9083,7 @@
     "chapter": 6,
     "lo": "FL-6.2.1",
     "isAppendix": false,
-    "stem": "Qual destes é um RISCO comum na introdução de ferramentas de automação de teste?",
+    "stem": "Qual destes é um risco comum na introdução de ferramentas de automação de teste?",
     "options": [
       {
         "letter": "a",
@@ -9120,7 +9120,7 @@
     "chapter": 6,
     "lo": "FL-6.2.1",
     "isAppendix": false,
-    "stem": "Antes de adotar uma nova ferramenta de teste no projeto 'EduCadastro', a equipe deve considerar PRINCIPALMENTE:",
+    "stem": "Antes de adotar uma nova ferramenta de teste no projeto 'EduCadastro', a equipe deve considerar principalmente:",
     "options": [
       {
         "letter": "a",
