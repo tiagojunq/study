@@ -2,13 +2,19 @@ import { useEffect, useMemo, useState } from 'react'
 import ThemeToggle from '../components/ThemeToggle.jsx'
 import { CERTS, getCertQuestions } from '../lib/quiz.js'
 
-const OFFICIAL_EXAMS = new Set(['A', 'B'])
+// Per-certification, which exam letters correspond to official sample exams
+// published by ISTQB. Everything else (C, D, …) is generated.
+const OFFICIAL_EXAMS_BY_CERT = {
+  CTFL: new Set(['A', 'B']),
+  CTAI: new Set(['A']),
+}
 
 function certStats(certId) {
   const qs = getCertQuestions(certId)
+  const official = OFFICIAL_EXAMS_BY_CERT[certId] || new Set()
   const total = qs.length
-  const official = qs.filter((q) => OFFICIAL_EXAMS.has(q.exam)).length
-  return { total, official, generated: total - official }
+  const off = qs.filter((q) => official.has(q.exam)).length
+  return { total, official: off, generated: total - off }
 }
 
 export default function Home({ onStartSolo, onStartModerator, onStartParticipant }) {
@@ -29,7 +35,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
     const sala = params.get('sala')
     if (sala) {
       setCode(sala.toUpperCase())
-      // Participants don't need to pick a cert — they join whichever
+      // Participants don't need to pick a cert - they join whichever
       // session the moderator created. Skip straight to the form.
       setCert('CTFL')
       setStage('participant')
@@ -64,9 +70,9 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
           <h2 style={{ marginTop: 0 }}>Estuda que a vida muda!</h2>
           <p className="muted">
             Banco de simulados BSTQB (PT-BR) com suporte às certificações
-            {' '}<strong>CTFL — Foundation Level</strong> e
-            {' '}<strong>CT-AI — AI Testing</strong>.<br />
-            Estude sozinho ou em grupo de até 10 pessoas via WebRTC P2P — sem servidor.
+            {' '}<strong>CTFL - Foundation Level</strong> e
+            {' '}<strong>CT-AI - AI Testing</strong>.<br />
+            Estude sozinho ou em grupo de até 10 pessoas via WebRTC P2P - sem servidor.
           </p>
           <ul className="muted" style={{ marginTop: '0.5rem', textAlign: 'left' }}>
             <li><strong>Modo solo</strong>: configure e responda no seu ritmo, sem precisar de outros participantes.</li>
@@ -107,7 +113,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
               })}
             </div>
             <p className="muted" style={{ fontSize: '0.85rem', marginTop: '0.6rem' }}>
-              Se você foi convidado para uma sala, peça o código ao moderador — a
+              Se você foi convidado para uma sala, peça o código ao moderador - a
               certificação será definida por ele.
             </p>
           </div>
@@ -119,7 +125,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
               Como deseja entrar?
               {certInfo && (
                 <span className="muted" style={{ fontSize: '0.9rem', fontWeight: 'normal' }}>
-                  {' '}— {certInfo.shortLabel} ({certStat?.total} questões)
+                  {' '}- {certInfo.shortLabel} ({certStat?.total} questões)
                 </span>
               )}
             </h2>
@@ -142,7 +148,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
 
         {stage === 'solo-name' && (
           <div className="panel">
-            <h2>Modo solo — {certInfo?.shortLabel}</h2>
+            <h2>Modo solo - {certInfo?.shortLabel}</h2>
             <label>
               Seu nome
               <input
@@ -168,7 +174,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
 
         {stage === 'group-choice' && (
           <div className="panel">
-            <h2>Em grupo — {certInfo?.shortLabel}</h2>
+            <h2>Em grupo - {certInfo?.shortLabel}</h2>
             <p className="muted">Você será o moderador da sala ou um participante?</p>
             <div className="row" style={{ marginTop: '0.5rem' }}>
               <button
@@ -187,7 +193,7 @@ export default function Home({ onStartSolo, onStartModerator, onStartParticipant
 
         {stage === 'moderator-name' && (
           <div className="panel">
-            <h2>Moderador — {certInfo?.shortLabel}</h2>
+            <h2>Moderador - {certInfo?.shortLabel}</h2>
             <label>
               Seu nome (também aparece no ranking)
               <input

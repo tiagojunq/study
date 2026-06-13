@@ -7,13 +7,15 @@ export default function QuestionDisplay({
   onToggle,
   locked,
   reveal,
+  showPoints = false,
 }) {
   if (!question) return null
-  const { stem, options, selectCount, correct } = question
+  const { stem, options, selectCount, correct, points } = question
   const correctSet = new Set(correct)
   const selSet = new Set(selected || [])
 
   const canPick = !locked && !reveal
+  const pts = points || 1
 
   return (
     <div>
@@ -21,6 +23,11 @@ export default function QuestionDisplay({
         <strong>Questão {question.exam}-{question.number}</strong>
         {' • '}
         {chapterName(question.chapter, question.cert)}
+        {showPoints && (
+          <span className="tag points" style={{ marginLeft: '0.5rem' }}>
+            {pts === 1 ? '1 ponto' : `${pts} pontos`}
+          </span>
+        )}
         <span className="tag" style={{ marginLeft: '0.5rem' }}>
           {selectCount === 2 ? 'Selecione DUAS' : 'Selecione UMA'}
         </span>

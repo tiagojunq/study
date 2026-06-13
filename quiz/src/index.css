@@ -619,6 +619,11 @@ label {
   text-transform: uppercase;
   letter-spacing: 0.03em;
 }
+.tag.points {
+  background: var(--warn-soft);
+  color: var(--warn);
+  border-color: var(--warn-border);
+}
 
 .q-number {
   color: var(--muted);

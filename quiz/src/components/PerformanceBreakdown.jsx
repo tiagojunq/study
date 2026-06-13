@@ -6,9 +6,9 @@ function overallMessage(pct) {
   if (pct >= 80)
     return 'Muito bom resultado! Ainda há espaço para afinar alguns tópicos e consolidar a aprovação com folga.'
   if (pct >= 65)
-    return 'Aprovado(a)! A base está sólida — reforce os capítulos indicados para não correr risco na prova oficial.'
+    return 'Aprovado(a)! A base está sólida - reforce os capítulos indicados para não correr risco na prova oficial.'
   if (pct >= 50)
-    return 'Quase lá — resultado abaixo do corte, mas com bom potencial de recuperação. Foco nos capítulos prioritários fará a diferença.'
+    return 'Quase lá - resultado abaixo do corte, mas com bom potencial de recuperação. Foco nos capítulos prioritários fará a diferença.'
   return 'Resultado abaixo do esperado. Um plano de estudos estruturado pelos capítulos mais pesados vai mudar o cenário.'
 }
 
@@ -78,8 +78,10 @@ function Insights({ p, chapters, chapterTotals, totalPoints, certInfo }) {
 export default function PerformanceBreakdown({
   participants,
   chapterTotals,
+  chapterPointTotals,
   totalQuestions,
   totalPoints,
+  hasMixedPoints = false,
   myId,
   solo = false,
   cert = DEFAULT_CERT,
@@ -128,6 +130,7 @@ export default function PerformanceBreakdown({
                 <tr>
                   <th>Capítulo</th>
                   <th>Acertos</th>
+                  {hasMixedPoints && <th>Pontos</th>}
                   <th>%</th>
                 </tr>
               </thead>
@@ -135,11 +138,19 @@ export default function PerformanceBreakdown({
                 {chapters.map((ch) => {
                   const correct = p.chapterCorrect?.[ch] || 0
                   const total = chapterTotals[ch]
-                  const chPct = total > 0 ? (correct / total) * 100 : 0
+                  const pts = p.chapterPoints?.[ch] || 0
+                  const ptsTotal = chapterPointTotals?.[ch] || total
+                  // When points vary, the % column reflects points earned
+                  // out of points possible (the metric that decides
+                  // approval); otherwise it stays as questions correct.
+                  const chPct = hasMixedPoints
+                    ? (ptsTotal > 0 ? (pts / ptsTotal) * 100 : 0)
+                    : (total > 0 ? (correct / total) * 100 : 0)
                   return (
                     <tr key={ch}>
                       <td>{chapterName(ch, certInfo.id)}</td>
                       <td>{correct}/{total}</td>
+                      {hasMixedPoints && <td>{pts}/{ptsTotal}</td>}
                       <td className="muted">{chPct.toFixed(0)}%</td>
                     </tr>
                   )
