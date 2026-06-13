@@ -30,10 +30,10 @@
       "c"
     ],
     "explanations": {
-      "a": "Incorreta. Provar ausência de defeitos não é um objetivo válido; pelo 1º princípio ISTQB, testes revelam defeitos mas não provam sua ausência.",
+      "a": "Incorreta. Provar ausência de defeitos não é um objetivo válido; pelo 1º princípio BSTQB, testes revelam defeitos mas não provam sua ausência.",
       "b": "Incorreta. Garantir ausência de falhas em produção viola o 1º princípio: testes não provam ausência de defeitos.",
       "c": "Correta. Reduzir o nível de risco e aumentar a confiança na qualidade é um objetivo legítimo e realista do teste.",
-      "d": "Incorreta. Verificar todas as combinações de entradas seria testes exaustivos, o que é impossível (2º princípio ISTQB)."
+      "d": "Incorreta. Verificar todas as combinações de entradas seria testes exaustivos, o que é impossível (2º princípio BSTQB)."
     },
     "cert": "CTFL",
     "points": 1
@@ -271,7 +271,7 @@
     ],
     "explanations": {
       "a": "Incorreta. Criar visão de produto e planejar/organizar o trabalho da equipe são habilidades de gestão/liderança, não as mais importantes para um testador.",
-      "b": "Correta. Conhecimento da área (domínio), ser bom jogador de equipe e pensamento crítico são as habilidades mais importantes para um testador segundo o ISTQB.",
+      "b": "Correta. Conhecimento da área (domínio), ser bom jogador de equipe e pensamento crítico são as habilidades mais importantes para um testador segundo o BSTQB.",
       "c": "Incorreta. Criar visão de produto não é uma habilidade tipicamente requerida de testadores; é mais associada a gerentes de produto.",
       "d": "Incorreta. Planejar e organizar o trabalho da equipe é uma habilidade gerencial, não a mais importante para um testador individual."
     },
@@ -311,7 +311,7 @@
     "explanations": {
       "a": "Incorreta. Decisões sobre automação de testes não são responsabilidade de representantes de negócios.",
       "b": "Incorreta. Testadores não ajudam a definir estratégia de testes junto com representantes de negócios; a estratégia é definida pela liderança de testes.",
-      "c": "Incorreta. Representantes comerciais fazem parte da abordagem de equipe completa (whole team approach) no ISTQB.",
+      "c": "Incorreta. Representantes comerciais fazem parte da abordagem de equipe completa (whole team approach) no BSTQB.",
       "d": "Correta. Na abordagem whole team, testadores auxiliam representantes de negócios a criar testes de aceite adequados às necessidades do negócio."
     },
     "cert": "CTFL",
@@ -2430,7 +2430,7 @@
     "explanations": {
       "a": "Incorreta. Alto impacto de risco não implica automaticamente alta probabilidade; esses dois fatores são avaliados independentemente.",
       "b": "Incorreta. Não há relação inversa automática entre impacto e probabilidade de risco.",
-      "c": "Correta. No ISTQB, impacto e probabilidade do risco são fatores independentes; conhecer um não determina o outro.",
+      "c": "Correta. No BSTQB, impacto e probabilidade do risco são fatores independentes; conhecer um não determina o outro.",
       "d": "Incorreta. A probabilidade é sempre necessária para calcular o nível total de risco (probabilidade × impacto) e definir respostas adequadas."
     },
     "cert": "CTFL",
@@ -3020,7 +3020,7 @@
     ],
     "explanations": {
       "a": "Correta. TDD (Test-Driven Development) é uma abordagem de desenvolvimento orientada a testes, onde os testes são escritos antes do código de produção.",
-      "b": "Incorreta. Desenvolvimento orientado pela cobertura não é uma abordagem reconhecida do ISTQB CTFL.",
+      "b": "Incorreta. Desenvolvimento orientado pela cobertura não é uma abordagem reconhecida do BSTQB CTFL.",
       "c": "Incorreta. Desenvolvimento orientado pela qualidade é um conceito genérico, não uma técnica específica de TDD.",
       "d": "Incorreta. Desenvolvimento orientado a funcionalidades (Feature-Driven Development) é uma metodologia ágil diferente do TDD."
     },
@@ -4197,7 +4197,7 @@
     ],
     "explanations": {
       "a": "Incorreta. Reduzir o nível de risco do produto é um objetivo de teste válido e realista.",
-      "b": "Correta. 'Garantir que o software esteja completamente livre de defeitos' não é um objetivo válido; pelo 1º princípio ISTQB, testes não provam ausência de defeitos.",
+      "b": "Correta. 'Garantir que o software esteja completamente livre de defeitos' não é um objetivo válido; pelo 1º princípio BSTQB, testes não provam ausência de defeitos.",
       "c": "Incorreta. Fornecer informações para decisão de lançamento é um objetivo legítimo e importante do teste.",
       "d": "Incorreta. Verificar conformidade com requisitos contratuais ou legais é um objetivo válido, especialmente em domínios regulamentados."
     },
@@ -4212,7 +4212,7 @@
     "chapter": 1,
     "lo": "FL-1.1.2",
     "selectCount": 1,
-    "stem": "Um desenvolvedor codifica incorrectamente uma condição 'maior que' quando deveria ser 'maior ou igual a'. Isso resulta em um resultado incorreto durante a execução. Qual é a sequência correta dos termos ISTQB para descrever essa situação?",
+    "stem": "Um desenvolvedor codifica incorrectamente uma condição 'maior que' quando deveria ser 'maior ou igual a'. Isso resulta em um resultado incorreto durante a execução. Qual é a sequência correta dos termos BSTQB para descrever essa situação?",
     "options": [
       {
         "letter": "a",
@@ -4235,8 +4235,8 @@
       "a"
     ],
     "explanations": {
-      "a": "Correta. A sequência correta no ISTQB é: engano humano (error) → defeito no produto (defect) → falha durante execução (failure).",
-      "b": "Incorreta. Esta sequência (failure → defect → error) está completamente invertida em relação à causalidade ISTQB.",
+      "a": "Correta. A sequência correta no BSTQB é: engano humano (error) → defeito no produto (defect) → falha durante execução (failure).",
+      "b": "Incorreta. Esta sequência (failure → defect → error) está completamente invertida em relação à causalidade BSTQB.",
       "c": "Incorreta. O defeito resulta do engano, não o contrário; a ordem defect → error está invertida.",
       "d": "Incorreta. A falha é a manifestação do defeito durante execução, não um passo intermediário entre engano e defeito."
     },
@@ -4446,7 +4446,7 @@
     "chapter": 1,
     "lo": "FL-1.5.1",
     "selectCount": 1,
-    "stem": "Qual habilidade é considerada fundamental para um testador eficaz segundo o ISTQB CTFL?",
+    "stem": "Qual habilidade é considerada fundamental para um testador eficaz segundo o BSTQB CTFL?",
     "options": [
       {
         "letter": "a",
@@ -4469,9 +4469,9 @@
       "c"
     ],
     "explanations": {
-      "a": "Incorreta. Programar em múltiplas linguagens é útil mas não é a habilidade fundamental definida pelo ISTQB para testadores.",
+      "a": "Incorreta. Programar em múltiplas linguagens é útil mas não é a habilidade fundamental definida pelo BSTQB para testadores.",
       "b": "Incorreta. Conhecimento exclusivo de ferramentas de automação é muito restrito; testadores precisam de habilidades mais abrangentes.",
-      "c": "Correta. Pensamento crítico, curiosidade e atenção aos detalhes são habilidades fundamentais para um testador eficaz, conforme o ISTQB CTFL.",
+      "c": "Correta. Pensamento crítico, curiosidade e atenção aos detalhes são habilidades fundamentais para um testador eficaz, conforme o BSTQB CTFL.",
       "d": "Incorreta. Trabalhar de forma isolada contradiz o princípio de whole team approach; colaboração é essencial para testadores."
     },
     "cert": "CTFL",
@@ -5414,7 +5414,7 @@
       "a": "Correta. Riscos de produto são possíveis falhas nas características do software; riscos de projeto são fatores que podem comprometer o sucesso do projeto (prazo, orçamento, recursos).",
       "b": "Incorreta. Ambos os tipos de risco são gerenciados por toda a equipe de projeto; não há divisão exclusiva por papel.",
       "c": "Incorreta. Riscos de produto podem ocorrer após a entrega (ex.: falhas em produção); riscos de projeto podem se materializar em qualquer fase do desenvolvimento.",
-      "d": "Incorreta. A distinção entre riscos de produto e projeto é fundamental para o planejamento baseado em riscos no ISTQB."
+      "d": "Incorreta. A distinção entre riscos de produto e projeto é fundamental para o planejamento baseado em riscos no BSTQB."
     },
     "cert": "CTFL",
     "points": 1
@@ -5744,7 +5744,7 @@
     "chapter": 1,
     "lo": "FL-1.1.1",
     "isAppendix": false,
-    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste válido segundo o ISTQB?",
+    "stem": "A equipe de uma startup que desenvolve um app de meditação chamado 'CalmaJá' está discutindo o que considerar como objetivo de teste. Qual das alternativas representa um objetivo de teste válido segundo o BSTQB?",
     "options": [
       {
         "letter": "a",
@@ -5768,7 +5768,7 @@
     ],
     "selectCount": 1,
     "explanations": {
-      "a": "Incorreta. Provar ausência de defeitos é impossível (1º princípio ISTQB).",
+      "a": "Incorreta. Provar ausência de defeitos é impossível (1º princípio BSTQB).",
       "b": "Correta. Prevenir defeitos pela revisão antecipada de requisitos é um objetivo legítimo do teste, alinhado ao princípio de teste antecipado.",
       "c": "Incorreta. O teste é parte do QA, não o substitui.",
       "d": "Incorreta. Nenhum teste prova segurança absoluta; o teste reduz risco, não o elimina."
@@ -5822,7 +5822,7 @@
     "chapter": 1,
     "lo": "FL-1.2.1",
     "isAppendix": false,
-    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste todas as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio ISTQB esse gerente está ignorando?",
+    "stem": "Um gerente da empresa 'PagueFácil' insiste que a equipe teste todas as combinações possíveis de entrada do formulário de cadastro (com 12 campos) antes do lançamento. Que princípio BSTQB esse gerente está ignorando?",
     "options": [
       {
         "letter": "a",
@@ -5900,7 +5900,7 @@
     "chapter": 1,
     "lo": "FL-1.2.1",
     "isAppendix": false,
-    "stem": "A equipe da 'EduTech Cursos' entregou um sistema com zero defeitos abertos, mas os usuários reclamaram que ele não atende às necessidades reais de aprendizado. Qual princípio ISTQB foi violado?",
+    "stem": "A equipe da 'EduTech Cursos' entregou um sistema com zero defeitos abertos, mas os usuários reclamaram que ele não atende às necessidades reais de aprendizado. Qual princípio BSTQB foi violado?",
     "options": [
       {
         "letter": "a",
@@ -5963,7 +5963,7 @@
     ],
     "selectCount": 1,
     "explanations": {
-      "a": "Incorreta. A ordem está fora do fluxo lógico definido pelo ISTQB.",
+      "a": "Incorreta. A ordem está fora do fluxo lógico definido pelo BSTQB.",
       "b": "Correta. Esta é a sequência típica das atividades de teste; monitoramento/controle ocorre em paralelo.",
       "c": "Incorreta. Planejamento deve preceder análise e design.",
       "d": "Incorreta. Execução não vem antes de design e análise."
@@ -6056,7 +6056,7 @@
     "chapter": 1,
     "lo": "FL-1.4.1",
     "isAppendix": false,
-    "stem": "Qual conjunto de habilidades é mais importante para um testador eficaz, segundo o ISTQB?",
+    "stem": "Qual conjunto de habilidades é mais importante para um testador eficaz, segundo o BSTQB?",
     "options": [
       {
         "letter": "a",
@@ -6068,7 +6068,7 @@
       },
       {
         "letter": "c",
-        "text": "Apenas certificação ISTQB e experiência em frameworks específicos."
+        "text": "Apenas certificação BSTQB e experiência em frameworks específicos."
       },
       {
         "letter": "d",
@@ -6081,7 +6081,7 @@
     "selectCount": 1,
     "explanations": {
       "a": "Incorreta. Apenas técnica não basta; comunicação e domínio são igualmente cruciais.",
-      "b": "Correta. O ISTQB destaca uma combinação de habilidades técnicas e interpessoais.",
+      "b": "Correta. O BSTQB destaca uma combinação de habilidades técnicas e interpessoais.",
       "c": "Incorreta. Certificação não substitui habilidades comportamentais e de domínio.",
       "d": "Incorreta. Programação de baixo nível raramente é requisito para testadores."
     },
@@ -6122,7 +6122,7 @@
       "a": "Incorreta. Inverte os papéis: desenvolvimento cria; teste investiga.",
       "b": "Correta. Testadores tendem a ser críticos/questionadores, enquanto desenvolvedores tendem a focar em construir soluções.",
       "c": "Incorreta. Os mindsets são complementares, não idênticos.",
-      "d": "Incorreta. Bom teste exige colaboração; o ISTQB ressalta isso."
+      "d": "Incorreta. Bom teste exige colaboração; o BSTQB ressalta isso."
     },
     "cert": "CTFL",
     "points": 1
@@ -6160,8 +6160,8 @@
     "explanations": {
       "a": "Incorreta. Confunde os conceitos.",
       "b": "Correta. Erro é a ação humana, defeito é a falha estática no código/produto, falha é a manifestação observável.",
-      "c": "Incorreta. Cada conceito tem definição distinta no ISTQB.",
-      "d": "Incorreta. Reclamação de cliente não é definida como falha pelo ISTQB."
+      "c": "Incorreta. Cada conceito tem definição distinta no BSTQB.",
+      "d": "Incorreta. Reclamação de cliente não é definida como falha pelo BSTQB."
     },
     "cert": "CTFL",
     "points": 1
@@ -6238,7 +6238,7 @@
     "explanations": {
       "a": "Incorreta. Independência traz benefícios mas não garante por si só maior qualidade.",
       "b": "Incorreta. Vieses do autor dificultam encontrar defeitos no próprio trabalho.",
-      "c": "Correta. ISTQB destaca que cada nível de independência possui prós e contras; o contexto determina o adequado.",
+      "c": "Correta. BSTQB destaca que cada nível de independência possui prós e contras; o contexto determina o adequado.",
       "d": "Incorreta. Comunicação é fundamental; independência não significa isolamento."
     },
     "cert": "CTFL",
@@ -6981,7 +6981,7 @@
       "a": "Incorreta. Não houve defeito a corrigir.",
       "b": "Correta. Manutenção adaptativa responde a mudanças no ambiente (regulação, sistemas externos).",
       "c": "Incorreta. Perfectiva é melhoria de qualidade sem mudança de ambiente.",
-      "d": "Incorreta. 'Preditiva' não é categoria padrão do ISTQB."
+      "d": "Incorreta. 'Preditiva' não é categoria padrão do BSTQB."
     },
     "cert": "CTFL",
     "points": 1
@@ -8814,7 +8814,7 @@
     ],
     "selectCount": 1,
     "explanations": {
-      "a": "Incorreta. Não são fatores de risco no ISTQB.",
+      "a": "Incorreta. Não são fatores de risco no BSTQB.",
       "b": "Correta. Risco = Probabilidade × Impacto.",
       "c": "Incorreta. Irrelevantes para risco do produto.",
       "d": "Incorreta. São métricas de tamanho, não risco."
@@ -9635,7 +9635,7 @@
     "selectCount": 1,
     "explanations": {
       "a": "Incorreta. Custo é só um dos fatores.",
-      "b": "Correta. ISTQB destaca avaliação ampla: processo, ROI, integração técnica e capacitação.",
+      "b": "Correta. BSTQB destaca avaliação ampla: processo, ROI, integração técnica e capacitação.",
       "c": "Incorreta. UI é apenas um aspecto secundário.",
       "d": "Incorreta. Decisão deve ser baseada em múltiplos critérios."
     },

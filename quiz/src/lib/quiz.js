@@ -7,9 +7,9 @@ export const ALL_QUESTIONS = allQuestions
 export const CERTS = {
   CTFL: {
     id: 'CTFL',
-    label: 'ISTQB CTFL — Foundation Level',
+    label: 'BSTQB CTFL — Foundation Level',
     shortLabel: 'CTFL',
-    description: 'Certificação base do ISTQB sobre fundamentos de teste de software.',
+    description: 'Certificação base do BSTQB sobre fundamentos de teste de software.',
     chapters: [1, 2, 3, 4, 5, 6],
     chapterNames: {
       1: 'Cap. 1 – Fundamentos',
@@ -52,9 +52,9 @@ export const CERTS = {
   },
   CTAI: {
     id: 'CTAI',
-    label: 'ISTQB CT-AI — AI Testing',
+    label: 'BSTQB CT-AI — AI Testing',
     shortLabel: 'CT-AI',
-    description: 'Certificação ISTQB sobre teste de sistemas baseados em Inteligência Artificial.',
+    description: 'Certificação BSTQB sobre teste de sistemas baseados em Inteligência Artificial.',
     chapters: [1, 2, 3, 4, 5, 6, 7],
     chapterNames: {
       1: 'Cap. 1 – Introdução à AI',
