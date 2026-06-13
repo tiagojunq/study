@@ -374,6 +374,27 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 </>
               )}
             </div>
+
+            <div className="panel">
+              <h2>
+                Quem respondeu ({(state.answeredIds || []).length}/{state.participants.length})
+              </h2>
+              <div className="participants">
+                {state.participants.map((p) => {
+                  const answered = (state.answeredIds || []).includes(p.id)
+                  return (
+                    <span
+                      key={p.id}
+                      className={`chip ${answered ? 'answered' : p.online ? 'online' : ''}`}
+                    >
+                      <span className="dot" />
+                      {p.name}{p.id === myConnId ? ' (você)' : ''}
+                      {p.role === 'moderator' ? ' • mod' : ''}
+                    </span>
+                  )
+                })}
+              </div>
+            </div>
           </>
         )}
 
