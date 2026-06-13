@@ -258,6 +258,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 <Ranking
                   participants={state.participants}
                   totalQuestions={state.totalQuestions}
+                  totalPoints={state.totalPoints}
                   myId={myConnId}
                 />
               </div>
@@ -267,7 +268,9 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                   participants={state.participants}
                   chapterTotals={state.chapterTotals || {}}
                   totalQuestions={state.totalQuestions}
+                  totalPoints={state.totalPoints}
                   myId={myConnId}
+                  cert={state.cert}
                 />
               </div>
               <div className="panel">
@@ -282,10 +285,19 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
     )
   }
 
+  const certLabel = state?.cert === 'CTAI' ? 'CT-AI' : state?.cert === 'CTFL' ? 'CTFL' : null
+
   return (
     <div className="app">
       <header className="header">
-        <h1>Participante • {name}</h1>
+        <h1>
+          Participante • {name}
+          {certLabel && (
+            <span className="muted" style={{ fontSize: '0.85rem', fontWeight: 'normal' }}>
+              {' • '}{certLabel}
+            </span>
+          )}
+        </h1>
         <div className="meta">
           {startedAt && (
             <span className={timerClass}>
@@ -408,6 +420,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
               <Ranking
                 participants={state.participants}
                 totalQuestions={state.totalQuestions}
+                totalPoints={state.totalPoints}
                 myId={myConnId}
               />
             </div>
@@ -417,7 +430,9 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 participants={state.participants}
                 chapterTotals={state.chapterTotals || {}}
                 totalQuestions={state.totalQuestions}
+                totalPoints={state.totalPoints}
                 myId={myConnId}
+                cert={state.cert}
               />
             </div>
             <div className="panel">
