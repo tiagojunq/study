@@ -80,6 +80,11 @@ export default function ModeratorSession({
   // Confirmation dialog when leaving (closes the room for everyone).
   const [confirmExit, setConfirmExit] = useState(false)
 
+  // Cached state of participants who disconnected, keyed by normalized name.
+  // Lets a reconnecting participant resume with the same score / chapter
+  // counters / answers if they rejoin with the same name.
+  const disconnectedRef = useRef(new Map())
+
   // --- PeerJS setup ----------------------------------------------------
   useEffect(() => {
     if (solo) return
@@ -99,6 +104,21 @@ export default function ModeratorSession({
           let msg
           try { msg = typeof raw === 'string' ? JSON.parse(raw) : raw } catch { msg = raw }
           handleClientMessage(conn.connectionId, msg, conn)
+        })
+      },
+      onDisconnect: (connId) => {
+        // Snapshot the participant's state for potential reconnection,
+        // then remove them from the visible list and from any current
+        // answers / answers history (they'll be merged back on rejoin).
+        setParticipants((prev) => {
+          const p = prev.find((x) => x.id === connId)
+          if (p) {
+            disconnectedRef.current.set(p.name.trim().toLowerCase(), {
+              ...p,
+              _oldId: connId,
+            })
+          }
+          return prev.filter((x) => x.id !== connId)
         })
       },
     })
@@ -182,8 +202,47 @@ export default function ModeratorSession({
     if (!msg || typeof msg !== 'object') return
     if (msg.type === 'join') {
       const cleanName = String(msg.name || '').trim().slice(0, 40) || 'Convidado'
+      const nameKey = cleanName.toLowerCase()
+      // Reconnection path: name matches a participant who recently dropped.
+      const cached = disconnectedRef.current.get(nameKey)
+      if (cached) {
+        disconnectedRef.current.delete(nameKey)
+        const oldId = cached._oldId
+        // Migrate any pending answer for the current question.
+        setCurrentAnswers((prev) => {
+          if (!(oldId in prev)) return prev
+          const { [oldId]: prior, ...rest } = prev
+          return { ...rest, [connId]: prior }
+        })
+        // Migrate full answers history.
+        setAnswersHistory((prev) => {
+          let dirty = false
+          const next = {}
+          for (const [qi, byId] of Object.entries(prev)) {
+            if (oldId in byId) {
+              const { [oldId]: prior, ...rest } = byId
+              next[qi] = { ...rest, [connId]: prior }
+              dirty = true
+            } else {
+              next[qi] = byId
+            }
+          }
+          return dirty ? next : prev
+        })
+        setParticipants((prev) => {
+          const nonHost = prev.filter((p) => p.id !== HOST_ID)
+          if (nonHost.length >= MAX_PARTICIPANTS - 1) {
+            try { conn.send(JSON.stringify({ type: 'rejected', reason: 'full' })) } catch (e) {}
+            return prev
+          }
+          return [
+            ...prev,
+            { ...cached, id: connId, online: true, _oldId: undefined },
+          ]
+        })
+        return
+      }
       setParticipants((prev) => {
-        // Reject if room is full (excluding the moderator).
         const nonHost = prev.filter((p) => p.id !== HOST_ID)
         if (nonHost.length >= MAX_PARTICIPANTS - 1) {
           try { conn.send(JSON.stringify({ type: 'rejected', reason: 'full' })) } catch (e) {}
@@ -202,12 +261,11 @@ export default function ModeratorSession({
             score: 0,
             answeredCount: 0,
             chapterCorrect: {},
-      chapterPoints: {},
+            chapterPoints: {},
           },
         ]
       })
     } else if (msg.type === 'answer') {
-      // Accept only if it matches the current question and we're in `question` phase.
       if (phaseRef.current !== 'question') return
       if (msg.questionIndex !== currentIndexRef.current) return
       const letters = Array.isArray(msg.letters)
@@ -757,6 +815,7 @@ export default function ModeratorSession({
                   totalPoints={totalPoints}
                   myId={HOST_ID}
                   solo={solo}
+                  cert={cert}
                 />
               </div>
             )}

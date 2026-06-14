@@ -1,3 +1,5 @@
+import { getCert, DEFAULT_CERT } from '../lib/quiz.js'
+
 const MEDALS = ['🥇', '🥈', '🥉']
 
 export default function Ranking({
@@ -6,8 +8,14 @@ export default function Ranking({
   totalPoints,
   myId,
   solo = false,
+  cert = DEFAULT_CERT,
 }) {
   const denom = totalPoints || totalQuestions
+  const certInfo = getCert(cert)
+  const passPct =
+    certInfo.examTotalPoints > 0
+      ? (certInfo.examPassPoints / certInfo.examTotalPoints) * 100
+      : 65
 
   const sorted = [...participants].sort((a, b) => {
     if (b.score !== a.score) return b.score - a.score
@@ -18,7 +26,8 @@ export default function Ranking({
   return (
     <ol className="ranking ranking-list">
       {sorted.map((p, i) => {
-        const pct = denom > 0 ? Math.round((p.score / denom) * 100) : 0
+        const pct = denom > 0 ? (p.score / denom) * 100 : 0
+        const passed = pct >= passPct
         const isMe = p.id === myId
         const medal = MEDALS[i] ?? `#${i + 1}`
         const posClass =
@@ -35,8 +44,11 @@ export default function Ranking({
               {!solo && p.role === 'moderator' ? ' • mod' : ''}
               {p.online === false ? ' • offline' : ''}
             </span>
+            <span className={`pass-badge ${passed ? 'pass' : 'fail'}`}>
+              {passed ? '✓ Aprovado' : '✗ Reprovado'}
+            </span>
             <span className="score rank-score">{p.score}/{denom} pts</span>
-            <span className="pct">{pct}%</span>
+            <span className="pct">{Math.round(pct)}%</span>
           </li>
         )
       })}
