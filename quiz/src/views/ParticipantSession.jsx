@@ -260,6 +260,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                   totalQuestions={state.totalQuestions}
                   totalPoints={state.totalPoints}
                   myId={myConnId}
+                  cert={state.cert}
                 />
               </div>
               <div className="panel">
@@ -425,6 +426,7 @@ export default function ParticipantSession({ roomCode, name, onExit }) {
                 totalQuestions={state.totalQuestions}
                 totalPoints={state.totalPoints}
                 myId={myConnId}
+                cert={state.cert}
               />
             </div>
             <div className="panel">

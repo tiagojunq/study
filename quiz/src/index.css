@@ -774,7 +774,7 @@ label input[type="checkbox"] { width: auto; }
 }
 .ranking li, .ranking-row {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: auto 1fr auto auto auto;
   align-items: center;
   gap: 12px;
   padding: 12px 16px;
@@ -1085,9 +1085,14 @@ label input[type="checkbox"] { width: auto; }
   .room-code { font-size: 28px; letter-spacing: 6px; padding: 14px; }
   .ranking li, .ranking-row {
     grid-template-columns: auto 1fr;
-    grid-template-areas: "pos name" "score score" "pct pct";
+    grid-template-areas:
+      "pos name"
+      "badge badge"
+      "score score"
+      "pct pct";
   }
   .ranking .pos, .ranking-row .rank-medal { grid-area: pos; }
+  .ranking li > .pass-badge { grid-area: badge; justify-self: start; }
   .ranking .score, .ranking-row .rank-score { grid-area: score; text-align: left; }
   .ranking .pct { grid-area: pct; text-align: left; }
 }

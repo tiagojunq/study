@@ -72,7 +72,7 @@ export function newRoomCode() {
 
 // Wrap Peer so the rest of the app talks in terms of "host" / "client".
 
-export function createHost({ roomCode, onConnection, onError, onOpen }) {
+export function createHost({ roomCode, onConnection, onError, onOpen, onDisconnect }) {
   const peerId = roomIdToPeerId(roomCode)
   const peer = new Peer(peerId, PEER_OPTIONS)
   const connections = new Map() // connId -> DataConnection
@@ -99,10 +99,12 @@ export function createHost({ roomCode, onConnection, onError, onOpen }) {
     })
     conn.on('close', () => {
       connections.delete(conn.connectionId)
+      onDisconnect && onDisconnect(conn.connectionId)
     })
     conn.on('error', (err) => {
       console.warn('[host] conn error', err)
       connections.delete(conn.connectionId)
+      onDisconnect && onDisconnect(conn.connectionId)
     })
   })
 
