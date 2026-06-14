@@ -141,6 +141,11 @@ a { color: var(--accent); }
   display: flex;
   align-items: center;
   gap: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 .header h1::before, .app-header h1::before, .header-title::before {
   content: ">";
@@ -163,6 +168,7 @@ a { color: var(--accent); }
   padding: 4px 10px;
   border-radius: 4px;
   border: 1px solid rgba(161,0,255,.3);
+  white-space: nowrap;
 }
 .timer.warn { color: var(--warn); background: var(--warn-soft); border-color: var(--warn-border); }
 .timer.danger { color: var(--danger); background: var(--danger-soft); border-color: var(--danger-border); }
@@ -1095,22 +1101,25 @@ label input[type="checkbox"] { width: auto; }
 /* Mobile / small tablets (≤ 640px). Encolhe radicalmente o layout: tudo
    empilha em 1 coluna, headers compactos, tabelas com scroll horizontal. */
 @media (max-width: 640px) {
-  body { font-size: 14px; }
+  body { font-size: 13.5px; }
   .container { padding: 0 12px 28px; }
-  .header, .app-header { padding: 0 12px; min-height: 52px; gap: 6px; }
-  .header h1, .app-header h1, .header-title { font-size: 13px; gap: 6px; }
+  .header, .app-header { padding: 0 10px; min-height: 50px; gap: 6px; flex-wrap: nowrap; }
+  .header h1, .app-header h1, .header-title { font-size: 12px; gap: 5px; }
   .header h1::before,
   .app-header h1::before,
-  .header-title::before { font-size: 18px; }
-  .timer { font-size: 12px; padding: 3px 8px; }
-  .meta, .header-meta { gap: 6px; }
-  .panel { padding: 18px; margin-top: 14px; }
-  .panel h2, .panel-title { font-size: 16px; }
-  .brand-headline { font-size: 20px; margin-bottom: 8px; }
-  .brand-desc { font-size: 13px; }
-  .brand-list li { font-size: 13px; padding-left: 18px; }
-  .brand-panel::before { font-size: 160px; opacity: 0.035; }
-  .brand-img-wrap img { max-width: 240px; }
+  .header-title::before { font-size: 16px; }
+  .header button, .header .btn,
+  .app-header button, .app-header .btn { padding: 6px 10px; font-size: 11px; }
+  .theme-toggle { width: 32px; height: 32px; font-size: 14px; }
+  .timer { font-size: 11px; padding: 3px 6px; }
+  .meta, .header-meta { gap: 5px; flex-shrink: 0; }
+  .panel { padding: 16px; margin-top: 14px; }
+  .panel h2, .panel-title { font-size: 15px; margin-bottom: 12px; }
+  .brand-headline { font-size: 18px; margin-bottom: 6px; }
+  .brand-desc { font-size: 12.5px; }
+  .brand-list li { font-size: 12.5px; padding-left: 18px; padding-block: 4px; }
+  .brand-panel::before { font-size: 140px; opacity: 0.035; }
+  .brand-img-wrap img { max-width: 220px; }
   .cert-cards, .grid-2, .form-grid-2 { grid-template-columns: 1fr; gap: 12px; }
   .cert-card { padding: 18px; }
   .cert-card::after { font-size: 24px; right: 12px; bottom: 12px; }
@@ -1134,10 +1143,20 @@ label input[type="checkbox"] { width: auto; }
     border-right: none;
     border-bottom: 2px solid var(--border-strong);
     width: 100%;
+    min-height: 44px;
+    padding: 12px 16px;
     justify-content: center;
+    font-size: 12.5px;
+    color: var(--text);
+    background: var(--panel);
   }
   .mode-toggle .mode-btn:last-child,
   .mode-toggle .btn:last-child { border-bottom: none; }
+  .mode-toggle .mode-btn.active,
+  .mode-toggle .btn.active {
+    background: var(--accent);
+    color: #ffffff;
+  }
   /* Questões */
   .question-meta, .q-number { gap: 6px; padding-bottom: 10px; margin-bottom: 10px; }
   .option { padding: 12px 14px; gap: 10px; }
@@ -1151,10 +1170,19 @@ label input[type="checkbox"] { width: auto; }
   .stem-table, .stem-pre { font-size: 12px; padding: 10px; }
   /* Performance header: nome em cima, score embaixo */
   .performance-header, .perf-header { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .performance-result { width: 100%; justify-content: space-between; }
-  /* Tabela com scroll horizontal para evitar quebrar */
-  .chapter-table { display: block; overflow-x: auto; white-space: nowrap; }
-  .chapter-table thead, .chapter-table tbody, .chapter-table tr { display: table; width: 100%; table-layout: fixed; }
+  .performance-result { width: 100%; justify-content: space-between; flex-wrap: wrap; gap: 6px; }
+  .performance-name strong { font-size: 15px; }
+  /* Tabela compacta com palavras que podem quebrar */
+  .chapter-table { font-size: 12px; table-layout: auto; }
+  .chapter-table th, .chapter-table td {
+    padding: 8px 8px;
+    font-size: 11px;
+    word-break: keep-all;
+  }
+  .chapter-table th { font-size: 10px; letter-spacing: 0.5px; }
+  .chapter-table td:first-child { white-space: normal; line-height: 1.35; }
+  .chapter-table td:not(:first-child) { white-space: nowrap; text-align: right; }
+  .chapter-table th:not(:first-child) { text-align: right; }
   /* Ranking empilhado em 4 áreas */
   .ranking li, .ranking-row {
     grid-template-columns: auto 1fr;
@@ -1186,6 +1214,14 @@ label input[type="checkbox"] { width: auto; }
   /* Chapter checkboxes mais espaçados para toque */
   .chapter-check-item, .chapter-check { padding: 8px 0; font-size: 13.5px; }
   .chapter-check-item input, .chapter-check input { width: 18px; height: 18px; }
+  /* Pass/fail badges menores */
+  .pass-badge, .badge { padding: 2px 8px; font-size: 10px; letter-spacing: 0.4px; }
+  .performance-score { font-size: 12px; }
+  /* Inputs e labels mais compactos */
+  input, .input { font-size: 13.5px; padding: 9px 12px; }
+  label, .form-label { font-size: 10px; }
+  /* Ambient ">" do brand-panel não deve sobrar */
+  .brand-panel { overflow: hidden; }
 }
 
 /* Smartphones pequenos (≤ 380px). Apertar o suficiente para Galaxy S/iPhone SE. */
