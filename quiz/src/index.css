@@ -1077,22 +1077,128 @@ label input[type="checkbox"] { width: auto; }
   margin-top: 8px;
 }
 
-/* ─── Mobile tweaks ──────────────────────────────────────────────────────── */
-@media (max-width: 540px) {
-  .container { padding: 0 14px 32px; }
-  .panel { padding: 20px; }
+/* ─── Responsiveness ─────────────────────────────────────────────────────── */
+/* Tablet (≤ 900px). Mantém duas colunas onde faz sentido, encolhe tipografia
+   e densifica o header. */
+@media (max-width: 900px) {
+  .container { max-width: 100%; padding: 0 18px 36px; }
+  .header, .app-header { padding: 0 16px; }
+  .panel { padding: 22px; }
   .brand-headline { font-size: 22px; }
-  .room-code { font-size: 28px; letter-spacing: 6px; padding: 14px; }
+  .brand-panel::before { font-size: 220px; right: -30px; opacity: 0.04; }
+  .room-code { font-size: 34px; letter-spacing: 8px; padding: 16px; }
+  .question-meta, .q-number { font-size: 12px; }
+  .chapter-table { font-size: 12.5px; }
+  .chapter-table th, .chapter-table td { padding: 8px 10px; }
+}
+
+/* Mobile / small tablets (≤ 640px). Encolhe radicalmente o layout: tudo
+   empilha em 1 coluna, headers compactos, tabelas com scroll horizontal. */
+@media (max-width: 640px) {
+  body { font-size: 14px; }
+  .container { padding: 0 12px 28px; }
+  .header, .app-header { padding: 0 12px; min-height: 52px; gap: 6px; }
+  .header h1, .app-header h1, .header-title { font-size: 13px; gap: 6px; }
+  .header h1::before,
+  .app-header h1::before,
+  .header-title::before { font-size: 18px; }
+  .timer { font-size: 12px; padding: 3px 8px; }
+  .meta, .header-meta { gap: 6px; }
+  .panel { padding: 18px; margin-top: 14px; }
+  .panel h2, .panel-title { font-size: 16px; }
+  .brand-headline { font-size: 20px; margin-bottom: 8px; }
+  .brand-desc { font-size: 13px; }
+  .brand-list li { font-size: 13px; padding-left: 18px; }
+  .brand-panel::before { font-size: 160px; opacity: 0.035; }
+  .brand-img-wrap img { max-width: 240px; }
+  .cert-cards, .grid-2, .form-grid-2 { grid-template-columns: 1fr; gap: 12px; }
+  .cert-card { padding: 18px; }
+  .cert-card::after { font-size: 24px; right: 12px; bottom: 12px; }
+  .room-code {
+    font-size: 26px;
+    letter-spacing: 5px;
+    padding: 14px;
+    word-break: break-all;
+  }
+  /* Buttons cheios na largura nas linhas de ação */
+  .row, .btn-row { gap: 8px; }
+  .row > button, .btn-row > button,
+  .row > .btn, .btn-row > .btn { flex: 1 1 auto; padding: 10px 14px; font-size: 12px; }
+  /* Mode toggle empilhado */
+  .mode-toggle {
+    width: 100%;
+    flex-direction: column;
+  }
+  .mode-toggle .mode-btn,
+  .mode-toggle .btn {
+    border-right: none;
+    border-bottom: 2px solid var(--border-strong);
+    width: 100%;
+    justify-content: center;
+  }
+  .mode-toggle .mode-btn:last-child,
+  .mode-toggle .btn:last-child { border-bottom: none; }
+  /* Questões */
+  .question-meta, .q-number { gap: 6px; padding-bottom: 10px; margin-bottom: 10px; }
+  .option { padding: 12px 14px; gap: 10px; }
+  .option-text { font-size: 13.5px; }
+  .option-explanation, .explanation { font-size: 11.5px; padding: 7px 10px; }
+  .options { gap: 6px; }
+  /* Spread se mantém em flex-wrap para empilhar quando precisa */
+  .spread { gap: 8px; }
+  /* Stem mais compacto */
+  .stem-prose p, .stem-p { font-size: 13.5px; line-height: 1.6; }
+  .stem-table, .stem-pre { font-size: 12px; padding: 10px; }
+  /* Performance header: nome em cima, score embaixo */
+  .performance-header, .perf-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .performance-result { width: 100%; justify-content: space-between; }
+  /* Tabela com scroll horizontal para evitar quebrar */
+  .chapter-table { display: block; overflow-x: auto; white-space: nowrap; }
+  .chapter-table thead, .chapter-table tbody, .chapter-table tr { display: table; width: 100%; table-layout: fixed; }
+  /* Ranking empilhado em 4 áreas */
   .ranking li, .ranking-row {
     grid-template-columns: auto 1fr;
     grid-template-areas:
       "pos name"
       "badge badge"
-      "score score"
-      "pct pct";
+      "score pct";
+    gap: 6px 12px;
+    padding: 10px 12px;
   }
   .ranking .pos, .ranking-row .rank-medal { grid-area: pos; }
+  .rank-name { grid-area: name; }
   .ranking li > .pass-badge { grid-area: badge; justify-self: start; }
   .ranking .score, .ranking-row .rank-score { grid-area: score; text-align: left; }
-  .ranking .pct { grid-area: pct; text-align: left; }
+  .ranking .pct { grid-area: pct; text-align: right; }
+  /* Review chips menores */
+  .review-chip { width: 36px; height: 36px; font-size: 12px; }
+  /* Dialog */
+  .dialog-box, .modal { padding: 22px; }
+  .dialog-title, .modal h2 { font-size: 17px; }
+  .dialog-msg, .modal p { font-size: 13px; }
+  .dialog-actions, .modal-actions { flex-direction: column-reverse; }
+  .dialog-actions > button, .modal-actions > button { width: 100%; }
+  /* Footer compacto */
+  footer { padding: 12px; font-size: 11px; }
+  /* Insights */
+  .insights { padding: 14px; }
+  .insights-summary { font-size: 12.5px; }
+  /* Chapter checkboxes mais espaçados para toque */
+  .chapter-check-item, .chapter-check { padding: 8px 0; font-size: 13.5px; }
+  .chapter-check-item input, .chapter-check input { width: 18px; height: 18px; }
+}
+
+/* Smartphones pequenos (≤ 380px). Apertar o suficiente para Galaxy S/iPhone SE. */
+@media (max-width: 380px) {
+  .header h1, .app-header h1, .header-title { font-size: 12px; }
+  .room-code { font-size: 22px; letter-spacing: 4px; padding: 12px; }
+  .brand-headline { font-size: 18px; }
+  .panel { padding: 14px; }
+  .option { padding: 10px 12px; }
+  .option-text { font-size: 13px; }
+}
+
+/* Telas grandes (≥ 1280px). Aumentamos o container para aproveitar o espaço. */
+@media (min-width: 1280px) {
+  .container { max-width: 880px; }
 }
